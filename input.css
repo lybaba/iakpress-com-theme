@@ -1,0 +1,15 @@
+/*!
+Theme Name: IAKPress.com Theme
+Theme URI: https://iakpress.com
+Description: Thème enfant de GeneratePress pour IAKPress.com optimisé avec Tailwind CSS
+Author: IAKPress
+Author URI: https://iakpress.com
+Template: generatepress
+Version: 1.0.0
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vous pouvez ajouter du CSS personnalisé supplémentaire ici si besoin */
