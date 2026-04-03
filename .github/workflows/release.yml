@@ -1,0 +1,48 @@
+name: Release Theme
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Tailwind CSS
+        run: npm run build
+
+      - name: Package Theme
+        run: |
+          mkdir -p dist/iakpress-com-theme
+          rsync -a --exclude='node_modules' \
+                   --exclude='src' \
+                   --exclude='.git' \
+                   --exclude='.github' \
+                   --exclude='package*.json' \
+                   --exclude='tailwind.config.js' \
+                   --exclude='dist' \
+                   ./ dist/iakpress-com-theme/
+          cd dist
+          zip -r ../iakpress-com-theme.zip iakpress-com-theme/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: iakpress-com-theme.zip
+          generate_release_notes: true
