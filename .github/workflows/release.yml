@@ -2,8 +2,12 @@ name: Release Theme
 
 on:
   push:
+    branches:
+      - main
+      - master
     tags:
       - 'v*'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -46,3 +50,4 @@ jobs:
         with:
           files: iakpress-com-theme.zip
           generate_release_notes: true
+
