@@ -37,10 +37,14 @@ jobs:
           rsync -a --exclude='node_modules' \
                    --exclude='src' \
                    --exclude='.git' \
+                   --exclude='.gitignore' \
                    --exclude='.github' \
                    --exclude='package*.json' \
                    --exclude='tailwind.config.js' \
                    --exclude='dist' \
+                   --exclude='scripts' \
+                   --exclude='*.zip' \
+                   --exclude='iakpress-com-theme' \
                    ./ dist/iakpress-com-theme/
           cd dist
           zip -r ../iakpress-com-theme.zip iakpress-com-theme/
@@ -50,4 +54,3 @@ jobs:
         with:
           files: iakpress-com-theme.zip
           generate_release_notes: true
-
