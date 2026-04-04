@@ -38,7 +38,7 @@ get_header(); ?>
             </li>
             <li class="flex items-start">
               <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-              <span class="text-gray-700"><strong>Branding:</strong> We adjust the React runtime theme (colors, fonts, radii) to seamlessly blend with your WordPress theme.</span>
+              <span class="text-gray-700"><strong>Branding:</strong> We adjust the workflow theme (colors, fonts, radii) to seamlessly blend with your WordPress site.</span>
             </li>
             <li class="flex items-start">
               <svg class="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>

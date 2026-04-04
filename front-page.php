@@ -15,7 +15,7 @@ get_header(); ?>
         Stop fighting your theme's CSS <br class="hidden md:block"/>on complex forms.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        XPressUI is a React-powered Document Intake portal for WordPress. 100% theme-proof. Zero CSS conflicts. Installed in 2 minutes.
+      XPressUI is a decoupled Document Intake portal for WordPress. 100% theme-proof. Zero CSS conflicts. Installed in 2 minutes.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="#pricing" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
@@ -57,7 +57,7 @@ get_header(); ?>
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">The XPressUI approach: "Theme-Proof" by design.</h2>
-      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">We took the complexity out of WordPress. Your portal is built on our SaaS console, packaged as a <code>.zip</code>, and rendered on your client's site inside an isolated Shadow DOM.</p>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">We took the complexity out of WordPress. Your portal is built on our SaaS console, packaged as a <code>.zip</code>, and rendered natively on your client's site with strictly scoped CSS.</p>
       
       <div class="text-left space-y-8 bg-blue-50/50 border border-blue-100 p-8 md:p-12 rounded-3xl">
         <div class="flex items-start">

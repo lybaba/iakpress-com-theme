@@ -31,7 +31,7 @@ get_header(); ?>
       
       <div class="bg-gray-100 border-t border-gray-200 p-6 flex flex-col sm:flex-row items-center justify-between">
         <div class="text-sm text-gray-600 mb-4 sm:mb-0">
-          <strong>Notice how smooth it is?</strong> That's because it's an isolated React app, not a standard WP form.
+          <strong>Notice how smooth it is?</strong> That's because it uses a custom lightweight runtime and strictly scoped CSS, not a standard WP form.
         </div>
         <a href="/#pricing" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition whitespace-nowrap shrink-0">Get the Agency License</a>
       </div>
