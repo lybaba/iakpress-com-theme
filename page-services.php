@@ -21,11 +21,11 @@ get_header(); ?>
   </section>
 
   <!-- Services Details -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
     <div class="bg-white rounded-2xl shadow-xl ring-1 ring-black ring-opacity-5 overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
         <!-- Left Column: What's included -->
-        <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-gray-100">
+        <div class="p-8 md:p-12 lg:col-span-5 border-b lg:border-b-0 lg:border-r border-gray-100">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">White-Glove Setup</h3>
           <ul class="space-y-5">
             <li class="flex items-start">
@@ -48,14 +48,16 @@ get_header(); ?>
         </div>
         
         <!-- Right Column: Pricing & CTA -->
-        <div class="p-8 md:p-12 bg-gray-50 flex flex-col justify-center">
+        <div class="p-8 md:p-12 lg:col-span-7 bg-gray-50 flex flex-col justify-center">
           <h3 class="text-xl font-bold text-gray-900 mb-2">Turnkey Delivery</h3>
           <p class="text-gray-500 mb-8">Delivered in 48 hours. XPressUI Agency License included.</p>
           <div class="mb-8">
             <span class="text-5xl font-extrabold text-gray-900">€499</span>
             <span class="text-gray-500 font-medium">/ portal</span>
           </div>
-        <a href="mailto:hello@iakpress.com?subject=Turnkey%20Portal%20Setup%20Inquiry" class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Request a Setup</a>
+        <div class="w-full text-left mb-4">
+          <?php echo do_shortcode('[xpressui id="turnkey-setup"]'); ?>
+        </div>
           <p class="mt-4 text-sm text-gray-500 text-center">Or <a href="/#pricing" class="text-blue-600 font-medium hover:underline">buy the license</a> and do it yourself.</p>
         </div>
       </div>

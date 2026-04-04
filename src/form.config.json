@@ -1,0 +1,131 @@
+{
+  "id": "turnkey-setup",
+  "uid": "turnkey-setup-001",
+  "type": "form",
+  "name": "turnkey-setup",
+  "mode": "form-multi-step",
+  "title": "Turnkey Setup Inquiry",
+  "stepUi": {
+    "backBehavior": "always",
+    "progressPlacement": "top",
+    "navigationPlacement": "bottom"
+  },
+  "sections": {
+    "global": [],
+    "custom": [
+      {
+        "type": "section",
+        "subType": "section",
+        "name": "contact_details",
+        "label": "Contact Details",
+        "adminLabel": "Contact Details"
+      },
+      {
+        "type": "section",
+        "subType": "section",
+        "name": "project_scope",
+        "label": "Project Scope",
+        "adminLabel": "Project Scope"
+      }
+    ],
+    "contact_details": [
+      {
+        "name": "fullName",
+        "label": "Your Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "email",
+        "label": "Agency Email",
+        "type": "email",
+        "required": true
+      },
+      {
+        "name": "agencyName",
+        "label": "Agency Name",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "website",
+        "label": "Agency Website",
+        "type": "url",
+        "required": false
+      }
+    ],
+    "project_scope": [
+      {
+        "name": "targetIndustry",
+        "label": "Who is this portal for?",
+        "type": "radio-buttons",
+        "required": true,
+        "choices": [
+          { "value": "law", "label": "Law Firm" },
+          { "value": "accounting", "label": "Accounting" },
+          { "value": "real_estate", "label": "Real Estate" },
+          { "value": "hr", "label": "HR / Recruiting" },
+          { "value": "other", "label": "Other" }
+        ]
+      },
+      {
+        "name": "complexity",
+        "label": "Estimated number of fields needed?",
+        "type": "select",
+        "required": true,
+        "choices": [
+          { "value": "basic", "label": "Basic (1-10 fields)" },
+          { "value": "standard", "label": "Standard (11-30 fields)" },
+          { "value": "complex", "label": "Complex (30+ fields)" }
+        ]
+      },
+      {
+        "name": "projectDetails",
+        "label": "Tell us about the onboarding flow you want to digitize.",
+        "desc": "Any specific documents to collect? Conditional logic needed?",
+        "type": "textarea",
+        "required": true
+      }
+    ],
+    "btngroup": [
+      {
+        "type": "submit",
+        "name": "prevbtn",
+        "label": "Back",
+        "adminLabel": "Back"
+      },
+      {
+        "type": "submit",
+        "name": "nextbtn",
+        "label": "Next: Project Details →",
+        "adminLabel": "Continue"
+      },
+      {
+        "type": "submit",
+        "name": "submitbtn",
+        "label": "Request Setup",
+        "adminLabel": "Submit"
+      }
+    ]
+  },
+  "workflowConfig": {
+    "submissionMode": "multi-step-submit",
+    "providerMode": "wordpress-bridge",
+    "resumeSupport": "disabled"
+  },
+  "submit": {
+    "endpoint": "__XPRESSUI_WORDPRESS_REST_URL__",
+    "method": "POST",
+    "mode": "form-data",
+    "includeDocumentData": true
+  },
+  "navigationLabels": {
+    "prevLabel": "Back",
+    "nextLabel": "Next: Project Details \u2192",
+    "submitLabel": "Request Setup"
+  },
+  "submitFeedback": {
+    "title": "Request Received! \ud83d\ude80",
+    "idle_message": "Thanks for reaching out! We will review your requirements and get back to you within 24 hours to schedule a quick kickoff call. We look forward to building your portal."
+  }
+}

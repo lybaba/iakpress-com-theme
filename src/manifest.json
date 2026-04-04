@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "console.export/v2",
+  "projectId": "turnkey-setup",
+  "projectSlug": "turnkey-setup",
+  "projectName": "Turnkey Setup Inquiry",
+  "generatedAt": "2026-04-04T00:00:00Z",
+  "xpressui": {
+    "version": "1.0.0"
+  },
+  "runtimeRequirements": {
+    "tier": "light"
+  },
+  "wordpressCompatibility": {
+    "bridgeMode": "plugin-shell",
+    "shortcodeMode": "legacy-template",
+    "templateProfile": "light",
+    "requiresLicense": false
+  },
+  "capabilities": {
+    "components": ["text", "email", "url", "radio-buttons", "select", "textarea"]
+  },
+  "meta": {
+    "stepCount": 2,
+    "fieldCount": 7,
+    "isBundled": true,
+    "listingGroup": "bundled",
+    "listingTitle": "Turnkey Setup Form"
+  },
+  "artifacts": {
+    "config": "form.config.json",
+    "templateContext": "template.context.json"
+  }
+}
