@@ -8,8 +8,8 @@ Template: generatepress
 Version: 1.0.0
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../**/*.php";
+@source "../src/**/*.js";
 
 /* Vous pouvez ajouter du CSS personnalisé supplémentaire ici si besoin */
