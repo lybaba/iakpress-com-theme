@@ -3,9 +3,7 @@
  * The front page template file for IAKPress.com
  */
 
-// Set to false once we have real customer feedback and revert to normal flow.
-$prelaunch_mode = defined('XPRESSUI_PRELAUNCH_MODE') ? XPRESSUI_PRELAUNCH_MODE : true;
-$console_url    = 'https://xpressui.iakpress.com/console/';
+$console_url = 'https://xpressui.iakpress.com/console/';
 
 get_header(); ?>
 
@@ -22,8 +20,7 @@ get_header(); ?>
       XPressUI is a decoupled Document Intake portal for WordPress. 100% theme-proof. Zero CSS conflicts. Installed in 2 minutes.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo $prelaunch_mode ? esc_url($console_url) : '#pricing'; ?>"
-           <?php if ($prelaunch_mode) echo 'target="_blank" rel="noreferrer"'; ?>
+        <a href="#pricing"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
           Get XPressUI Pro
         </a>
@@ -120,13 +117,6 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€49</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <?php if ($prelaunch_mode): ?>
-          <a href="<?php echo esc_url($console_url); ?>" target="_blank" rel="noreferrer"
-             class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 text-center">
-            Try it free in the console →
-          </a>
-          <p class="mt-4 text-xs text-gray-400 font-medium">Free license during early access</p>
-          <?php else: ?>
           <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get Instant Access</button>
           <script>
             document.getElementById('buy-pro-btn').addEventListener('click', async function() {
@@ -160,7 +150,6 @@ get_header(); ?>
             });
           </script>
           <p class="mt-4 text-xs text-gray-400 font-medium">Instant license delivery via email</p>
-          <?php endif; ?>
         </div>
       </div>
     </div>
