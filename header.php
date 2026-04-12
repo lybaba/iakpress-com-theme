@@ -29,6 +29,7 @@
         <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Home</a>
         <a href="/document-intake/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Live Demo</a>
         <a href="/services/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Services</a>
+        <a href="/blog/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Blog</a>
       </nav>
 
       <!-- Call to Action & Mobile -->

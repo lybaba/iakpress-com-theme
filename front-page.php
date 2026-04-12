@@ -94,6 +94,47 @@ get_header(); ?>
     </div>
   </section>
 
+  <!-- SECTION : LATEST ARTICLE -->
+  <?php
+  $latest_post = get_posts( [ 'numberposts' => 1, 'post_status' => 'publish' ] );
+  if ( ! empty( $latest_post ) ) :
+    $post = $latest_post[0];
+    setup_postdata( $post );
+  ?>
+  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center justify-between mb-10">
+        <h2 class="text-2xl font-bold text-gray-900">From the Blog</h2>
+        <a href="/blog/" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition">All articles &rarr;</a>
+      </div>
+
+      <a href="<?php echo get_permalink( $post->ID ); ?>"
+         class="group block bg-gray-50 hover:bg-blue-50 border border-gray-100 hover:border-blue-200 rounded-2xl p-8 md:p-10 transition-all duration-200">
+        <?php
+        $cats = get_the_category( $post->ID );
+        if ( ! empty( $cats ) ) : ?>
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">
+            <?php echo esc_html( $cats[0]->name ); ?>
+          </p>
+        <?php endif; ?>
+
+        <h3 class="text-2xl font-extrabold text-gray-900 group-hover:text-blue-700 mb-3 transition-colors leading-snug">
+          <?php echo esc_html( get_the_title( $post->ID ) ); ?>
+        </h3>
+        <p class="text-gray-500 leading-relaxed mb-6">
+          <?php echo esc_html( wp_trim_words( get_the_excerpt( $post->ID ), 28, '…' ) ); ?>
+        </p>
+        <span class="inline-flex items-center text-sm font-bold text-blue-600 group-hover:underline">
+          Read the article
+          <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+  <?php wp_reset_postdata(); endif; ?>
+
   <!-- SECTION 4 : PRIX -->
   <section id="pricing" class="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
