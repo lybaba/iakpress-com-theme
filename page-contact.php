@@ -1,38 +1,48 @@
 <?php
 /**
- * Template for the /contact/ page.
+ * The template for displaying the /contact/ page.
  */
 
-$xpressui_active_route = 'contact';
-$contact_form_url      = xpressui_asset_url( 'contact-form.html' );
+get_header(); ?>
 
-get_header( 'xpressui' );
-?>
+<div class="font-sans text-gray-900 antialiased">
 
-<main class="subpage-shell">
-  <div class="container">
-    <section class="subpage-hero">
-      <p class="section-kicker">Contact</p>
-      <h1>Need help deciding, installing, or tailoring the workflow?</h1>
-      <p>
-        Fill in the form and we'll get back to you within 1-2 business days.
-        For installation questions, include your WordPress version and active theme.
+  <!-- Hero -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Contact</p>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
+        Need help deciding, installing,<br class="hidden md:block"/> or tailoring the workflow?
+      </h1>
+      <p class="text-gray-500 leading-relaxed">
+        Fill in the form and we'll get back to you within 1–2 business days. For installation questions, include your WordPress version and active theme.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section style="max-width:600px">
-      <iframe
-        src="<?php echo esc_url( $contact_form_url ); ?>"
-        title="Contact form"
-        style="display:block;width:100%;height:520px;border:none;overflow:hidden"
-        loading="lazy"
-      ></iframe>
-      <p style="margin-top:16px;font-size:13px;color:#94a3b8">
-        Prefer email?
-        <a href="mailto:hello@iakpress.com?subject=XPressUI%20Contact" style="color:#059669;font-weight:700;text-decoration:none">hello@iakpress.com</a>
-      </p>
-    </section>
-  </div>
-</main>
+  <!-- Form (shortcode) -->
+  <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <?php the_content(); ?>
+    </div>
+  </section>
 
-<?php get_footer( 'xpressui' ); ?>
+  <!-- XpressUI promo -->
+  <section class="bg-gray-50 border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col sm:flex-row items-center gap-6">
+        <div class="flex-1 min-w-0">
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Built with XPressUI</p>
+          <p class="text-gray-900 font-bold mb-1">This form runs on a WordPress plugin.</p>
+          <p class="text-sm text-gray-500 leading-relaxed">No code, no CSS conflicts. Designed in the visual console, deployed as a shortcode in under 30 minutes.</p>
+        </div>
+        <a href="/xpressui/" class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-sm whitespace-nowrap">
+          See how it works →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<?php get_footer(); ?>

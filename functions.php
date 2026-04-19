@@ -9,16 +9,7 @@
 // Ajoutez vos fonctions WordPress personnalisées (shortcodes, filtres, etc.) ci-dessous :
 
 function xpressui_is_promo_page(): bool {
-    return is_page_template(
-        [
-            'template-xpressui-overview.php',
-            'page-pro.php',
-            'page-pricing.php',
-            'page-install.php',
-            'page-contact.php',
-            'page-purchase-confirmed.php',
-        ]
-    );
+    return is_page_template( [ 'page-purchase-confirmed.php' ] );
 }
 
 function xpressui_asset_url( string $path ): string {

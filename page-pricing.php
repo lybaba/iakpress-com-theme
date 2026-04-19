@@ -4,7 +4,6 @@
  * WordPress automatically loads this for a page with slug "pricing".
  */
 
-$xpressui_active_route = 'pricing';
 $download_url = 'https://github.com/lybaba/xpressui-wordpress-bridge/releases/latest';
 
 $rows = [
@@ -45,81 +44,82 @@ $faq_items = [
   ['q' => 'What is the refund policy?',                        'a' => '30-day money-back guarantee, no questions asked. Email hello@iakpress.com within 30 days of purchase.'],
 ];
 
-get_header('xpressui');
+get_header();
 ?>
 
-<div class="page-shell">
-  <main class="container page-stack" style="padding-top:56px">
+<div class="font-sans text-gray-900 antialiased">
 
-    <!-- Hero -->
-    <section style="text-align:center;max-width:640px;margin:0 auto 56px">
-      <p class="section-kicker">Pricing</p>
-      <h1 style="font-family:'Fraunces',Georgia,serif;font-size:clamp(2.2rem,4vw,3.4rem);letter-spacing:-.04em;line-height:1.05;margin:0 0 16px">
-        Free to start.<br>Pro when you need more.
-      </h1>
-      <p style="color:#64748b;line-height:1.65;margin:0">
-        The free plugin ships with a ready-to-use document intake workflow.
-        Pro unlocks the Console builder, custom pack install, and advanced field types.
-      </p>
-    </section>
+  <!-- Hero -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100 text-center">
+    <div class="max-w-2xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pricing</p>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Free to start.<br>Pro when you need more.</h1>
+      <p class="text-gray-500 leading-relaxed">The free plugin ships with a ready-to-use document intake workflow. Pro unlocks the Console builder, custom pack install, and advanced field types.</p>
+    </div>
+  </section>
 
-    <!-- Pricing cards -->
-    <section class="pricing-grid" style="margin-bottom:64px">
-      <article class="pricing-card">
-        <span class="pricing-tag">Free</span>
-        <h3>Open source plugin</h3>
-        <div class="price-row">
-          <strong>€0</strong>
-          <span>available on GitHub</span>
+  <!-- Pricing cards -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Free -->
+      <article class="bg-gray-50 rounded-2xl border border-gray-100 p-8 flex flex-col">
+        <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">Free</span>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Open source plugin</h3>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="text-4xl font-extrabold text-gray-900">€0</span>
+          <span class="text-gray-500 text-sm">available on GitHub</span>
         </div>
-        <ul class="check-list">
-          <li><strong>1</strong> bundled Document Intake workflow</li>
-          <li>WordPress submission inbox</li>
-          <li>File uploads, status tracking, team assignment</li>
-          <li>Data stays in your WordPress DB</li>
-          <li>Community support via GitHub</li>
+        <ul class="space-y-3 mb-8 flex-1">
+          <?php foreach (['1 bundled Document Intake workflow', 'WordPress submission inbox', 'File uploads, status tracking, team assignment', 'Data stays in your WordPress DB', 'Community support via GitHub'] as $item): ?>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <svg class="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($item); ?>
+          </li>
+          <?php endforeach; ?>
         </ul>
-        <div class="pricing-card-footer">
-          <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="btn btn-primary btn-block">Download the plugin</a>
-        </div>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
+           class="block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition">
+          Download the plugin
+        </a>
       </article>
 
-      <article class="pricing-card pricing-card-featured">
-        <span class="pricing-tag pricing-tag-dark">Pro</span>
-        <h3>Visual workflow builder</h3>
-        <div class="price-row">
-          <strong>€49</strong>
-          <span>one-time · lifetime license · 5 sites</span>
+      <!-- Pro -->
+      <article class="bg-gray-900 rounded-2xl border border-gray-800 p-8 flex flex-col">
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Pro</span>
+        <h3 class="text-xl font-bold text-white mb-2">Visual workflow builder</h3>
+        <div class="flex items-baseline gap-2 mb-6">
+          <span class="text-4xl font-extrabold text-white">€49</span>
+          <span class="text-gray-400 text-sm">one-time · lifetime · 5 sites</span>
         </div>
-        <ul class="check-list">
-          <li>Everything in Free</li>
-          <li>Console builder — design any intake flow</li>
-          <li>Custom workflow pack install</li>
-          <li>Advanced field types (QR scan, doc scan, quiz…)</li>
-          <li>Customize labels, validation, design tokens in wp-admin</li>
-          <li>Automatic plugin updates</li>
-          <li>Priority email support (1–2 business days)</li>
+        <ul class="space-y-3 mb-8 flex-1">
+          <?php foreach (['Everything in Free', 'Console builder — design any intake flow', 'Custom workflow pack install', 'Advanced field types (QR scan, doc scan, quiz…)', 'Customize labels, validation, design tokens in wp-admin', 'Automatic plugin updates', 'Priority email support (1–2 business days)'] as $item): ?>
+          <li class="flex items-start gap-3 text-sm text-gray-300">
+            <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($item); ?>
+          </li>
+          <?php endforeach; ?>
         </ul>
-        <div class="pricing-card-footer">
-          <button class="btn btn-dark btn-block xpressui-checkout-btn">Get Pro — €49 →</button>
-          <p style="margin:10px 0 0;font-size:.75rem;color:rgba(255,255,255,0.5);text-align:center">30-day money-back guarantee · Stripe secure checkout</p>
-        </div>
+        <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+          Get Pro — €49 →
+        </button>
+        <p class="text-center text-xs text-gray-500 mt-3">30-day money-back guarantee · Stripe secure checkout</p>
       </article>
-    </section>
 
-    <!-- Comparison table -->
-    <section class="section-block">
-      <div class="section-heading">
-        <p class="section-kicker">Compare plans</p>
-        <h2>Full feature breakdown.</h2>
-      </div>
+    </div>
+  </section>
 
-      <div style="border:1px solid #e2e8f0;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 16px 34px rgba(18,32,51,.05)">
-        <!-- Header -->
-        <div style="display:grid;grid-template-columns:1fr 100px 100px;background:#f8fafc;border-bottom:1px solid #e2e8f0">
-          <div style="padding:14px 20px;font-size:.8rem;font-weight:700;color:#475569">Feature</div>
-          <div style="padding:14px 16px;font-size:.8rem;font-weight:700;color:#475569;border-left:1px solid #e2e8f0;text-align:center">Free</div>
-          <div style="padding:14px 16px;font-size:.8rem;font-weight:700;color:#1e293b;border-left:1px solid #e2e8f0;text-align:center">Pro</div>
+  <!-- Comparison table -->
+  <section class="bg-gray-50 border-t border-gray-100 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Compare plans</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Full feature breakdown.</h2>
+
+      <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
+        <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:1fr 100px 100px">
+          <div class="py-3 px-5 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 text-center uppercase tracking-wider">Free</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-900 border-l border-gray-100 text-center uppercase tracking-wider">Pro</div>
         </div>
 
         <?php
@@ -131,68 +131,64 @@ get_header('xpressui');
           if ($row['group'] !== '') $current_group = $row['group'];
         ?>
           <?php if ($is_new_group): ?>
-          <div style="display:grid;grid-template-columns:1fr 100px 100px;background:#f1f5f9;<?php echo $i > 0 ? 'border-top:1px solid #e2e8f0;' : ''; ?>border-bottom:1px solid #e2e8f0">
-            <div style="padding:8px 20px;font-size:.72rem;font-weight:800;color:#64748b;letter-spacing:.07em;text-transform:uppercase"><?php echo esc_html($row['group']); ?></div>
-            <div style="border-left:1px solid #e2e8f0"></div>
-            <div style="border-left:1px solid #e2e8f0"></div>
+          <div class="grid bg-gray-50 <?php echo $i > 0 ? 'border-t border-gray-100' : ''; ?> border-b border-gray-100" style="grid-template-columns:1fr 100px 100px">
+            <div class="py-2 px-5 text-xs font-bold text-gray-400 uppercase tracking-wider"><?php echo esc_html($row['group']); ?></div>
+            <div class="border-l border-gray-100"></div>
+            <div class="border-l border-gray-100"></div>
           </div>
           <?php endif; ?>
-
-          <div style="display:grid;grid-template-columns:1fr 100px 100px;align-items:center;<?php echo $is_last ? '' : 'border-bottom:1px solid #f1f5f9'; ?>">
-            <div style="padding:13px 20px;font-size:.9rem;color:#334155"><?php echo esc_html($row['label']); ?></div>
-            <div style="padding:13px 16px;text-align:center;border-left:1px solid #f1f5f9;font-size:1rem">
-              <?php if ($row['free'] === true): ?>
-                <span style="color:#16a34a">✓</span>
-              <?php elseif ($row['free'] === false): ?>
-                <span style="color:#cbd5e1">—</span>
-              <?php else: ?>
-                <span style="font-size:.82rem;color:#64748b"><?php echo esc_html($row['free']); ?></span>
-              <?php endif; ?>
+          <div class="grid items-center <?php echo $is_last ? '' : 'border-b border-gray-50'; ?>" style="grid-template-columns:1fr 100px 100px">
+            <div class="py-3 px-5 text-sm text-gray-600"><?php echo esc_html($row['label']); ?></div>
+            <div class="py-3 px-4 text-center border-l border-gray-50 text-base">
+              <?php if ($row['free'] === true): ?><span class="text-green-500 font-bold">✓</span>
+              <?php elseif ($row['free'] === false): ?><span class="text-gray-300">—</span>
+              <?php else: ?><span class="text-xs text-gray-400"><?php echo esc_html($row['free']); ?></span><?php endif; ?>
             </div>
-            <div style="padding:13px 16px;text-align:center;border-left:1px solid #f1f5f9;font-size:1rem<?php echo $row['pro'] === true ? ';background:rgba(16,185,129,.04)' : ''; ?>">
-              <?php if ($row['pro'] === true): ?>
-                <span style="color:#059669;font-weight:700">✓</span>
-              <?php elseif ($row['pro'] === false): ?>
-                <span style="color:#cbd5e1">—</span>
-              <?php else: ?>
-                <span style="font-size:.82rem;color:#64748b"><?php echo esc_html($row['pro']); ?></span>
-              <?php endif; ?>
+            <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['pro'] === true ? ' bg-blue-50/30' : ''; ?>">
+              <?php if ($row['pro'] === true): ?><span class="text-blue-600 font-bold">✓</span>
+              <?php elseif ($row['pro'] === false): ?><span class="text-gray-300">—</span>
+              <?php else: ?><span class="text-xs text-gray-400"><?php echo esc_html($row['pro']); ?></span><?php endif; ?>
             </div>
           </div>
         <?php endforeach; ?>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section class="section-block faq-shell">
-      <div class="section-heading">
-        <p class="section-kicker">FAQ</p>
-        <h2>Common questions.</h2>
-      </div>
-      <div class="faq-grid">
+  <!-- FAQ -->
+  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">FAQ</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">Common questions.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <?php foreach ($faq_items as $item): ?>
-        <article class="faq-card">
-          <h3><?php echo esc_html($item['q']); ?></h3>
-          <p><?php echo esc_html($item['a']); ?></p>
+        <article class="bg-gray-50 rounded-2xl border border-gray-100 p-6">
+          <h3 class="font-bold text-gray-900 mb-3 text-base leading-snug"><?php echo esc_html($item['q']); ?></h3>
+          <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($item['a']); ?></p>
         </article>
         <?php endforeach; ?>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section class="final-cta-band">
+  <!-- Final CTA -->
+  <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
       <div>
-        <p class="section-kicker">Ready to start?</p>
-        <h2>Free plugin or Pro — both ship today.</h2>
-        <p>Download the free plugin and try the intake experience. Upgrade to Pro when you need custom workflows.</p>
+        <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Ready to start?</p>
+        <h2 class="text-3xl font-extrabold text-white mb-3">Free plugin or Pro — both ship today.</h2>
+        <p class="text-gray-400">Download the free plugin and try the intake experience. Upgrade to Pro when you need custom workflows.</p>
       </div>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap">
-        <button class="btn btn-primary xpressui-checkout-btn">Get Pro — €49 →</button>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="btn btn-outline">Download free plugin</a>
+      <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro — €49 →</button>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
+           class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">
+          Download free plugin
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
 </div>
 
 <script>
@@ -217,4 +213,4 @@ get_header('xpressui');
 })();
 </script>
 
-<?php get_footer('xpressui'); ?>
+<?php get_footer(); ?>

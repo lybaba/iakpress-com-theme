@@ -4,7 +4,6 @@
  * WordPress automatically loads this for a page with slug "install".
  */
 
-$xpressui_active_route = 'install';
 $github_release = 'https://github.com/lybaba/xpressui-wordpress-bridge/releases/latest';
 $console_url    = 'https://xpressui.iakpress.com/console/';
 
@@ -53,49 +52,51 @@ $pro_steps = [
 ];
 
 $built_in = [
-  ['id' => 'document-intake',      'label' => 'Document Intake',         'desc' => 'Multi-step client intake with file uploads and admin review.'],
-  ['id' => 'validation-playground','label' => 'Validation Playground',   'desc' => 'Full field type library — text, select, upload, conditional logic.'],
+  ['id' => 'document-intake',      'label' => 'Document Intake',       'desc' => 'Multi-step client intake with file uploads and admin review.'],
+  ['id' => 'validation-playground','label' => 'Validation Playground', 'desc' => 'Full field type library — text, select, upload, conditional logic.'],
 ];
 
-get_header('xpressui');
+get_header();
 ?>
 
-<main class="subpage-shell">
-  <div class="container">
+<div class="font-sans text-gray-900 antialiased">
 
-    <section class="subpage-hero">
-      <p class="section-kicker">Install guide</p>
-      <h1>Live intake page on WordPress in under 30 minutes.</h1>
-      <p>Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
-    </section>
+  <!-- Hero -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Install guide</p>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page on WordPress in under 30 minutes.</h1>
+      <p class="text-gray-500 leading-relaxed">Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
+    </div>
+  </section>
 
-    <!-- Free path -->
-    <section class="subpage-stack">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
-        <span style="padding:4px 12px;border-radius:999px;background:#f0fdf4;border:1px solid #bbf7d0;font-size:11px;font-weight:800;color:#059669;text-transform:uppercase;letter-spacing:.07em">Free</span>
-        <h2 style="margin:0;font-size:20px;font-weight:800;color:#0f172a">Test the built-in workflows</h2>
+  <!-- Free path -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-bold text-green-700 uppercase tracking-wider">Free</span>
+        <h2 class="text-xl font-bold text-gray-900">Test the built-in workflows</h2>
       </div>
-      <p style="margin:0 0 20px;font-size:14px;color:#64748b;line-height:1.6">
-        The plugin ships with two ready-to-embed workflows. No account, no license key, no builder.
-      </p>
+      <p class="text-gray-500 text-sm mb-8 leading-relaxed">The plugin ships with two ready-to-embed workflows. No account, no license key, no builder.</p>
 
-      <div style="display:grid;gap:16px">
+      <div class="space-y-4">
         <?php foreach ($free_steps as $step): ?>
-        <article style="display:grid;grid-template-columns:48px 1fr;gap:20px;padding:28px;border-radius:20px;border:1px solid rgba(18,32,51,.08);background:#fff;box-shadow:0 4px 16px rgba(18,32,51,.05)">
-          <div style="width:48px;height:48px;border-radius:14px;background:#f0fdf4;border:1px solid #bbf7d0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#059669;flex-shrink:0">
+        <article class="flex gap-6 p-7 rounded-2xl border border-gray-100 bg-white shadow-sm">
+          <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-green-50 border border-green-200 flex items-center justify-center text-xs font-bold text-green-700">
             <?php echo esc_html($step['number']); ?>
           </div>
-          <div style="display:grid;gap:12px">
-            <h3 style="margin:0;font-size:18px;font-weight:800;color:#0f172a;line-height:1.2"><?php echo esc_html($step['title']); ?></h3>
-            <p style="margin:0;font-size:14px;line-height:1.7;color:#475569"><?php echo esc_html($step['body']); ?></p>
+          <div class="space-y-3 min-w-0">
+            <h3 class="text-base font-bold text-gray-900"><?php echo esc_html($step['title']); ?></h3>
+            <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($step['body']); ?></p>
             <?php if (!empty($step['code'])): ?>
-            <pre style="margin:0;padding:12px 16px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;color:#0f172a;font-family:'Fira Mono','Courier New',monospace;overflow-x:auto"><?php echo esc_html($step['code']); ?></pre>
+            <pre class="p-3 rounded-lg bg-gray-50 border border-gray-200 text-sm font-mono text-gray-800 overflow-x-auto"><?php echo esc_html($step['code']); ?></pre>
             <?php endif; ?>
             <?php if (!empty($step['note'])): ?>
-            <p style="margin:0;font-size:12px;line-height:1.6;color:#94a3b8;border-left:2px solid #e2e8f0;padding-left:10px"><?php echo esc_html($step['note']); ?></p>
+            <p class="text-xs text-gray-400 border-l-2 border-gray-200 pl-3 leading-relaxed"><?php echo esc_html($step['note']); ?></p>
             <?php endif; ?>
             <?php if (!empty($step['cta'])): ?>
-            <a href="<?php echo esc_url($step['cta']['href']); ?>"<?php echo !empty($step['cta']['external']) ? ' target="_blank" rel="noreferrer"' : ''; ?> class="btn btn-primary" style="margin-top:4px;width:fit-content;min-height:44px">
+            <a href="<?php echo esc_url($step['cta']['href']); ?>"<?php echo !empty($step['cta']['external']) ? ' target="_blank" rel="noreferrer"' : ''; ?>
+               class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition">
               <?php echo esc_html($step['cta']['label']); ?>
             </a>
             <?php endif; ?>
@@ -105,45 +106,46 @@ get_header('xpressui');
       </div>
 
       <!-- Built-in workflows -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
         <?php foreach ($built_in as $w): ?>
-        <div style="padding:20px;border-radius:16px;border:1px solid #e2e8f0;background:#f8fafc">
-          <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#059669;text-transform:uppercase;letter-spacing:.07em">Built-in</p>
-          <p style="margin:0 0 6px;font-size:15px;font-weight:800;color:#0f172a"><?php echo esc_html($w['label']); ?></p>
-          <p style="margin:0 0 12px;font-size:13px;color:#64748b;line-height:1.5"><?php echo esc_html($w['desc']); ?></p>
-          <pre style="margin:0;padding:8px 12px;border-radius:8px;background:#fff;border:1px solid #e2e8f0;font-size:12px;color:#334155;font-family:monospace">[xpressui id="<?php echo esc_attr($w['id']); ?>"]</pre>
+        <div class="p-5 rounded-xl border border-gray-100 bg-gray-50">
+          <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-1">Built-in</p>
+          <p class="font-bold text-gray-900 mb-1"><?php echo esc_html($w['label']); ?></p>
+          <p class="text-sm text-gray-500 mb-3 leading-relaxed"><?php echo esc_html($w['desc']); ?></p>
+          <pre class="p-2 rounded-lg bg-white border border-gray-200 text-xs font-mono text-gray-700">[xpressui id="<?php echo esc_attr($w['id']); ?>"]</pre>
         </div>
         <?php endforeach; ?>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Pro path -->
-    <section class="subpage-stack" style="margin-top:48px">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
-        <span style="padding:4px 12px;border-radius:999px;background:#eff6ff;border:1px solid #bfdbfe;font-size:11px;font-weight:800;color:#2563eb;text-transform:uppercase;letter-spacing:.07em">Pro</span>
-        <h2 style="margin:0;font-size:20px;font-weight:800;color:#0f172a">Deploy a custom workflow</h2>
+  <!-- Pro path -->
+  <section class="bg-gray-50 border-t border-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-600 uppercase tracking-wider">Pro</span>
+        <h2 class="text-xl font-bold text-gray-900">Deploy a custom workflow</h2>
       </div>
-      <p style="margin:0 0 20px;font-size:14px;color:#64748b;line-height:1.6">
-        Build any intake flow in the visual console, export it as a ZIP, and upload it to WordPress. Requires a Pro license key.
-      </p>
+      <p class="text-gray-500 text-sm mb-8 leading-relaxed">Build any intake flow in the visual console, export it as a ZIP, and upload it to WordPress. Requires a Pro license key.</p>
 
-      <div style="display:grid;gap:16px">
+      <div class="space-y-4">
         <?php foreach ($pro_steps as $step): ?>
-        <article style="display:grid;grid-template-columns:48px 1fr;gap:20px;padding:28px;border-radius:20px;border:1px solid rgba(18,32,51,.08);background:#fff;box-shadow:0 4px 16px rgba(18,32,51,.05)">
-          <div style="width:48px;height:48px;border-radius:14px;background:#eff6ff;border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#2563eb;flex-shrink:0">
+        <article class="flex gap-6 p-7 rounded-2xl border border-gray-100 bg-white shadow-sm">
+          <div class="w-12 h-12 flex-shrink-0 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">
             <?php echo esc_html($step['number']); ?>
           </div>
-          <div style="display:grid;gap:12px">
-            <h3 style="margin:0;font-size:18px;font-weight:800;color:#0f172a;line-height:1.2"><?php echo esc_html($step['title']); ?></h3>
-            <p style="margin:0;font-size:14px;line-height:1.7;color:#475569"><?php echo esc_html($step['body']); ?></p>
+          <div class="space-y-3 min-w-0">
+            <h3 class="text-base font-bold text-gray-900"><?php echo esc_html($step['title']); ?></h3>
+            <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($step['body']); ?></p>
             <?php if (!empty($step['code'])): ?>
-            <pre style="margin:0;padding:12px 16px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;color:#0f172a;font-family:'Fira Mono','Courier New',monospace;overflow-x:auto"><?php echo esc_html($step['code']); ?></pre>
+            <pre class="p-3 rounded-lg bg-gray-50 border border-gray-200 text-sm font-mono text-gray-800 overflow-x-auto"><?php echo esc_html($step['code']); ?></pre>
             <?php endif; ?>
             <?php if (!empty($step['note'])): ?>
-            <p style="margin:0;font-size:12px;line-height:1.6;color:#94a3b8;border-left:2px solid #e2e8f0;padding-left:10px"><?php echo esc_html($step['note']); ?></p>
+            <p class="text-xs text-gray-400 border-l-2 border-gray-200 pl-3 leading-relaxed"><?php echo esc_html($step['note']); ?></p>
             <?php endif; ?>
             <?php if (!empty($step['cta'])): ?>
-            <a href="<?php echo esc_url($step['cta']['href']); ?>"<?php echo !empty($step['cta']['external']) ? ' target="_blank" rel="noreferrer"' : ''; ?> class="btn btn-primary" style="margin-top:4px;width:fit-content;min-height:44px">
+            <a href="<?php echo esc_url($step['cta']['href']); ?>"<?php echo !empty($step['cta']['external']) ? ' target="_blank" rel="noreferrer"' : ''; ?>
+               class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition">
               <?php echo esc_html($step['cta']['label']); ?>
             </a>
             <?php endif; ?>
@@ -151,19 +153,24 @@ get_header('xpressui');
         </article>
         <?php endforeach; ?>
       </div>
-    </section>
-
-    <!-- Pro CTA -->
-    <div style="margin-top:48px;padding:28px 32px;border-radius:24px;background:linear-gradient(135deg,#05422f 0%,#0a7a5a 100%);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:0 20px 48px rgba(5,66,47,.25)">
-      <div>
-        <p style="margin:0 0 4px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6)">XPressUI Pro</p>
-        <p style="margin:0 0 4px;font-size:1.05rem;font-weight:700;color:#fff">Build your first custom workflow — one purchase, lifetime license.</p>
-        <p style="margin:0;font-size:13px;color:rgba(255,255,255,.6)">30-day money-back guarantee.</p>
-      </div>
-      <a href="<?php echo esc_url( home_url( '/pro/' ) ); ?>" class="btn" style="background:#fff;color:#05422f;font-weight:800;white-space:nowrap;flex-shrink:0">Get Pro — €49 →</a>
     </div>
+  </section>
 
-  </div>
-</main>
+  <!-- Pro CTA -->
+  <section class="bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">XPressUI Pro</p>
+        <p class="text-white font-bold text-lg mb-1">Build your first custom workflow — one purchase, lifetime license.</p>
+        <p class="text-gray-400 text-sm">30-day money-back guarantee.</p>
+      </div>
+      <a href="<?php echo esc_url(home_url('/pro/')); ?>"
+         class="flex-shrink-0 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">
+        Get Pro — €49 →
+      </a>
+    </div>
+  </section>
 
-<?php get_footer('xpressui'); ?>
+</div>
+
+<?php get_footer(); ?>

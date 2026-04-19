@@ -25,22 +25,30 @@
       </div>
       
       <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-8">
-        <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Home</a>
-        <a href="/document-intake/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Live Demo</a>
-        <a href="/services/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Services</a>
-        <a href="/blog/" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition">Blog</a>
+      <?php
+      $nav_base   = 'px-3 py-2 text-sm font-medium transition rounded-md';
+      $nav_active = $nav_base . ' text-blue-600 bg-blue-50';
+      $nav_idle   = $nav_base . ' text-gray-600 hover:text-gray-900 hover:bg-gray-50';
+      ?>
+      <nav class="hidden md:flex space-x-1">
+        <a href="/" class="<?php echo is_front_page() ? $nav_active : $nav_idle; ?>">Home</a>
+        <a href="/xpressui/" class="<?php echo is_page('xpressui') ? $nav_active : $nav_idle; ?>">XpressUI</a>
+        <a href="/pricing/" class="<?php echo is_page('pricing') ? $nav_active : $nav_idle; ?>">Pricing</a>
+        <a href="/install/" class="<?php echo is_page('install') ? $nav_active : $nav_idle; ?>">Install</a>
+        <a href="/services/" class="<?php echo is_page('services') ? $nav_active : $nav_idle; ?>">Services</a>
+        <a href="/contact/" class="<?php echo is_page('contact') ? $nav_active : $nav_idle; ?>">Contact</a>
+        <a href="/blog/" class="<?php echo ( is_home() && ! is_front_page() ) || is_singular('post') || is_category() || is_tag() ? $nav_active : $nav_idle; ?>">Blog</a>
       </nav>
 
       <!-- Call to Action & Mobile -->
       <div class="flex items-center space-x-4">
-        <a href="/#pricing" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition">
+        <a href="/pro/" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition">
           Get Pro
         </a>
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">
-          <a href="/document-intake/" class="text-blue-600 font-bold text-sm mr-4">Demo</a>
-          <a href="/services/" class="text-gray-900 font-medium text-sm">Services</a>
+          <a href="/pricing/" class="text-blue-600 font-bold text-sm mr-4">Pricing</a>
+          <a href="/pro/" class="text-gray-900 font-medium text-sm">Get Pro</a>
         </div>
       </div>
 
