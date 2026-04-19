@@ -1,0 +1,55 @@
+services:
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  wordpress:
+    image: wordpress:php8.2-apache
+    command: >-
+      bash -c "a2enmod rewrite
+      && perl -0pi -e 's#<Directory /var/www/>\\s+Options Indexes FollowSymLinks\\s+AllowOverride None\\s+Require all granted\\s+</Directory>#<Directory /var/www/>\\n\\tOptions Indexes FollowSymLinks\\n\\tAllowOverride All\\n\\tRequire all granted\\n</Directory>#s' /etc/apache2/apache2.conf
+      && apache2-foreground"
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+    volumes:
+      - wordpress_data:/var/www/html
+      - .:/var/www/html/wp-content/themes/iakpress-com-theme
+
+  setup:
+    image: wordpress:cli-php8.2
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+    volumes:
+      - wordpress_data:/var/www/html
+      - .:/var/www/html/wp-content/themes/iakpress-com-theme
+    entrypoint: ["/bin/sh", "/var/www/html/wp-content/themes/iakpress-com-theme/scripts/docker-setup.sh"]
+
+volumes:
+  db_data:
+  wordpress_data:
