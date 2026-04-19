@@ -16,7 +16,7 @@ $gallery_shots = [
   ['src' => xpressui_asset_url('front-step-2.png'),            'title' => 'Guided intake',     'caption' => 'Clients move through a focused multi-step flow instead of dumping everything into email.'],
   ['src' => xpressui_asset_url('front-step-3.png'),            'title' => 'File collection',   'caption' => 'Drag-and-drop uploads help you collect documents and assets before kickoff.'],
   ['src' => xpressui_asset_url('admin-project-inbox.png'),     'title' => 'Operator inbox',    'caption' => 'New submissions land in one WordPress workspace, not across multiple inboxes.'],
-  ['src' => xpressui_asset_url('admin-submission-detail.php'), 'title' => 'Submission detail', 'caption' => 'Review answers, downloads, and notes in one screen when you start the project.'],
+  ['src' => xpressui_asset_url('admin-submission-detail.png'), 'title' => 'Submission detail', 'caption' => 'Review answers, downloads, and notes in one screen when you start the project.'],
 ];
 
 $value_points = [
