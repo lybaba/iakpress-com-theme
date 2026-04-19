@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <style>
+    :root {
+      --template-page-background: transparent;
+      --template-surface: #ffffff;
+      --template-text: #0f172a;
+      --template-muted-text: #475569;
+      --template-primary: #059669;
+      --template-border: #e2e8f0;
+      --template-card-radius: 20px;
+      --template-input-radius: 10px;
+      --template-button-radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: var(--template-text);
+    }
+    .form-shell { padding: 0; }
+    .template-runtime-shell { display: grid; gap: 20px; }
+    .template-section { display: grid; gap: 16px; }
+    .template-fields { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+    .template-fields--two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+    @media (max-width: 520px) { .template-fields--two-col { grid-template-columns: 1fr; } }
+    .template-field { display: flex; flex-direction: column; gap: 6px; width: 100%; min-width: 0; }
+    .template-field-label { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #334155; }
+    .template-required { color: #64748b; font-size: 13px; font-weight: 700; }
+    .template-input,
+    .template-textarea,
+    .template-select {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      border: 1px solid var(--template-border);
+      border-radius: var(--template-input-radius);
+      background: #ffffff;
+      color: var(--template-text);
+      font: inherit;
+      font-size: 14px;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 120ms ease, box-shadow 120ms ease;
+    }
+    .template-select { appearance: auto; }
+    .template-input:focus,
+    .template-textarea:focus,
+    .template-select:focus {
+      border-color: var(--template-primary);
+      box-shadow: 0 0 0 3px rgba(5,150,105,0.12);
+    }
+    .template-textarea { min-height: 140px; resize: vertical; }
+    .template-input.is-error,
+    .template-textarea.is-error,
+    .template-select.is-error {
+      border-color: rgba(220,38,38,0.72);
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.08);
+    }
+    .template-field-message { font-size: 12px; line-height: 1.45; }
+    .template-field-message.is-error { color: #b91c1c; font-weight: 600; }
+    .template-submit-feedback {
+      display: none;
+      gap: 6px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .template-submit-feedback[data-state="loading"] { display: grid; background: rgba(239,246,255,0.98); border-color: rgba(96,165,250,0.24); }
+    .template-submit-feedback[data-state="success"] { display: grid; background: rgba(220,252,231,0.9); border-color: rgba(74,222,128,0.28); }
+    .template-submit-feedback[data-state="error"] { display: grid; background: rgba(254,242,242,0.95); border-color: rgba(248,113,113,0.28); }
+    .template-submit-feedback-title { font-size: 13px; font-weight: 800; color: var(--template-text); }
+    .template-submit-feedback-message { font-size: 13px; color: var(--template-muted-text); line-height: 1.45; }
+    .template-submit-feedback-message a { color: var(--template-primary); }
+    .template-submit-row { display: flex; justify-content: flex-start; padding-top: 4px; }
+    .template-submit-btn {
+      appearance: none;
+      border: none;
+      border-radius: var(--template-button-radius);
+      background: var(--template-primary);
+      color: #f8fafc;
+      font: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 24px;
+      min-width: 160px;
+      min-height: 48px;
+      cursor: pointer;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+    .template-submit-btn:hover { transform: translateY(-1px); opacity: 0.92; }
+    .template-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .fallback-email {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+    .fallback-email a { color: var(--template-primary); }
+  </style>
+</head>
+<body>
+  <div class="form-shell">
+    <form
+      id="contact-form"
+      class="template-runtime-shell"
+      novalidate
+    >
+      <div class="template-section">
+        <div class="template-fields--two-col">
+          <div class="template-field">
+            <label class="template-field-label" for="field-name">
+              Name <span class="template-required" aria-hidden="true">*</span>
+            </label>
+            <input
+              id="field-name"
+              class="template-input"
+              type="text"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            />
+            <div class="template-field-message is-error" id="error-name" role="alert" style="display:none;"></div>
+          </div>
+
+          <div class="template-field">
+            <label class="template-field-label" for="field-email">
+              Email <span class="template-required" aria-hidden="true">*</span>
+            </label>
+            <input
+              id="field-email"
+              class="template-input"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <div class="template-field-message is-error" id="error-email" role="alert" style="display:none;"></div>
+          </div>
+        </div>
+
+        <div class="template-field">
+          <label class="template-field-label" for="field-subject">Subject</label>
+          <select id="field-subject" class="template-select" name="subject">
+            <option>Pre-sales question</option>
+            <option>Installation help</option>
+            <option>Custom setup request</option>
+            <option>Bug report</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="template-field">
+          <label class="template-field-label" for="field-message">
+            Message <span class="template-required" aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="field-message"
+            class="template-textarea"
+            name="message"
+            placeholder="Describe your setup or question..."
+            required
+          ></textarea>
+          <div class="template-field-message is-error" id="error-message" role="alert" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="template-submit-feedback" id="submit-feedback" role="status" aria-live="polite">
+        <div class="template-submit-feedback-title" id="feedback-title">Status</div>
+        <div class="template-submit-feedback-message" id="feedback-message"></div>
+      </div>
+
+      <div class="template-submit-row" id="submit-row">
+        <button type="submit" class="template-submit-btn" id="submit-btn">Send message →</button>
+      </div>
+
+      <p class="fallback-email">
+        Prefer email? <a href="mailto:hello@iakpress.com?subject=XPressUI%20Contact">hello@iakpress.com</a>
+      </p>
+    </form>
+  </div>
+
+  <script>
+    const API_BASE = 'https://xpressui.iakpress.com/api';
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitRow = document.getElementById('submit-row');
+    const feedback = document.getElementById('submit-feedback');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackMsg = document.getElementById('feedback-message');
+
+    const fieldName = document.getElementById('field-name');
+    const fieldEmail = document.getElementById('field-email');
+    const fieldSubject = document.getElementById('field-subject');
+    const fieldMessage = document.getElementById('field-message');
+
+    const errorName = document.getElementById('error-name');
+    const errorEmail = document.getElementById('error-email');
+    const errorMessage = document.getElementById('error-message');
+
+    const setFeedback = (state, title, message) => {
+      feedback.dataset.state = state;
+      feedbackTitle.textContent = title;
+      feedbackMsg.innerHTML = message;
+    };
+
+    const clearError = (input, errorEl) => {
+      input.classList.remove('is-error');
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
+    };
+
+    const showError = (input, errorEl, msg) => {
+      input.classList.add('is-error');
+      errorEl.textContent = msg;
+      errorEl.style.display = '';
+    };
+
+    const validate = () => {
+      let valid = true;
+      clearError(fieldName, errorName);
+      clearError(fieldEmail, errorEmail);
+      clearError(fieldMessage, errorMessage);
+
+      if (!fieldName.value.trim()) {
+        showError(fieldName, errorName, 'Name is required.');
+        valid = false;
+      }
+      const emailVal = fieldEmail.value.trim();
+      if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        showError(fieldEmail, errorEmail, 'Valid email is required.');
+        valid = false;
+      }
+      if (!fieldMessage.value.trim()) {
+        showError(fieldMessage, errorMessage, 'Message is required.');
+        valid = false;
+      }
+      return valid;
+    };
+
+    const notifyHeight = () => {
+      const h = document.body.scrollHeight;
+      try { window.parent.postMessage({ type: 'xpressui-contact-height', height: h }, '*'); } catch(_) {}
+    };
+
+    const ro = new ResizeObserver(notifyHeight);
+    ro.observe(document.body);
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!validate()) {
+        notifyHeight();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      setFeedback('loading', 'Submitting', 'Sending your message...');
+
+      try {
+        const res = await fetch(`${API_BASE}/v1/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: fieldName.value.trim(),
+            email: fieldEmail.value.trim(),
+            subject: fieldSubject.value,
+            message: fieldMessage.value.trim(),
+          }),
+        });
+
+        if (res.ok || res.status === 202) {
+          setFeedback('success', 'Message sent', "We'll get back to you within 1–2 business days. Redirecting you to the home page…");
+          submitRow.style.display = 'none';
+          form.querySelectorAll('input, textarea, select').forEach(el => el.disabled = true);
+          setTimeout(() => {
+            try { window.top.location.href = '/'; } catch(_) { window.location.href = '/'; }
+          }, 2000);
+        } else {
+          throw new Error(`status ${res.status}`);
+        }
+      } catch (_err) {
+        setFeedback('error', 'Submission failed', 'Something went wrong. Please try again or email us at <a href="mailto:hello@iakpress.com">hello@iakpress.com</a>.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message →';
+      }
+
+      notifyHeight();
+    });
+  </script>
+</body>
+</html>
