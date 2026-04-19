@@ -12,4 +12,18 @@ Version: 1.0.0
 @tailwind components;
 @tailwind utilities;
 
-/* Vous pouvez ajouter du CSS personnalisé supplémentaire ici si besoin */
+/* Prevent GeneratePress from overriding Tailwind button text colors on hover */
+a[class*="bg-blue-"]:hover,
+button[class*="bg-blue-"]:hover {
+  color: #ffffff;
+}
+
+a[class*="bg-gray-9"]:hover,
+button[class*="bg-gray-9"]:hover {
+  color: #ffffff;
+}
+
+a[class*="bg-white"]:hover,
+button[class*="bg-white"]:hover {
+  color: inherit;
+}

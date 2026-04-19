@@ -5,8 +5,8 @@
  * Main promo/sales page for Document Intake for WordPress.
  */
 
-$download_url  = 'https://github.com/lybaba/xpressui-wordpress-bridge/releases/latest';
-$repo_url      = 'https://github.com/lybaba/xpressui-wordpress-bridge';
+$download_url  = 'https://github.com/lybaba/xpressui-packages/releases/latest';
+$repo_url      = 'https://github.com/lybaba/xpressui-packages';
 $console_url   = 'https://xpressui.iakpress.com/console/';
 $contact_url   = home_url('/contact/');
 $demo_video_url = 'https://www.youtube.com/watch?v=tXjWmTetHpQ';

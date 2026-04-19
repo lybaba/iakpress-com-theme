@@ -4,7 +4,7 @@
  * WordPress automatically loads this for a page with slug "install".
  */
 
-$github_release = 'https://github.com/lybaba/xpressui-wordpress-bridge/releases/latest';
+$github_release = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 $console_url    = 'https://xpressui.iakpress.com/console/';
 
 $free_steps = [

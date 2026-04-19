@@ -4,7 +4,7 @@
  * WordPress automatically loads this for a page with slug "pricing".
  */
 
-$download_url = 'https://github.com/lybaba/xpressui-wordpress-bridge/releases/latest';
+$download_url = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 
 $rows = [
   // Bundled workflows
