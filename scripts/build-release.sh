@@ -18,6 +18,7 @@ rsync -a --exclude='node_modules' \
          --exclude='scripts' \
          --exclude='*.zip' \
          --exclude='.gitignore' \
+         --exclude='docker-compose.yml' \
          --exclude='iakpress-com-theme' \
          ./ dist/iakpress-com-theme/
 

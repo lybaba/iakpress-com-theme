@@ -168,7 +168,7 @@ get_header();
           <div class="text-6xl font-extrabold text-gray-900 mb-1">€49</div>
           <p class="text-gray-400 text-xs mb-6">excl. VAT, no hidden fees.</p>
           <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">
-            Get your license →
+            Get your license
           </button>
           <p class="mt-3 text-xs text-gray-400">Instant delivery via email · Stripe</p>
         </div>

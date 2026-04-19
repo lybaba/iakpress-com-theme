@@ -1,8 +1,7 @@
 <?php
 /**
- * Template Name: Document Intake — Overview
- *
- * Main promo/sales page for Document Intake for WordPress.
+ * Template for the /xpressui/ page.
+ * WordPress automatically loads this for a page with slug "xpressui".
  */
 
 $download_url  = 'https://github.com/lybaba/xpressui-packages/releases/latest';
