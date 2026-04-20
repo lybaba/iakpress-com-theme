@@ -238,7 +238,7 @@ get_header();
           <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Pro</span>
           <h3 class="text-xl font-bold text-white mb-2">Visual workflow builder</h3>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-white">€49</span>
+            <span class="text-4xl font-extrabold text-white">€129</span>
             <span class="text-gray-400 text-sm">one-time · lifetime · 5 sites</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
@@ -251,7 +251,7 @@ get_header();
           </ul>
           <a href="<?php echo esc_url(home_url('/pro/')); ?>"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Get Pro — €49 →
+            Get Pro — €129 →
           </a>
         </article>
       </div>

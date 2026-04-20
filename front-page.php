@@ -156,7 +156,7 @@ get_header(); ?>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
-          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€49</span></div>
+          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
           <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get Instant Access</button>
           <script>

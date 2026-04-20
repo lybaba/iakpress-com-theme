@@ -19,8 +19,13 @@
       
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="text-2xl font-extrabold tracking-tighter text-gray-900">
-          IAKPress<span class="text-blue-600">.</span>
+        <a href="/" class="flex items-center gap-2">
+          <img
+            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/iakpress-logo.svg' ); ?>"
+            alt="IAKPress"
+            class="h-9 w-9 rounded-lg"
+          >
+          <span class="text-xl font-extrabold tracking-tighter text-gray-900">IAKPress<span class="text-blue-600">.</span></span>
         </a>
       </div>
       

@@ -53,7 +53,7 @@ get_header();
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €49 lifetime →
+          Buy Pro — €129 lifetime →
         </button>
         <a href="<?php echo esc_url(home_url('/install/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
@@ -70,7 +70,7 @@ get_header();
       <?php foreach ([
         ['stat' => '2–3 h',    'label' => 'Saved per client onboarding', 'note' => 'No more chasing briefs and missing files by email'],
         ['stat' => '< 30 min', 'label' => 'To go live on WordPress',      'note' => 'Build, export, shortcode — done'],
-        ['stat' => '€49',      'label' => 'Paid back in one project',     'note' => 'One saved onboarding covers the full cost'],
+        ['stat' => '€129',      'label' => 'Paid back in one project',     'note' => 'One saved onboarding covers the full cost'],
       ] as $item): ?>
       <div class="bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
         <div class="text-4xl font-extrabold text-blue-600 mb-2 tracking-tight"><?php echo esc_html($item['stat']); ?></div>
@@ -165,7 +165,7 @@ get_header();
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time</p>
-          <div class="text-6xl font-extrabold text-gray-900 mb-1">€49</div>
+          <div class="text-6xl font-extrabold text-gray-900 mb-1">€129</div>
           <p class="text-gray-400 text-xs mb-6">excl. VAT, no hidden fees.</p>
           <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">
             Get your license
@@ -199,7 +199,7 @@ get_header();
       <p class="text-gray-500 mb-8 leading-relaxed">One purchase. Unlimited workflows. Lifetime license. 30-day money-back guarantee.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €49 →
+          Buy Pro — €129 →
         </button>
         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">

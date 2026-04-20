@@ -40,7 +40,7 @@ $faq_items = [
   ['q' => 'What does the free plugin actually give me?',       'a' => 'The free plugin ships with the Document Intake workflow ready to use — no Console access needed. You get the full WordPress inbox: submissions, status tracking, team assignment, file uploads, and email notifications.'],
   ['q' => 'Why do I need Pro to install custom workflow packs?', 'a' => 'Custom packs are designed in the XPressUI Console and exported as .zip files. The Pro extension handles installation, the full runtime, and advanced field types. The free plugin only supports the bundled starter.'],
   ['q' => 'Can I try it before buying?',                       'a' => 'Yes. Download the free plugin from GitHub, install the document-intake shortcode on any page, and see the full client and admin experience before purchasing anything.'],
-  ['q' => 'Is the €49 a subscription?',                        'a' => 'No — it\'s a one-time payment. You get lifetime access and all future updates for up to 5 WordPress sites. No annual renewal.'],
+  ['q' => 'Is the €129 a subscription?',                        'a' => 'No — it\'s a one-time payment. You get lifetime access and all future updates for up to 5 WordPress sites. No annual renewal.'],
   ['q' => 'What is the refund policy?',                        'a' => '30-day money-back guarantee, no questions asked. Email hello@iakpress.com within 30 days of purchase.'],
 ];
 
@@ -89,7 +89,7 @@ get_header();
         <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Pro</span>
         <h3 class="text-xl font-bold text-white mb-2">Visual workflow builder</h3>
         <div class="flex items-baseline gap-2 mb-6">
-          <span class="text-4xl font-extrabold text-white">€49</span>
+          <span class="text-4xl font-extrabold text-white">€129</span>
           <span class="text-gray-400 text-sm">one-time · lifetime · 5 sites</span>
         </div>
         <ul class="space-y-3 mb-8 flex-1">
@@ -101,7 +101,7 @@ get_header();
           <?php endforeach; ?>
         </ul>
         <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-          Get Pro — €49 →
+          Get Pro — €129 →
         </button>
         <p class="text-center text-xs text-gray-500 mt-3">30-day money-back guarantee · Stripe secure checkout</p>
       </article>
@@ -180,7 +180,7 @@ get_header();
         <p class="text-gray-400">Download the free plugin and try the intake experience. Upgrade to Pro when you need custom workflows.</p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro — €49 →</button>
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro — €129 →</button>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">
           Download free plugin
