@@ -66,7 +66,7 @@ get_header();
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Install guide</p>
       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page on WordPress in under 30 minutes.</h1>
-      <p class="text-gray-500 leading-relaxed">Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
+      <p class="text-gray-400 leading-relaxed">Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
     </div>
   </section>
 
@@ -77,7 +77,7 @@ get_header();
         <span class="px-3 py-1 rounded-full bg-green-50 border border-green-200 text-xs font-bold text-green-700 uppercase tracking-wider">Free</span>
         <h2 class="text-xl font-bold text-gray-900">Test the built-in workflows</h2>
       </div>
-      <p class="text-gray-500 text-sm mb-8 leading-relaxed">The plugin ships with two ready-to-embed workflows. No account, no license key, no builder.</p>
+      <p class="text-gray-400 text-sm mb-8 leading-relaxed">The plugin ships with two ready-to-embed workflows. No account, no license key, no builder.</p>
 
       <div class="space-y-4">
         <?php foreach ($free_steps as $step): ?>
@@ -120,13 +120,13 @@ get_header();
   </section>
 
   <!-- Pro path -->
-  <section class="bg-gray-50 border-t border-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+  <section class="bg-white border-t border-gray-100 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-3 mb-4">
         <span class="px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-600 uppercase tracking-wider">Pro</span>
         <h2 class="text-xl font-bold text-gray-900">Deploy a custom workflow</h2>
       </div>
-      <p class="text-gray-500 text-sm mb-8 leading-relaxed">Build any intake flow in the visual console, export it as a ZIP, and upload it to WordPress. Requires a Pro license key.</p>
+      <p class="text-gray-400 text-sm mb-8 leading-relaxed">Build any intake flow in the visual console, export it as a ZIP, and upload it to WordPress. Requires a Pro license key.</p>
 
       <div class="space-y-4">
         <?php foreach ($pro_steps as $step): ?>

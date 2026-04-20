@@ -5,35 +5,33 @@
  */
 
 $pro_features = [
-  ['icon' => '⚡', 'label' => 'Design any intake in minutes',          'desc' => 'Drag fields, set steps, add conditional logic — no code, no PHP. Export to WordPress when you\'re done.'],
-  ['icon' => '🔀', 'label' => 'Skip irrelevant questions automatically', 'desc' => 'Conditional steps adapt to each client\'s answers. Clients only see what\'s relevant to them.'],
-  ['icon' => '📎', 'label' => 'Collect files without a plugin stack',   'desc' => 'Upload fields, approval flows, and document collection built in. No add-ons needed.'],
-  ['icon' => '📤', 'label' => 'One click to deploy on WordPress',       'desc' => 'Export as a ZIP, upload in wp-admin. The workflow is live as a shortcode immediately.'],
-  ['icon' => '📥', 'label' => 'Review everything in one screen',        'desc' => 'Submissions, files, and status — New / In Review / Done — all inside wp-admin.'],
-  ['icon' => '🔑', 'label' => 'Lifetime license · 5 sites',            'desc' => 'Pay once, use it on up to 5 WordPress sites. Updates included, no subscription.'],
+  ['icon' => '🧩', 'label' => 'Build reusable portals',          'desc' => 'Create structured intakes once, then reuse them across client projects instead of rebuilding each time.'],
+  ['icon' => '⚙️', 'label' => 'Adapt the flow to the project',   'desc' => 'Add steps, conditions, upload rules, and field variations without hand-coding new forms.'],
+  ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
+  ['icon' => '🚀', 'label' => 'Deploy in WordPress fast',        'desc' => 'Export your portal, install it, and publish it as a shortcode on the site you already manage.'],
+  ['icon' => '📥', 'label' => 'Review submissions in one place', 'desc' => 'Answers, files, and workflow status live in one clean admin view instead of across inboxes.'],
+  ['icon' => '🔑', 'label' => 'Lifetime license for 5 sites',    'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
 
 $personas = [
-  ['icon' => '🧑‍💻', 'role' => 'Freelancer building 3–5 sites a year',   'pain' => 'You spend hours chasing briefs and missing files before every project starts.',         'win' => 'One intake page collects everything before kickoff — no more back-and-forth.'],
-  ['icon' => '🏢',   'role' => 'Small agency with recurring onboarding',  'pain' => 'Every client onboarding is a variation of the same scattered email thread.',           'win' => 'Standardize the intake once, deploy on every client site in minutes.'],
-  ['icon' => '🛠️',  'role' => 'Developer who builds for clients',        'pain' => 'Clients ask for custom intake forms that take days to build from scratch.',            'win' => 'Deliver polished intake flows faster — without hand-coding HTML forms each time.'],
+  ['icon' => '🧑‍💻', 'role' => 'Freelancer delivering client sites', 'pain' => 'Every new project starts with the same brief, assets, and missing-file chase.', 'win' => 'Package onboarding into one portal and start projects with everything already organized.'],
+  ['icon' => '🏢', 'role' => 'Agency standardizing onboarding',     'pain' => 'Your team keeps recreating intake pages, checklists, and upload flows for similar projects.', 'win' => 'Reuse one proven portal structure across projects and deliver a more professional kickoff.'],
+  ['icon' => '🛠️', 'role' => 'Service business using WordPress',    'pain' => 'Clients struggle to submit complete documents the first time, which slows the entire workflow.', 'win' => 'Guide clients step by step and get cleaner submissions from day one.'],
 ];
 
 $screenshots = [
-  ['src' => xpressui_asset_url('admin-workflows.png'),         'label' => 'Workflow builder',  'desc' => 'Design steps, fields, and conditional logic — then export. No code.'],
-  ['src' => xpressui_asset_url('admin-project-inbox.png'),     'label' => 'Submissions inbox', 'desc' => 'Every new submission lands here. No more scattered emails.'],
-  ['src' => xpressui_asset_url('admin-submission-detail.png'), 'label' => 'Submission detail', 'desc' => 'Answers, files, and notes in one structured screen.'],
+  ['src' => xpressui_asset_url('admin-workflows.png'),         'label' => 'Portal builder',     'desc' => 'Design your intake structure, steps, and logic visually.'],
+  ['src' => xpressui_asset_url('admin-project-inbox.png'),     'label' => 'Submission inbox',   'desc' => 'See incoming client submissions in one place instead of across email threads.'],
+  ['src' => xpressui_asset_url('admin-submission-detail.png'), 'label' => 'Submission detail',  'desc' => 'Open a submission and review answers, files, and progress in one screen.'],
 ];
 
 $faq_items = [
-  ['q' => 'Do I need to know PHP or JavaScript?',           'a' => 'No. The builder is fully visual. Activating the plugin in wp-admin is the only technical step. If you can install a WordPress plugin, you can use XPressUI Pro.'],
-  ['q' => 'What if it conflicts with my WordPress theme?',  'a' => 'XPressUI uses strictly scoped CSS. The intake form is isolated from your theme — it won\'t inherit or override your theme\'s styles. It works with Divi, Elementor, Astra, and any other theme.'],
-  ['q' => 'What is the refund policy?',                     'a' => '30-day money-back guarantee. If it doesn\'t work for your WordPress setup within 30 days, email us at hello@iakpress.com and we\'ll refund you in full — no questions asked.'],
-  ['q' => 'What is included in the Pro license?',           'a' => 'Full access to the XPressUI Console builder. Design any workflow, export it to WordPress with one click, and manage all submissions in one place. Lifetime updates included.'],
-  ['q' => 'How many sites does the license cover?',         'a' => 'Up to 5 sites. One purchase, five activations — no extra cost per site.'],
-  ['q' => 'Is it really a lifetime license?',               'a' => 'Yes. Pay once, use it forever. No subscription, no annual renewal. All future updates are included.'],
-  ['q' => 'Can I try it before buying?',                    'a' => 'Yes. The free plugin ships with two built-in workflows. Install it, embed the shortcode, and see how the intake experience works before purchasing Pro.'],
-  ['q' => 'What happens after I purchase?',                 'a' => 'You receive a license key by email immediately after checkout. Activate the Pro plugin on your WordPress site and start building custom workflows right away.'],
+  ['q' => 'Who should buy Pro?',                    'a' => 'Pro is for freelancers, agencies, and teams that want to create custom client portals, reuse them across projects, and turn onboarding into a repeatable service.'],
+  ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery as well as internal use.'],
+  ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install a WordPress plugin and publish a shortcode, you can use XPressUI Pro.'],
+  ['q' => 'What does Pro unlock?',                  'a' => 'Pro unlocks the visual builder, custom workflow pack installation, advanced fields, local customization in wp-admin, automatic updates, and priority support.'],
+  ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
+  ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
 get_header();
@@ -46,36 +44,35 @@ get_header();
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Stop building intake flows<br class="hidden md:block"/> from scratch.
+        Build client document portals you can reuse, brand, and sell.
       </h1>
-      <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Pro unlocks the visual workflow builder — design any multi-step intake, add conditional logic and file uploads, then deploy it to any WordPress site in one click.
+      <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
+        Pro is for teams that need more than a single bundled demo portal. Build custom intake flows, reuse them across projects, and turn chaotic onboarding into a repeatable WordPress service.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €129 lifetime →
+          Buy Pro — €129 lifetime
         </button>
-        <a href="<?php echo esc_url(home_url('/install/')); ?>"
+        <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          See the free starter first
+          Compare plans
         </a>
       </div>
-      <p class="mt-4 text-sm text-gray-400">Lifetime license · Up to 5 sites · 30-day money-back guarantee</p>
+      <p class="mt-4 text-sm text-gray-400">One-time payment · lifetime access · up to 5 sites · 30-day money-back guarantee</p>
     </div>
   </section>
 
-  <!-- Value stats -->
-  <section class="bg-gray-50 border-b border-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Outcome strip -->
+  <section class="bg-gray-50 border-b border-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
       <?php foreach ([
-        ['stat' => '2–3 h',    'label' => 'Saved per client onboarding', 'note' => 'No more chasing briefs and missing files by email'],
-        ['stat' => '< 30 min', 'label' => 'To go live on WordPress',      'note' => 'Build, export, shortcode — done'],
-        ['stat' => '€129',      'label' => 'Paid back in one project',     'note' => 'One saved onboarding covers the full cost'],
+        ['title' => 'Ship faster', 'body' => 'Turn the same onboarding pattern into a reusable portal instead of rebuilding every time.'],
+        ['title' => 'Charge more', 'body' => 'Package client portals as a premium WordPress service with a clearer business story.'],
+        ['title' => 'Start cleaner', 'body' => 'Get files, answers, and missing documents structured before the project begins.'],
       ] as $item): ?>
-      <div class="bg-white rounded-2xl border border-gray-100 p-8 text-center shadow-sm">
-        <div class="text-4xl font-extrabold text-blue-600 mb-2 tracking-tight"><?php echo esc_html($item['stat']); ?></div>
-        <div class="font-bold text-gray-900 mb-1 text-sm"><?php echo esc_html($item['label']); ?></div>
-        <div class="text-xs text-gray-400 leading-relaxed"><?php echo esc_html($item['note']); ?></div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></h2>
+        <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($item['body']); ?></p>
       </div>
       <?php endforeach; ?>
     </div>
@@ -85,7 +82,7 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Who buys Pro</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Built for people who onboard clients repeatedly.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Built for teams that onboard clients repeatedly.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <?php foreach ($personas as $p): ?>
         <div class="bg-gray-50 rounded-2xl border border-gray-100 p-8">
@@ -102,8 +99,8 @@ get_header();
   <!-- Screenshots -->
   <section class="bg-gray-50 border-t border-gray-100 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">What you get access to</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">The important screens are already built.</h2>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">What Pro gives you</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">The important screens are already there.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <?php foreach ($screenshots as $s): ?>
         <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
@@ -125,11 +122,11 @@ get_header();
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         <div class="md:col-span-1">
-          <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What's included</p>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything to ship faster.</h2>
+          <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What is included</p>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
           <p class="text-gray-500 leading-relaxed mb-6">One purchase unlocks the full builder, unlimited workflows, and lifetime updates.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-            Buy Pro →
+            Buy Pro
           </button>
         </div>
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -151,26 +148,26 @@ get_header();
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
           <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4">Pro · Lifetime</span>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Full builder access</h3>
-          <p class="text-gray-500 mb-6 text-sm">Pay once. Design unlimited workflows, deploy on up to 5 sites. No subscription, no renewal.</p>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
+          <p class="text-gray-500 mb-6 text-sm">Pay once. Build and reuse as many workflows as you want. Use Pro on up to 5 WordPress sites with all future updates included.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Full builder access', 'Up to 5 WordPress sites', 'Lifetime updates included'] as $t): ?>
+            <?php foreach (['Visual builder access', 'Unlimited custom workflows', 'Use on up to 5 sites', 'Lifetime updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>
             </li>
             <?php endforeach; ?>
           </ul>
-          <p class="text-xs text-gray-400">Not happy within 30 days? <a href="mailto:hello@iakpress.com" class="text-blue-600 hover:underline">hello@iakpress.com</a> — full refund guaranteed.</p>
+          <p class="text-xs text-gray-400">30-day money-back guarantee. Questions? <a href="mailto:hello@iakpress.com" class="text-blue-600 hover:underline">hello@iakpress.com</a></p>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time</p>
           <div class="text-6xl font-extrabold text-gray-900 mb-1">€129</div>
-          <p class="text-gray-400 text-xs mb-6">excl. VAT, no hidden fees.</p>
+          <p class="text-gray-400 text-xs mb-6">No subscription. No renewal.</p>
           <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">
             Get your license
           </button>
-          <p class="mt-3 text-xs text-gray-400">Instant delivery via email · Stripe</p>
+          <p class="mt-3 text-xs text-gray-400">Instant delivery via email</p>
         </div>
       </div>
     </div>
@@ -195,15 +192,15 @@ get_header();
   <!-- Final CTA -->
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100 text-center">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Your next client onboarding starts cleaner.</h2>
-      <p class="text-gray-500 mb-8 leading-relaxed">One purchase. Unlimited workflows. Lifetime license. 30-day money-back guarantee.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">If you want cleaner onboarding, Pro is the fastest path.</h2>
+      <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional WordPress experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €129 →
+          Buy Pro — €129
         </button>
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+        <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Questions? Contact us
+          Try the live demo
         </a>
       </div>
     </div>
