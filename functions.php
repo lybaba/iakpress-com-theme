@@ -37,9 +37,12 @@ function xpressui_enqueue_promo_assets(): void {
 add_action( 'wp_enqueue_scripts', 'xpressui_enqueue_promo_assets', 20 );
 
 function iakpress_favicon(): void {
-    $logo = get_stylesheet_directory_uri() . '/assets/iakpress-logo.svg';
-    echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( $logo ) . '">' . "\n";
-    echo '<link rel="shortcut icon" href="' . esc_url( $logo ) . '">' . "\n";
+    $base = get_stylesheet_directory_uri() . '/assets/favicon';
+    echo '<link rel="icon" type="image/x-icon" href="' . esc_url( $base . '/favicon.ico' ) . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url( $base . '/favicon-16x16.png' ) . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="' . esc_url( $base . '/favicon-32x32.png' ) . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="96x96" href="' . esc_url( $base . '/favicon-96x96.png' ) . '">' . "\n";
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url( $base . '/apple-icon-180x180.png' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'iakpress_favicon', 1 );
 add_action( 'admin_head', 'iakpress_favicon', 1 );

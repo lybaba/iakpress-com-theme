@@ -21,9 +21,9 @@
       <div class="flex-shrink-0 flex items-center">
         <a href="/">
           <img
-            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/iakpress-logo.svg' ); ?>"
+            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/iakpress-logo-mark.jpg' ); ?>"
             alt="IAKPress"
-            class="h-9 w-9 rounded-lg"
+            class="h-9 w-9 rounded-xl"
           >
         </a>
       </div>
