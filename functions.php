@@ -35,3 +35,11 @@ function xpressui_enqueue_promo_assets(): void {
     wp_dequeue_style( 'generate-child-style' );
 }
 add_action( 'wp_enqueue_scripts', 'xpressui_enqueue_promo_assets', 20 );
+
+function iakpress_favicon(): void {
+    $logo = get_stylesheet_directory_uri() . '/assets/iakpress-logo.svg';
+    echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( $logo ) . '">' . "\n";
+    echo '<link rel="shortcut icon" href="' . esc_url( $logo ) . '">' . "\n";
+}
+add_action( 'wp_head', 'iakpress_favicon', 1 );
+add_action( 'admin_head', 'iakpress_favicon', 1 );
