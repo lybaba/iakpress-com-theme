@@ -22,7 +22,7 @@ $value_points = [
   'Create a client document portal inside WordPress',
   'Collect files, structured answers, and project requirements in one flow',
   'Review submissions in wp-admin instead of chasing email threads',
-  'Start free with the plugin, then upgrade to Pro for the builder',
+  'Customize labels, colors, and messages per workflow — without rebuilding the pack',
 ];
 
 $compare_rows = [
@@ -41,7 +41,7 @@ $workflow_steps = [
 $faq_items = [
   ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a client document portal for WordPress, built for structured onboarding and intake workflows.'],
   ['q' => 'Can I start for free?', 'a' => 'Yes. The plugin is available free on GitHub with a bundled document intake workflow so you can test the setup on a real site.'],
-  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want the visual workflow builder, more customization, and a faster way to create your own portal experiences.'],
+  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want to customize your forms — labels, choice labels, colors, messages — directly from wp-admin without rebuilding the pack. Pro also unlocks the visual Console builder, advanced field types, and automatic plugin updates.'],
   ['q' => 'Who is it for?', 'a' => 'It fits WordPress freelancers, agencies, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
 
@@ -235,7 +235,7 @@ get_header();
             <span class="text-gray-400 text-sm">one-time · lifetime · 5 sites</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Everything in Free', 'Visual workflow builder', 'More customization and field options', 'Priority email support'] as $item): ?>
+            <?php foreach (['Everything in Free', 'Visual Console builder', 'Customize Workflow — labels, choices, colors, messages per workflow', 'Advanced fields (QR scan, document scan, quiz…)', 'Priority email support'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-300">
               <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>

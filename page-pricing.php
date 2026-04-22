@@ -32,7 +32,7 @@ $rows = [
 
 $faq_items = [
   ['q' => 'Can I start with the free plugin first?', 'a' => 'Yes. The free plugin is the easiest way to try the document portal experience on your own WordPress site. You can install it, test the intake flow, and only upgrade when you need custom portals.'],
-  ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro unlocks the visual Console builder, custom workflow pack installation, advanced field types, local customization in wp-admin, automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro unlocks Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), the visual Console builder, custom workflow pack installation, advanced field types (QR scan, document scan, quiz…), automatic updates, and the license for up to 5 WordPress sites.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
   ['q' => 'Who is Pro for?', 'a' => 'Pro is built for WordPress freelancers, agencies, and service businesses that want to create their own branded intake portals, reuse them across projects, and charge clients for that delivery.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery and internal use.'],
@@ -118,10 +118,10 @@ get_header();
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             'Everything in Free',
+            'Customize Workflow — labels, choices, colors, and messages per workflow from wp-admin',
             'Visual Console builder for custom portals',
             'Install and ship your own workflow packs',
             'Advanced fields including QR and document scan',
-            'Customize labels, rules, and design tokens',
             'Priority email support and automatic updates'
           ] as $item): ?>
           <li class="flex items-start gap-3 text-sm text-gray-200">
