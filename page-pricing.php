@@ -12,10 +12,10 @@ $rows = [
   ['group' => '', 'label' => 'File uploads, status tracking, team assignment', 'free' => true, 'pro' => true],
   ['group' => '', 'label' => 'Email notifications and redirect flow', 'free' => true, 'pro' => true],
 
-  ['group' => 'Build custom portals', 'label' => 'Visual Console builder', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Install custom workflow packs from the Console', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'One-click export to WordPress (.zip)', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Unlimited custom workflows', 'free' => false, 'pro' => true],
+  ['group' => 'Build custom portals', 'label' => 'Export workflow packs from the Console (.zip)', 'free' => true, 'pro' => true],
+  ['group' => '', 'label' => 'Install custom workflow packs in WordPress', 'free' => true, 'pro' => true],
+  ['group' => '', 'label' => 'Console Sync (pull packs directly from the Console)', 'free' => false, 'pro' => true],
+  ['group' => '', 'label' => 'Unlimited custom workflows', 'free' => true, 'pro' => true],
 
   ['group' => 'Advanced capture', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true],
   ['group' => '', 'label' => 'Advanced fields (QR scan, document scan, quiz, product list...)', 'free' => false, 'pro' => true],
@@ -31,8 +31,8 @@ $rows = [
 ];
 
 $faq_items = [
-  ['q' => 'Can I start with the free plugin first?', 'a' => 'Yes. The free plugin is the easiest way to try the document portal experience on your own WordPress site. You can install it, test the intake flow, and only upgrade when you need custom portals.'],
-  ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro unlocks Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), the visual Console builder, custom workflow pack installation, advanced field types (QR scan, document scan, quiz…), automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'Can I start with the free plugin first?', 'a' => 'Yes. The free plugin is the easiest way to try the document portal experience on your own WordPress site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
+  ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, advanced field types (QR scan, document scan, quiz…), automatic updates, and the license for up to 5 WordPress sites.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
   ['q' => 'Who is Pro for?', 'a' => 'Pro is built for WordPress freelancers, agencies, and service businesses that want to create their own branded intake portals, reuse them across projects, and charge clients for that delivery.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery and internal use.'],
@@ -49,7 +49,7 @@ get_header();
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pricing</p>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Start free. Upgrade when you are ready to build and sell custom client portals.</h1>
-      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">The free plugin gives you a ready-to-use document intake portal inside WordPress. Pro gives you the builder, custom packs, advanced fields, and the license you need to turn portals into a repeatable service.</p>
+      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">The free plugin gives you the operational WordPress bridge, bundled starter workflow, and custom workflow ZIP installation. Pro adds advanced fields, local workflow customization, Console Sync, and the commercial license you need to turn portals into a repeatable service.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro lifetime — €129</button>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download free plugin</a>
@@ -91,6 +91,7 @@ get_header();
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             '1 bundled Document Intake portal',
+            'Custom workflow ZIP installation',
             'WordPress inbox for submissions',
             'File uploads, statuses, and team assignment',
             'Great for validating the client experience',
@@ -119,8 +120,7 @@ get_header();
           <?php foreach ([
             'Everything in Free',
             'Customize Workflow — labels, choices, colors, and messages per workflow from wp-admin',
-            'Visual Console builder for custom portals',
-            'Install and ship your own workflow packs',
+            'Console Sync for direct workflow pull',
             'Advanced fields including QR and document scan',
             'Priority email support and automatic updates'
           ] as $item): ?>

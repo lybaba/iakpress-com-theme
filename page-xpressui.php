@@ -34,14 +34,14 @@ $compare_rows = [
 
 $workflow_steps = [
   ['num' => '01', 'title' => 'Install the plugin', 'body' => 'Download the free WordPress plugin and activate it on your site in a few minutes.'],
-  ['num' => '02', 'title' => 'Publish the portal', 'body' => 'Embed the bundled intake workflow or upgrade to Pro to build your own portal visually.'],
+  ['num' => '02', 'title' => 'Install a workflow', 'body' => 'Use the bundled starter or upload a workflow pack exported from the Console. Upgrade to Pro when you want Console Sync and advanced customization.'],
   ['num' => '03', 'title' => 'Collect everything cleanly', 'body' => 'Clients submit files and answers in one place, and your team reviews it inside WordPress.'],
 ];
 
 $faq_items = [
   ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a client document portal for WordPress, built for structured onboarding and intake workflows.'],
-  ['q' => 'Can I start for free?', 'a' => 'Yes. The plugin is available free on GitHub with a bundled document intake workflow so you can test the setup on a real site.'],
-  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want to customize your forms — labels, choice labels, colors, messages — directly from wp-admin without rebuilding the pack. Pro also unlocks the visual Console builder, advanced field types, and automatic plugin updates.'],
+  ['q' => 'Can I start for free?', 'a' => 'Yes. The free plugin includes the operational WordPress bridge, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
+  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in wp-admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
   ['q' => 'Who is it for?', 'a' => 'It fits WordPress freelancers, agencies, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
 
@@ -215,7 +215,7 @@ get_header();
             <span class="text-gray-500 text-sm">from GitHub</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Bundled document intake flow', 'Submission inbox in WordPress', 'File uploads and review screens'] as $item): ?>
+            <?php foreach (['Bundled document intake flow', 'Custom workflow ZIP installation', 'Submission inbox in WordPress', 'File uploads and review screens'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-600">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>
@@ -235,7 +235,7 @@ get_header();
             <span class="text-gray-400 text-sm">one-time · lifetime · 5 sites</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Everything in Free', 'Visual Console builder', 'Customize Workflow — labels, choices, colors, messages per workflow', 'Advanced fields (QR scan, document scan, quiz…)', 'Priority email support'] as $item): ?>
+            <?php foreach (['Everything in Free', 'Customize Workflow — labels, choices, colors, messages per workflow', 'Console Sync from the XPressUI Console', 'Advanced fields (QR scan, document scan, quiz…)', 'Priority email support and automatic updates'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-300">
               <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>

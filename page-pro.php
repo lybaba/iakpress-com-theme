@@ -6,10 +6,10 @@
 
 $pro_features = [
   ['icon' => '🧩', 'label' => 'Build reusable portals',          'desc' => 'Create structured intakes once, then reuse them across client projects instead of rebuilding each time.'],
-  ['icon' => '⚙️', 'label' => 'Adapt the flow to the project',   'desc' => 'Add steps, conditions, upload rules, and field variations without hand-coding new forms.'],
+  ['icon' => '⚙️', 'label' => 'Customize in WordPress',         'desc' => 'Edit labels, choices, validation rules, colors, and messages from wp-admin without rebuilding the workflow pack.'],
+  ['icon' => '🔄', 'label' => 'Sync from the Console',          'desc' => 'Pull workflow packs directly from your XPressUI Console instead of relying on manual ZIP handling for every update.'],
   ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
-  ['icon' => '🚀', 'label' => 'Deploy in WordPress fast',        'desc' => 'Export your portal, install it, and publish it as a shortcode on the site you already manage.'],
-  ['icon' => '📥', 'label' => 'Review submissions in one place', 'desc' => 'Answers, files, and workflow status live in one clean admin view instead of across inboxes.'],
+  ['icon' => '🚀', 'label' => 'Use advanced runtime features',   'desc' => 'Unlock advanced field types such as document scan, QR capture, product lists, quizzes, and richer guided flows.'],
   ['icon' => '🔑', 'label' => 'Lifetime license for 5 sites',    'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
 
@@ -29,7 +29,7 @@ $faq_items = [
   ['q' => 'Who should buy Pro?',                    'a' => 'Pro is for freelancers, agencies, and teams that want to create custom client portals, reuse them across projects, and turn onboarding into a repeatable service.'],
   ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery as well as internal use.'],
   ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install a WordPress plugin and publish a shortcode, you can use XPressUI Pro.'],
-  ['q' => 'What does Pro unlock?',                  'a' => 'Pro unlocks the visual builder, custom workflow pack installation, advanced fields, local customization in wp-admin, automatic updates, and priority support.'],
+  ['q' => 'What does Pro unlock?',                  'a' => 'Pro adds the full runtime, advanced field types, local workflow customization in wp-admin, Console Sync, automatic updates, and the commercial license for up to 5 sites.'],
   ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
@@ -44,10 +44,10 @@ get_header();
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Build client document portals you can reuse, brand, and sell.
+        Build client document portals you can customize, reuse, and sell.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        Pro is for teams that need more than a single bundled demo portal. Build custom intake flows, reuse them across projects, and turn chaotic onboarding into a repeatable WordPress service.
+        Pro is for teams that need more than the free operational bridge. Add advanced fields, Customize Workflow, Console Sync, and a faster path from the XPressUI Console to production WordPress sites.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
@@ -124,7 +124,7 @@ get_header();
         <div class="md:col-span-1">
           <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What is included</p>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
-          <p class="text-gray-500 leading-relaxed mb-6">One purchase unlocks the full builder, unlimited workflows, and lifetime updates.</p>
+          <p class="text-gray-500 leading-relaxed mb-6">One purchase unlocks the full runtime, local workflow customization, Console Sync, and lifetime updates for your commercial add-on.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
             Buy Pro
           </button>
@@ -151,7 +151,7 @@ get_header();
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
           <p class="text-gray-500 mb-6 text-sm">Pay once. Build and reuse as many workflows as you want. Use Pro on up to 5 WordPress sites with all future updates included.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Visual builder access', 'Unlimited custom workflows', 'Use on up to 5 sites', 'Lifetime updates included'] as $t): ?>
+            <?php foreach (['Full runtime + advanced fields', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Lifetime updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>
