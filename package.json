@@ -7,7 +7,8 @@
     "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
     "build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
     "visual:test": "playwright test",
-    "visual:update": "playwright test --update-snapshots"
+    "visual:update": "playwright test --update-snapshots",
+    "visual:smoke": "playwright test --grep \"payment proof panel does not overflow horizontally\""
   },
   "keywords": [],
   "author": "",
