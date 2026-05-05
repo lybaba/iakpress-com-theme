@@ -76,6 +76,7 @@ create_page() {
   wp --allow-root post meta update --path="$WP" "$id" _wp_page_template "$template" 2>/dev/null
 }
 
+create_page "Home"                "home"               "default"
 create_page "Document Intake"     "xpressui"           "page-xpressui.php"
 create_page "Pro"                 "pro"                "page-pro.php"
 create_page "Pricing"             "pricing"            "page-pricing.php"
@@ -83,10 +84,10 @@ create_page "Install"             "install"            "page-install.php"
 create_page "Contact"             "contact"            "page-contact.php"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"
 
-# ── 7. Set overview as static front page ─────────────────────────────────────
-echo "==> Setting overview as static front page..."
+# ── 7. Set home as static front page ─────────────────────────────────────────
+echo "==> Setting home as static front page..."
 FRONT_ID=$(wp --allow-root post list --path="$WP" \
-  --post_type=page --post_name=xpressui --field=ID 2>/dev/null | head -1)
+  --post_type=page --post_name=home --field=ID 2>/dev/null | head -1)
 if [ -n "$FRONT_ID" ]; then
   wp --allow-root rewrite structure '/%postname%/' --hard --path="$WP" 2>/dev/null || true
   cat > "$WP/.htaccess" <<'HTACCESS'
