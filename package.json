@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -i ./src/input.css -o ./style.css --watch",
-    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify"
+    "build": "tailwindcss -i ./src/input.css -o ./style.css --minify",
+    "visual:test": "playwright test",
+    "visual:update": "playwright test --update-snapshots"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@playwright/test": "^1.54.1",
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",
