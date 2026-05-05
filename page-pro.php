@@ -10,13 +10,13 @@ $pro_features = [
   ['icon' => '🔄', 'label' => 'Sync from the Console',          'desc' => 'Pull workflow packs directly from your XPressUI Console instead of relying on manual ZIP handling for every update.'],
   ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
   ['icon' => '🚀', 'label' => 'Use advanced runtime features',   'desc' => 'Unlock advanced field types such as document scan, QR capture, product lists, quizzes, and richer guided flows.'],
-  ['icon' => '🔑', 'label' => 'Lifetime license for 5 sites',    'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
+  ['icon' => '🔑', 'label' => 'Starter license for 5 sites',     'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
 
 $personas = [
-  ['icon' => '🧑‍💻', 'role' => 'Freelancer delivering client sites', 'pain' => 'Every new project starts with the same brief, assets, and missing-file chase.', 'win' => 'Package onboarding into one portal and start projects with everything already organized.'],
-  ['icon' => '🏢', 'role' => 'Agency standardizing onboarding',     'pain' => 'Your team keeps recreating intake pages, checklists, and upload flows for similar projects.', 'win' => 'Reuse one proven portal structure across projects and deliver a more professional kickoff.'],
-  ['icon' => '🛠️', 'role' => 'Service business using WordPress',    'pain' => 'Clients struggle to submit complete documents the first time, which slows the entire workflow.', 'win' => 'Guide clients step by step and get cleaner submissions from day one.'],
+  ['icon' => '🧾', 'role' => 'Accounting firm on WordPress',         'pain' => 'Client files arrive late, incomplete, or scattered across channels during monthly and annual cycles.', 'win' => 'Run one repeatable checklist flow and receive cleaner document sets from day one.'],
+  ['icon' => '🏢', 'role' => 'Agency serving accounting clients',    'pain' => 'Your team keeps rebuilding similar intake pages and follow-up flows for each client account.', 'win' => 'Reuse a proven intake structure and deliver a consistent kickoff experience faster.'],
+  ['icon' => '🛠️', 'role' => 'Operations team with recurring intake', 'pain' => 'Manual relaunches and missing-file chases slow delivery every cycle.', 'win' => 'Standardize intake once, then run the same process with better completion rates.'],
 ];
 
 $screenshots = [
@@ -26,11 +26,11 @@ $screenshots = [
 ];
 
 $faq_items = [
-  ['q' => 'Who should buy Pro?',                    'a' => 'Pro is for freelancers, agencies, and teams that want to create custom client portals, reuse them across projects, and turn onboarding into a repeatable service.'],
+  ['q' => 'Who should buy Pro?',                    'a' => 'Pro is for accounting firms and agencies that need repeatable document intake with less back-and-forth.'],
   ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery as well as internal use.'],
   ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install a WordPress plugin and publish a shortcode, you can use XPressUI Pro.'],
   ['q' => 'What does Pro unlock?',                  'a' => 'Pro adds the full runtime, advanced field types, local workflow customization in wp-admin, Console Sync, automatic updates, and the commercial license for up to 5 sites.'],
-  ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
+  ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time Starter payment for use on up to 5 WordPress sites, with updates included.'],
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
@@ -44,21 +44,21 @@ get_header();
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Build client document portals you can customize, reuse, and sell.
+        Run repeatable document intake workflows you can ship with confidence.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        Pro is for teams that need more than the free operational bridge. Add advanced fields, Customize Workflow, Console Sync, and a faster path from the XPressUI Console to production WordPress sites.
+        Pro is for teams that need structured outcomes, not ad hoc form submissions. Add advanced capture, local workflow customization, and Console Sync to reduce manual relaunches and missing-file follow-ups.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €129 lifetime
+          Get Starter — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
           Compare plans
         </a>
       </div>
-      <p class="mt-4 text-sm text-gray-400">One-time payment · lifetime access · up to 5 sites · 30-day money-back guarantee</p>
+      <p class="mt-4 text-sm text-gray-400">Starter offer: one-time payment · up to 5 sites · 30-day money-back guarantee</p>
     </div>
   </section>
 
@@ -66,9 +66,9 @@ get_header();
   <section class="bg-gray-50 border-b border-gray-100 py-10 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
       <?php foreach ([
-        ['title' => 'Ship faster', 'body' => 'Turn the same onboarding pattern into a reusable portal instead of rebuilding every time.'],
-        ['title' => 'Charge more', 'body' => 'Package client portals as a premium WordPress service with a clearer business story.'],
-        ['title' => 'Start cleaner', 'body' => 'Get files, answers, and missing documents structured before the project begins.'],
+        ['title' => 'Ship faster', 'body' => 'Turn the same intake pattern into a reusable workflow instead of rebuilding every cycle.'],
+        ['title' => 'Reduce follow-ups', 'body' => 'Give clients one checklist flow and reduce back-and-forth for missing documents.'],
+        ['title' => 'Start cleaner', 'body' => 'Get files, answers, and missing-document status structured before work begins.'],
       ] as $item): ?>
       <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
         <h2 class="text-lg font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></h2>
@@ -82,7 +82,7 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Who buys Pro</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Built for teams that onboard clients repeatedly.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Built for teams that run recurring document intake.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <?php foreach ($personas as $p): ?>
         <div class="bg-gray-50 rounded-2xl border border-gray-100 p-8">
@@ -124,9 +124,9 @@ get_header();
         <div class="md:col-span-1">
           <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What is included</p>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
-          <p class="text-gray-500 leading-relaxed mb-6">One purchase unlocks the full runtime, local workflow customization, Console Sync, and lifetime updates for your commercial add-on.</p>
+          <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, and updates for your commercial add-on.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-            Buy Pro
+            Get Starter
           </button>
         </div>
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -147,11 +147,11 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
-          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4">Pro · Lifetime</span>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4">Pro · Starter</span>
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
-          <p class="text-gray-500 mb-6 text-sm">Pay once. Build and reuse as many workflows as you want. Use Pro on up to 5 WordPress sites with all future updates included.</p>
+          <p class="text-gray-500 mb-6 text-sm">Pay once for Starter. Build and reuse workflows now, with Scale options planned for larger multi-site teams.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Full runtime + advanced fields', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Lifetime updates included'] as $t): ?>
+            <?php foreach (['Full runtime + advanced fields', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>
@@ -196,7 +196,7 @@ get_header();
       <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional WordPress experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Buy Pro — €129
+          Get Starter — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">

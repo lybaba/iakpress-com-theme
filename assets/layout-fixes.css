@@ -1,0 +1,19 @@
+/* Layout stability fixes for sticky header and headline wrapping */
+
+html {
+  overflow-y: scroll;
+}
+
+body.admin-bar .iak-site-header {
+  top: 32px;
+}
+
+@media (max-width: 782px) {
+  body.admin-bar .iak-site-header {
+    top: 46px;
+  }
+}
+
+.iak-home-landing h1 {
+  text-wrap: balance;
+}

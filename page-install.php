@@ -60,7 +60,7 @@ get_header();
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Install guide</p>
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page on WordPress in under 30 minutes.</h1>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page on WordPress in under 10 minutes.</h1>
       <p class="text-gray-500 leading-relaxed">Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
     </div>
   </section>

@@ -19,6 +19,16 @@ function iakpress_dequeue_generatepress_styles(): void {
 }
 add_action( 'wp_enqueue_scripts', 'iakpress_dequeue_generatepress_styles', 20 );
 
+function iakpress_enqueue_layout_fixes(): void {
+    wp_enqueue_style(
+        'iakpress-layout-fixes',
+        get_stylesheet_directory_uri() . '/assets/layout-fixes.css',
+        [],
+        filemtime( get_stylesheet_directory() . '/assets/layout-fixes.css' )
+    );
+}
+add_action( 'wp_enqueue_scripts', 'iakpress_enqueue_layout_fixes', 30 );
+
 function iakpress_favicon(): void {
     $base = get_stylesheet_directory_uri() . '/assets/favicon';
     echo '<link rel="icon" type="image/x-icon" href="' . esc_url( $base . '/favicon.ico' ) . '">' . "\n";

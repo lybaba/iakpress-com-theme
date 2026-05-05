@@ -33,8 +33,9 @@ $rows = [
 $faq_items = [
   ['q' => 'Can I start with the free plugin first?', 'a' => 'Yes. The free plugin is the easiest way to try the document portal experience on your own WordPress site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
   ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, advanced field types (QR scan, document scan, quiz…), automatic updates, and the license for up to 5 WordPress sites.'],
-  ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time payment for lifetime access, future updates, and use on up to 5 WordPress sites.'],
-  ['q' => 'Who is Pro for?', 'a' => 'Pro is built for WordPress freelancers, agencies, and service businesses that want to create their own branded intake portals, reuse them across projects, and charge clients for that delivery.'],
+  ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time Starter payment for use on up to 5 WordPress sites, with updates included.'],
+  ['q' => 'Who is Pro for?', 'a' => 'Pro is built for accounting firms and WordPress agencies that need repeatable client document intake with less back-and-forth.'],
+  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes, a Scale plan is planned for teams managing larger multi-site portfolios. The current Starter offer is the fastest way to ship today.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery and internal use.'],
   ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
@@ -48,13 +49,13 @@ get_header();
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100 text-center">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pricing</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Start free. Upgrade when you are ready to build and sell custom client portals.</h1>
-      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">The free plugin gives you the operational WordPress bridge, bundled starter workflow, and custom workflow ZIP installation. Pro adds advanced fields, local workflow customization, Console Sync, and the commercial license you need to turn portals into a repeatable service.</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Start free. Upgrade when you need repeatable document intake.</h1>
+      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">The free plugin gives you an operational WordPress portal. Pro adds advanced capture, local workflow customization, and Console Sync so your team can reduce follow-ups and standardize intake delivery.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro lifetime — €129</button>
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download free plugin</a>
       </div>
-      <p class="mt-4 text-sm text-gray-500">One-time payment · lifetime access · up to 5 sites · 30-day money-back guarantee</p>
+      <p class="mt-4 text-sm text-gray-500">Starter offer: one-time payment · up to 5 sites · 30-day money-back guarantee</p>
     </div>
   </section>
 
@@ -67,11 +68,11 @@ get_header();
       </div>
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
         <p class="text-sm font-semibold text-gray-900 mb-1">Built for delivery</p>
-        <p class="text-sm text-gray-500">Create reusable client portals instead of one-off forms.</p>
+        <p class="text-sm text-gray-500">Run reusable intake workflows instead of one-off forms.</p>
       </div>
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Pays for itself fast</p>
-        <p class="text-sm text-gray-500">A single client setup can cover the full Pro price.</p>
+        <p class="text-sm font-semibold text-gray-900 mb-1">Designed for recurring intake</p>
+        <p class="text-sm text-gray-500">Built for teams who run the same collection process every month or every client kickoff.</p>
       </div>
     </div>
   </section>
@@ -109,13 +110,13 @@ get_header();
       <article class="bg-gray-900 rounded-3xl border border-gray-800 p-8 flex flex-col relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Best value</div>
         <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Pro</span>
-        <h2 class="text-2xl font-bold text-white mb-2">Build custom portals and use them on client projects</h2>
-        <p class="text-gray-300 mb-6">Best for freelancers, agencies, and teams that want a repeatable service they can ship fast.</p>
+        <h2 class="text-2xl font-bold text-white mb-2">Build custom portals and ship intake faster</h2>
+        <p class="text-gray-300 mb-6">Best for accounting teams and agencies that need structured, repeatable document collection.</p>
         <div class="flex items-baseline gap-2 mb-2">
           <span class="text-5xl font-extrabold text-white">€129</span>
           <span class="text-gray-400 text-sm">one-time</span>
         </div>
-        <p class="text-sm text-blue-200 mb-6">Lifetime access · up to 5 WordPress sites · all future updates</p>
+        <p class="text-sm text-blue-200 mb-6">Starter offer · up to 5 WordPress sites · updates included</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             'Everything in Free',
@@ -130,7 +131,7 @@ get_header();
           </li>
           <?php endforeach; ?>
         </ul>
-        <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro lifetime — €129</button>
+        <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
         <p class="text-center text-xs text-gray-400 mt-3">Use it yourself or deliver it on up to 5 sites.</p>
       </article>
 
@@ -141,7 +142,7 @@ get_header();
   <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100 border-b border-gray-100">
     <div class="max-w-5xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Why teams upgrade</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Pro is for selling and reusing portals — not just testing one.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Pro is for running repeatable intake outcomes, not just publishing one form.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <article class="bg-white rounded-2xl border border-gray-100 p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Save time</h3>
@@ -226,10 +227,10 @@ get_header();
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto text-center">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Ready to build?</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use the free portal today. Upgrade when you want your own repeatable system.</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use the free portal today. Upgrade when your team needs repeatable intake at speed.</h2>
       <p class="text-gray-400 max-w-2xl mx-auto mb-8">If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Pro lifetime — €129</button>
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">Download free plugin</a>
       </div>
       <p class="text-xs text-gray-500 mt-4">30-day money-back guarantee · Secure checkout</p>

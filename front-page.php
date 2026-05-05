@@ -12,17 +12,17 @@ get_header(); ?>
   <!-- SECTION 1 : HERO -->
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Built for WordPress Agencies & Freelancers</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Built for accounting firms and the WordPress agencies that support them</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Create a client document portal in WordPress <br class="hidden md:block"/>in 10 minutes
+        Get complete client documents faster. <br class="hidden md:block"/>Without endless follow-ups.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-      Stop chasing files over email. Let your clients upload, track and manage documents in one clean, structured portal — directly inside WordPress.
+        XpressUI helps teams reduce document follow-ups, get complete client files faster, and run a repeatable intake workflow inside WordPress.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="#pricing"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-          Start building your first portal
+          Get Starter
         </a>
         <a href="/document-intake/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
           Try the Live Demo
@@ -31,38 +31,38 @@ get_header(); ?>
     </div>
   </section>
 
-  <!-- SECTION 2 : LE PROBLÈME -->
+  <!-- SECTION 2 : THE PROBLEM -->
   <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-y border-gray-100">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Collecting client documents shouldn't be this painful</h2>
+      <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Client document collection is still too manual</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="landing-problem-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
           <div class="text-4xl mb-4">📧</div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Endless email threads</h3>
-          <p class="text-gray-600 leading-relaxed">Clients send files everywhere. Nothing is centralized.</p>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Files arrive everywhere</h3>
+          <p class="text-gray-600 leading-relaxed">Invoices, IDs, statements, and certificates land in email threads, shared drives, WhatsApp messages, and random attachments.</p>
         </div>
         <div class="landing-problem-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
           <div class="text-4xl mb-4">📎</div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Missing or wrong files</h3>
-          <p class="text-gray-600 leading-relaxed">You constantly chase clients for the right documents.</p>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Submissions are incomplete</h3>
+          <p class="text-gray-600 leading-relaxed">Your team loses time checking what is missing, asking again, and manually rebuilding the client file.</p>
         </div>
         <div class="landing-problem-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
           <div class="text-4xl mb-4">📋</div>
-          <h3 class="text-xl font-bold mb-3 text-gray-900">No visibility</h3>
-          <p class="text-gray-600 leading-relaxed">You never know what's complete and what's missing.</p>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">No clear status</h3>
+          <p class="text-gray-600 leading-relaxed">Clients do not know what is expected, and your team cannot instantly see what is complete, pending, or wrong.</p>
         </div>
       </div>
 
-      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You don’t need another form. You need a system.</p>
+      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another form. You need a client workflow system.</p>
     </div>
   </section>
 
-  <!-- SECTION 3 : LA SOLUTION -->
+  <!-- SECTION 3 : THE SOLUTION -->
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">A simple workflow your clients actually follow</h2>
-      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Build a structured document intake in minutes, send a private link, and receive everything in one clean workflow.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">A structured workflow your clients can actually complete</h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Create a secure document intake, send one private link, and receive a complete, organized file set inside WordPress.</p>
       
       <div class="text-left space-y-8 bg-blue-50/50 border border-blue-100 p-8 md:p-12 rounded-3xl">
         <div class="flex items-start">
@@ -70,8 +70,8 @@ get_header(); ?>
             <svg class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
           <div>
-            <h4 class="text-xl font-bold text-gray-900 mb-1">1. Create a portal</h4>
-            <p class="text-gray-600 leading-relaxed">Build a structured document intake in minutes.</p>
+            <h4 class="text-xl font-bold text-gray-900 mb-1">1. Build the checklist</h4>
+            <p class="text-gray-600 leading-relaxed">Define exactly which documents each client must submit: invoices, bank statements, IDs, contracts, certificates, or custom requirements.</p>
           </div>
         </div>
         <div class="flex items-start">
@@ -79,8 +79,8 @@ get_header(); ?>
             <svg class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
           <div>
-            <h4 class="text-xl font-bold text-gray-900 mb-1">2. Send a private link</h4>
-            <p class="text-gray-600 leading-relaxed">Your client accesses their dedicated portal and knows exactly what to submit.</p>
+            <h4 class="text-xl font-bold text-gray-900 mb-1">2. Send one private link</h4>
+            <p class="text-gray-600 leading-relaxed">Your client sees a clean portal with clear instructions, expected files, and submission status.</p>
           </div>
         </div>
         <div class="flex items-start">
@@ -88,57 +88,84 @@ get_header(); ?>
             <svg class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
           <div>
-            <h4 class="text-xl font-bold text-gray-900 mb-1">3. Receive everything cleanly</h4>
-            <p class="text-gray-600 leading-relaxed">No chaos, no back-and-forth, and a much more professional client experience.</p>
+            <h4 class="text-xl font-bold text-gray-900 mb-1">3. Receive a complete file set</h4>
+            <p class="text-gray-600 leading-relaxed">Everything arrives structured, traceable, and ready for review — with less manual follow-up for your team.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3B : DIFFERENTIATION -->
+  <!-- SECTION 3B : AI VALUE -->
   <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-y border-gray-100">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Not just another WordPress form plugin</h2>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Built for 2026 workflows</p>
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Go beyond file collection when you are ready.</h2>
+      <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">Start with a reliable intake workflow now. Then add AI-assisted review layers as your process matures.</p>
+      <div class="grid md:grid-cols-4 gap-6 text-left">
+        <div class="landing-value-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="font-bold text-lg mb-3 text-gray-900">OCR-ready foundation</h3>
+          <p class="text-gray-600">Your document flow is structured so OCR layers can be added without redoing intake.</p>
+        </div>
+        <div class="landing-value-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="font-bold text-lg mb-3 text-gray-900">Data extraction path</h3>
+          <p class="text-gray-600">Prepare for targeted extraction from invoices, certificates, and recurring client documents.</p>
+        </div>
+        <div class="landing-value-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="font-bold text-lg mb-3 text-gray-900">Missing-file checks</h3>
+          <p class="text-gray-600">Track which required documents are submitted, pending, or rejected.</p>
+        </div>
+        <div class="landing-value-card bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="font-bold text-lg mb-3 text-gray-900">Review summaries</h3>
+          <p class="text-gray-600">Turn uploaded files into clearer review queues for your team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3C : DIFFERENTIATION -->
+  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Why not email, Drive, or another SaaS?</h2>
       <div class="grid md:grid-cols-2 gap-10 text-left">
-        <div class="landing-compare-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="font-bold text-lg mb-4 text-gray-900">Typical form plugins</h3>
+        <div class="landing-compare-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <h3 class="font-bold text-lg mb-4 text-gray-900">Generic tools</h3>
           <ul class="text-gray-600 space-y-2">
-            <li>• One form = one interaction</li>
-            <li>• No document tracking</li>
-            <li>• Break with themes</li>
-            <li>• Manual follow-ups</li>
+            <li>• Email and Drive create messy, manual follow-up</li>
+            <li>• Form plugins collect inputs, not complete client workflows</li>
+            <li>• External SaaS adds another login and another client touchpoint</li>
+            <li>• DIY AI scripts are hard to trust, support, and standardize</li>
           </ul>
         </div>
-        <div class="landing-compare-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="font-bold text-lg mb-4 text-gray-900">XPressUI</h3>
+        <div class="landing-compare-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
+          <h3 class="font-bold text-lg mb-4 text-gray-900">XpressUI</h3>
           <ul class="text-gray-600 space-y-2">
-            <li>• Full client portal</li>
-            <li>• Structured document intake</li>
-            <li>• Consistent UI</li>
-            <li>• Clear workflow for clients</li>
+            <li>• A complete client document workflow inside WordPress</li>
+            <li>• Clear checklists, private links, and submission status</li>
+            <li>• A branded experience your clients already recognize</li>
+            <li>• A foundation for AI-assisted review and validation</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3C : BUSINESS VALUE -->
-  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+  <!-- SECTION 3D : BUSINESS VALUE -->
+  <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-y border-gray-100">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12 text-gray-900">Save hours. Or sell it as a premium service.</h2>
+      <h2 class="text-3xl font-bold mb-12 text-gray-900">Designed for firms managing recurring client documents</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="landing-value-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Save time</h3>
-          <p class="text-gray-600">Reduce client back-and-forth and stop chasing missing files.</p>
+        <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Reduce follow-ups</h3>
+          <p class="text-gray-600">Give clients a clear checklist and reduce the time spent asking for missing documents.</p>
         </div>
-        <div class="landing-value-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Charge more</h3>
-          <p class="text-gray-600">Package document portals as a premium WordPress service.</p>
+        <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Standardize intake</h3>
+          <p class="text-gray-600">Use repeatable workflows instead of rebuilding the process for every client or every month.</p>
         </div>
-        <div class="landing-value-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Look professional</h3>
-          <p class="text-gray-600">Give clients a cleaner, more structured onboarding experience.</p>
+        <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Stay in WordPress</h3>
+          <p class="text-gray-600">Keep the client experience inside your own branded environment instead of sending users to another SaaS.</p>
         </div>
       </div>
     </div>
@@ -185,30 +212,30 @@ get_header(); ?>
   </section>
   <?php wp_reset_postdata(); endif; ?>
 
-  <!-- SECTION 4 : PRIX -->
+  <!-- SECTION 4 : PRICING -->
   <section id="pricing" class="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Simple pricing for agencies and freelancers</h2>
-        <p class="mt-4 text-xl text-gray-400">One client project can pay for it.</p>
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Simple pricing to launch your first repeatable intake workflow</h2>
+        <p class="mt-4 text-xl text-gray-400">Start with Starter now. Scale options for larger multi-site teams are planned.</p>
       </div>
 
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Lifetime License</h3>
-          <p class="text-gray-500 mb-8">Build client document portals in WordPress without the usual back-and-forth.</p>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter License (Early Access)</h3>
+          <p class="text-gray-500 mb-8">Build structured client document portals in WordPress and replace scattered email follow-ups with a clear intake workflow.</p>
           <ul class="space-y-4">
             <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use it on up to <strong>5 production sites</strong></span></li>
             <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Automatic updates via <em>wp-admin</em></span></li>
             <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Pro components included for document collection</span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">No subscription, one-time payment</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Early-access Starter pricing while Scale plans are being prepared</span></li>
           </ul>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Start building your first portal</button>
+          <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
           <script>
             document.getElementById('buy-pro-btn').addEventListener('click', async function() {
               try {
@@ -234,9 +261,9 @@ get_header(); ?>
                 else throw new Error('No checkoutUrl returned from API');
               } catch (error) {
                 console.error('Checkout failed:', error);
-                alert(`Erreur de paiement : ${error.message}\n\n(Si "Failed to fetch", ouvrez la console F12, c'est une erreur CORS)`);
+                alert(`Payment error: ${error.message}\n\n(If you see "Failed to fetch", open the browser console. It is likely a CORS issue.)`);
                 this.disabled = false;
-                this.innerText = 'Start building your first portal';
+                this.innerText = 'Get Starter — €129 one-time';
               }
             });
           </script>
