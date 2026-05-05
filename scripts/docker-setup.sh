@@ -76,7 +76,7 @@ create_page() {
   wp --allow-root post meta update --path="$WP" "$id" _wp_page_template "$template" 2>/dev/null
 }
 
-create_page "Document Intake"     "xpressui"           "template-xpressui-overview.php"
+create_page "Document Intake"     "xpressui"           "page-xpressui.php"
 create_page "Pro"                 "pro"                "page-pro.php"
 create_page "Pricing"             "pricing"            "page-pricing.php"
 create_page "Install"             "install"            "page-install.php"
