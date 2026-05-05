@@ -81,7 +81,9 @@ create_page "Document Intake"     "xpressui"           "page-xpressui.php"
 create_page "Pro"                 "pro"                "page-pro.php"
 create_page "Pricing"             "pricing"            "page-pricing.php"
 create_page "Install"             "install"            "page-install.php"
+create_page "Services"            "services"           "page-services.php"
 create_page "Contact"             "contact"            "page-contact.php"
+create_page "Blog"                "blog"               "default"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"
 
 # ── 7. Set home as static front page ─────────────────────────────────────────
@@ -89,6 +91,8 @@ echo "==> Setting home as static front page..."
 FRONT_ID=$(wp --allow-root post list --path="$WP" \
   --post_type=page --post_name=home --field=ID 2>/dev/null | head -1)
 if [ -n "$FRONT_ID" ]; then
+  BLOG_ID=$(wp --allow-root post list --path="$WP" \
+    --post_type=page --post_name=blog --field=ID 2>/dev/null | head -1)
   wp --allow-root rewrite structure '/%postname%/' --hard --path="$WP" 2>/dev/null || true
   cat > "$WP/.htaccess" <<'HTACCESS'
 # BEGIN WordPress
@@ -104,6 +108,9 @@ RewriteRule . /index.php [L]
 HTACCESS
   wp --allow-root option update --path="$WP" show_on_front page
   wp --allow-root option update --path="$WP" page_on_front "$FRONT_ID"
+  if [ -n "$BLOG_ID" ]; then
+    wp --allow-root option update --path="$WP" page_for_posts "$BLOG_ID"
+  fi
 fi
 
 echo ""
