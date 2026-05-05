@@ -41,4 +41,33 @@ test.describe('Theme visual regression', () => {
 
     expect(overflow).toBeLessThanOrEqual(1);
   });
+
+  test('xpressui hero chips stay within container bounds', async ({ page }) => {
+    await page.goto('/xpressui/', { waitUntil: 'networkidle' });
+    await hideWpAdminBar(page);
+
+    const overflow = await page.evaluate(() => {
+      const wrap = document.querySelector('.xpressui-hero-points') as HTMLElement | null;
+      if (!wrap) return { hasWrap: false, overflowPx: 0 };
+      const wrapRect = wrap.getBoundingClientRect();
+      let maxOverflow = 0;
+      wrap.querySelectorAll('span').forEach((chip) => {
+        const rect = (chip as HTMLElement).getBoundingClientRect();
+        maxOverflow = Math.max(maxOverflow, rect.right - wrapRect.right);
+      });
+      return { hasWrap: true, overflowPx: maxOverflow };
+    });
+
+    expect(overflow.hasWrap).toBeTruthy();
+    expect(overflow.overflowPx).toBeLessThanOrEqual(1);
+  });
+
+  test('xpressui page remains stable with wp admin bar visible', async ({ page }) => {
+    await page.goto('/xpressui/', { waitUntil: 'networkidle' });
+    await expect(page).toHaveScreenshot('xpressui-adminbar-on.png', {
+      fullPage: true,
+      animations: 'disabled',
+      maxDiffPixelRatio: 0.01,
+    });
+  });
 });
