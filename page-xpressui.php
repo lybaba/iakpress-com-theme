@@ -40,9 +40,9 @@ $workflow_steps = [
 
 $faq_items = [
   ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a client document portal for WordPress, built for structured onboarding and intake workflows.'],
-  ['q' => 'Can I start for free?', 'a' => 'Yes. The free plugin includes the operational WordPress bridge, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
-  ['q' => 'What is the WordPress Pack?', 'a' => 'The WordPress Pack is the fastest path to production today: plugin install, workflow setup, and submission review directly in wp-admin.'],
-  ['q' => 'What is Standalone Early Access?', 'a' => 'Standalone Early Access is for teams that want the same structured intake approach outside WordPress (hosted or embedded delivery paths). Access is coordinated case by case.'],
+  ['q' => 'Can I start for free?', 'a' => 'Yes. Free Bridge includes the operational WordPress bridge, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
+  ['q' => 'What is WordPress Bridge Pro?', 'a' => 'WordPress Bridge Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in wp-admin.'],
+  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, and operator review outside WordPress. Cloud Starter starts at €19/month.'],
   ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in wp-admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
   ['q' => 'Who is it for?', 'a' => 'It fits WordPress freelancers, agencies, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
@@ -54,25 +54,25 @@ get_header();
 
   <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
     <div class="max-w-5xl mx-auto xpressui-hero-shell">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI · WP-first, non-WP-ready</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro now · XPressUI Cloud next</p>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight max-w-5xl mx-auto">
         Create a client document portal in WordPress without the usual plugin mess.
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        XPressUI helps teams collect complete client files faster with structured intake workflows. Start in WordPress now, then expand to non-WordPress delivery paths as needed.
+        WordPress Bridge Pro helps teams collect complete client files faster with structured intake workflows inside WordPress. Move to XPressUI Cloud when your team wants hosted workflow links and a managed operations layer.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
         <a href="<?php echo esc_url(home_url('/pro/')); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Get XPressUI Pro →
+          Get WordPress Bridge Pro →
         </a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Start free with the plugin →
+          Start with Free Bridge →
         </a>
       </div>
       <div class="xpressui-hero-points flex flex-wrap justify-center gap-x-3 gap-y-3 text-sm text-gray-500">
-        <?php foreach (['Reduce follow-ups and missing files', 'Structured intake workflows', 'WordPress today, standalone path next', 'Theme-proof UI and admin review'] as $point): ?>
+        <?php foreach (['Reduce follow-ups and missing files', 'Structured intake workflows', 'WordPress Bridge Pro now', 'XPressUI Cloud next'] as $point): ?>
         <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
         <?php endforeach; ?>
       </div>
@@ -206,11 +206,11 @@ get_header();
   <section class="bg-gray-50 border-t border-gray-100 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with WordPress now. Expand beyond WordPress when ready.</h2>
-      <p class="text-gray-500 text-center mb-10">Launch quickly with the WordPress workflow path today, then add a standalone delivery path as your client base expands.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with WordPress now. Move to hosted when operations need to scale.</h2>
+      <p class="text-gray-500 text-center mb-10">Launch quickly with Free Bridge, upgrade to WordPress Bridge Pro for production WordPress delivery, then add XPressUI Cloud when you want XPressUI to manage links, inbox, files, quotas, and team review.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article class="bg-white rounded-2xl border border-gray-100 p-8 flex flex-col shadow-sm">
-          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">WordPress Pack</span>
+          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">Free Bridge</span>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Ship the intake workflow inside WordPress</h3>
           <div class="flex items-baseline gap-2 mb-6">
             <span class="text-4xl font-extrabold text-gray-900">€0</span>
@@ -226,18 +226,18 @@ get_header();
           </ul>
           <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Start with WordPress
+            Start with Free Bridge
           </a>
         </article>
         <article class="bg-gray-900 rounded-2xl border border-gray-800 p-8 flex flex-col shadow-sm">
-          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Standalone Path</span>
-          <h3 class="text-xl font-bold text-white mb-2">Prepare non-WordPress delivery as you scale</h3>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">XPressUI Cloud</span>
+          <h3 class="text-xl font-bold text-white mb-2">Let XPressUI host the workflow and operations inbox</h3>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-white">Early access</span>
-            <span class="text-gray-400 text-sm">roadmap track</span>
+            <span class="text-4xl font-extrabold text-white">€19</span>
+            <span class="text-gray-400 text-sm">/month</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Keep the same intake logic beyond WordPress', 'Deploy hosted or embedded intake experiences', 'Preserve structured submissions and review cues', 'Coordinate rollout with your existing WordPress delivery'] as $item): ?>
+            <?php foreach (['Publish hosted public submission links', 'Operate submissions and files from Console', 'Use workspace quotas and audit trail', 'Add team review without sharing WordPress access'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-300">
               <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>
@@ -246,7 +246,7 @@ get_header();
           </ul>
           <a href="<?php echo esc_url($contact_url); ?>"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Join Standalone Early Access →
+            Request Cloud Starter →
           </a>
         </article>
       </div>
@@ -272,15 +272,15 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to clean up onboarding?</p>
       <h2 class="text-3xl font-extrabold text-white mb-4">Give your next client project a better start.</h2>
-      <p class="text-gray-400 mb-10">Start free with the plugin, or get Pro if you want to build and ship portal workflows faster.</p>
+      <p class="text-gray-400 mb-10">Start with Free Bridge, or get WordPress Bridge Pro if you want to build and ship portal workflows faster.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url(home_url('/pro/')); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Get XPressUI Pro →
+          Get WordPress Bridge Pro →
         </a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">
-          Download free plugin
+          Download Free Bridge
         </a>
       </div>
     </div>

@@ -7,40 +7,60 @@
 $download_url = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 
 $rows = [
-  ['group' => 'Start free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'WordPress submission inbox', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'File uploads, status tracking, team assignment', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'Email notifications and redirect flow', 'free' => true, 'pro' => true],
+  ['group' => 'Start with Free Bridge', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'WordPress submission inbox', 'free' => true, 'pro' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Console submission inbox', 'free' => false, 'pro' => false, 'cloud' => true],
+  ['group' => '', 'label' => 'File uploads and status tracking', 'free' => true, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Email notifications and redirect flow', 'free' => true, 'pro' => true, 'cloud' => 'Hosted'],
 
-  ['group' => 'Build custom portals', 'label' => 'Export workflow packs from the Console (.zip)', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'Install custom workflow packs in WordPress', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'Console Sync (pull packs directly from the Console)', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Unlimited custom workflows', 'free' => true, 'pro' => true],
+  ['group' => 'Build custom portals', 'label' => 'Export workflow packs from the Console (.zip)', 'free' => true, 'pro' => true, 'cloud' => 'N/A'],
+  ['group' => '', 'label' => 'Install custom workflow packs in WordPress', 'free' => true, 'pro' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Console Sync / hosted publish path', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Custom workflows', 'free' => true, 'pro' => true, 'cloud' => '3 hosted'],
 
-  ['group' => 'Advanced capture', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'Advanced fields (QR scan, document scan, quiz, product list...)', 'free' => false, 'pro' => true],
+  ['group' => 'Advanced capture', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Advanced fields (QR scan, document scan, quiz, product list...)', 'free' => false, 'pro' => true, 'cloud' => true],
 
-  ['group' => 'Client delivery', 'label' => 'Customize labels, help text, and choice labels', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Customize validation rules and upload limits', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Design tokens — colors, fonts, border radius', 'free' => false, 'pro' => true],
+  ['group' => 'Client delivery', 'label' => 'Customize labels, help text, and choice labels', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Customize validation rules and upload limits', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Design tokens — colors, fonts, border radius', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Hosted workflow links', 'free' => false, 'pro' => false, 'cloud' => true],
+  ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'cloud' => true],
 
-  ['group' => 'Support and license', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true],
-  ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'License valid on up to 5 WordPress sites', 'free' => false, 'pro' => true],
-  ['group' => '', 'label' => 'Priority email support (1–2 business days)', 'free' => false, 'pro' => true],
+  ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€129 once', 'cloud' => '€19/mo'],
+  ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'License valid on up to 5 WordPress sites', 'free' => false, 'pro' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Cloud Starter limits', 'free' => false, 'pro' => false, 'cloud' => '1 workspace'],
+  ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => false, 'cloud' => '500/mo'],
+  ['group' => '', 'label' => 'Priority email support (1-2 business days)', 'free' => false, 'pro' => true, 'cloud' => true],
 ];
 
 $faq_items = [
-  ['q' => 'Can I start with the free plugin first?', 'a' => 'Yes. The free plugin is the easiest way to try the document portal experience on your own WordPress site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
-  ['q' => 'What does Pro unlock exactly?', 'a' => 'Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, advanced field types (QR scan, document scan, quiz…), automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'Can I start with Free Bridge first?', 'a' => 'Yes. Free Bridge is the easiest way to try the document portal experience on your own WordPress site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
+  ['q' => 'What does WordPress Bridge Pro unlock exactly?', 'a' => 'WordPress Bridge Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, advanced field types (QR scan, document scan, quiz...), automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'Where does XPressUI Cloud fit?', 'a' => 'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, and operator review instead of running the operations layer inside WordPress. The Starter launch price is €19/month.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time Starter payment for use on up to 5 WordPress sites, with updates included.'],
-  ['q' => 'Who is Pro for?', 'a' => 'Pro is built for accounting firms and WordPress agencies that need repeatable client document intake with less back-and-forth.'],
-  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes, a Scale plan is planned for teams managing larger multi-site portfolios. The current Starter offer is the fastest way to ship today.'],
+  ['q' => 'Who is WordPress Bridge Pro for?', 'a' => 'WordPress Bridge Pro is built for accounting firms and WordPress agencies that need repeatable client document intake with less back-and-forth.'],
+  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward XPressUI Cloud, higher quotas, team workspace access, and managed rollout. The current Starter offer is the fastest WordPress path today.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery and internal use.'],
   ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
 get_header();
+
+function xpressui_pricing_cell($value, $color = 'blue') {
+  if ($value === true) {
+    $class = $color === 'green' ? 'text-green-500' : 'text-blue-600';
+    echo '<span class="' . esc_attr($class) . ' font-bold">✓</span>';
+    return;
+  }
+  if ($value === false) {
+    echo '<span class="text-gray-300">—</span>';
+    return;
+  }
+  echo '<span class="text-xs text-gray-500 font-semibold">' . esc_html($value) . '</span>';
+}
 ?>
 
 <div class="font-sans text-gray-900 antialiased">
@@ -49,13 +69,13 @@ get_header();
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100 text-center">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pricing</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Start free. Upgrade when you need repeatable document intake.</h1>
-      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">The free plugin gives you an operational WordPress portal. Pro adds advanced capture, local workflow customization, and Console Sync so your team can reduce follow-ups and standardize intake delivery.</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Choose the right path: Free Bridge, WordPress Bridge Pro, or XPressUI Cloud.</h1>
+      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">Start with Free Bridge on a real WordPress site, use WordPress Bridge Pro for production WordPress delivery, or move to XPressUI Cloud when you want hosted links, Console inbox, files, quotas, and team review.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download free plugin</a>
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get WordPress Bridge Pro — €129 one-time</button>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download Free Bridge</a>
       </div>
-      <p class="mt-4 text-sm text-gray-500">Starter offer: one-time payment · up to 5 sites · 30-day money-back guarantee</p>
+      <p class="mt-4 text-sm text-gray-500">Free Bridge · WordPress Bridge Pro one-time payment · XPressUI Cloud from €19/month</p>
     </div>
   </section>
 
@@ -63,40 +83,37 @@ get_header();
   <section class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Try before you buy</p>
-        <p class="text-sm text-gray-500">Use the free portal on a real WordPress site first.</p>
+        <p class="text-sm font-semibold text-gray-900 mb-1">Free Bridge</p>
+        <p class="text-sm text-gray-500">Validate the portal experience on a real WordPress site.</p>
       </div>
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Built for delivery</p>
-        <p class="text-sm text-gray-500">Run reusable intake workflows instead of one-off forms.</p>
+        <p class="text-sm font-semibold text-gray-900 mb-1">WordPress Bridge Pro</p>
+        <p class="text-sm text-gray-500">Ship production workflow packs inside client WordPress sites.</p>
       </div>
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
-        <p class="text-sm font-semibold text-gray-900 mb-1">Designed for recurring intake</p>
-        <p class="text-sm text-gray-500">Built for teams who run the same collection process every month or every client kickoff.</p>
+        <p class="text-sm font-semibold text-gray-900 mb-1">XPressUI Cloud</p>
+        <p class="text-sm text-gray-500">Ask XPressUI to host links, files, inbox, quotas, and review.</p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing cards -->
+  <!-- Offer cards -->
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
       <article class="bg-gray-50 rounded-3xl border border-gray-100 p-8 flex flex-col">
-        <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">Free</span>
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Start with the ready-to-use portal</h2>
-        <p class="text-gray-500 mb-6">Best if you want to test the experience on your own site before committing.</p>
+        <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">Free Bridge</span>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Validate the portal on WordPress</h2>
+        <p class="text-gray-500 mb-6">Best when you want to test the intake experience before buying or rolling out a hosted workflow.</p>
         <div class="flex items-baseline gap-2 mb-6">
           <span class="text-5xl font-extrabold text-gray-900">€0</span>
           <span class="text-gray-500 text-sm">GitHub download</span>
         </div>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
-            '1 bundled Document Intake portal',
+            'WordPress bridge plugin',
+            'Bundled document intake workflow',
             'Custom workflow ZIP installation',
-            'WordPress inbox for submissions',
-            'File uploads, statuses, and team assignment',
-            'Great for validating the client experience',
-            'Community support via GitHub'
+            'Submission inbox and file uploads in WordPress'
           ] as $item): ?>
           <li class="flex items-start gap-3 text-sm text-gray-600">
             <svg class="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -104,14 +121,14 @@ get_header();
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition">Download the free plugin</a>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="mt-auto block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition">Download Free Bridge</a>
       </article>
 
       <article class="bg-gray-900 rounded-3xl border border-gray-800 p-8 flex flex-col relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Best value</div>
-        <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Pro</span>
-        <h2 class="text-2xl font-bold text-white mb-2">Build custom portals and ship intake faster</h2>
-        <p class="text-gray-300 mb-6">Best for accounting teams and agencies that need structured, repeatable document collection.</p>
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">WordPress Bridge Pro</span>
+        <h2 class="text-2xl font-bold text-white mb-2">Ship production workflows inside WordPress</h2>
+        <p class="text-gray-300 mb-6">Best for agencies and teams that need custom, repeatable document portals on client WordPress sites.</p>
         <div class="flex items-baseline gap-2 mb-2">
           <span class="text-5xl font-extrabold text-white">€129</span>
           <span class="text-gray-400 text-sm">one-time</span>
@@ -119,7 +136,7 @@ get_header();
         <p class="text-sm text-blue-200 mb-6">Starter offer · up to 5 WordPress sites · updates included</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
-            'Everything in Free',
+            'Everything in Free Bridge',
             'Customize Workflow — labels, choices, colors, and messages per workflow from wp-admin',
             'Console Sync for direct workflow pull',
             'Advanced fields including QR and document scan',
@@ -131,8 +148,33 @@ get_header();
           </li>
           <?php endforeach; ?>
         </ul>
-        <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
-        <p class="text-center text-xs text-gray-400 mt-3">Use it yourself or deliver it on up to 5 sites.</p>
+        <button class="xpressui-checkout-btn mt-auto w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Bridge Pro — €129</button>
+      </article>
+
+      <article class="bg-blue-50 rounded-3xl border border-blue-100 p-8 flex flex-col">
+        <span class="inline-block px-3 py-1 rounded-full bg-white border border-blue-100 text-xs font-bold text-blue-700 uppercase tracking-wider mb-4 w-fit">XPressUI Cloud</span>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Let XPressUI run hosted operations</h2>
+        <p class="text-gray-600 mb-6">Best when the client does not want WordPress operations, or when your team needs shared review, quotas, audit, and file handling in Console.</p>
+        <div class="flex items-baseline gap-2 mb-2">
+          <span class="text-5xl font-extrabold text-gray-900">€19</span>
+          <span class="text-gray-500 text-sm">/month</span>
+        </div>
+        <p class="text-sm text-blue-700 mb-6">Starter launch price · managed rollout</p>
+        <ul class="space-y-3 mb-8 flex-1">
+          <?php foreach ([
+            '1 workspace and 3 hosted workflows',
+            '500 submissions/month',
+            'Hosted workflow links',
+            'Console inbox, statuses, and operator notes',
+            'Workspace file storage, quotas, and audit trail'
+          ] as $item): ?>
+          <li class="flex items-start gap-3 text-sm text-gray-600">
+            <svg class="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($item); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="mt-auto block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Request Cloud Starter</a>
       </article>
 
     </div>
@@ -142,7 +184,7 @@ get_header();
   <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100 border-b border-gray-100">
     <div class="max-w-5xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Why teams upgrade</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Pro is for running repeatable intake outcomes, not just publishing one form.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">WordPress Bridge Pro is for running repeatable intake outcomes, not just publishing one form.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <article class="bg-white rounded-2xl border border-gray-100 p-6 text-center">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Save time</h3>
@@ -164,14 +206,16 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Compare plans</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">See exactly what changes when you go Pro.</h2>
-      <p class="text-center text-gray-500 max-w-2xl mx-auto mb-10">Start free if you only need the bundled portal. Go Pro when you want to design your own client intake systems and ship them repeatedly.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">See exactly what changes when you upgrade.</h2>
+      <p class="text-center text-gray-500 max-w-2xl mx-auto mb-10">Start with Free Bridge if you only need the bundled portal. Upgrade to WordPress Bridge Pro for WordPress delivery, or choose XPressUI Cloud when the hosted operations layer should live in Console.</p>
 
-      <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
-        <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:minmax(0,1fr) 100px 100px">
+      <div class="rounded-2xl border border-gray-100 overflow-x-auto bg-white shadow-sm">
+        <div style="min-width:620px">
+        <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
           <div class="py-3 px-5 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
-          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 text-center uppercase tracking-wider">Free</div>
-          <div class="py-3 px-4 text-xs font-bold text-gray-900 border-l border-gray-100 text-center uppercase tracking-wider">Pro</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 text-center uppercase tracking-wider">Free Bridge</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-900 border-l border-gray-100 text-center uppercase tracking-wider">Bridge Pro</div>
+          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 text-center uppercase tracking-wider">Cloud Starter</div>
         </div>
 
         <?php
@@ -183,26 +227,27 @@ get_header();
           if ($row['group'] !== '') $current_group = $row['group'];
         ?>
           <?php if ($is_new_group): ?>
-          <div class="grid bg-gray-50 <?php echo $i > 0 ? 'border-t border-gray-100' : ''; ?> border-b border-gray-100" style="grid-template-columns:minmax(0,1fr) 100px 100px">
+          <div class="grid bg-gray-50 <?php echo $i > 0 ? 'border-t border-gray-100' : ''; ?> border-b border-gray-100" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
             <div class="py-2 px-5 text-xs font-bold text-gray-400 uppercase tracking-wider"><?php echo esc_html($row['group']); ?></div>
+            <div class="border-l border-gray-100"></div>
             <div class="border-l border-gray-100"></div>
             <div class="border-l border-gray-100"></div>
           </div>
           <?php endif; ?>
-          <div class="grid items-center <?php echo $is_last ? '' : 'border-b border-gray-50'; ?>" style="grid-template-columns:minmax(0,1fr) 100px 100px">
+          <div class="grid items-center <?php echo $is_last ? '' : 'border-b border-gray-50'; ?>" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
             <div class="py-3 px-5 text-sm text-gray-600"><?php echo esc_html($row['label']); ?></div>
             <div class="py-3 px-4 text-center border-l border-gray-50 text-base">
-              <?php if ($row['free'] === true): ?><span class="text-green-500 font-bold">✓</span>
-              <?php elseif ($row['free'] === false): ?><span class="text-gray-300">—</span>
-              <?php else: ?><span class="text-xs text-gray-400"><?php echo esc_html($row['free']); ?></span><?php endif; ?>
+              <?php xpressui_pricing_cell($row['free'], 'green'); ?>
             </div>
             <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['pro'] === true ? ' bg-blue-50/40' : ''; ?>">
-              <?php if ($row['pro'] === true): ?><span class="text-blue-600 font-bold">✓</span>
-              <?php elseif ($row['pro'] === false): ?><span class="text-gray-300">—</span>
-              <?php else: ?><span class="text-xs text-gray-400"><?php echo esc_html($row['pro']); ?></span><?php endif; ?>
+              <?php xpressui_pricing_cell($row['pro']); ?>
+            </div>
+            <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['cloud'] === true ? ' bg-blue-50/50' : ''; ?>">
+              <?php xpressui_pricing_cell($row['cloud']); ?>
             </div>
           </div>
         <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </section>
@@ -227,11 +272,11 @@ get_header();
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto text-center">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-2">Ready to build?</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use the free portal today. Upgrade when your team needs repeatable intake at speed.</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use Free Bridge today. Upgrade when your team needs repeatable intake at speed.</h2>
       <p class="text-gray-400 max-w-2xl mx-auto mb-8">If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">Download free plugin</a>
+        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get WordPress Bridge Pro — €129 one-time</button>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">Download Free Bridge</a>
       </div>
       <p class="text-xs text-gray-500 mt-4">30-day money-back guarantee · Secure checkout</p>
     </div>

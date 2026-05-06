@@ -5,6 +5,7 @@ const pages = [
   { path: '/xpressui/', slug: 'xpressui' },
   { path: '/install/', slug: 'install' },
   { path: '/pricing/', slug: 'pricing' },
+  { path: '/xpressui-cloud/', slug: 'xpressui-cloud' },
 ];
 
 async function hideWpAdminBar(page: Page) {

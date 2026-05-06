@@ -42,16 +42,16 @@ get_header();
   <!-- Hero -->
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Run repeatable document intake workflows you can ship with confidence.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        Pro is for teams that need structured outcomes, not ad hoc form submissions. Add advanced capture, local workflow customization, and Console Sync to reduce manual relaunches and missing-file follow-ups.
+        WordPress Bridge Pro is for teams that need structured outcomes, not ad hoc form submissions. Add advanced capture, local workflow customization, and Console Sync to reduce manual relaunches and missing-file follow-ups.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get Starter — €129 one-time
+          Get WordPress Bridge Pro — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
@@ -126,7 +126,7 @@ get_header();
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
           <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, and updates for your commercial add-on.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-            Get Starter
+            Get WordPress Bridge Pro
           </button>
         </div>
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ get_header();
       <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional WordPress experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get Starter — €129 one-time
+          Get WordPress Bridge Pro — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">

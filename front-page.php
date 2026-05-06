@@ -12,20 +12,20 @@ get_header(); ?>
   <!-- SECTION 1 : HERO -->
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Built for accounting firms and the WordPress agencies that support them</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro now · XPressUI Cloud next</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Get complete client documents faster. <br class="hidden md:block"/>Without endless follow-ups.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        XpressUI helps teams reduce document follow-ups, get complete client files faster, and run a repeatable intake workflow inside WordPress.
+        Ship WordPress Bridge Pro on client sites today. Move to XPressUI Cloud Starter from €19/month when you want hosted workflow links, shared review, files, and quotas managed in Console.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#pricing"
+        <a href="/pro/"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-          Get Starter
+          Get WordPress Bridge Pro
         </a>
-        <a href="/document-intake/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
-          Try the Live Demo
+        <a href="/xpressui-cloud/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
+          Explore XPressUI Cloud
         </a>
       </div>
     </div>
@@ -133,14 +133,14 @@ get_header(); ?>
           <ul class="text-gray-600 space-y-2">
             <li>• Email and Drive create messy, manual follow-up</li>
             <li>• Form plugins collect inputs, not complete client workflows</li>
-            <li>• External SaaS adds another login and another client touchpoint</li>
+            <li>• Generic SaaS adds another login without matching your workflow model</li>
             <li>• DIY AI scripts are hard to trust, support, and standardize</li>
           </ul>
         </div>
         <div class="landing-compare-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <h3 class="font-bold text-lg mb-4 text-gray-900">XpressUI</h3>
+          <h3 class="font-bold text-lg mb-4 text-gray-900">XPressUI</h3>
           <ul class="text-gray-600 space-y-2">
-            <li>• A complete client document workflow inside WordPress</li>
+            <li>• WordPress Bridge Pro for site-owned delivery, XPressUI Cloud when operations should live in XPressUI</li>
             <li>• Clear checklists, private links, and submission status</li>
             <li>• A branded experience your clients already recognize</li>
             <li>• A foundation for AI-assisted review and validation</li>
@@ -164,8 +164,8 @@ get_header(); ?>
           <p class="text-gray-600">Use repeatable workflows instead of rebuilding the process for every client or every month.</p>
         </div>
         <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-          <h3 class="text-xl font-bold mb-3 text-gray-900">Stay in WordPress</h3>
-          <p class="text-gray-600">Keep the client experience inside your own branded environment instead of sending users to another SaaS.</p>
+          <h3 class="text-xl font-bold mb-3 text-gray-900">Choose the right pack</h3>
+          <p class="text-gray-600">Use WordPress Bridge Pro first, then move to XPressUI Cloud Starter from €19/month when shared operations, quotas, and review should live in Console.</p>
         </div>
       </div>
     </div>
@@ -217,12 +217,12 @@ get_header(); ?>
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Simple pricing to launch your first repeatable intake workflow</h2>
-        <p class="mt-4 text-xl text-gray-400">Start with Starter now. Scale options for larger multi-site teams are planned.</p>
+          <p class="mt-4 text-xl text-gray-400">Start with Free Bridge or WordPress Bridge Pro for site-owned delivery. Use XPressUI Cloud when your team wants hosted workflow operations.</p>
       </div>
 
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter License (Early Access)</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">WordPress Bridge Pro</h3>
           <p class="text-gray-500 mb-8">Build structured client document portals in WordPress and replace scattered email follow-ups with a clear intake workflow.</p>
           <ul class="space-y-4">
             <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use it on up to <strong>5 production sites</strong></span></li>
@@ -235,7 +235,7 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get Starter — €129 one-time</button>
+          <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get WordPress Bridge Pro — €129 one-time</button>
           <script>
             document.getElementById('buy-pro-btn').addEventListener('click', async function() {
               try {
@@ -263,7 +263,7 @@ get_header(); ?>
                 console.error('Checkout failed:', error);
                 alert(`Payment error: ${error.message}\n\n(If you see "Failed to fetch", open the browser console. It is likely a CORS issue.)`);
                 this.disabled = false;
-                this.innerText = 'Get Starter — €129 one-time';
+                this.innerText = 'Get WordPress Bridge Pro — €129 one-time';
               }
             });
           </script>
