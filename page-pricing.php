@@ -151,6 +151,30 @@ function xpressui_pricing_cell($value, $color = 'blue') {
     </div>
   </section>
 
+  <section class="bg-white py-10 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Fast decision</p>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-6 text-center">Choose by the first workflow you need to ship.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article class="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+          <p class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-2">Install today</p>
+          <h3 class="text-lg font-extrabold text-gray-900 mb-2">Use XPressUI Free</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">You want to validate one client-site workflow with the bundled starter before buying anything.</p>
+        </article>
+        <article class="rounded-2xl border border-gray-900 bg-gray-900 p-5 text-white shadow-sm">
+          <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-2">Sell client-site delivery</p>
+          <h3 class="text-lg font-extrabold mb-2">Buy XPressUI Pro</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">You need to package workflows for client-owned sites and keep the operations inside the delivered site.</p>
+        </article>
+        <article class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">Avoid client-site ops</p>
+          <h3 class="text-lg font-extrabold text-gray-900 mb-2">Start XPressUI Cloud</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">You want XPressUI to host the public link, submissions, files, catalogs, quotas, and operator review.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Positioning strip -->
   <section class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
