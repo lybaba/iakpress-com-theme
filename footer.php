@@ -6,8 +6,8 @@
 
 <footer class="bg-gray-900 py-12 border-t border-gray-800 mt-auto">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-4">
-    <a href="/" class="text-xl font-extrabold tracking-tighter text-white opacity-50 hover:opacity-100 transition">
-      IAKPress<span class="text-blue-500">.</span>
+    <a href="/" class="text-xl font-extrabold tracking-tighter text-white opacity-70 hover:opacity-100 transition">
+      XPress<span class="text-blue-500">UI</span>
     </a>
     <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
       <a href="/pricing/" class="text-sm text-gray-500 hover:text-gray-300 transition">Pricing</a>
@@ -20,7 +20,7 @@
       </a>
     </nav>
     <p class="text-gray-500 text-sm">
-      &copy; <?php echo date('Y'); ?> IAKPress. All rights reserved.
+      &copy; <?php echo date('Y'); ?> XPressUI by IAKPress. All rights reserved.
     </p>
   </div>
 </footer>

@@ -17,14 +17,15 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       
-      <!-- Logo -->
+      <!-- Brand -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/">
-          <img
-            src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/iakpress-logo-mark.jpg' ); ?>"
-            alt="IAKPress"
-            class="h-9 w-9 rounded-xl"
-          >
+        <a href="/" class="flex items-center gap-3" aria-label="XPressUI home">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gray-900 text-white text-sm font-extrabold tracking-tight shadow-sm">
+            XP
+          </span>
+          <span class="hidden sm:inline-flex text-lg font-extrabold tracking-tight text-gray-900">
+            XPress<span class="text-blue-600">UI</span>
+          </span>
         </a>
       </div>
       
