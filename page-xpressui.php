@@ -8,6 +8,7 @@ $download_url   = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 $repo_url       = 'https://github.com/lybaba/xpressui-packages';
 $console_url    = 'https://xpressui.iakpress.com/console/';
 $contact_url    = home_url('/contact/');
+$agency_pilot_url = home_url('/agency-pilot/');
 $demo_video_url = 'https://www.youtube.com/watch?v=tXjWmTetHpQ';
 $demo_embed_url = 'https://www.youtube.com/embed/tXjWmTetHpQ';
 
@@ -74,7 +75,7 @@ get_header();
         XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use WordPress Bridge Pro for client sites or XPressUI Cloud for hosted links and managed operations.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-        <a href="<?php echo esc_url($contact_url); ?>"
+        <a href="<?php echo esc_url($agency_pilot_url); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
           Launch a workflow in 48h →
         </a>
@@ -146,7 +147,7 @@ get_header();
         <?php endforeach; ?>
       </div>
       <div class="text-center mt-10">
-        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
           Request a setup call
         </a>
       </div>

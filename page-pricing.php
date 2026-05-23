@@ -5,6 +5,7 @@
  */
 
 $download_url = 'https://github.com/lybaba/xpressui-packages/releases/latest';
+$agency_pilot_url = home_url('/agency-pilot/');
 
 $rows = [
   ['group' => 'Start with Free Bridge', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
@@ -79,6 +80,11 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get WordPress Bridge Pro — €129 one-time</button>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download Free Bridge</a>
+      </div>
+      <div class="mt-4">
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-5 rounded-lg transition text-sm">
+          Need the first workflow live? See Agency Pilot
+        </a>
       </div>
       <p class="mt-4 text-sm text-gray-500">Free Bridge · WordPress Bridge Pro one-time payment · XPressUI Cloud from €19/month</p>
     </div>

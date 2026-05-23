@@ -15,7 +15,7 @@ get_header(); ?>
         Need help deciding, installing,<br class="hidden md:block"/> or tailoring the workflow?
       </h1>
       <p class="text-gray-500 leading-relaxed">
-        Fill in the form and we'll get back to you within 1–2 business days. For installation questions, include your WordPress version and active theme.
+        Tell us which workflow you want to launch first and we'll get back to you within 1–2 business days. For WordPress delivery, include your WordPress version and active theme.
       </p>
     </div>
   </section>
@@ -23,6 +23,10 @@ get_header(); ?>
   <!-- Form (shortcode) -->
   <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
+      <div class="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5">
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">Best first message</p>
+        <p class="text-sm text-gray-700 leading-relaxed">Share one painful workflow, who reviews it, how users submit today, and whether you want a hosted link or WordPress delivery.</p>
+      </div>
       <?php the_content(); ?>
     </div>
   </section>
