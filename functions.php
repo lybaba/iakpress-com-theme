@@ -29,6 +29,22 @@ function iakpress_enqueue_layout_fixes(): void {
 }
 add_action( 'wp_enqueue_scripts', 'iakpress_enqueue_layout_fixes', 30 );
 
+function iakpress_enqueue_xpressui_embed_script(): void {
+    if ( ! is_page( 'contact' ) ) {
+        return;
+    }
+
+    $path = get_stylesheet_directory() . '/assets/xpressui/embed.js';
+    wp_enqueue_script(
+        'xpressui-hosted-embed',
+        get_stylesheet_directory_uri() . '/assets/xpressui/embed.js',
+        [],
+        file_exists( $path ) ? filemtime( $path ) : null,
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'iakpress_enqueue_xpressui_embed_script', 40 );
+
 function iakpress_favicon(): void {
     $base = get_stylesheet_directory_uri() . '/assets/favicon';
     echo '<link rel="icon" type="image/x-icon" href="' . esc_url( $base . '/favicon.ico' ) . '">' . "\n";

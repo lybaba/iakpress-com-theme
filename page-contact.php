@@ -70,14 +70,18 @@ get_header(); ?>
                 Open in new tab →
               </a>
             </div>
-            <iframe
-              src="<?php echo esc_url($contact_embed_url); ?>"
-              title="XPressUI workflow request"
-              loading="eager"
-              referrerpolicy="strict-origin-when-cross-origin"
-              class="block w-full bg-white"
-              style="height: 860px; min-height: 720px; border: 0;"
-            ></iframe>
+            <div
+              data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
+              data-xpressui-embed-title="XPressUI workflow request"
+              data-xpressui-embed-min-height="860"
+              data-xpressui-embed-loading="eager"
+            ></div>
+            <noscript>
+              <div class="p-4 text-sm text-gray-600">
+                JavaScript is required to show the embedded workflow.
+                <a href="<?php echo esc_url($contact_embed_url); ?>" class="font-bold text-blue-600">Open the workflow in a new tab</a>.
+              </div>
+            </noscript>
           </div>
         <?php else: ?>
           <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-900/10">
