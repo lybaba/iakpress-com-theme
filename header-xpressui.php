@@ -22,12 +22,12 @@ $is_pro = ($active === 'pro');
   <div class="container nav-inner">
     <a href="<?php echo esc_url( home_url( '/xpressui/' ) ); ?>" class="brand-mark-word"<?php if ($is_pro): ?> style="color:#e8f0f8"<?php endif; ?>>
       <span class="brand-icon">DI</span>
-      <span>WordPress Bridge Pro</span>
+      <span>XPressUI Pro</span>
     </a>
     <div class="nav-links">
       <?php
       $nav = [
-        ['href' => home_url( '/xpressui/' ),            'slug' => '',        'label' => 'WordPress Bridge Pro'],
+        ['href' => home_url( '/xpressui/' ),            'slug' => '',        'label' => 'XPressUI Pro'],
         ['href' => home_url( '/xpressui-cloud/' ),         'slug' => 'xpressui-cloud', 'label' => 'XPressUI Cloud'],
         ['href' => home_url( '/pricing/' ),             'slug' => 'pricing', 'label' => 'Pricing'],
         ['href' => home_url( '/install/' ),             'slug' => 'install', 'label' => 'Install'],
@@ -42,7 +42,7 @@ $is_pro = ($active === 'pro');
       ?>
       <a href="<?php echo esc_url($item['href']); ?>"<?php echo $class . $external . $dim; ?>><?php echo esc_html($item['label']); ?></a>
       <?php endforeach; ?>
-      <a href="<?php echo esc_url( home_url( '/pro/' ) ); ?>" class="nav-cta<?php echo ($active === 'pro') ? ' is-active' : ''; ?>">Get WordPress Bridge Pro →</a>
+      <a href="<?php echo esc_url( home_url( '/pro/' ) ); ?>" class="nav-cta<?php echo ($active === 'pro') ? ' is-active' : ''; ?>">Get XPressUI Pro →</a>
     </div>
   </div>
 </nav>

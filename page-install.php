@@ -11,21 +11,21 @@ $free_steps = [
   [
     'number' => '01',
     'title'  => 'Download and install the plugin',
-    'body'   => 'Download the latest release from GitHub. Install and activate through wp-admin → Plugins → Add New → Upload Plugin.',
+    'body'   => 'Download the latest release from GitHub. Install and activate it from your site admin.',
     'cta'    => ['label' => 'Download latest release on GitHub', 'href' => $github_release, 'external' => true],
-    'note'   => 'Requires WordPress 5.9+ and PHP 7.4+.',
+    'note'   => 'Requires a compatible client-site runtime with PHP 7.4+.',
   ],
   [
     'number' => '02',
-    'title'  => 'Create a page and paste the shortcode',
-    'body'   => 'Create a new WordPress page, then paste one of the two built-in shortcodes below. No account or license key needed — these workflows are embedded in the plugin.',
+    'title'  => 'Create a page and paste the embed',
+    'body'   => 'Create a new client-site page, then paste one of the two built-in embeds below. No account or license key needed — these workflows are embedded in the plugin.',
     'code'   => '[xpressui id="document-intake"]',
     'note'   => 'Or use [xpressui id="validation-playground"] to explore the full field type library.',
   ],
   [
     'number' => '03',
     'title'  => 'Publish the page — you\'re live',
-    'body'   => 'The form renders inline on your page, isolated from your theme. Submissions land in wp-admin → XPressUI → Submissions with status tracking (New / In Review / Done).',
+    'body'   => 'The form renders inline on your page, isolated from your theme. Submissions land in XPressUI → Submissions with status tracking (New / In Review / Done).',
   ],
 ];
 
@@ -38,14 +38,14 @@ $pro_steps = [
   ],
   [
     'number' => '02',
-    'title'  => 'Upload the workflow ZIP to WordPress',
-    'body'   => 'In wp-admin → XPressUI → Workflows, upload the ZIP you exported. The plugin extracts the form config and registers the workflow slug automatically.',
+    'title'  => 'Upload the workflow ZIP',
+    'body'   => 'In the client-site admin, go to XPressUI → Workflows and upload the ZIP you exported. The plugin extracts the form config and registers the workflow slug automatically.',
     'note'   => 'A Pro license key is required to upload custom workflows.',
   ],
   [
     'number' => '03',
-    'title'  => 'Embed with the shortcode',
-    'body'   => 'Paste the shortcode on any WordPress page using the slug from your workflow.',
+    'title'  => 'Embed the workflow',
+    'body'   => 'Paste the embed on any client-site page using the slug from your workflow.',
     'code'   => '[xpressui id="your-workflow-slug"]',
     'note'   => 'Optional: add redirect="https://yoursite.com/thank-you/" to send users to a custom success page after submission.',
   ],
@@ -60,7 +60,7 @@ get_header();
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Install guide</p>
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page on WordPress in under 10 minutes.</h1>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Live intake page with XPressUI in under 10 minutes.</h1>
       <p class="text-gray-500 leading-relaxed">Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.</p>
     </div>
   </section>

@@ -76,7 +76,7 @@ get_header(); ?>
         </a>
         <a href="/#pricing"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-200">
-          Get WordPress Bridge Pro &rarr;
+          Get XPressUI Pro &rarr;
         </a>
       </div>
     </div>

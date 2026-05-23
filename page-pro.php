@@ -6,16 +6,16 @@
 
 $pro_features = [
   ['icon' => '🧩', 'label' => 'Build reusable portals',          'desc' => 'Create structured intakes once, then reuse them across client projects instead of rebuilding each time.'],
-  ['icon' => '⚙️', 'label' => 'Customize in WordPress',         'desc' => 'Edit labels, choices, validation rules, colors, and messages from wp-admin without rebuilding the workflow pack.'],
+  ['icon' => '⚙️', 'label' => 'Customize on the client site',         'desc' => 'Edit labels, choices, validation rules, colors, and messages from the client-site admin without rebuilding the workflow pack.'],
   ['icon' => '🔄', 'label' => 'Sync from the Console',          'desc' => 'Pull workflow packs directly from your XPressUI Console instead of relying on manual ZIP handling for every update.'],
   ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
-  ['icon' => '📚', 'label' => 'Connect dynamic catalogs',        'desc' => 'Pair WordPress workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when a static form is not enough.'],
+  ['icon' => '📚', 'label' => 'Connect dynamic catalogs',        'desc' => 'Pair client-site workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when a static form is not enough.'],
   ['icon' => '🚀', 'label' => 'Use specialized runtime features', 'desc' => 'Unlock richer guided flows and specialized capture only when the workflow actually needs them.'],
   ['icon' => '🔑', 'label' => 'Starter license for 5 sites',     'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
 
 $personas = [
-  ['icon' => '🧾', 'role' => 'Accounting firm on WordPress',         'pain' => 'Client files arrive late, incomplete, or scattered across channels during monthly and annual cycles.', 'win' => 'Run one repeatable checklist flow and receive cleaner document sets from day one.'],
+  ['icon' => '🧾', 'role' => 'Accounting and document-heavy teams',   'pain' => 'Client files arrive late, incomplete, or scattered across channels during monthly and annual cycles.', 'win' => 'Run one repeatable checklist flow and receive cleaner document sets from day one.'],
   ['icon' => '🏢', 'role' => 'Agency serving accounting clients',    'pain' => 'Your team keeps rebuilding similar intake pages and follow-up flows for each client account.', 'win' => 'Reuse a proven intake structure and deliver a consistent kickoff experience faster.'],
   ['icon' => '🛠️', 'role' => 'Operations team with recurring intake', 'pain' => 'Manual relaunches and missing-file chases slow delivery every cycle.', 'win' => 'Standardize intake once, then run the same process with better completion rates.'],
 ];
@@ -28,10 +28,10 @@ $screenshots = [
 
 $faq_items = [
   ['q' => 'Who should buy Pro?',                    'a' => 'Pro is for accounting firms and agencies that need repeatable document intake with less back-and-forth.'],
-  ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Pro license covers up to 5 WordPress sites, which makes it practical for client delivery as well as internal use.'],
-  ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install a WordPress plugin and publish a shortcode, you can use XPressUI Pro.'],
-  ['q' => 'What does Pro unlock?',                  'a' => 'Pro adds the full runtime, advanced field types, local workflow customization in wp-admin, Console Sync, automatic updates, and the commercial license for up to 5 sites.'],
-  ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time Starter payment for use on up to 5 WordPress sites, with updates included.'],
+  ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Pro license covers up to 5 client sites, which makes it practical for client delivery as well as internal use.'],
+  ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install XPressUI and publish an embed, you can use XPressUI Pro.'],
+  ['q' => 'What does Pro unlock?',                  'a' => 'Pro adds the full runtime, advanced field types, local workflow customization in the client-site admin, Console Sync, automatic updates, and the commercial license for up to 5 sites.'],
+  ['q' => 'Is €129 a subscription?',                'a' => 'No. It is a one-time Starter payment for use on up to 5 client sites, with updates included.'],
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
@@ -43,16 +43,16 @@ get_header();
   <!-- Hero -->
   <section class="bg-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Run repeatable document intake workflows you can ship with confidence.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        WordPress Bridge Pro is for teams that need structured outcomes, not ad hoc form submissions. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
+        XPressUI Pro is for teams that need structured outcomes, not ad hoc form submissions. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get WordPress Bridge Pro — €129 one-time
+          Get XPressUI Pro — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
@@ -127,7 +127,7 @@ get_header();
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
           <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, updates for your commercial add-on, and a clean upgrade path to Cloud catalogs.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-            Get WordPress Bridge Pro
+            Get XPressUI Pro
           </button>
         </div>
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ get_header();
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
           <p class="text-gray-500 mb-6 text-sm">Pay once for Starter. Build and reuse workflows now, with Scale options planned for larger multi-site teams.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Full runtime + specialized workflow features', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Updates included'] as $t): ?>
+            <?php foreach (['Full runtime + specialized workflow features', 'Customize Workflow in the client-site admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>
@@ -194,10 +194,10 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-100 text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">If you want cleaner onboarding, Pro is the fastest path.</h2>
-      <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional WordPress experience from the start.</p>
+      <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional workflow experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get WordPress Bridge Pro — €129 one-time
+          Get XPressUI Pro — €129 one-time
         </button>
         <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">

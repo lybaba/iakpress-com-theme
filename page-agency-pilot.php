@@ -15,10 +15,10 @@ $offers = [
     'fit' => 'Best when the client needs a public link quickly.',
   ],
   [
-    'title' => 'WordPress delivery',
+    'title' => 'Client-site delivery',
     'price' => 'from €790 setup',
-    'body' => 'WordPress Bridge Pro delivery, shortcode placement guidance, test submission, and admin inbox validation.',
-    'fit' => 'Best for agencies shipping on client-owned WordPress sites.',
+    'body' => 'XPressUI Pro delivery, page embed guidance, test submission, and admin inbox validation.',
+    'fit' => 'Best for agencies shipping on client-owned sites.',
   ],
   [
     'title' => 'Agency pilot',
@@ -36,7 +36,7 @@ $steps = [
 ];
 
 $qualifiers = [
-  'You already build or maintain WordPress sites.',
+  'You already build or maintain client sites or workflow-heavy service pages.',
   'A client workflow currently runs through email, spreadsheets, or static forms.',
   'Files, prices, dates, services, or payment proofs create manual follow-up.',
   'You can test one workflow with a real operator within 7 days.',

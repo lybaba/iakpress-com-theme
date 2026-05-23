@@ -15,17 +15,17 @@ get_header(); ?>
         Need help deciding, installing,<br class="hidden md:block"/> or tailoring the workflow?
       </h1>
       <p class="text-gray-500 leading-relaxed">
-        Tell us which workflow you want to launch first and we'll get back to you within 1–2 business days. For WordPress delivery, include your WordPress version and active theme.
+        Tell us which workflow you want to launch first and we'll get back to you within 1–2 business days. For client-site delivery, include the site URL, platform, and active theme if relevant.
       </p>
     </div>
   </section>
 
-  <!-- Form (shortcode) -->
+  <!-- Form -->
   <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
       <div class="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5">
         <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">Best first message</p>
-        <p class="text-sm text-gray-700 leading-relaxed">Share one painful workflow, who reviews it, how users submit today, and whether you want a hosted link or WordPress delivery.</p>
+        <p class="text-sm text-gray-700 leading-relaxed">Share one painful workflow, who reviews it, how users submit today, and whether you want a hosted link or client-site delivery.</p>
       </div>
       <?php the_content(); ?>
     </div>
@@ -37,8 +37,8 @@ get_header(); ?>
       <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col sm:flex-row items-center gap-6">
         <div class="flex-1 min-w-0">
           <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Built with XPressUI</p>
-          <p class="text-gray-900 font-bold mb-1">This form runs on a WordPress plugin.</p>
-          <p class="text-sm text-gray-500 leading-relaxed">No code, no CSS conflicts. Designed in the visual console, deployed as a shortcode in under 30 minutes.</p>
+          <p class="text-gray-900 font-bold mb-1">This form runs on XPressUI.</p>
+          <p class="text-sm text-gray-500 leading-relaxed">No code, no CSS conflicts. Designed in the visual console, deployed on a client site in under 30 minutes.</p>
         </div>
         <a href="/xpressui/" class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-sm whitespace-nowrap">
           See how it works →

@@ -36,7 +36,7 @@
       ?>
       <nav class="hidden md:flex space-x-1">
         <a href="/" class="<?php echo is_front_page() ? $nav_active : $nav_idle; ?>">Home</a>
-        <a href="/xpressui/" class="<?php echo is_page('xpressui') ? $nav_active : $nav_idle; ?>">WordPress Bridge Pro</a>
+        <a href="/xpressui/" class="<?php echo is_page('xpressui') ? $nav_active : $nav_idle; ?>">XPressUI Pro</a>
         <a href="/agency-pilot/" class="<?php echo is_page('agency-pilot') ? $nav_active : $nav_idle; ?>">Agency Pilot</a>
         <a href="/xpressui-cloud/" class="<?php echo is_page('xpressui-cloud') ? $nav_active : $nav_idle; ?>">XPressUI Cloud</a>
         <a href="/pricing/" class="<?php echo is_page('pricing') ? $nav_active : $nav_idle; ?>">Pricing</a>

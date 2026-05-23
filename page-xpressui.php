@@ -15,21 +15,21 @@ $demo_embed_url = 'https://www.youtube.com/embed/tXjWmTetHpQ';
 $gallery_shots = [
   ['src' => xpressui_asset_url('front-step-2.png'),            'title' => 'Client portal flow',  'caption' => 'Clients move through a clear multi-step portal instead of sending everything across scattered emails.'],
   ['src' => xpressui_asset_url('front-step-3.png'),            'title' => 'Document upload',     'caption' => 'Collect briefs, assets, and required files in one structured intake flow.'],
-  ['src' => xpressui_asset_url('admin-project-inbox.png'),     'title' => 'Submission inbox',    'caption' => 'Every submission lands in one WordPress workspace so nothing gets lost before kickoff.'],
+  ['src' => xpressui_asset_url('admin-project-inbox.png'),     'title' => 'Submission inbox',    'caption' => 'Every submission lands in one operator workspace so nothing gets lost before kickoff.'],
   ['src' => xpressui_asset_url('admin-submission-detail.png'), 'title' => 'Submission review',   'caption' => 'Review answers, downloads, and project context in one screen before work starts.'],
 ];
 
 $value_points = [
-  'Launch hosted or WordPress workflows for real business requests',
+  'Launch hosted or client-site workflows for real business requests',
   'Collect files, structured answers, products, dates, and service choices in one flow',
-  'Review submissions in WordPress or Console instead of chasing email threads',
+  'Review submissions on the client site or Console instead of chasing email threads',
   'Use reusable catalogs so prices, slots, options, and members are not hardcoded in every form',
 ];
 
 $compare_rows = [
   ['feature' => 'What it is',        'xpressui' => '<strong>Business workflow delivery.</strong> Built for document intake, registrations, service requests, product choices, and operator review.', 'others' => '<strong>Single-form interaction.</strong> Great for general forms, but not designed as a full intake or operations flow.'],
   ['feature' => 'Dynamic data',      'xpressui' => '<strong>Reusable catalogs.</strong> Products, prices, service slots, dates, options, and members can be maintained outside the form.', 'others' => '<strong>Static choices.</strong> Lists often live inside each form and need manual updates across projects.'],
-  ['feature' => 'WordPress fit',     'xpressui' => '<strong>Theme-proof by design.</strong> UI stays consistent without fighting theme CSS on every project.', 'others' => '<strong>Theme-dependent.</strong> Styling often needs extra overrides or custom fixes.'],
+  ['feature' => 'Client-site fit',     'xpressui' => '<strong>Theme-proof by design.</strong> UI stays consistent without fighting theme CSS on every project.', 'others' => '<strong>Theme-dependent.</strong> Styling often needs extra overrides or custom fixes.'],
   ['feature' => 'Best use case',     'xpressui' => '<strong>Agencies and service teams.</strong> Best when you repeatedly collect structured requests, documents, bookings, or catalog-driven choices.', 'others' => '<strong>General-purpose forms.</strong> Best when you need broad form coverage rather than a dedicated workflow.'],
 ];
 
@@ -41,23 +41,23 @@ $catalog_cards = [
 
 $done_for_you_cards = [
   ['title' => 'Hosted workflow setup', 'price' => 'from €299 setup', 'body' => 'We configure one branded hosted workflow with operator email and a generated document summary.'],
-  ['title' => 'WordPress delivery', 'price' => 'from €790 setup', 'body' => 'We install the bridge, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
+  ['title' => 'Client-site delivery', 'price' => 'from €790 setup', 'body' => 'We install XPressUI Pro, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
   ['title' => 'Agency pilot', 'price' => '3 months guided', 'body' => 'For agencies with complex forms, we help ship the first client workflow and turn the result into a repeatable offer.'],
 ];
 
 $workflow_steps = [
-  ['num' => '01', 'title' => 'Install the plugin', 'body' => 'Download the free WordPress plugin and activate it on your site in a few minutes.'],
+  ['num' => '01', 'title' => 'Install XPressUI Free', 'body' => 'Download XPressUI Free and activate it on your site in a few minutes.'],
   ['num' => '02', 'title' => 'Install a workflow', 'body' => 'Use the bundled starter or upload a workflow pack exported from the Console. Upgrade to Pro when you want Console Sync and advanced customization.'],
-  ['num' => '03', 'title' => 'Collect everything cleanly', 'body' => 'Clients submit files and answers in one place, and your team reviews it inside WordPress.'],
+  ['num' => '03', 'title' => 'Collect everything cleanly', 'body' => 'Clients submit files and answers in one place, and your team reviews it on client sites.'],
 ];
 
 $faq_items = [
-  ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a client document portal for WordPress, built for structured onboarding and intake workflows.'],
-  ['q' => 'Can I start for free?', 'a' => 'Yes. Free Bridge includes the operational WordPress bridge, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
-  ['q' => 'What is WordPress Bridge Pro?', 'a' => 'WordPress Bridge Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in wp-admin.'],
-  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, and operator review outside WordPress. Cloud Starter starts at €19/month.'],
-  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in wp-admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
-  ['q' => 'Who is it for?', 'a' => 'It fits WordPress freelancers, agencies, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
+  ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a workflow delivery product, built for structured onboarding, document intake, catalogs, and operator review.'],
+  ['q' => 'Can I start for free?', 'a' => 'Yes. XPressUI Free includes the client-site runtime, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
+  ['q' => 'What is XPressUI Pro?', 'a' => 'XPressUI Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.'],
+  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, and operator review outside a client site. Cloud Starter starts at €19/month.'],
+  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
+  ['q' => 'Who is it for?', 'a' => 'It fits agencies, operators, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
 
 get_header();
@@ -67,12 +67,12 @@ get_header();
 
   <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
     <div class="max-w-5xl mx-auto xpressui-hero-shell">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for WordPress agencies and service teams</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for agencies and service teams</p>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight max-w-5xl mx-auto">
         Launch business workflows without rebuilding forms, catalogs, and review screens from scratch.
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use WordPress Bridge Pro for client sites or XPressUI Cloud for hosted links and managed operations.
+        XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use XPressUI Pro for client sites or XPressUI Cloud for hosted links and managed operations.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
         <a href="<?php echo esc_url($agency_pilot_url); ?>"
@@ -81,11 +81,11 @@ get_header();
         </a>
         <a href="<?php echo esc_url(home_url('/pro/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Get WordPress Bridge Pro →
+          Get XPressUI Pro →
         </a>
       </div>
       <div class="xpressui-hero-points flex flex-wrap justify-center gap-x-3 gap-y-3 text-sm text-gray-500">
-        <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'WordPress Pro or Hosted Cloud'] as $point): ?>
+        <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'XPressUI Pro or Cloud'] as $point): ?>
         <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
         <?php endforeach; ?>
       </div>
@@ -206,7 +206,7 @@ get_header();
       <div class="bg-blue-50/60 border border-blue-100 rounded-2xl p-8 shadow-sm xpressui-audience-card">
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">For agencies</p>
         <h3 class="text-2xl font-bold text-gray-900 mb-4">Package it as a premium onboarding feature.</h3>
-        <p class="text-gray-600 leading-relaxed">Turn a messy kickoff into a cleaner client experience you can actually sell as part of your WordPress delivery.</p>
+        <p class="text-gray-600 leading-relaxed">Turn a messy kickoff into a cleaner client experience you can actually sell as part of your client-site delivery.</p>
       </div>
       <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm xpressui-audience-card">
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">For freelancers</p>
@@ -215,7 +215,7 @@ get_header();
       </div>
       <div class="bg-gray-50 border border-gray-100 rounded-2xl p-8 shadow-sm xpressui-audience-card">
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">For teams</p>
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Keep everything in WordPress.</h3>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Keep everything on the client site.</h3>
         <p class="text-gray-600 leading-relaxed">Your team reviews submissions, tracks status, and downloads project files without moving between disconnected tools.</p>
       </div>
     </div>
@@ -240,7 +240,7 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Why it stands out</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Not just another WordPress form plugin.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Not just another static site form plugin.</h2>
       <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">Generic form plugins are useful. XPressUI is simply aimed at a different outcome: a structured client portal that makes onboarding cleaner.</p>
       <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm xpressui-compare-table">
         <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:140px 1fr 1fr">
@@ -262,18 +262,18 @@ get_header();
   <section class="bg-gray-50 border-t border-gray-100 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with WordPress now. Move to hosted when operations need to scale.</h2>
-      <p class="text-gray-500 text-center mb-10">Launch quickly with Free Bridge, upgrade to WordPress Bridge Pro for production WordPress delivery, then add XPressUI Cloud when you want XPressUI to manage links, inbox, files, quotas, and team review.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with XPressUI Pro now. Move to hosted when operations need to scale.</h2>
+      <p class="text-gray-500 text-center mb-10">Launch quickly with XPressUI Free, upgrade to XPressUI Pro for production client-site delivery, then add XPressUI Cloud when you want XPressUI to manage links, inbox, files, quotas, and team review.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article class="bg-white rounded-2xl border border-gray-100 p-8 flex flex-col shadow-sm">
-          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">Free Bridge</span>
-          <h3 class="text-xl font-bold text-gray-900 mb-2">Ship the intake workflow inside WordPress</h3>
+          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">XPressUI Free</span>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Ship the intake workflow on client sites</h3>
           <div class="flex items-baseline gap-2 mb-6">
             <span class="text-4xl font-extrabold text-gray-900">€0</span>
             <span class="text-gray-500 text-sm">free entry path</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Bundled document intake workflow', 'Custom workflow ZIP installation', 'Submission inbox in WordPress', 'File uploads and review screens'] as $item): ?>
+            <?php foreach (['Bundled document intake workflow', 'Custom workflow ZIP installation', 'Submission inbox on the client site', 'File uploads and review screens'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-600">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>
@@ -282,7 +282,7 @@ get_header();
           </ul>
           <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Start with Free Bridge
+            Start with XPressUI Free
           </a>
         </article>
         <article class="bg-gray-900 rounded-2xl border border-gray-800 p-8 flex flex-col shadow-sm">
@@ -293,7 +293,7 @@ get_header();
             <span class="text-gray-400 text-sm">/month</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
-            <?php foreach (['Publish hosted public submission links', 'Operate submissions and files from Console', 'Use workspace quotas and audit trail', 'Add team review without sharing WordPress access'] as $item): ?>
+            <?php foreach (['Publish hosted public submission links', 'Operate submissions and files from Console', 'Use workspace quotas and audit trail', 'Add team review without sharing client-site access'] as $item): ?>
             <li class="flex items-start gap-3 text-sm text-gray-300">
               <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($item); ?>
@@ -328,15 +328,15 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to clean up onboarding?</p>
       <h2 class="text-3xl font-extrabold text-white mb-4">Give your next client project a better start.</h2>
-      <p class="text-gray-400 mb-10">Start with Free Bridge, or get WordPress Bridge Pro if you want to build and ship portal workflows faster.</p>
+      <p class="text-gray-400 mb-10">Start with XPressUI Free, or get XPressUI Pro if you want to build and ship portal workflows faster.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url(home_url('/pro/')); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Get WordPress Bridge Pro →
+          Get XPressUI Pro →
         </a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">
-          Download Free Bridge
+          Download XPressUI Free
         </a>
       </div>
     </div>

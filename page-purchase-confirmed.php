@@ -13,33 +13,33 @@ $steps = [
   [
     'n'    => '02',
     'title'=> 'Download and install the free plugin',
-    'body' => 'Install and activate XPressUI Bridge on your WordPress site first. This is the base runtime the Pro plugin requires.',
+    'body' => 'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.',
     'cta'  => ['label' => 'Download XPressUI Bridge on GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest'],
   ],
   [
     'n'    => '03',
-    'title'=> 'Install Bridge Pro from your email link',
-    'body' => 'Download the Pro plugin ZIP from your email, then upload and activate it in WordPress › Plugins › Add New › Upload Plugin.',
+    'title'=> 'Install XPressUI Pro from your email link',
+    'body' => 'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
   ],
   [
     'n'    => '04',
     'title'=> 'Enter your license key',
-    'body' => 'In wp-admin, go to XPressUI › Settings › License. Paste your license key from the email and click Activate. A green badge confirms it\'s active.',
+    'body' => 'In the client-site admin, go to XPressUI › Settings › License. Paste your license key from the email and click Activate. A green badge confirms it\'s active.',
   ],
   [
     'n'    => '05',
     'title'=> 'Upload your workflow pack',
-    'body' => 'Go to XPressUI › Workflows › Upload and install your workflow pack ZIP. Create a page with the shortcode to go live.',
+    'body' => 'Go to XPressUI › Workflows › Upload and install your workflow pack ZIP. Create a page embed to go live.',
     'code' => '[xpressui id="your-pack-slug"]',
   ],
 ];
 
 $handoff_items = [
   'workflow slug or client project name',
-  'WordPress URL and active theme if this is a WordPress delivery',
+  'client-site URL and active theme if this is a client-site delivery',
   'who should receive operator emails',
   'one test submission you expect to see',
-  'whether you need a hosted link, WordPress page, or both',
+  'whether you need a hosted link, client-site page, or both',
 ];
 
 get_header();
