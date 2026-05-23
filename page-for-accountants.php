@@ -3,52 +3,52 @@
  * Template for the /for-accountants/ segment page.
  */
 
-$segment_eyebrow = 'For accounting teams';
-$segment_title = 'Stop chasing client documents across email threads.';
-$segment_intro = 'XPressUI helps accounting firms collect tax files, onboarding forms, attestations, payment proofs, and missing documents through one guided workflow instead of scattered messages.';
-$segment_primary_cta = 'Scope an accounting workflow';
+$segment_eyebrow = 'For accountants';
+$segment_title = 'Collect client documents without chasing every missing file.';
+$segment_intro = 'XPressUI helps accounting teams launch a structured document intake workflow for monthly bookkeeping, VAT, annual returns, onboarding, and supporting evidence.';
+$segment_primary_cta = 'Scope an accounting intake';
 $segment_secondary_cta = 'Compare pricing';
 
 $segment_pains = [
-  'Clients send files across email, WhatsApp, shared drives, and late follow-ups.',
-  'Your team cannot see what is complete, missing, or waiting for review.',
-  'Each client onboarding checklist is rebuilt manually instead of reused.',
-  'Sensitive documents arrive without a clean review trail.',
+  'Client documents arrive across email, shared drives, messages, and late attachments.',
+  'Teams lose time asking for missing invoices, IDs, payment proofs, or statements.',
+  'Every period starts with the same checklist and the same manual reminders.',
+  'Managers need a cleaner view of what is received, blocked, reviewed, and done.',
 ];
 
 $segment_workflow = [
-  'title' => 'A repeatable intake portal for client documents.',
+  'title' => 'One repeatable intake desk for each accounting cycle.',
   'steps' => [
-    ['title' => 'Collect client identity', 'body' => 'Guide the client through company, contact, fiscal year, and engagement details.'],
-    ['title' => 'Request the right files', 'body' => 'Ask for tax forms, invoices, bank documents, attestations, and missing proof in one flow.'],
-    ['title' => 'Review and follow up', 'body' => 'Use statuses, notes, and summaries to know what is complete before work starts.'],
+    ['title' => 'Publish one client link', 'body' => 'Give each client a branded intake workflow for the recurring period.'],
+    ['title' => 'Collect files and answers', 'body' => 'Receive invoices, bank statements, IDs, payroll inputs, payment proofs, and notes in one submission.'],
+    ['title' => 'Review with status', 'body' => 'Operators see new, blocked, reviewed, and completed dossiers without digging through inboxes.'],
   ],
 ];
 
 $segment_proofs = [
-  ['title' => 'Tax and accounting files', 'body' => 'Invoices, statements, VAT exports, payroll documents, and annual close material.'],
-  ['title' => 'Client onboarding data', 'body' => 'Company details, contacts, fiscal preferences, and authorization answers.'],
-  ['title' => 'Attestations and IDs', 'body' => 'KYC-style files, mandates, certificates, and signed documents.'],
-  ['title' => 'Payment proofs', 'body' => 'Receipts, transfer confirmations, and supporting evidence for manual review.'],
+  ['title' => 'Monthly bookkeeping', 'body' => 'Invoices, bank statements, receipts, missing-file notes, and period confirmation.'],
+  ['title' => 'VAT preparation', 'body' => 'Sales evidence, purchase files, proof of payment, and exception notes.'],
+  ['title' => 'Client onboarding', 'body' => 'Company details, IDs, mandates, bank info, and signed documents.'],
+  ['title' => 'Annual file collection', 'body' => 'Year-end supporting documents, confirmations, exports, and review comments.'],
 ];
 
 $segment_offer = [
-  'title' => 'Sell it as client intake cleanup.',
-  'body' => 'Start with one recurring process, then convert it into a reusable onboarding product for the firm.',
+  'title' => 'Start with one client workflow.',
+  'body' => 'Launch one document-heavy process first, then decide whether it should become the standard intake pattern for more clients.',
   'items' => [
-    'Hosted setup from 299 EUR',
+    'Hosted workflow setup from 299 EUR',
     'Client-site delivery from 790 EUR',
-    'Reusable checklists and document categories',
-    'Cloud catalogs for recurring document lists',
+    'Cloud Team for shared operator review',
+    'Reusable workflow templates for recurring periods',
   ],
 ];
 
-$segment_outbound = "Many accounting teams still collect client documents through email and spreadsheets.\n\nXPressUI turns that into one guided intake workflow: files, answers, missing items, and review status in one place.\n\nIf one recurring client process still creates manual follow-up, we can launch a small pilot around that workflow first.";
+$segment_outbound = "Accounting teams often lose hours collecting the same missing client documents every month.\n\nXPressUI turns one recurring checklist into a branded intake workflow with files, statuses, and operator review.\n\nIf one monthly or VAT workflow is already painful, we can scope a small paid pilot around it.";
 
 $segment_use_cases = [
-  ['title' => 'New client onboarding', 'body' => 'Collect identity details, mandates, accounting preferences, and first document bundle.'],
-  ['title' => 'Annual document request', 'body' => 'Send one link for the yearly checklist and track what is still missing.'],
-  ['title' => 'Payment proof review', 'body' => 'Centralize receipts and transfer proofs before reconciliation or follow-up.'],
+  ['title' => 'Monthly document intake', 'body' => 'Collect invoices, receipts, statements, and notes for the active period.'],
+  ['title' => 'VAT return preparation', 'body' => 'Gather required supporting evidence and flag missing or invalid proofs before review.'],
+  ['title' => 'New client onboarding', 'body' => 'Standardize client details, KYC-style documents, mandates, and initial context.'],
 ];
 
 require get_stylesheet_directory() . '/template-parts/segment-landing.php';
