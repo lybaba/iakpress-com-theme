@@ -6,6 +6,7 @@
 
 $contact_url = home_url('/contact/');
 $pricing_url = home_url('/pricing/');
+$agency_url  = home_url('/agency-pilot/');
 
 $features = [
   ['title' => 'Hosted workflow links', 'body' => 'Publish a public workflow URL without asking the client to install or maintain client-site infrastructure.'],
@@ -134,6 +135,36 @@ get_header();
           </ul>
         </article>
         <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-14 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto rounded-3xl border border-blue-100 bg-white p-8 md:p-10 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center">
+        <div>
+          <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Before choosing a plan</p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-4">Start Cloud with one hosted workflow that proves demand.</h2>
+          <p class="text-gray-600 leading-relaxed">
+            If the workflow is still messy, do not start by debating limits. Start with the smallest live test: one hosted link, one inbox, one reusable catalog or file intake, and one operator review path.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Fastest paid path</p>
+          <ul class="space-y-3 text-sm text-gray-700 mb-5">
+            <li><strong class="text-gray-900">Hosted setup:</strong> from €299 for one workflow.</li>
+            <li><strong class="text-gray-900">Then decide:</strong> Solo, Team, Agency, or client-site delivery.</li>
+            <li><strong class="text-gray-900">Good fit:</strong> files, reservations, catalog orders, payment proofs.</li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition">
+              Scope hosted pilot
+            </a>
+            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
+              See pilot offer
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
