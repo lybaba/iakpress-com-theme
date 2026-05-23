@@ -35,6 +35,9 @@ $faq_items = [
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
+$contact_url = home_url('/contact/');
+$agency_url  = home_url('/agency-pilot/');
+
 get_header();
 ?>
 
@@ -60,6 +63,36 @@ get_header();
         </a>
       </div>
       <p class="mt-4 text-sm text-gray-400">Starter offer: one-time payment · up to 5 sites · 30-day money-back guarantee</p>
+    </div>
+  </section>
+
+  <section class="bg-blue-50/60 border-b border-blue-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto rounded-3xl border border-blue-100 bg-white p-8 shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+        <div>
+          <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Need delivery, not just a license?</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3">Buy Pro when you want the runtime. Start a pilot when you want the first workflow delivered with you.</h2>
+          <p class="text-gray-600 leading-relaxed">
+            The assisted path turns one real intake, reservation, catalog order, or payment-proof workflow into a working delivery before you standardize it for more clients.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Fast commercial route</p>
+          <ul class="space-y-3 text-sm text-gray-700 mb-5">
+            <li><strong class="text-gray-900">€129:</strong> Pro license for self-managed delivery.</li>
+            <li><strong class="text-gray-900">From €299:</strong> hosted workflow setup.</li>
+            <li><strong class="text-gray-900">From €790:</strong> client-site delivery and validation.</li>
+          </ul>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition">
+              Scope my workflow
+            </a>
+            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
+              See pilot
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
