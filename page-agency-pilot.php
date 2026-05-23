@@ -56,6 +56,9 @@ get_header();
         <p class="text-lg md:text-xl text-gray-500 leading-relaxed mb-8">
           XPressUI helps agencies ship document intake, service requests, reservations, catalog orders, and operator review without rebuilding a custom backend for each client.
         </p>
+        <p class="text-sm font-semibold text-gray-600 leading-relaxed mb-8 border-l-4 border-blue-600 pl-4">
+          This is the page to send to prospects. The home page stays broader; Agency Pilot is the focused path for turning one workflow into a paid pilot.
+        </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
             Request a pilot

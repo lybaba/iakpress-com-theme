@@ -14,20 +14,35 @@ get_header(); ?>
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro now · XPressUI Cloud next</p>
       <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Get complete client documents faster. <br class="hidden md:block"/>Without endless follow-ups.
+        Launch one client workflow first. <br class="hidden md:block"/>Then make it repeatable.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Ship WordPress Bridge Pro on client sites today. Move to XPressUI Cloud Starter from €19/month when you want hosted workflow links, shared review, files, and quotas managed in Console.
+        Start with an assisted pilot for document intake, reservations, service requests, catalog orders, or payment proof review. Use WordPress Bridge Pro for client sites or XPressUI Cloud when operations should be hosted.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/pro/"
+        <a href="/agency-pilot/"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-          Get WordPress Bridge Pro
+          Launch a workflow in 48h
         </a>
-        <a href="/xpressui-cloud/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
-          Explore XPressUI Cloud
+        <a href="/xpressui/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
+          See XPressUI
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-blue-50/60 border-y border-blue-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <?php foreach ([
+        ['title' => 'Hosted setup from €299', 'body' => 'One branded workflow, operator email, generated summary, and handoff.'],
+        ['title' => 'WordPress delivery from €790', 'body' => 'Bridge Pro install, shortcode delivery, test submission, and admin inbox validation.'],
+        ['title' => 'Agency pilot', 'body' => 'Validate XPressUI on one real client workflow before scaling the offer.'],
+      ] as $item): ?>
+      <article class="bg-white rounded-2xl border border-blue-100 p-5 shadow-sm text-left">
+        <p class="text-sm font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></p>
+        <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($item['body']); ?></p>
+      </article>
+      <?php endforeach; ?>
     </div>
   </section>
 
@@ -55,6 +70,11 @@ get_header(); ?>
       </div>
 
       <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another form. You need a client workflow system.</p>
+      <div class="text-center mt-8">
+        <a href="/agency-pilot/" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+          Scope the first pilot
+        </a>
+      </div>
     </div>
   </section>
 
