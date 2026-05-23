@@ -87,14 +87,18 @@ get_header();
       <h2 class="text-3xl font-bold text-gray-900 text-center mb-10">Start assisted, then decide what should become reusable.</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <?php foreach ($offers as $offer): ?>
-        <article class="bg-white rounded-2xl border border-gray-100 p-7 shadow-sm">
-          <p class="text-sm font-bold text-blue-600 mb-2"><?php echo esc_html($offer['price']); ?></p>
-          <h3 class="text-xl font-bold text-gray-900 mb-3"><?php echo esc_html($offer['title']); ?></h3>
-          <p class="text-gray-600 leading-relaxed mb-5"><?php echo esc_html($offer['body']); ?></p>
-          <p class="text-sm text-gray-500 leading-relaxed mb-5"><?php echo esc_html($offer['fit']); ?></p>
-          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
-            Scope this option
-          </a>
+        <article class="flex h-full flex-col bg-white rounded-2xl border border-gray-100 p-7 shadow-sm">
+          <div>
+            <p class="text-sm font-bold text-blue-600 mb-2"><?php echo esc_html($offer['price']); ?></p>
+            <h3 class="text-xl font-bold text-gray-900 mb-3"><?php echo esc_html($offer['title']); ?></h3>
+            <p class="text-gray-600 leading-relaxed mb-5"><?php echo esc_html($offer['body']); ?></p>
+            <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($offer['fit']); ?></p>
+          </div>
+          <div class="mt-auto pt-6">
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
+              Scope this option
+            </a>
+          </div>
         </article>
         <?php endforeach; ?>
       </div>
