@@ -65,49 +65,50 @@ get_header();
 
 <div class="iak-xpressui-page font-sans text-gray-900 antialiased">
 
-  <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
-    <div class="max-w-5xl mx-auto xpressui-hero-shell">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for agencies and service teams</p>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight max-w-5xl mx-auto">
-        Launch business workflows without rebuilding forms, catalogs, and review screens from scratch.
-      </h1>
-      <p class="text-lg sm:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use XPressUI Pro for client sites or XPressUI Cloud for hosted links and managed operations.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-        <a href="<?php echo esc_url($agency_pilot_url); ?>"
-           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Launch a workflow in 48h →
-        </a>
-        <a href="<?php echo esc_url(home_url('/pro/')); ?>"
-           class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Get XPressUI Pro →
-        </a>
+  <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center xpressui-hero-shell">
+      <div class="lg:col-span-6 text-center lg:text-left">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for agencies and service teams</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
+          Launch business workflows without rebuilding forms, catalogs, and review screens from scratch.
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 mb-8 leading-relaxed">
+          XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use XPressUI Pro for client sites or XPressUI Cloud for hosted links and managed operations.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
+          <a href="<?php echo esc_url($agency_pilot_url); ?>"
+             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+            Launch a workflow in 48h →
+          </a>
+          <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
+             class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
+            Try live demo
+          </a>
+        </div>
+        <div class="xpressui-hero-points flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-3 text-sm text-gray-500">
+          <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'XPressUI Pro or Cloud'] as $point): ?>
+          <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
+          <?php endforeach; ?>
+        </div>
       </div>
-      <div class="xpressui-hero-points flex flex-wrap justify-center gap-x-3 gap-y-3 text-sm text-gray-500">
-        <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'XPressUI Pro or Cloud'] as $point): ?>
-        <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
-        <?php endforeach; ?>
+      <div class="lg:col-span-6">
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 aspect-video bg-black ring-1 ring-black/5">
+          <iframe
+            src="<?php echo esc_url($demo_embed_url); ?>"
+            title="XPressUI demo video"
+            loading="eager"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="w-full h-full"
+          ></iframe>
+        </div>
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-end text-sm">
+          <a href="<?php echo esc_url($demo_video_url); ?>" target="_blank" rel="noreferrer" class="text-blue-600 font-semibold hover:underline">Open video</a>
+          <span class="hidden sm:inline text-gray-300">•</span>
+          <span class="text-gray-500">Portal, file collection, and admin review in one flow.</span>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <section class="bg-gray-50 border-b border-gray-100 py-16 px-4 sm:px-6 lg:px-8 xpressui-video-section">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Watch the workflow</p>
-      <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-video bg-black ring-1 ring-black/5">
-        <iframe
-          src="<?php echo esc_url($demo_embed_url); ?>"
-          title="XPressUI demo video"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-          class="w-full h-full"
-        ></iframe>
-      </div>
-      <p class="text-center text-sm text-gray-500 mt-4">See how the portal, file collection, and admin review flow work together.</p>
-      <p class="text-center text-sm mt-3"><a href="<?php echo esc_url($demo_video_url); ?>" target="_blank" rel="noreferrer" class="text-blue-600 font-semibold hover:underline">Open the demo in a new tab</a></p>
     </div>
   </section>
 
