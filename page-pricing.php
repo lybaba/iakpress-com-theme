@@ -6,6 +6,7 @@
 
 $download_url = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 $agency_pilot_url = home_url('/agency-pilot/');
+$contact_url = home_url('/contact/');
 
 $rows = [
   ['group' => 'Start with XPressUI Free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
@@ -171,6 +172,26 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <h3 class="text-lg font-extrabold text-gray-900 mb-2">Start XPressUI Cloud</h3>
           <p class="text-sm text-gray-600 leading-relaxed">You want XPressUI to host the public link, submissions, files, catalogs, quotas, and operator review.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-10 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-5xl mx-auto rounded-3xl border border-blue-100 bg-blue-50 p-6 md:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Not ready to choose a plan?</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Start with one paid workflow pilot.</h2>
+        <p class="text-gray-600 leading-relaxed">
+          If the buyer is still comparing paths, scope one real workflow first. Hosted pilots start from €299 setup; client-site delivery starts from €790 setup.
+        </p>
+      </div>
+      <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+          Scope a pilot
+        </a>
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-6 rounded-lg transition">
+          See pilot details
+        </a>
       </div>
     </div>
   </section>
