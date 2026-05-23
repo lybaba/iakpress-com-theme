@@ -33,6 +33,10 @@ get_header(); ?>
           </div>
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+            <p><strong class="text-gray-900">You can share context.</strong> Add a form, spreadsheet, screenshot, or process document link if it helps explain the workflow.</p>
+          </div>
+          <div class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
             <p><strong class="text-gray-900">We suggest the delivery path.</strong> Hosted link first, or client-site delivery when the workflow must live on an existing site.</p>
           </div>
           <div class="flex gap-3">

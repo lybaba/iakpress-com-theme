@@ -144,6 +144,12 @@
       line-height: 1.45;
     }
     .template-pilot-note strong { color: var(--template-text); }
+    .template-context-link {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px dashed #bfdbfe;
+      background: #eff6ff;
+    }
     .fallback-email {
       margin-top: 12px;
       font-size: 13px;
@@ -241,6 +247,20 @@
           </select>
         </div>
 
+        <div class="template-field template-context-link">
+          <label class="template-field-label" for="field-supporting-link">Supporting document or screenshot link</label>
+          <input
+            id="field-supporting-link"
+            class="template-input"
+            type="url"
+            name="supporting_link"
+            placeholder="https://..."
+          />
+          <p class="template-help">
+            Optional: paste a link to an existing form, spreadsheet, screenshot, or process document.
+          </p>
+        </div>
+
         <div class="template-field">
           <label class="template-field-label" for="field-message">
             What should this workflow do first? <span class="template-required" aria-hidden="true">*</span>
@@ -290,6 +310,7 @@
     const fieldWorkflow = document.getElementById('field-workflow');
     const fieldDelivery = document.getElementById('field-delivery');
     const fieldCurrentProcess = document.getElementById('field-current-process');
+    const fieldSupportingLink = document.getElementById('field-supporting-link');
     const fieldMessage = document.getElementById('field-message');
 
     const errorName = document.getElementById('error-name');
@@ -347,6 +368,7 @@
         `Workflow to launch: ${fieldWorkflow.value}`,
         `Preferred delivery: ${fieldDelivery.value}`,
         `Current process: ${fieldCurrentProcess.value}`,
+        fieldSupportingLink.value.trim() ? `Supporting link: ${fieldSupportingLink.value.trim()}` : 'Supporting link: Not provided',
         '',
         fieldMessage.value.trim(),
       ].join('\n');
