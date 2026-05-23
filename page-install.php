@@ -149,6 +149,17 @@ get_header();
         </a>
       </div>
 
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl border border-blue-100 bg-blue-50">
+        <div>
+          <strong class="block text-gray-900 mb-1">Need the first workflow live with you?</strong>
+          <p class="text-sm text-gray-600 leading-relaxed">Use Agency Pilot when the priority is a working client workflow, not learning the whole tool first.</p>
+        </div>
+        <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>"
+           class="flex-shrink-0 inline-flex items-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 text-sm font-bold py-2.5 px-5 rounded-lg transition whitespace-nowrap">
+          See Agency Pilot
+        </a>
+      </div>
+
     </div>
   </section>
 

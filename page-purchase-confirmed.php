@@ -34,6 +34,14 @@ $steps = [
   ],
 ];
 
+$handoff_items = [
+  'workflow slug or client project name',
+  'WordPress URL and active theme if this is a WordPress delivery',
+  'who should receive operator emails',
+  'one test submission you expect to see',
+  'whether you need a hosted link, WordPress page, or both',
+];
+
 get_header();
 ?>
 
@@ -99,6 +107,23 @@ get_header();
         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
            class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 text-sm font-bold py-2.5 px-5 rounded-lg transition whitespace-nowrap">
           Email support
+        </a>
+      </div>
+
+      <div class="p-6 rounded-2xl border border-blue-100 bg-blue-50">
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Want an assisted launch?</p>
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Send the details once, then we can scope the smallest useful setup.</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
+          <?php foreach ($handoff_items as $item): ?>
+          <li class="text-sm text-gray-700 flex gap-2">
+            <span class="text-blue-600 font-bold">•</span>
+            <span><?php echo esc_html($item); ?></span>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>"
+           class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition">
+          See assisted setup options
         </a>
       </div>
 
