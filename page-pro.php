@@ -9,7 +9,8 @@ $pro_features = [
   ['icon' => '⚙️', 'label' => 'Customize in WordPress',         'desc' => 'Edit labels, choices, validation rules, colors, and messages from wp-admin without rebuilding the workflow pack.'],
   ['icon' => '🔄', 'label' => 'Sync from the Console',          'desc' => 'Pull workflow packs directly from your XPressUI Console instead of relying on manual ZIP handling for every update.'],
   ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
-  ['icon' => '🚀', 'label' => 'Use advanced runtime features',   'desc' => 'Unlock advanced field types such as document scan, QR capture, product lists, quizzes, and richer guided flows.'],
+  ['icon' => '📚', 'label' => 'Connect dynamic catalogs',        'desc' => 'Pair WordPress workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when a static form is not enough.'],
+  ['icon' => '🚀', 'label' => 'Use specialized runtime features', 'desc' => 'Unlock richer guided flows and specialized capture only when the workflow actually needs them.'],
   ['icon' => '🔑', 'label' => 'Starter license for 5 sites',     'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
 
@@ -47,7 +48,7 @@ get_header();
         Run repeatable document intake workflows you can ship with confidence.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        WordPress Bridge Pro is for teams that need structured outcomes, not ad hoc form submissions. Add advanced capture, local workflow customization, and Console Sync to reduce manual relaunches and missing-file follow-ups.
+        WordPress Bridge Pro is for teams that need structured outcomes, not ad hoc form submissions. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
@@ -68,7 +69,7 @@ get_header();
       <?php foreach ([
         ['title' => 'Ship faster', 'body' => 'Turn the same intake pattern into a reusable workflow instead of rebuilding every cycle.'],
         ['title' => 'Reduce follow-ups', 'body' => 'Give clients one checklist flow and reduce back-and-forth for missing documents.'],
-        ['title' => 'Start cleaner', 'body' => 'Get files, answers, and missing-document status structured before work begins.'],
+        ['title' => 'Reuse data', 'body' => 'Connect products, dates, service slots, and members through Cloud catalogs when the workflow needs live business data.'],
       ] as $item): ?>
       <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
         <h2 class="text-lg font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></h2>
@@ -124,7 +125,7 @@ get_header();
         <div class="md:col-span-1">
           <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What is included</p>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
-          <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, and updates for your commercial add-on.</p>
+          <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, updates for your commercial add-on, and a clean upgrade path to Cloud catalogs.</p>
           <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
             Get WordPress Bridge Pro
           </button>
@@ -151,7 +152,7 @@ get_header();
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
           <p class="text-gray-500 mb-6 text-sm">Pay once for Starter. Build and reuse workflows now, with Scale options planned for larger multi-site teams.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Full runtime + advanced fields', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Updates included'] as $t): ?>
+            <?php foreach (['Full runtime + specialized workflow features', 'Customize Workflow in wp-admin', 'Console Sync + Pro license', 'Use on up to 5 sites', 'Updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>

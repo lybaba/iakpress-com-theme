@@ -18,8 +18,10 @@ $rows = [
   ['group' => '', 'label' => 'Console Sync / hosted publish path', 'free' => false, 'pro' => true, 'cloud' => true],
   ['group' => '', 'label' => 'Custom workflows', 'free' => true, 'pro' => true, 'cloud' => '3 hosted'],
 
-  ['group' => 'Advanced capture', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Advanced fields (QR scan, document scan, quiz, product list...)', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => 'Workflow data', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Dynamic product, service, date, and member catalogs', 'free' => false, 'pro' => 'Cloud embed', 'cloud' => true],
+  ['group' => '', 'label' => 'CSV import and catalog-backed checkout/review', 'free' => false, 'pro' => 'Cloud embed', 'cloud' => true],
+  ['group' => '', 'label' => 'Specialized capture fields when needed', 'free' => false, 'pro' => true, 'cloud' => true],
 
   ['group' => 'Client delivery', 'label' => 'Customize labels, help text, and choice labels', 'free' => false, 'pro' => true, 'cloud' => true],
   ['group' => '', 'label' => 'Customize validation rules and upload limits', 'free' => false, 'pro' => true, 'cloud' => true],
@@ -28,6 +30,7 @@ $rows = [
   ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'cloud' => true],
 
   ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€129 once', 'cloud' => '€19/mo'],
+  ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => 'from €790', 'cloud' => 'from €299'],
   ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'License valid on up to 5 WordPress sites', 'free' => false, 'pro' => true, 'cloud' => false],
@@ -38,8 +41,10 @@ $rows = [
 
 $faq_items = [
   ['q' => 'Can I start with Free Bridge first?', 'a' => 'Yes. Free Bridge is the easiest way to try the document portal experience on your own WordPress site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
-  ['q' => 'What does WordPress Bridge Pro unlock exactly?', 'a' => 'WordPress Bridge Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, advanced field types (QR scan, document scan, quiz...), automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'What does WordPress Bridge Pro unlock exactly?', 'a' => 'WordPress Bridge Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from wp-admin), Console Sync, specialized runtime features, automatic updates, and the license for up to 5 WordPress sites.'],
+  ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static forms. WordPress Pro can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.'],
   ['q' => 'Where does XPressUI Cloud fit?', 'a' => 'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, and operator review instead of running the operations layer inside WordPress. The Starter launch price is €19/month.'],
+  ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for WordPress delivery. It is the fastest way to get the first workflow live and reusable.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time Starter payment for use on up to 5 WordPress sites, with updates included.'],
   ['q' => 'Who is WordPress Bridge Pro for?', 'a' => 'WordPress Bridge Pro is built for accounting firms and WordPress agencies that need repeatable client document intake with less back-and-forth.'],
   ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward XPressUI Cloud, higher quotas, team workspace access, and managed rollout. The current Starter offer is the fastest WordPress path today.'],
@@ -79,6 +84,21 @@ function xpressui_pricing_cell($value, $color = 'blue') {
     </div>
   </section>
 
+  <section class="bg-blue-50/60 py-10 px-4 sm:px-6 lg:px-8 border-b border-blue-100">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+      <?php foreach ([
+        ['title' => 'Done For You setup', 'body' => 'Get one branded hosted workflow live from €299 setup, including operator email and a generated document summary.'],
+        ['title' => 'Dynamic catalogs', 'body' => 'Products, prices, service slots, options, and members become reusable data instead of static form choices.'],
+        ['title' => 'Agency pilot', 'body' => 'WordPress agencies can validate XPressUI on 1 to 3 client workflows before committing to a larger plan.'],
+      ] as $item): ?>
+      <article class="bg-white rounded-2xl border border-blue-100 p-5 shadow-sm">
+        <p class="text-sm font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></p>
+        <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($item['body']); ?></p>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </section>
+
   <!-- Positioning strip -->
   <section class="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
@@ -92,7 +112,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       </div>
       <div class="bg-white rounded-2xl border border-gray-100 p-5">
         <p class="text-sm font-semibold text-gray-900 mb-1">XPressUI Cloud</p>
-        <p class="text-sm text-gray-500">Ask XPressUI to host links, files, inbox, quotas, and review.</p>
+        <p class="text-sm text-gray-500">Ask XPressUI to host links, catalogs, files, inbox, quotas, and review.</p>
       </div>
     </div>
   </section>

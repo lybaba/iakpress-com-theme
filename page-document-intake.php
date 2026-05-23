@@ -15,10 +15,10 @@ get_header(); ?>
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Live demo</p>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        See the client document portal your clients will actually complete.
+        See the document intake workflow your clients will actually complete.
       </h1>
       <p class="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed mb-10">
-        This is not just a form. It is a guided client intake flow for collecting files, project details, and missing documents in one clean WordPress experience.
+        This is not just a form. It is a guided intake flow for collecting files, project details, and missing documents in one clean WordPress or hosted experience.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="#live-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
@@ -37,7 +37,7 @@ get_header(); ?>
       <?php foreach ([
         ['title' => 'Clear for clients', 'body' => 'A guided flow that tells clients exactly what to upload and what is still missing.'],
         ['title' => 'Cleaner for your team', 'body' => 'Files, answers, and submission status are structured from the start instead of scattered in email.'],
-        ['title' => 'Ready for WordPress', 'body' => 'The experience feels polished inside WordPress without rebuilding everything from scratch.'],
+        ['title' => 'Ready for delivery', 'body' => 'Use it inside WordPress or as a hosted workflow when the client needs a faster operational path.'],
       ] as $item): ?>
       <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm text-left">
         <h2 class="text-lg font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></h2>
@@ -86,7 +86,7 @@ get_header(); ?>
 
         <div class="bg-gray-900 rounded-3xl p-6 text-white shadow-sm">
           <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-3">Best fit</p>
-          <h2 class="text-2xl font-bold mb-4">Built for service businesses using WordPress.</h2>
+          <h2 class="text-2xl font-bold mb-4">Built for agencies and service teams with document-heavy workflows.</h2>
           <ul class="space-y-3 text-sm text-gray-300">
             <li>• agencies collecting briefs and assets</li>
             <li>• freelancers onboarding new clients</li>
@@ -103,7 +103,7 @@ get_header(); ?>
   <section class="bg-white border-t border-gray-100 py-16 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">If the demo feels right, the next step is simple.</h2>
-      <p class="text-gray-500 leading-relaxed mb-8">Start with Free Bridge or upgrade to WordPress Bridge Pro when you want to build custom portals, reuse them across client projects, and ship faster.</p>
+      <p class="text-gray-500 leading-relaxed mb-8">Start with WordPress Bridge Pro when the workflow belongs on a client site, or use XPressUI Cloud when the team needs hosted links, catalogs, files, and operator review.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($pricing_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">See pricing</a>
         <a href="<?php echo esc_url($pro_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">Explore Pro</a>

@@ -9,6 +9,7 @@ $pricing_url = home_url('/pricing/');
 
 $features = [
   ['title' => 'Hosted workflow links', 'body' => 'Publish a public workflow URL without asking the client to install or maintain WordPress infrastructure.'],
+  ['title' => 'Dynamic catalogs', 'body' => 'Manage products, services, dates, options, or member lists once and reuse them across hosted workflows.'],
   ['title' => 'Console review inbox', 'body' => 'Operators review submissions, statuses, files, and internal notes from the same workspace.'],
   ['title' => 'Storage and quotas', 'body' => 'Files stay behind the hosted operations layer with workspace limits, download controls, and audit trail.'],
   ['title' => 'Team-ready path', 'body' => 'Add admins and operators to the workspace without sharing a WordPress account.'],
@@ -17,6 +18,7 @@ $features = [
 $comparison = [
   ['label' => 'Best fit', 'wordpress' => 'Existing WordPress site, client-owned delivery', 'hosted' => 'No WordPress dependency, XPressUI-managed operations'],
   ['label' => 'Public entry', 'wordpress' => 'Shortcode on a WordPress page', 'hosted' => 'Hosted workflow URL'],
+  ['label' => 'Dynamic catalogs', 'wordpress' => 'Cloud-backed catalogs can be integrated case by case', 'hosted' => 'Products, services, dates, options, and members managed in Console'],
   ['label' => 'Operations inbox', 'wordpress' => 'wp-admin submission screens', 'hosted' => 'Console inbox and workspace review'],
   ['label' => 'Files and quotas', 'wordpress' => 'WordPress storage and plugin policy', 'hosted' => 'Workspace storage, quotas, retention, audit'],
 ];
@@ -29,18 +31,18 @@ get_header();
     <div class="max-w-5xl mx-auto text-center">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Cloud Starter · €19/month</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Host the workflow link, inbox, files, and review operations with XPressUI.
+        Host the workflow link, catalogs, inbox, files, and review operations with XPressUI.
       </h1>
       <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
-        XPressUI Cloud is for teams that want the same structured intake workflow without running the operations layer inside WordPress.
-        XPressUI hosts the public link and centralizes submissions, files, quotas, and operator review in Console.
+        XPressUI Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer inside WordPress.
+        XPressUI hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
       </p>
       <div class="mb-10 bg-blue-50 border border-blue-100 rounded-3xl p-6 max-w-2xl mx-auto">
         <div class="flex items-baseline justify-center gap-2 mb-3">
           <span class="text-5xl font-extrabold text-gray-900">€19</span>
           <span class="text-gray-500 font-semibold">/month</span>
         </div>
-        <p class="text-sm text-gray-600">Starter launch price: 1 workspace, 3 hosted workflows, 500 submissions/month, hosted files, Console inbox, and operator review.</p>
+        <p class="text-sm text-gray-600">Starter launch price: 1 workspace, 3 hosted workflows, 500 submissions/month, dynamic catalogs, hosted files, Console inbox, and operator review.</p>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">

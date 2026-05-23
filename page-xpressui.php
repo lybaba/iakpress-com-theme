@@ -19,17 +19,29 @@ $gallery_shots = [
 ];
 
 $value_points = [
-  'Create a client document portal inside WordPress',
-  'Collect files, structured answers, and project requirements in one flow',
-  'Review submissions in wp-admin instead of chasing email threads',
-  'Customize labels, colors, and messages per workflow — without rebuilding the pack',
+  'Launch hosted or WordPress workflows for real business requests',
+  'Collect files, structured answers, products, dates, and service choices in one flow',
+  'Review submissions in WordPress or Console instead of chasing email threads',
+  'Use reusable catalogs so prices, slots, options, and members are not hardcoded in every form',
 ];
 
 $compare_rows = [
-  ['feature' => 'What it is',        'xpressui' => '<strong>Client portal workflow.</strong> Built for onboarding, document intake, and structured handoff before projects begin.', 'others' => '<strong>Single-form interaction.</strong> Great for general forms, but not designed as a full intake portal.'],
-  ['feature' => 'Client experience', 'xpressui' => '<strong>Guided and focused.</strong> Clients follow a clean step-by-step flow with uploads and required information.', 'others' => '<strong>Basic submission flow.</strong> Usually one long form, with less structure for complex onboarding.'],
+  ['feature' => 'What it is',        'xpressui' => '<strong>Business workflow delivery.</strong> Built for document intake, registrations, service requests, product choices, and operator review.', 'others' => '<strong>Single-form interaction.</strong> Great for general forms, but not designed as a full intake or operations flow.'],
+  ['feature' => 'Dynamic data',      'xpressui' => '<strong>Reusable catalogs.</strong> Products, prices, service slots, dates, options, and members can be maintained outside the form.', 'others' => '<strong>Static choices.</strong> Lists often live inside each form and need manual updates across projects.'],
   ['feature' => 'WordPress fit',     'xpressui' => '<strong>Theme-proof by design.</strong> UI stays consistent without fighting theme CSS on every project.', 'others' => '<strong>Theme-dependent.</strong> Styling often needs extra overrides or custom fixes.'],
-  ['feature' => 'Best use case',     'xpressui' => '<strong>Freelancers and agencies.</strong> Best when you repeatedly onboard clients and need files collected properly.', 'others' => '<strong>General-purpose forms.</strong> Best when you need broad form coverage rather than a dedicated portal flow.'],
+  ['feature' => 'Best use case',     'xpressui' => '<strong>Agencies and service teams.</strong> Best when you repeatedly collect structured requests, documents, bookings, or catalog-driven choices.', 'others' => '<strong>General-purpose forms.</strong> Best when you need broad form coverage rather than a dedicated workflow.'],
+];
+
+$catalog_cards = [
+  ['title' => 'Products and options', 'body' => 'Keep SKUs, prices, quantities, and selectable options in a reusable catalog instead of copying choices into every form.'],
+  ['title' => 'Services and slots', 'body' => 'Publish available services, dates, capacities, and booking choices so operators can review requests with context.'],
+  ['title' => 'Members and lists', 'body' => 'Reuse member, subscriber, or client lists when a workflow needs verification or a known audience.'],
+];
+
+$done_for_you_cards = [
+  ['title' => 'Hosted workflow setup', 'price' => 'from €299 setup', 'body' => 'We configure one branded hosted workflow with operator email and a generated document summary.'],
+  ['title' => 'WordPress delivery', 'price' => 'from €790 setup', 'body' => 'We install the bridge, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
+  ['title' => 'Agency pilot', 'price' => '3 months guided', 'body' => 'For agencies with complex forms, we help ship the first client workflow and turn the result into a repeatable offer.'],
 ];
 
 $workflow_steps = [
@@ -54,25 +66,25 @@ get_header();
 
   <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-24 px-4 sm:px-6 lg:px-8 text-center border-b border-gray-100">
     <div class="max-w-5xl mx-auto xpressui-hero-shell">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">WordPress Bridge Pro now · XPressUI Cloud next</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for WordPress agencies and service teams</p>
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight max-w-5xl mx-auto">
-        Create a client document portal in WordPress without the usual plugin mess.
+        Launch business workflows without rebuilding forms, catalogs, and review screens from scratch.
       </h1>
       <p class="text-lg sm:text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        WordPress Bridge Pro helps teams collect complete client files faster with structured intake workflows inside WordPress. Move to XPressUI Cloud when your team wants hosted workflow links and a managed operations layer.
+        XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use WordPress Bridge Pro for client sites or XPressUI Cloud for hosted links and managed operations.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-        <a href="<?php echo esc_url(home_url('/pro/')); ?>"
+        <a href="<?php echo esc_url($contact_url); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Get WordPress Bridge Pro →
+          Launch a workflow in 48h →
         </a>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
+        <a href="<?php echo esc_url(home_url('/pro/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Start with Free Bridge →
+          Get WordPress Bridge Pro →
         </a>
       </div>
       <div class="xpressui-hero-points flex flex-wrap justify-center gap-x-3 gap-y-3 text-sm text-gray-500">
-        <?php foreach (['Reduce follow-ups and missing files', 'Structured intake workflows', 'WordPress Bridge Pro now', 'XPressUI Cloud next'] as $point): ?>
+        <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'WordPress Pro or Hosted Cloud'] as $point): ?>
         <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
         <?php endforeach; ?>
       </div>
@@ -95,6 +107,49 @@ get_header();
       </div>
       <p class="text-center text-sm text-gray-500 mt-4">See how the portal, file collection, and admin review flow work together.</p>
       <p class="text-center text-sm mt-3"><a href="<?php echo esc_url($demo_video_url); ?>" target="_blank" rel="noreferrer" class="text-blue-600 font-semibold hover:underline">Open the demo in a new tab</a></p>
+    </div>
+  </section>
+
+  <section class="bg-blue-50/50 border-t border-b border-blue-100 py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Dynamic catalogs</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Your workflows should not be full of static lists.</h2>
+        <p class="text-gray-600 leading-relaxed">Products, prices, service slots, dates, options, and members become reusable data your team can maintain once and connect to multiple workflows.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <?php foreach ($catalog_cards as $card): ?>
+        <article class="bg-white rounded-2xl border border-blue-100 p-7 shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-3"><?php echo esc_html($card['title']); ?></h3>
+          <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($card['body']); ?></p>
+        </article>
+        <?php endforeach; ?>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-8">Best for agencies and teams replacing spreadsheets, duplicated choice lists, and manually maintained prices or schedules.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Done For You</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Want the first workflow live quickly?</h2>
+        <p class="text-gray-600 leading-relaxed">We can configure the first workflow with you, test it, and leave you with a reusable pattern for the next client or service.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <?php foreach ($done_for_you_cards as $card): ?>
+        <article class="bg-gray-50 rounded-2xl border border-gray-100 p-7 shadow-sm flex flex-col">
+          <p class="text-sm font-bold text-blue-600 mb-2"><?php echo esc_html($card['price']); ?></p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3"><?php echo esc_html($card['title']); ?></h3>
+          <p class="text-sm text-gray-600 leading-relaxed flex-1"><?php echo esc_html($card['body']); ?></p>
+        </article>
+        <?php endforeach; ?>
+      </div>
+      <div class="text-center mt-10">
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+          Request a setup call
+        </a>
+      </div>
     </div>
   </section>
 
