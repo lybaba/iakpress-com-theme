@@ -23,13 +23,38 @@ $comparison = [
   ['label' => 'Files and quotas', 'wordpress' => 'Client-site storage and plugin policy', 'hosted' => 'Workspace storage, quotas, retention, audit'],
 ];
 
+$plans = [
+  [
+    'name' => 'Solo',
+    'price' => '€19',
+    'period' => '/month',
+    'summary' => 'Validate one hosted workflow with real users.',
+    'items' => ['1 workspace', '100 submissions/month', 'Hosted workflow links', 'Dynamic catalogs', 'Console inbox and files'],
+  ],
+  [
+    'name' => 'Team',
+    'price' => '€49',
+    'period' => '/month',
+    'summary' => 'Run shared operations with several workflows and operators.',
+    'items' => ['5 workspaces', '500 submissions/month', 'Team operators/admins', 'Reusable catalogs', 'Basic AI extraction/validation path'],
+    'featured' => true,
+  ],
+  [
+    'name' => 'Agency',
+    'price' => '€129',
+    'period' => '/month',
+    'summary' => 'Turn workflows into a repeatable client delivery offer.',
+    'items' => ['Higher limits', 'White-label rollout path', 'Advanced AI extraction/digest path', 'Template reuse', 'Assisted onboarding option'],
+  ],
+];
+
 get_header();
 ?>
 
 <div class="font-sans text-gray-900 antialiased">
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto text-center">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Cloud Starter · €19/month</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Cloud · Solo, Team, Agency</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Host the workflow link, catalogs, inbox, files, and review operations with XPressUI.
       </h1>
@@ -38,19 +63,47 @@ get_header();
         XPressUI hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
       </p>
       <div class="mb-10 bg-blue-50 border border-blue-100 rounded-3xl p-6 max-w-2xl mx-auto">
-        <div class="flex items-baseline justify-center gap-2 mb-3">
-          <span class="text-5xl font-extrabold text-gray-900">€19</span>
-          <span class="text-gray-500 font-semibold">/month</span>
-        </div>
-        <p class="text-sm text-gray-600">Starter launch price: 1 workspace, 3 hosted workflows, 500 submissions/month, dynamic catalogs, hosted files, Console inbox, and operator review.</p>
+        <p class="text-sm font-semibold text-gray-700 mb-2">Starts at €19/month for Solo.</p>
+        <p class="text-sm text-gray-600">Move to Team at €49/month for shared operations, or Agency at €129/month when workflows become a repeatable client delivery product.</p>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Request Cloud Starter
+          Discuss Cloud plan
         </a>
         <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
           Compare with XPressUI Pro
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with the smallest plan that proves the workflow.</h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">The Cloud path is intentionally simple: Solo for one workflow, Team for shared operations, Agency for repeatable client delivery.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <?php foreach ($plans as $plan): $featured = !empty($plan['featured']); ?>
+        <article class="<?php echo $featured ? 'bg-gray-900 border-gray-800 text-white' : 'bg-white border-gray-100 text-gray-900'; ?> rounded-3xl border p-8 shadow-sm flex flex-col relative overflow-hidden">
+          <?php if ($featured): ?>
+          <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Recommended</div>
+          <?php endif; ?>
+          <h3 class="text-2xl font-bold mb-3"><?php echo esc_html($plan['name']); ?></h3>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-5xl font-extrabold"><?php echo esc_html($plan['price']); ?></span>
+            <span class="<?php echo $featured ? 'text-gray-400' : 'text-gray-500'; ?> text-sm"><?php echo esc_html($plan['period']); ?></span>
+          </div>
+          <p class="<?php echo $featured ? 'text-gray-300' : 'text-gray-600'; ?> text-sm leading-relaxed mb-6"><?php echo esc_html($plan['summary']); ?></p>
+          <ul class="space-y-3 flex-1">
+            <?php foreach ($plan['items'] as $item): ?>
+            <li class="<?php echo $featured ? 'text-gray-200' : 'text-gray-600'; ?> flex items-start gap-3 text-sm">
+              <svg class="h-5 w-5 <?php echo $featured ? 'text-blue-400' : 'text-blue-500'; ?> flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <?php echo esc_html($item); ?>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+        </article>
+        <?php endforeach; ?>
       </div>
     </div>
   </section>
@@ -93,11 +146,11 @@ get_header();
 
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Starter launch price · €19/month</p>
+      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €19/month</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use XPressUI Cloud when the workflow needs shared operations, not another site admin.</h2>
-      <p class="text-gray-400 mb-8">We are opening Cloud Starter case by case for teams with active intake workflows, file-heavy submissions, or multi-operator review needs.</p>
+      <p class="text-gray-400 mb-8">We are opening Solo, Team, and Agency plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
       <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-        Request Cloud Starter
+        Discuss Cloud plan
       </a>
     </div>
   </section>

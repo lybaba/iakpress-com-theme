@@ -35,7 +35,7 @@ $rows = [
   ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'License valid on up to 5 client sites', 'free' => false, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'Cloud Starter limits', 'free' => false, 'pro' => false, 'cloud' => '1 workspace'],
+  ['group' => '', 'label' => 'Cloud Solo limits', 'free' => false, 'pro' => false, 'cloud' => '1 workspace'],
   ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => false, 'cloud' => '500/mo'],
   ['group' => '', 'label' => 'Priority email support (1-2 business days)', 'free' => false, 'pro' => true, 'cloud' => true],
 ];
@@ -44,13 +44,59 @@ $faq_items = [
   ['q' => 'Can I start with XPressUI Free first?', 'a' => 'Yes. XPressUI Free is the easiest way to try the document portal experience on your own client site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
   ['q' => 'What does XPressUI Pro unlock exactly?', 'a' => 'XPressUI Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from the client-site admin), Console Sync, specialized runtime features, automatic updates, and the license for up to 5 client sites.'],
   ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static forms. XPressUI Pro can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.'],
-  ['q' => 'Where does XPressUI Cloud fit?', 'a' => 'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, and operator review instead of running the operations layer on client sites. The Starter launch price is €19/month.'],
+  ['q' => 'Where does XPressUI Cloud fit?', 'a' => 'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud starts with Solo at €19/month, then Team and Agency for larger rollout.'],
   ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time Starter payment for use on up to 5 client sites, with updates included.'],
   ['q' => 'Who is XPressUI Pro for?', 'a' => 'XPressUI Pro is built for accounting firms and agencies that need repeatable client document intake with less back-and-forth.'],
   ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward XPressUI Cloud, higher quotas, team workspace access, and managed rollout. The current Starter offer is the fastest client-site path today.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Pro license covers up to 5 client sites, which makes it practical for client delivery and internal use.'],
   ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
+];
+
+$cloud_tiers = [
+  [
+    'name' => 'Solo',
+    'price' => '€19',
+    'period' => '/month',
+    'tag' => 'Start one workflow',
+    'body' => 'Best for a single team validating hosted intake, catalogs, files, and review before scaling.',
+    'items' => [
+      '1 workspace',
+      '100 submissions/month',
+      'Hosted workflow links',
+      'Dynamic catalogs',
+      'Console inbox and file review',
+    ],
+  ],
+  [
+    'name' => 'Team',
+    'price' => '€49',
+    'period' => '/month',
+    'tag' => 'Most useful after first signal',
+    'body' => 'Best when several workflows or operators need shared review, reusable catalogs, and basic AI assistance.',
+    'items' => [
+      '5 workspaces',
+      '500 submissions/month',
+      'Team operators and admins',
+      'Basic AI extraction/validation path',
+      'Priority email support',
+    ],
+    'featured' => true,
+  ],
+  [
+    'name' => 'Agency',
+    'price' => '€129',
+    'period' => '/month',
+    'tag' => 'For repeatable client delivery',
+    'body' => 'Best for agencies turning workflows into a reusable delivery offer across clients and verticals.',
+    'items' => [
+      'Higher workspace and submission limits',
+      'White-label rollout path',
+      'Advanced AI extraction/digest path',
+      'Template and catalog reuse',
+      'Assisted onboarding option',
+    ],
+  ],
 ];
 
 get_header();
@@ -185,7 +231,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <span class="text-5xl font-extrabold text-gray-900">€19</span>
           <span class="text-gray-500 text-sm">/month</span>
         </div>
-        <p class="text-sm text-blue-700 mb-6">Starter launch price · managed rollout</p>
+        <p class="text-sm text-blue-700 mb-6">Solo from €19/month · Team and Agency available</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             '1 workspace and 3 hosted workflows',
@@ -200,9 +246,45 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="mt-auto block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Request Cloud Starter</a>
+        <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="mt-auto block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Discuss Cloud plan</a>
       </article>
 
+    </div>
+  </section>
+
+  <!-- Cloud pricing -->
+  <section class="bg-blue-50/60 py-20 px-4 sm:px-6 lg:px-8 border-y border-blue-100">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Cloud pricing</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Choose the Cloud tier by workflow volume, not by guesswork.</h2>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Solo is enough to validate one real workflow. Team adds shared operations and basic AI assistance. Agency is the path for repeatable client delivery, white-label rollout, and higher-volume work.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <?php foreach ($cloud_tiers as $tier): $featured = !empty($tier['featured']); ?>
+        <article class="<?php echo $featured ? 'bg-gray-900 border-gray-800 text-white' : 'bg-white border-blue-100 text-gray-900'; ?> rounded-3xl border p-8 flex flex-col shadow-sm relative overflow-hidden">
+          <?php if ($featured): ?>
+          <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Recommended</div>
+          <?php endif; ?>
+          <p class="<?php echo $featured ? 'text-blue-300' : 'text-blue-600'; ?> text-sm font-bold tracking-widest uppercase mb-3"><?php echo esc_html($tier['tag']); ?></p>
+          <h3 class="text-2xl font-bold mb-4"><?php echo esc_html($tier['name']); ?></h3>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-5xl font-extrabold"><?php echo esc_html($tier['price']); ?></span>
+            <span class="<?php echo $featured ? 'text-gray-400' : 'text-gray-500'; ?> text-sm"><?php echo esc_html($tier['period']); ?></span>
+          </div>
+          <p class="<?php echo $featured ? 'text-gray-300' : 'text-gray-600'; ?> text-sm leading-relaxed mb-6"><?php echo esc_html($tier['body']); ?></p>
+          <ul class="space-y-3 flex-1">
+            <?php foreach ($tier['items'] as $item): ?>
+            <li class="<?php echo $featured ? 'text-gray-200' : 'text-gray-600'; ?> flex items-start gap-3 text-sm">
+              <svg class="h-5 w-5 <?php echo $featured ? 'text-blue-400' : 'text-blue-500'; ?> flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <?php echo esc_html($item); ?>
+            </li>
+            <?php endforeach; ?>
+          </ul>
+          <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
+            Discuss <?php echo esc_html($tier['name']); ?>
+          </a>
+        </article>
+        <?php endforeach; ?>
+      </div>
     </div>
   </section>
 
@@ -241,7 +323,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <div class="py-3 px-5 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
           <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 text-center uppercase tracking-wider">XPressUI Free</div>
           <div class="py-3 px-4 text-xs font-bold text-gray-900 border-l border-gray-100 text-center uppercase tracking-wider">XPressUI Pro</div>
-          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 text-center uppercase tracking-wider">Cloud Starter</div>
+          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 text-center uppercase tracking-wider">Cloud Solo</div>
         </div>
 
         <?php

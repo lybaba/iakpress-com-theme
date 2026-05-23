@@ -185,7 +185,7 @@ get_header(); ?>
         </div>
         <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <h3 class="text-xl font-bold mb-3 text-gray-900">Choose the right pack</h3>
-          <p class="text-gray-600">Use XPressUI Pro first, then move to XPressUI Cloud Starter from €19/month when shared operations, quotas, and review should live in Console.</p>
+          <p class="text-gray-600">Use XPressUI Pro first, then move to XPressUI Cloud from €19/month when shared operations, quotas, catalogs, and review should live in Console.</p>
         </div>
       </div>
     </div>

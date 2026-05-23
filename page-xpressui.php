@@ -55,7 +55,7 @@ $faq_items = [
   ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a workflow delivery product, built for structured onboarding, document intake, catalogs, and operator review.'],
   ['q' => 'Can I start for free?', 'a' => 'Yes. XPressUI Free includes the client-site runtime, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
   ['q' => 'What is XPressUI Pro?', 'a' => 'XPressUI Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.'],
-  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, and operator review outside a client site. Cloud Starter starts at €19/month.'],
+  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Solo starts at €19/month, Team at €49/month, and Agency at €129/month.'],
   ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
   ['q' => 'Who is it for?', 'a' => 'It fits agencies, operators, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
@@ -302,7 +302,7 @@ get_header();
           </ul>
           <a href="<?php echo esc_url($contact_url); ?>"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Request Cloud Starter →
+            Discuss Cloud plan →
           </a>
         </article>
       </div>
