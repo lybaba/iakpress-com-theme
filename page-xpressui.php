@@ -39,6 +39,13 @@ $catalog_cards = [
   ['title' => 'Members and lists', 'body' => 'Reuse member, subscriber, or client lists when a workflow needs verification or a known audience.'],
 ];
 
+$use_cases = [
+  ['title' => 'Document intake', 'body' => 'Collect files, missing information, and approvals before an operator starts review.'],
+  ['title' => 'Service requests', 'body' => 'Route one branded request form into a repeatable review path with status and follow-up.'],
+  ['title' => 'Catalog orders', 'body' => 'Let clients choose products, quantities, prices, or options without hardcoding lists in the form.'],
+  ['title' => 'Reservations', 'body' => 'Expose dates, slots, capacities, and exceptions without rebuilding the workflow every month.'],
+];
+
 $done_for_you_cards = [
   ['title' => 'Hosted workflow setup', 'price' => 'from €299 setup', 'body' => 'We configure one branded hosted workflow with operator email and a generated document summary.'],
   ['title' => 'Client-site delivery', 'price' => 'from €790 setup', 'body' => 'We install XPressUI Pro, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
@@ -108,6 +115,31 @@ get_header();
           <span class="hidden sm:inline text-gray-300">•</span>
           <span class="text-gray-500">Portal, file collection, and admin review in one flow.</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">First workflows to sell</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Start with the processes that already create manual follow-up.</h2>
+        <p class="text-gray-600 leading-relaxed">
+          XPressUI is easiest to sell when the buyer already feels the pain: missing files, outdated lists, unclear requests, or schedule changes.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <?php foreach ($use_cases as $case): ?>
+        <article class="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+          <h3 class="font-bold text-gray-900 mb-2"><?php echo esc_html($case['title']); ?></h3>
+          <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($case['body']); ?></p>
+        </article>
+        <?php endforeach; ?>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700">
+          Pick one pilot workflow
+        </a>
       </div>
     </div>
   </section>
