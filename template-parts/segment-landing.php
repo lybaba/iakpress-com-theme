@@ -113,6 +113,26 @@ get_header();
     </div>
   </section>
 
+  <section class="bg-blue-50/60 py-12 px-4 sm:px-6 lg:px-8 border-b border-blue-100">
+    <div class="max-w-6xl mx-auto rounded-3xl border border-blue-100 bg-white p-6 md:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center shadow-sm">
+      <div>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Fastest next step</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Scope one workflow before buying a full platform.</h2>
+        <p class="text-gray-600 leading-relaxed">
+          The first paid pilot turns one painful intake, catalog, reservation, or review process into a working XPressUI workflow. If it works, the same pattern becomes reusable.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 min-w-[220px]">
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700">
+          Scope a pilot
+        </a>
+        <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-6 py-3 text-sm font-bold text-blue-700 transition hover:border-blue-200 hover:bg-blue-100">
+          See agency pilot
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Use cases</p>
