@@ -74,9 +74,9 @@ get_header(); ?>
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
           Try the Live Demo
         </a>
-        <a href="/#pricing"
+        <a href="/contact/"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-200">
-          Get XPressUI Pro &rarr;
+          Discuss Cloud plan &rarr;
         </a>
       </div>
     </div>

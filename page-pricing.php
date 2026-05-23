@@ -125,7 +125,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Choose the right path: XPressUI Free, XPressUI Pro, or XPressUI Cloud.</h1>
       <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">Start with XPressUI Free on a real client site, use XPressUI Pro for production client-site delivery, or move to XPressUI Cloud when you want hosted links, Console inbox, files, quotas, and team review.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get XPressUI Pro — €129 one-time</button>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center">Discuss Cloud plan</a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download XPressUI Free</a>
       </div>
       <div class="mt-4">
@@ -164,7 +164,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         </article>
         <article class="rounded-2xl border border-gray-900 bg-gray-900 p-5 text-white shadow-sm">
           <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-2">Sell client-site delivery</p>
-          <h3 class="text-lg font-extrabold mb-2">Buy XPressUI Pro</h3>
+          <h3 class="text-lg font-extrabold mb-2">Discuss XPressUI delivery</h3>
           <p class="text-sm text-gray-300 leading-relaxed">You need to package workflows for client-owned sites and keep the operations inside the delivered site.</p>
         </article>
         <article class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
@@ -265,7 +265,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <button class="xpressui-checkout-btn mt-auto w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get XPressUI Pro — €129</button>
+        <a href="<?php echo esc_url($contact_url); ?>" class="mt-auto block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Discuss Cloud plan</a>
       </article>
 
       <article class="bg-blue-50 rounded-3xl border border-blue-100 p-8 flex flex-col">
@@ -428,35 +428,13 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use XPressUI Free today. Upgrade when your team needs repeatable intake at speed.</h2>
       <p class="text-gray-400 max-w-2xl mx-auto mb-8">If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">Get XPressUI Pro — €129 one-time</button>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center">Discuss Cloud plan</a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">Download XPressUI Free</a>
       </div>
-      <p class="text-xs text-gray-500 mt-4">30-day money-back guarantee · Secure checkout</p>
+      <p class="text-xs text-gray-500 mt-4">Direct Pro sales are temporarily paused while XPressUI Free is being validated by WordPress.org.</p>
     </div>
   </section>
 
 </div>
-
-<script>
-(function () {
-  var API = 'https://xpressui.iakpress.com';
-  document.querySelectorAll('.xpressui-checkout-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (btn.disabled) return;
-      var original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Redirecting\u2026';
-      fetch(API + '/api/v1/billing/create-public-checkout-session', { method: 'POST' })
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function (data) { window.location.href = data.checkoutUrl; })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = original;
-          alert('Unable to start checkout. Please try again or contact us at hello@iakpress.com.');
-        });
-    });
-  });
-})();
-</script>
 
 <?php get_footer(); ?>

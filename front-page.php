@@ -255,39 +255,8 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <button id="buy-pro-btn" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">Get XPressUI Pro — €129 one-time</button>
-          <script>
-            document.getElementById('buy-pro-btn').addEventListener('click', async function() {
-              try {
-                this.disabled = true;
-                this.innerText = 'Redirecting to secure checkout...';
-
-                const response = await fetch('https://xpressui.iakpress.com/api/v1/billing/create-public-checkout-session', {
-                  method: 'POST',
-                  headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                  },
-                  body: JSON.stringify({})
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(`HTTP ${response.status} - ${errorText}`);
-                }
-
-                const data = await response.json();
-                if (data.checkoutUrl) window.location.href = data.checkoutUrl;
-                else throw new Error('No checkoutUrl returned from API');
-              } catch (error) {
-                console.error('Checkout failed:', error);
-                alert(`Payment error: ${error.message}\n\n(If you see "Failed to fetch", open the browser console. It is likely a CORS issue.)`);
-                this.disabled = false;
-                this.innerText = 'Get XPressUI Pro — €129 one-time';
-              }
-            });
-          </script>
-          <p class="mt-4 text-xs text-gray-400 font-medium">Instant license delivery via email</p>
+          <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Discuss Cloud plan</a>
+          <p class="mt-4 text-xs text-gray-400 font-medium">Direct Pro sales are temporarily paused while XPressUI Free is being validated by WordPress.org.</p>
         </div>
       </div>
     </div>

@@ -169,15 +169,15 @@ get_header();
         </div>
       </div>
 
-      <!-- Get Pro CTA -->
+      <!-- Delivery discussion CTA -->
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl border border-gray-100 bg-white shadow-sm">
         <div>
           <strong class="block text-gray-900 mb-1">Ready to build a custom workflow?</strong>
-          <p class="text-sm text-gray-500 leading-relaxed">One purchase, lifetime license. 30-day money-back guarantee.</p>
+          <p class="text-sm text-gray-500 leading-relaxed">Direct Pro sales are paused while XPressUI Free is being validated by WordPress.org.</p>
         </div>
-        <a href="<?php echo esc_url(home_url('/pro/')); ?>"
+        <a href="<?php echo esc_url($contact_url); ?>"
            class="flex-shrink-0 inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition whitespace-nowrap">
-          Get Pro — €129
+          Discuss Cloud plan
         </a>
       </div>
 

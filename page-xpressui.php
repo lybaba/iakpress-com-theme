@@ -361,11 +361,11 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to clean up onboarding?</p>
       <h2 class="text-3xl font-extrabold text-white mb-4">Give your next client project a better start.</h2>
-      <p class="text-gray-400 mb-10">Start with XPressUI Free, or get XPressUI Pro if you want to build and ship portal workflows faster.</p>
+      <p class="text-gray-400 mb-10">Start with XPressUI Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url(home_url('/pro/')); ?>"
+        <a href="<?php echo esc_url($contact_url); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Get XPressUI Pro →
+          Discuss Cloud plan →
         </a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">

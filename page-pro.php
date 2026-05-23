@@ -54,9 +54,9 @@ get_header();
         XPressUI Pro is for teams that need structured outcomes, not ad hoc form submissions. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get XPressUI Pro — €129 one-time
-        </button>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+          Discuss Cloud plan
+        </a>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
           Compare plans
@@ -71,7 +71,7 @@ get_header();
       <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
         <div>
           <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Need delivery, not just a license?</p>
-          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3">Buy Pro when you want the runtime. Start a pilot when you want the first workflow delivered with you.</h2>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3">Prepare the Pro runtime path. Start a pilot when you want the first workflow delivered with you.</h2>
           <p class="text-gray-600 leading-relaxed">
             The assisted path turns one real intake, reservation, catalog order, or payment-proof workflow into a working delivery before you standardize it for more clients.
           </p>
@@ -159,9 +159,9 @@ get_header();
           <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">What is included</p>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">Everything you need to deliver portals faster.</h2>
           <p class="text-gray-500 leading-relaxed mb-6">One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, updates for your commercial add-on, and a clean upgrade path to Cloud catalogs.</p>
-          <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-            Get XPressUI Pro
-          </button>
+          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
+            Discuss Cloud plan
+          </a>
         </div>
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <?php foreach ($pro_features as $f): ?>
@@ -198,10 +198,10 @@ get_header();
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time</p>
           <div class="text-6xl font-extrabold text-gray-900 mb-1">€129</div>
           <p class="text-gray-400 text-xs mb-6">No subscription. No renewal.</p>
-          <button class="xpressui-checkout-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 disabled:opacity-50 disabled:cursor-not-allowed">
-            Get your license
-          </button>
-          <p class="mt-3 text-xs text-gray-400">Instant delivery via email</p>
+          <a href="<?php echo esc_url($contact_url); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30">
+            Discuss Cloud plan
+          </a>
+          <p class="mt-3 text-xs text-gray-400">Direct Pro sales are paused while XPressUI Free is being validated by WordPress.org.</p>
         </div>
       </div>
     </div>
@@ -229,9 +229,9 @@ get_header();
       <h2 class="text-3xl font-bold text-gray-900 mb-4">If you want cleaner onboarding, Pro is the fastest path.</h2>
       <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional workflow experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button class="xpressui-checkout-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 disabled:opacity-50 disabled:cursor-not-allowed">
-          Get XPressUI Pro — €129 one-time
-        </button>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+          Discuss Cloud plan
+        </a>
         <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
           Try the live demo
@@ -241,27 +241,5 @@ get_header();
   </section>
 
 </div>
-
-<script>
-(function () {
-  var API = 'https://xpressui.iakpress.com';
-  document.querySelectorAll('.xpressui-checkout-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (btn.disabled) return;
-      var original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Redirecting\u2026';
-      fetch(API + '/api/v1/billing/create-public-checkout-session', { method: 'POST' })
-        .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-        .then(function (data) { window.location.href = data.checkoutUrl; })
-        .catch(function () {
-          btn.disabled = false;
-          btn.textContent = original;
-          alert('Unable to start checkout. Please try again or contact us at hello@iakpress.com.');
-        });
-    });
-  });
-})();
-</script>
 
 <?php get_footer(); ?>

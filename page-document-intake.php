@@ -4,7 +4,7 @@
  */
 
 $pricing_url = home_url('/pricing/');
-$pro_url     = home_url('/pro/');
+$contact_url = home_url('/contact/');
 
 get_header(); ?>
 
@@ -68,7 +68,7 @@ get_header(); ?>
               <strong class="text-gray-900">What to notice:</strong>
               the portal stays focused, structured, and easy to complete — exactly what you want when clients are sending critical documents.
             </div>
-            <a href="<?php echo esc_url($pro_url); ?>" class="inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition whitespace-nowrap shrink-0">Get Pro</a>
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center px-6 py-3 text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition whitespace-nowrap shrink-0">Discuss Cloud plan</a>
           </div>
         </div>
       </div>
