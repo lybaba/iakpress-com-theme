@@ -91,10 +91,28 @@ get_header();
           <p class="text-sm font-bold text-blue-600 mb-2"><?php echo esc_html($offer['price']); ?></p>
           <h3 class="text-xl font-bold text-gray-900 mb-3"><?php echo esc_html($offer['title']); ?></h3>
           <p class="text-gray-600 leading-relaxed mb-5"><?php echo esc_html($offer['body']); ?></p>
-          <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($offer['fit']); ?></p>
+          <p class="text-sm text-gray-500 leading-relaxed mb-5"><?php echo esc_html($offer['fit']); ?></p>
+          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
+            Scope this option
+          </a>
         </article>
         <?php endforeach; ?>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 px-4 sm:px-6 lg:px-8 border-y border-gray-100">
+    <div class="max-w-5xl mx-auto rounded-3xl bg-blue-50 border border-blue-100 p-6 md:p-8 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Best first message</p>
+        <h2 class="text-2xl font-extrabold text-gray-900 mb-2">Send the messy workflow, not a polished spec.</h2>
+        <p class="text-gray-600 leading-relaxed">
+          A short description plus a form, spreadsheet, screenshot, or document link is enough to estimate whether the first pilot should be hosted or client-site.
+        </p>
+      </div>
+      <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+        Send the workflow
+      </a>
     </div>
   </section>
 
