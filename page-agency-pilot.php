@@ -35,6 +35,13 @@ $steps = [
   ['title' => 'Turn it into a repeatable pack', 'body' => 'The working flow becomes a reusable delivery pattern for future clients.'],
 ];
 
+$deliverables = [
+  ['title' => 'Hosted workflow link', 'body' => 'A private link you can send to one client or embed on the commercial page while the process is validated.'],
+  ['title' => 'Operator inbox path', 'body' => 'Submissions arrive with enough context for review, follow-up, payment proof, or completion.'],
+  ['title' => 'Reusable catalog surface', 'body' => 'Products, services, dates, members, or options are separated from the form so the workflow can scale.'],
+  ['title' => 'Client-site delivery option', 'body' => 'If the workflow belongs on a client site, the pilot defines the XPressUI Pro delivery path and handoff.'],
+];
+
 $qualifiers = [
   'You already build or maintain client sites or workflow-heavy service pages.',
   'A client workflow currently runs through email, spreadsheets, or static forms.',
@@ -99,6 +106,29 @@ get_header();
               Scope this option
             </a>
           </div>
+        </article>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-y border-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+      <div>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pilot output</p>
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-4">A paid pilot should leave you with a working asset, not a slide deck.</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          The first workflow is scoped small enough to launch, but structured so it can become a repeatable offer for the next client.
+        </p>
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+          Scope the first workflow
+        </a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <?php foreach ($deliverables as $deliverable): ?>
+        <article class="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+          <h3 class="text-lg font-bold text-gray-900 mb-2"><?php echo esc_html($deliverable['title']); ?></h3>
+          <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($deliverable['body']); ?></p>
         </article>
         <?php endforeach; ?>
       </div>
