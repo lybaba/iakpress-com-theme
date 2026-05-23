@@ -12,22 +12,38 @@ get_header(); ?>
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Contact</p>
       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
-        Need help deciding, installing,<br class="hidden md:block"/> or tailoring the workflow?
+        Launch one workflow first.<br class="hidden md:block"/> Then decide what should scale.
       </h1>
       <p class="text-gray-500 leading-relaxed">
-        Tell us which workflow you want to launch first and we'll get back to you within 1–2 business days. For client-site delivery, include the site URL, platform, and active theme if relevant.
+        Tell us what arrives today, who reviews it, and where the result should be delivered. We'll reply within 1-2 business days with a concrete first-workflow path.
       </p>
     </div>
   </section>
 
   <!-- Form -->
   <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-6 rounded-2xl border border-blue-100 bg-blue-50 p-5">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">Best first message</p>
-        <p class="text-sm text-gray-700 leading-relaxed">Share one painful workflow, who reviews it, how users submit today, and whether you want a hosted link or client-site delivery.</p>
+    <div class="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-start">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">What happens next</p>
+        <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-4">A small pilot, not a vague discovery call.</h2>
+        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+          <div class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+            <p><strong class="text-gray-900">You describe one workflow.</strong> Documents, reservations, catalog orders, payment proofs, or another recurring intake.</p>
+          </div>
+          <div class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+            <p><strong class="text-gray-900">We suggest the delivery path.</strong> Hosted link first, or client-site delivery when the workflow must live on an existing site.</p>
+          </div>
+          <div class="flex gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+            <p><strong class="text-gray-900">You get a scoped next step.</strong> Paid assisted pilots start from 299 EUR. Client-site delivery starts from 790 EUR.</p>
+          </div>
+        </div>
       </div>
-      <?php the_content(); ?>
+      <div class="min-w-0">
+        <?php the_content(); ?>
+      </div>
     </div>
   </section>
 

@@ -28,6 +28,34 @@
     .form-shell { padding: 0; }
     .template-runtime-shell { display: grid; gap: 20px; }
     .template-section { display: grid; gap: 16px; }
+    .template-brief {
+      display: grid;
+      gap: 8px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+    .template-brief-kicker {
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .template-brief-title {
+      margin: 0;
+      color: var(--template-text);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+    .template-brief-copy {
+      margin: 0;
+      color: var(--template-muted-text);
+      font-size: 13px;
+      line-height: 1.5;
+    }
     .template-fields { display: flex; flex-direction: column; gap: 14px; width: 100%; }
     .template-fields--two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
     @media (max-width: 520px) { .template-fields--two-col { grid-template-columns: 1fr; } }
@@ -59,6 +87,12 @@
       box-shadow: 0 0 0 3px rgba(5,150,105,0.12);
     }
     .template-textarea { min-height: 140px; resize: vertical; }
+    .template-help {
+      margin: 0;
+      color: #64748b;
+      font-size: 12px;
+      line-height: 1.45;
+    }
     .template-input.is-error,
     .template-textarea.is-error,
     .template-select.is-error {
@@ -99,6 +133,17 @@
     }
     .template-submit-btn:hover { transform: translateY(-1px); opacity: 0.92; }
     .template-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .template-pilot-note {
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--template-border);
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .template-pilot-note strong { color: var(--template-text); }
     .fallback-email {
       margin-top: 12px;
       font-size: 13px;
@@ -114,6 +159,12 @@
       class="template-runtime-shell"
       novalidate
     >
+      <div class="template-brief">
+        <div class="template-brief-kicker">Workflow brief</div>
+        <p class="template-brief-title">Start with one real process.</p>
+        <p class="template-brief-copy">A clear first brief helps us reply with the fastest hosted or client-site delivery path.</p>
+      </div>
+
       <div class="template-section">
         <div class="template-fields--two-col">
           <div class="template-field">
@@ -149,31 +200,65 @@
           </div>
         </div>
 
+        <div class="template-fields--two-col">
+          <div class="template-field">
+            <label class="template-field-label" for="field-workflow">
+              Workflow to launch <span class="template-required" aria-hidden="true">*</span>
+            </label>
+            <select id="field-workflow" class="template-select" name="workflow" required>
+              <option value="">Choose a workflow</option>
+              <option>Document intake</option>
+              <option>Catalog or order workflow</option>
+              <option>Reservation or booking</option>
+              <option>Payment proof review</option>
+              <option>Operator review workflow</option>
+              <option>Other workflow</option>
+            </select>
+            <div class="template-field-message is-error" id="error-workflow" role="alert" style="display:none;"></div>
+          </div>
+
+          <div class="template-field">
+            <label class="template-field-label" for="field-delivery">Preferred delivery</label>
+            <select id="field-delivery" class="template-select" name="delivery">
+              <option>Not sure yet</option>
+              <option>Hosted workflow link</option>
+              <option>Client-site delivery</option>
+              <option>WordPress / existing website</option>
+            </select>
+            <p class="template-help">Pick "Not sure yet" if you want us to recommend the path.</p>
+          </div>
+        </div>
+
         <div class="template-field">
-          <label class="template-field-label" for="field-subject">Subject</label>
-          <select id="field-subject" class="template-select" name="subject">
-            <option>Pre-sales question</option>
-            <option>Installation help</option>
-            <option>Custom setup request</option>
-            <option>Bug report</option>
-            <option>Other</option>
+          <label class="template-field-label" for="field-current-process">How does it run today?</label>
+          <select id="field-current-process" class="template-select" name="current_process">
+            <option>Email and attachments</option>
+            <option>WhatsApp or direct messages</option>
+            <option>Spreadsheet tracking</option>
+            <option>Static form with manual follow-up</option>
+            <option>Existing website form</option>
+            <option>Other manual process</option>
           </select>
         </div>
 
         <div class="template-field">
           <label class="template-field-label" for="field-message">
-            Message <span class="template-required" aria-hidden="true">*</span>
+            What should this workflow do first? <span class="template-required" aria-hidden="true">*</span>
           </label>
           <textarea
             id="field-message"
             class="template-textarea"
             name="message"
-            placeholder="Describe your setup or question..."
+            placeholder="Example: clients send three documents by email, our team checks missing files manually, then we need a clean status email and a private submission link."
             required
           ></textarea>
           <div class="template-field-message is-error" id="error-message" role="alert" style="display:none;"></div>
         </div>
       </div>
+
+      <p class="template-pilot-note">
+        <strong>Good first scope:</strong> one intake, one reviewer path, one delivery target. Paid assisted pilots start from 299 EUR.
+      </p>
 
       <div class="template-submit-feedback" id="submit-feedback" role="status" aria-live="polite">
         <div class="template-submit-feedback-title" id="feedback-title">Status</div>
@@ -202,11 +287,14 @@
 
     const fieldName = document.getElementById('field-name');
     const fieldEmail = document.getElementById('field-email');
-    const fieldSubject = document.getElementById('field-subject');
+    const fieldWorkflow = document.getElementById('field-workflow');
+    const fieldDelivery = document.getElementById('field-delivery');
+    const fieldCurrentProcess = document.getElementById('field-current-process');
     const fieldMessage = document.getElementById('field-message');
 
     const errorName = document.getElementById('error-name');
     const errorEmail = document.getElementById('error-email');
+    const errorWorkflow = document.getElementById('error-workflow');
     const errorMessage = document.getElementById('error-message');
 
     const setFeedback = (state, title, message) => {
@@ -231,6 +319,7 @@
       let valid = true;
       clearError(fieldName, errorName);
       clearError(fieldEmail, errorEmail);
+      clearError(fieldWorkflow, errorWorkflow);
       clearError(fieldMessage, errorMessage);
 
       if (!fieldName.value.trim()) {
@@ -242,11 +331,25 @@
         showError(fieldEmail, errorEmail, 'Valid email is required.');
         valid = false;
       }
+      if (!fieldWorkflow.value.trim()) {
+        showError(fieldWorkflow, errorWorkflow, 'Choose the workflow you want to launch first.');
+        valid = false;
+      }
       if (!fieldMessage.value.trim()) {
-        showError(fieldMessage, errorMessage, 'Message is required.');
+        showError(fieldMessage, errorMessage, 'Share the current process and what should happen next.');
         valid = false;
       }
       return valid;
+    };
+
+    const buildMessage = () => {
+      return [
+        `Workflow to launch: ${fieldWorkflow.value}`,
+        `Preferred delivery: ${fieldDelivery.value}`,
+        `Current process: ${fieldCurrentProcess.value}`,
+        '',
+        fieldMessage.value.trim(),
+      ].join('\n');
     };
 
     const notifyHeight = () => {
@@ -275,8 +378,8 @@
           body: JSON.stringify({
             name: fieldName.value.trim(),
             email: fieldEmail.value.trim(),
-            subject: fieldSubject.value,
-            message: fieldMessage.value.trim(),
+            subject: `${fieldWorkflow.value} - ${fieldDelivery.value}`,
+            message: buildMessage(),
           }),
         });
 
