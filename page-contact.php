@@ -70,6 +70,15 @@ get_header(); ?>
                 Open in new tab →
               </a>
             </div>
+            <div class="border-b border-blue-100 bg-blue-50/70 p-4">
+              <p class="mb-3 text-xs font-bold uppercase tracking-widest text-blue-600">Useful context to include</p>
+              <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Current form or spreadsheet</strong><br>Paste a shared file link.</div>
+                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Sample document</strong><br>Invoice, request, proof, or screenshot.</div>
+                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Review owner</strong><br>Who checks and approves today.</div>
+                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Delivery target</strong><br>Hosted link or client-site page.</div>
+              </div>
+            </div>
             <div
               data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
               data-xpressui-embed-title="XPressUI workflow request"
