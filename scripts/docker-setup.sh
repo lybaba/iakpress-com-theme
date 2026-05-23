@@ -90,6 +90,15 @@ create_page "Contact"             "contact"            "page-contact.php"
 create_page "Blog"                "blog"               "default"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"
 
+if [ -n "$XPRESSUI_CONTACT_HOSTED_LINK_URL" ]; then
+  CONTACT_ID=$(wp --allow-root post list --path="$WP" \
+    --post_type=page --post_name=contact --field=ID 2>/dev/null | head -1)
+  if [ -n "$CONTACT_ID" ]; then
+    wp --allow-root post meta update --path="$WP" "$CONTACT_ID" xpressui_contact_hosted_link_url "$XPRESSUI_CONTACT_HOSTED_LINK_URL" 2>/dev/null
+    echo "   Contact hosted link URL configured from XPRESSUI_CONTACT_HOSTED_LINK_URL."
+  fi
+fi
+
 # ── 7. Set home as static front page ─────────────────────────────────────────
 echo "==> Setting home as static front page..."
 FRONT_ID=$(wp --allow-root post list --path="$WP" \
