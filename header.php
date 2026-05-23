@@ -42,7 +42,6 @@
         <a href="/xpressui-cloud/" class="<?php echo is_page('xpressui-cloud') ? $nav_active : $nav_idle; ?>">XPressUI Cloud</a>
         <a href="/pricing/" class="<?php echo is_page('pricing') ? $nav_active : $nav_idle; ?>">Pricing</a>
         <a href="/install/" class="<?php echo is_page('install') ? $nav_active : $nav_idle; ?>">Install</a>
-        <a href="/services/" class="<?php echo is_page('services') ? $nav_active : $nav_idle; ?>">Services</a>
         <a href="/blog/" class="<?php echo ( is_home() && ! is_front_page() ) || is_singular('post') || is_category() || is_tag() ? $nav_active : $nav_idle; ?>">Blog</a>
       </nav>
 

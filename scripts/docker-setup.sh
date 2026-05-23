@@ -86,7 +86,6 @@ create_page "For Accountants"     "for-accountants"    "page-for-accountants.php
 create_page "For Agencies"        "for-agencies"       "page-for-agencies.php"
 create_page "For Operations"      "for-operations"     "page-for-operations.php"
 create_page "Install"             "install"            "page-install.php"
-create_page "Services"            "services"           "page-services.php"
 create_page "Contact"             "contact"            "page-contact.php"
 create_page "Blog"                "blog"               "default"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"

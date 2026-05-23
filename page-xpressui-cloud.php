@@ -62,9 +62,27 @@ get_header();
         XPressUI Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites.
         XPressUI hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
       </p>
-      <div class="mb-10 bg-blue-50 border border-blue-100 rounded-3xl p-6 max-w-2xl mx-auto">
-        <p class="text-sm font-semibold text-gray-700 mb-2">Starts at €19/month for Solo.</p>
-        <p class="text-sm text-gray-600">Move to Team at €49/month for shared operations, or Agency at €129/month when workflows become a repeatable client delivery product.</p>
+      <div class="mb-10 max-w-3xl mx-auto rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-4 sm:p-5 shadow-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+          <div class="rounded-2xl bg-white border border-blue-100 p-4">
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Solo</p>
+            <p class="text-2xl font-extrabold text-gray-900">€19<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">Prove one hosted workflow.</p>
+          </div>
+          <div class="rounded-2xl bg-gray-900 border border-gray-800 p-4 text-white shadow-md shadow-blue-900/10">
+            <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-1">Team</p>
+            <p class="text-2xl font-extrabold">€49<span class="text-sm font-semibold text-gray-300">/mo</span></p>
+            <p class="text-xs text-gray-300 mt-1">Run shared operations.</p>
+          </div>
+          <div class="rounded-2xl bg-white border border-blue-100 p-4">
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Agency</p>
+            <p class="text-2xl font-extrabold text-gray-900">€129<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">Repeat delivery for clients.</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          Start with the smallest plan that proves the workflow, then upgrade when catalogs, inbox review, and operators become part of the daily process.
+        </p>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
