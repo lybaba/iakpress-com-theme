@@ -6,6 +6,8 @@
 
 $github_release = 'https://github.com/lybaba/xpressui-packages/releases/latest';
 $console_url    = 'https://xpressui.iakpress.com/console/';
+$contact_url    = home_url('/contact/');
+$agency_url     = home_url('/agency-pilot/');
 
 $free_steps = [
   [
@@ -134,6 +136,36 @@ get_header();
             </div>
           </article>
           <?php endforeach; ?>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-8 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+          <div>
+            <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Assisted launch</p>
+            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-3">Want one workflow live before learning every install step?</h2>
+            <p class="text-gray-600 leading-relaxed mb-5">
+              Send the workflow, the current files or form, and where the result should be delivered. We scope the fastest path: hosted link first, or client-site delivery when the workflow must live on an existing site.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="<?php echo esc_url($contact_url); ?>"
+                 class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition shadow-lg shadow-blue-500/20">
+                Scope the first workflow
+              </a>
+              <a href="<?php echo esc_url($agency_url); ?>"
+                 class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
+                See assisted pilot
+              </a>
+            </div>
+          </div>
+          <div class="rounded-2xl border border-blue-100 bg-white p-5 shadow-sm">
+            <p class="text-xs font-bold tracking-widest text-gray-500 uppercase mb-3">Best first message</p>
+            <ul class="space-y-3 text-sm text-gray-600">
+              <li><strong class="text-gray-900">1 workflow:</strong> what arrives today and who reviews it.</li>
+              <li><strong class="text-gray-900">1 destination:</strong> hosted link or client-site page.</li>
+              <li><strong class="text-gray-900">1 sample:</strong> form, spreadsheet, screenshot, or document.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
