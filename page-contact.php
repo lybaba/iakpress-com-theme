@@ -146,15 +146,6 @@ get_header(); ?>
       </div>
       <div class="min-w-0 lg:-mt-4">
         <?php if ($has_contact_embed): ?>
-          <div class="mb-2 flex flex-col gap-2 px-1 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">Workflow request</p>
-              <p class="text-sm text-gray-500">3 short steps. Add context only when it helps.</p>
-            </div>
-            <a href="<?php echo esc_url($contact_public_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-300 transition">
-              Open in new tab →
-            </a>
-          </div>
           <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-blue-900/10">
             <div
               data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
