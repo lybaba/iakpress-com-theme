@@ -18,19 +18,19 @@ if (!function_exists('iakpress_normalize_contact_hosted_link_url')) {
   }
 }
 
-if (!function_exists('iakpress_contact_hosted_link_embed_url')) {
-  function iakpress_contact_hosted_link_embed_url($url) {
+if (!function_exists('iakpress_contact_hosted_link_start_url')) {
+  function iakpress_contact_hosted_link_start_url($url) {
     $normalized_url = iakpress_normalize_contact_hosted_link_url($url);
     if ($normalized_url === '') {
       return '';
     }
 
     if (function_exists('add_query_arg')) {
-      return esc_url_raw(add_query_arg('embed', '1', $normalized_url));
+      return esc_url_raw(add_query_arg('start', '1', $normalized_url));
     }
 
     $separator = strpos($normalized_url, '?') === false ? '?' : '&';
-    return esc_url_raw($normalized_url . $separator . 'embed=1');
+    return esc_url_raw($normalized_url . $separator . 'start=1');
   }
 }
 
@@ -103,8 +103,8 @@ if ($contact_public_url === '' && defined('XPRESSUI_CONTACT_HOSTED_LINK_URL')) {
 }
 $contact_public_url = apply_filters('xpressui_contact_hosted_link_url', $contact_public_url);
 $contact_public_url = iakpress_normalize_contact_hosted_link_url($contact_public_url);
-$contact_embed_url = iakpress_contact_hosted_link_embed_url($contact_public_url);
-$has_contact_embed = $contact_embed_url !== '';
+$contact_launch_url = iakpress_contact_hosted_link_start_url($contact_public_url);
+$has_contact_embed = $contact_launch_url !== '';
 
 get_header(); ?>
 
@@ -146,25 +146,21 @@ get_header(); ?>
       </div>
       <div class="min-w-0">
         <?php if ($has_contact_embed): ?>
-          <div class="max-w-3xl mx-auto">
-            <div
-              data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
-              data-xpressui-embed-title="XPressUI workflow request"
-              data-xpressui-embed-min-height="220"
-              data-xpressui-embed-resize-floor="180"
-              data-xpressui-embed-resize-buffer="8"
-              data-xpressui-embed-launch-height="220"
-              data-xpressui-embed-loading="eager"
-              data-xpressui-embed-placeholder-title="Describe your first workflow"
-              data-xpressui-embed-placeholder-cta="Start the brief"
-            ></div>
-            <noscript>
-              <div class="p-4 text-sm text-gray-600">
-                JavaScript is required to show the embedded workflow.
-                <a href="<?php echo esc_url($contact_public_url); ?>" class="font-bold text-blue-600">Open the workflow in a new tab</a>.
-              </div>
-            </noscript>
-          </div>
+          <a
+            href="<?php echo esc_url($contact_launch_url); ?>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mx-auto grid min-h-[220px] max-w-3xl place-items-center rounded-[26px] border border-gray-200 bg-white px-8 py-10 text-center shadow-2xl shadow-slate-900/10 transition duration-150 hover:-translate-y-0.5 hover:shadow-slate-900/15 focus:outline-none focus:ring-4 focus:ring-blue-200"
+          >
+            <span class="block">
+              <span class="block text-[clamp(28px,3.2vw,36px)] font-black leading-tight tracking-tight text-gray-950">
+                Describe your first workflow
+              </span>
+              <span class="mt-5 inline-flex items-center justify-center rounded-xl bg-gray-950 px-7 py-3 text-sm font-extrabold text-white shadow-xl shadow-slate-900/20">
+                Start the brief
+              </span>
+            </span>
+          </a>
         <?php else: ?>
           <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-900/10">
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Hosted link missing</p>
