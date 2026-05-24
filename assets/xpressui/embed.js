@@ -49,7 +49,19 @@
     iframe.style.height = initialHeight + 'px';
     iframe.style.minHeight = resizeFloor + 'px';
     iframe.style.border = '0';
-    iframe.style.background = '#fff';
+    iframe.style.background = 'transparent';
+    iframe.style.opacity = '0';
+    iframe.style.transition = 'opacity 160ms ease';
+
+    container.style.minHeight = initialHeight + 'px';
+
+    iframe.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (iframe.dataset.xpressuiEmbedMeasured !== 'true') {
+          iframe.style.opacity = '1';
+        }
+      }, 180);
+    });
 
     container.dataset.xpressuiEmbedReady = 'true';
     container.innerHTML = '';
@@ -89,6 +101,11 @@
         frame.style.height = resizedHeight + 'px';
         frame.style.minHeight = (isLaunch ? Math.min(resizeFloor, resizedHeight) : resizeFloor) + 'px';
         frame.style.overflow = 'hidden';
+        frame.style.opacity = '1';
+        frame.dataset.xpressuiEmbedMeasured = 'true';
+        if (frame.parentElement) {
+          frame.parentElement.style.minHeight = resizedHeight + 'px';
+        }
       }
     });
   }

@@ -146,14 +146,14 @@ get_header(); ?>
       </div>
       <div class="min-w-0">
         <?php if ($has_contact_embed): ?>
-          <div class="max-w-3xl mx-auto overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-blue-900/10">
+          <div class="max-w-3xl mx-auto">
             <div
               data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
               data-xpressui-embed-title="XPressUI workflow request"
-              data-xpressui-embed-min-height="420"
-              data-xpressui-embed-resize-floor="260"
+              data-xpressui-embed-min-height="220"
+              data-xpressui-embed-resize-floor="180"
               data-xpressui-embed-resize-buffer="8"
-              data-xpressui-embed-launch-height="340"
+              data-xpressui-embed-launch-height="220"
               data-xpressui-embed-loading="eager"
             ></div>
             <noscript>
