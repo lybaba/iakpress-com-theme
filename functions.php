@@ -187,7 +187,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Public entry' => 'Entrée publique',
         'Operations inbox' => 'Inbox opérationnelle',
         'Files and quotas' => 'Fichiers et quotas',
-        'Cloud starts at €19/month' => 'Cloud commence à 19 €/mois',
+        'Cloud starts at €19/month' => 'Cloud commence à 19€ /mois',
         'Use XPressUI Cloud when the workflow needs shared operations, not another site admin.' => 'Utilisez XPressUI Cloud quand le workflow a besoin d’opérations partagées, pas d’un autre admin de site.',
 
         'Install guide' => 'Guide d’installation',
