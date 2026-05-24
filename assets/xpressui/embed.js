@@ -26,6 +26,9 @@
     }
 
     var minHeight = toPositiveNumber(container.getAttribute('data-xpressui-embed-min-height'), 720);
+    var resizeFloor = toPositiveNumber(container.getAttribute('data-xpressui-embed-resize-floor'), 520);
+    var resizeBuffer = toPositiveNumber(container.getAttribute('data-xpressui-embed-resize-buffer'), 96);
+    resizeFloor = Math.min(resizeFloor, minHeight);
     var title = container.getAttribute('data-xpressui-embed-title') || 'XPressUI hosted workflow';
     var iframe = document.createElement('iframe');
 
@@ -34,10 +37,12 @@
     iframe.loading = container.getAttribute('data-xpressui-embed-loading') || 'eager';
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
     iframe.setAttribute('data-xpressui-embed-frame', String(index));
+    iframe.setAttribute('data-xpressui-embed-resize-floor', String(resizeFloor));
+    iframe.setAttribute('data-xpressui-embed-resize-buffer', String(resizeBuffer));
     iframe.style.display = 'block';
     iframe.style.width = '100%';
     iframe.style.height = minHeight + 'px';
-    iframe.style.minHeight = minHeight + 'px';
+    iframe.style.minHeight = resizeFloor + 'px';
     iframe.style.border = '0';
     iframe.style.background = '#fff';
 
@@ -56,21 +61,27 @@
     var isHeightMessage =
       data &&
       typeof data === 'object' &&
-      (data.type === 'xpressui-embed-height' || data.type === 'xpressui-contact-height');
+      (data.type === 'xpressui-embed-height' ||
+        data.type === 'xpressui-contact-height' ||
+        data.type === 'xpressui:resize');
 
     if (!isHeightMessage) {
       return;
     }
 
     var height = toPositiveNumber(data.height, 0);
-    if (height < 240) {
+    if (height < 180) {
       return;
     }
 
     var frames = Array.prototype.slice.call(document.querySelectorAll('iframe[data-xpressui-embed-frame]'));
     frames.forEach(function (frame) {
       if (event.source === frame.contentWindow) {
-        frame.style.height = Math.ceil(height) + 'px';
+        var resizeFloor = toPositiveNumber(frame.getAttribute('data-xpressui-embed-resize-floor'), 520);
+        var resizeBuffer = toPositiveNumber(frame.getAttribute('data-xpressui-embed-resize-buffer'), 96);
+        var resizedHeight = Math.max(resizeFloor, Math.ceil(height + resizeBuffer));
+        frame.style.height = resizedHeight + 'px';
+        frame.style.minHeight = resizeFloor + 'px';
       }
     });
   }

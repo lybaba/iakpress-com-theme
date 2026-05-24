@@ -111,68 +111,57 @@ get_header(); ?>
 <div class="font-sans text-gray-900 antialiased">
 
   <!-- Hero -->
-  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-    <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Contact</p>
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">
+  <section class="bg-white py-4 px-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Contact</p>
+      <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-3 sm:text-4xl">
         Launch one workflow first.<br class="hidden md:block"/> Then decide what should scale.
       </h1>
-      <p class="text-gray-500 leading-relaxed">
+      <p class="text-base text-gray-500 leading-relaxed">
         Tell us what arrives today, who reviews it, and where the result should be delivered. We'll reply within 1-2 business days with a concrete first-workflow path.
       </p>
     </div>
   </section>
 
   <!-- Form -->
-  <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-start">
-      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">What happens next</p>
-        <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-4">A small pilot, not a vague discovery call.</h2>
-        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+  <section class="bg-gray-50 px-4 pb-8 pt-3 sm:px-6 lg:px-8 lg:pt-4">
+    <div class="max-w-7xl mx-auto grid gap-4 lg:grid-cols-[0.32fr_1.68fr] items-start">
+      <div class="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm lg:sticky lg:top-20">
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">What happens next</p>
+        <h2 class="text-lg font-extrabold tracking-tight text-gray-900 mb-2">A small pilot, not a vague discovery call.</h2>
+        <div class="space-y-2 text-sm text-gray-600 leading-relaxed">
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
             <p><strong class="text-gray-900">You describe one workflow.</strong> Documents, reservations, catalog orders, payment proofs, or another recurring intake.</p>
           </div>
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">You can share context.</strong> Add a form, spreadsheet, screenshot, or process document link if it helps explain the workflow.</p>
+            <p><strong class="text-gray-900">You can share context.</strong> Add a form, screenshot, spreadsheet, or process link if it helps.</p>
           </div>
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">We suggest the delivery path.</strong> Hosted link first, or client-site delivery when the workflow must live on an existing site.</p>
-          </div>
-          <div class="flex gap-3">
-            <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">You get a scoped next step.</strong> Paid assisted pilots start from 299 EUR. Client-site delivery starts from 790 EUR.</p>
+            <p><strong class="text-gray-900">You get a scoped next step.</strong> We recommend a delivery path and price the first step clearly.</p>
           </div>
         </div>
       </div>
-      <div class="min-w-0">
+      <div class="min-w-0 lg:-mt-4">
         <?php if ($has_contact_embed): ?>
+          <div class="mb-2 flex flex-col gap-2 px-1 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">Workflow request</p>
+              <p class="text-sm text-gray-500">3 short steps. Add context only when it helps.</p>
+            </div>
+            <a href="<?php echo esc_url($contact_public_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-300 transition">
+              Open in new tab →
+            </a>
+          </div>
           <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-blue-900/10">
-            <div class="flex flex-col gap-3 border-b border-gray-100 bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">XPressUI hosted workflow</p>
-                <p class="text-sm text-gray-500">Embedded like Calendly. Submissions land in the XPressUI inbox.</p>
-              </div>
-              <a href="<?php echo esc_url($contact_public_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-300 transition">
-                Open in new tab →
-              </a>
-            </div>
-            <div class="border-b border-blue-100 bg-blue-50/70 p-4">
-              <p class="mb-3 text-xs font-bold uppercase tracking-widest text-blue-600">Useful context to include</p>
-              <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Current form or spreadsheet</strong><br>Paste a shared file link.</div>
-                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Sample document</strong><br>Invoice, request, proof, or screenshot.</div>
-                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Review owner</strong><br>Who checks and approves today.</div>
-                <div class="rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm text-gray-700"><strong class="text-gray-900">Delivery target</strong><br>Hosted link or client-site page.</div>
-              </div>
-            </div>
             <div
               data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
               data-xpressui-embed-title="XPressUI workflow request"
-              data-xpressui-embed-min-height="860"
+              data-xpressui-embed-min-height="620"
+              data-xpressui-embed-resize-floor="360"
+              data-xpressui-embed-resize-buffer="18"
               data-xpressui-embed-loading="eager"
             ></div>
             <noscript>
