@@ -5,7 +5,7 @@
 
 if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
   function iakpress_extract_contact_hosted_link_url_from_content($content) {
-    if (!is_string($content) || trim($content) === '' || !function_exists('shortcode_parse_atts')) {
+    if (!is_string($content) || trim($content) === '') {
       return '';
     }
 
@@ -14,16 +14,31 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
     }
 
     foreach ($matches[1] as $attribute_text) {
-      $attributes = shortcode_parse_atts($attribute_text);
-      if (!is_array($attributes)) {
-        continue;
+      $candidate = '';
+      if (function_exists('shortcode_parse_atts')) {
+        $attributes = shortcode_parse_atts($attribute_text);
+        if (is_array($attributes)) {
+          if (isset($attributes['xpressui_contact_hosted_link_url'])) {
+            $candidate = (string) $attributes['xpressui_contact_hosted_link_url'];
+          } elseif (isset($attributes['hosted_link_url'])) {
+            $candidate = (string) $attributes['hosted_link_url'];
+          }
+        }
       }
 
-      $candidate = '';
-      if (isset($attributes['xpressui_contact_hosted_link_url'])) {
-        $candidate = (string) $attributes['xpressui_contact_hosted_link_url'];
-      } elseif (isset($attributes['hosted_link_url'])) {
-        $candidate = (string) $attributes['hosted_link_url'];
+      if ($candidate === '') {
+        $attribute_names = array('xpressui_contact_hosted_link_url', 'hosted_link_url');
+        foreach ($attribute_names as $attribute_name) {
+          $pattern = '/(?:^|\s)' . preg_quote($attribute_name, '/') . '\s*=\s*([\'"])(.*?)\1/i';
+          if (preg_match($pattern, $attribute_text, $attribute_match)) {
+            $candidate = (string) $attribute_match[2];
+            break;
+          }
+        }
+      }
+
+      if ($candidate === '' && preg_match('/https?:\/\/[^\s\'"]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+/i', $attribute_text, $url_match)) {
+        $candidate = (string) $url_match[0];
       }
 
       $candidate = trim($candidate);
