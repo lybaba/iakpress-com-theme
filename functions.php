@@ -50,6 +50,7 @@ function iakpress_language_path_map(): array {
         'pricing' => 'fr/pricing',
         'install' => 'fr/install',
         'contact' => 'fr/contact',
+        'agency-pilot' => 'fr/agency-pilot',
     );
 }
 
@@ -509,6 +510,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Pro runtime.' => 'Passez à Pro quand vous voulez les champs avancés, Customize Workflow dans l’admin du site client, Console Sync direct, les mises à jour commerciales et le runtime Pro complet.',
         'Who is it for?' => 'À qui s’adresse XPressUI ?',
         'It fits agencies, operators, and service teams that repeatedly collect client files, briefs, and onboarding information.' => 'C’est adapté aux agences, opérateurs et équipes de service qui collectent régulièrement fichiers client, briefs et informations d’onboarding.',
+        'Ready to launch your first intake portal?' => 'Prêt à lancer votre premier portail d’intake ?',
         'Ready to clean up onboarding?' => 'Prêt à clarifier l’onboarding ?',
         'Give your next client project a better start.' => 'Donnez un meilleur départ à votre prochain projet client.',
         'Start with XPressUI Free, then discuss the hosted or client-site path once the first workflow is clear.' => 'Commencez avec XPressUI Free, puis discutez du chemin hébergé ou site client une fois le premier workflow clarifié.',
@@ -573,6 +575,7 @@ function iakpress_render_french_routes(): void {
         'fr/pricing' => 'page-pricing.php',
         'fr/install' => 'page-install.php',
         'fr/contact' => 'page-contact.php',
+        'fr/agency-pilot' => 'page-agency-pilot.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
