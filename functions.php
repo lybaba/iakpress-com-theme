@@ -131,6 +131,7 @@ add_action( 'template_redirect', 'iakpress_redirect_to_persistent_language', -10
 function iakpress_translate_french_output( string $html ): string {
     $translations = array(
         'Open Console' => 'Ouvrir la console',
+        'Switch to English' => 'Passer en anglais',
         'Try live intake' => "Tester l'intake",
         'Try intake' => 'Tester',
         'Pricing' => 'Tarifs',
@@ -281,6 +282,9 @@ function iakpress_translate_french_output( string $html ): string {
         'Discuss Solo' => 'Discuter de Solo',
         'Discuss Team' => 'Discuter de Team',
         'Discuss Agency' => 'Discuter d’Agency',
+        'Priority email support' => 'Support email prioritaire',
+        '500/mo' => '500/mois',
+        'N/A' => 'N/A',
         'Why teams upgrade' => 'Pourquoi les équipes passent à la suite',
         'XPressUI Pro is for running repeatable intake outcomes, not just publishing one form.' => 'XPressUI Pro sert à produire des résultats d’intake répétables, pas seulement à publier un formulaire.',
         'Save time' => 'Gagner du temps',
