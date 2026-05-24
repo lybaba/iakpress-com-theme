@@ -156,12 +156,72 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
   }
 }
 
+$is_french_contact = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_page_id = function_exists('get_the_ID') ? (int) get_the_ID() : 0;
 $contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
+if ($is_french_contact && function_exists('get_page_by_path')) {
+  $source_contact_page = get_page_by_path('contact');
+  if ($source_contact_page instanceof WP_Post) {
+    $contact_page_id = (int) $source_contact_page->ID;
+    $contact_content = (string) $source_contact_page->post_content;
+  }
+}
+
+$contact_copy = $is_french_contact ? array(
+  'default_intro_title' => 'Décrivez votre premier intake client',
+  'default_cta_label' => 'Démarrer le brief',
+  'hero_eyebrow' => 'Contact',
+  'hero_title_line_1' => 'Lancez un premier intake client.',
+  'hero_title_line_2' => 'Puis décidez ce qui doit être répété.',
+  'hero_body' => 'Dites-nous ce qui arrive aujourd\'hui, qui le traite, et où le résultat doit être livré. Nous répondons sous 1 à 2 jours ouvrés avec un premier chemin concret.',
+  'next_eyebrow' => 'Et ensuite ?',
+  'next_title' => 'Un petit pilote concret, pas un appel de découverte vague.',
+  'bullet_1_title' => 'Vous décrivez un workflow.',
+  'bullet_1_body' => 'Documents, réservations, demandes de service, commandes catalogue, preuves de paiement ou autre intake récurrent.',
+  'bullet_2_title' => 'Vous partagez le contexte.',
+  'bullet_2_body' => 'Ajoutez un portail existant, une capture, un tableur ou un lien de process si utile.',
+  'bullet_3_title' => 'Vous recevez une prochaine étape cadrée.',
+  'bullet_3_body' => 'Nous recommandons un mode de livraison et chiffrons clairement le premier pas.',
+  'missing_eyebrow' => 'Lien hébergé manquant',
+  'missing_title' => 'Créez le lien hébergé XPressUI, puis intégrez-le ici.',
+  'missing_body_before' => 'Ajoutez l\'URL du workflow hébergé dans le champ personnalisé de la page',
+  'missing_body_after' => 'La page contact remplacera cette carte de configuration par le lien XPressUI actif.',
+  'fallback_summary' => 'Afficher le formulaire de contact existant',
+  'promo_eyebrow' => 'Construit avec XPressUI',
+  'promo_title' => 'Ce parcours fonctionne avec XPressUI.',
+  'promo_body' => 'Pas de code, pas de conflit CSS. Conçu dans la console visuelle, déployé sur un site client ou en lien hébergé.',
+  'promo_cta' => 'Voir comment ça marche →',
+) : array(
+  'default_intro_title' => 'Describe your first workflow',
+  'default_cta_label' => 'Start the brief',
+  'hero_eyebrow' => 'Contact',
+  'hero_title_line_1' => 'Launch one workflow first.',
+  'hero_title_line_2' => 'Then decide what should scale.',
+  'hero_body' => 'Tell us what arrives today, who reviews it, and where the result should be delivered. We\'ll reply within 1-2 business days with a concrete first-workflow path.',
+  'next_eyebrow' => 'What happens next',
+  'next_title' => 'A small pilot, not a vague discovery call.',
+  'bullet_1_title' => 'You describe one workflow.',
+  'bullet_1_body' => 'Documents, reservations, catalog orders, payment proofs, or another recurring intake.',
+  'bullet_2_title' => 'You can share context.',
+  'bullet_2_body' => 'Add a form, screenshot, spreadsheet, or process link if it helps.',
+  'bullet_3_title' => 'You get a scoped next step.',
+  'bullet_3_body' => 'We recommend a delivery path and price the first step clearly.',
+  'missing_eyebrow' => 'Hosted link missing',
+  'missing_title' => 'Create the XPressUI hosted link, then embed it here.',
+  'missing_body_before' => 'Add the hosted workflow URL as the page custom field',
+  'missing_body_after' => 'The contact page will switch from this setup card to the live XPressUI embed.',
+  'fallback_summary' => 'Show legacy contact form fallback',
+  'promo_eyebrow' => 'Built with XPressUI',
+  'promo_title' => 'This intake runs on XPressUI.',
+  'promo_body' => 'No code, no CSS conflicts. Designed in the visual console, deployed on a client site in under 30 minutes.',
+  'promo_cta' => 'See how it works →',
+);
+
 $contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
 $contact_public_url = $contact_shortcode_config['url'];
-if (function_exists('get_the_ID')) {
+if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
-    $contact_public_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
+    $contact_public_url = trim((string) get_post_meta($contact_page_id, 'xpressui_contact_hosted_link_url', true));
   }
 }
 if ($contact_public_url === '') {
@@ -176,12 +236,12 @@ $contact_launch_url = iakpress_contact_hosted_link_start_url($contact_public_url
 $has_contact_embed = $contact_launch_url !== '';
 $contact_intro_title = iakpress_clean_contact_card_text(
   $contact_shortcode_config['intro_title'],
-  'Describe your first workflow',
+  $contact_copy['default_intro_title'],
   140
 );
 $contact_cta_label = iakpress_clean_contact_card_text(
   $contact_shortcode_config['cta_label'],
-  'Start the brief',
+  $contact_copy['default_cta_label'],
   80
 );
 $contact_intro_title = apply_filters('xpressui_contact_card_intro_title', $contact_intro_title);
@@ -194,12 +254,12 @@ get_header(); ?>
   <!-- Hero -->
   <section class="bg-white py-4 px-4 sm:px-6 lg:px-8 sm:py-5 lg:py-6 border-b border-gray-100">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Contact</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2"><?php echo esc_html($contact_copy['hero_eyebrow']); ?></p>
       <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-3 sm:text-4xl">
-        Launch one workflow first.<br class="hidden md:block"/> Then decide what should scale.
+        <?php echo esc_html($contact_copy['hero_title_line_1']); ?><br class="hidden md:block"/> <?php echo esc_html($contact_copy['hero_title_line_2']); ?>
       </h1>
       <p class="text-base text-gray-500 leading-relaxed">
-        Tell us what arrives today, who reviews it, and where the result should be delivered. We'll reply within 1-2 business days with a concrete first-workflow path.
+        <?php echo esc_html($contact_copy['hero_body']); ?>
       </p>
     </div>
   </section>
@@ -208,20 +268,20 @@ get_header(); ?>
   <section class="bg-gray-50 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
       <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-20">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">What happens next</p>
-        <h2 class="text-xl font-extrabold tracking-tight text-gray-900 mb-4">A small pilot, not a vague discovery call.</h2>
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo esc_html($contact_copy['next_eyebrow']); ?></p>
+        <h2 class="text-xl font-extrabold tracking-tight text-gray-900 mb-4"><?php echo esc_html($contact_copy['next_title']); ?></h2>
         <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">You describe one workflow.</strong> Documents, reservations, catalog orders, payment proofs, or another recurring intake.</p>
+            <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_1_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_1_body']); ?></p>
           </div>
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">You can share context.</strong> Add a form, screenshot, spreadsheet, or process link if it helps.</p>
+            <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_2_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_2_body']); ?></p>
           </div>
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
-            <p><strong class="text-gray-900">You get a scoped next step.</strong> We recommend a delivery path and price the first step clearly.</p>
+            <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_3_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_3_body']); ?></p>
           </div>
         </div>
       </div>
@@ -244,18 +304,18 @@ get_header(); ?>
           </a>
         <?php else: ?>
           <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-900/10">
-            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Hosted link missing</p>
-            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-3">Create the XPressUI hosted link, then embed it here.</h2>
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo esc_html($contact_copy['missing_eyebrow']); ?></p>
+            <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-3"><?php echo esc_html($contact_copy['missing_title']); ?></h2>
             <p class="text-gray-600 leading-relaxed mb-5">
-              Add the hosted workflow URL as the page custom field
+              <?php echo esc_html($contact_copy['missing_body_before']); ?>
               <code class="rounded bg-blue-50 px-1 text-blue-700">xpressui_contact_hosted_link_url</code>.
-              The contact page will switch from this setup card to the live XPressUI embed.
+              <?php echo esc_html($contact_copy['missing_body_after']); ?>
             </p>
             <?php if (trim($contact_content) !== ''): ?>
               <details class="rounded-2xl border border-gray-100 bg-gray-50 p-4">
-                <summary class="cursor-pointer text-sm font-bold text-gray-900">Show legacy contact form fallback</summary>
+                <summary class="cursor-pointer text-sm font-bold text-gray-900"><?php echo esc_html($contact_copy['fallback_summary']); ?></summary>
                 <div class="mt-4">
-                  <?php the_content(); ?>
+                  <?php echo apply_filters('the_content', $contact_content); ?>
                 </div>
               </details>
             <?php endif; ?>
@@ -270,12 +330,12 @@ get_header(); ?>
     <div class="max-w-3xl mx-auto">
       <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col sm:flex-row items-center gap-6">
         <div class="flex-1 min-w-0">
-          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Built with XPressUI</p>
-          <p class="text-gray-900 font-bold mb-1">This form runs on XPressUI.</p>
-          <p class="text-sm text-gray-500 leading-relaxed">No code, no CSS conflicts. Designed in the visual console, deployed on a client site in under 30 minutes.</p>
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1"><?php echo esc_html($contact_copy['promo_eyebrow']); ?></p>
+          <p class="text-gray-900 font-bold mb-1"><?php echo esc_html($contact_copy['promo_title']); ?></p>
+          <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($contact_copy['promo_body']); ?></p>
         </div>
         <a href="/xpressui/" class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-sm whitespace-nowrap">
-          See how it works →
+          <?php echo esc_html($contact_copy['promo_cta']); ?>
         </a>
       </div>
     </div>

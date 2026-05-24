@@ -29,8 +29,27 @@ function iakpress_enqueue_layout_fixes(): void {
 }
 add_action( 'wp_enqueue_scripts', 'iakpress_enqueue_layout_fixes', 30 );
 
+function iakpress_current_path(): string {
+    return trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+}
+
+function iakpress_is_french_request(): bool {
+    $path = iakpress_current_path();
+    return $path === 'fr' || strpos( $path, 'fr/' ) === 0;
+}
+
+function iakpress_french_language_attributes( string $output ): string {
+    if ( ! iakpress_is_french_request() ) {
+        return $output;
+    }
+
+    return 'lang="fr-FR"';
+}
+add_filter( 'language_attributes', 'iakpress_french_language_attributes', 20 );
+
 function iakpress_enqueue_xpressui_embed_script(): void {
-    if ( ! is_page( 'contact' ) ) {
+    $path = iakpress_current_path();
+    if ( ! is_page( 'contact' ) && $path !== 'fr/contact' ) {
         return;
     }
 
@@ -56,13 +75,29 @@ function iakpress_favicon(): void {
 add_action( 'wp_head', 'iakpress_favicon', 1 );
 add_action( 'admin_head', 'iakpress_favicon', 1 );
 
-function iakpress_render_french_landing(): void {
-    $path = trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
-    if ( $path !== 'fr' ) {
+function iakpress_render_french_routes(): void {
+    $path = iakpress_current_path();
+
+    if ( $path === 'fr' ) {
+        global $wp_query;
+        if ( $wp_query ) {
+            $wp_query->is_404 = false;
+        }
+        status_header( 200 );
+        include get_stylesheet_directory() . '/page-fr.php';
+        exit;
+    }
+
+    if ( $path !== 'fr/contact' ) {
         return;
     }
 
-    include get_stylesheet_directory() . '/page-fr.php';
+    global $wp_query;
+    if ( $wp_query ) {
+        $wp_query->is_404 = false;
+    }
+    status_header( 200 );
+    include get_stylesheet_directory() . '/page-contact.php';
     exit;
 }
-add_action( 'template_redirect', 'iakpress_render_french_landing', 0 );
+add_action( 'template_redirect', 'iakpress_render_french_routes', 0 );

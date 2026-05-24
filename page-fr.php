@@ -23,7 +23,7 @@ get_header(); ?>
           XPressUI remplace les allers-retours par email par un lien privé, des uploads guidés, des étapes obligatoires et une inbox opérateur. Le portail peut vivre sur un site WordPress client ou être hébergé par XPressUI Cloud.
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-          <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+          <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>"
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
             Tester l'intake en direct
           </a>
@@ -100,7 +100,7 @@ get_header(); ?>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5">Commencez avec un vrai workflow client, pas une démo abstraite.</h2>
       <p class="text-gray-300 leading-relaxed mb-10">On peut livrer un premier portail hébergé ou l'installer sur un site WordPress client, puis transformer ce premier cas en offre réutilisable.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">Tester l'intake</a>
+        <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">Tester l'intake</a>
         <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">Voir l'accompagnement</a>
       </div>
     </div>
