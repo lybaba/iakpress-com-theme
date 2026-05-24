@@ -27,7 +27,7 @@ get_header(); ?>
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
             Tester l'intake en direct
           </a>
-          <a href="<?php echo esc_url(home_url('/pricing/')); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
+          <a href="<?php echo esc_url(home_url('/fr/pricing/')); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
             Voir les tarifs
           </a>
         </div>

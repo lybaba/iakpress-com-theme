@@ -87,9 +87,9 @@ get_header();
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
             Try live intake →
           </a>
-          <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
+          <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
              class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-            Try live demo
+            See pricing
           </a>
         </div>
         <div class="xpressui-hero-points flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-3 text-sm text-gray-500">
@@ -351,7 +351,7 @@ get_header();
 
   <section class="bg-gray-900 py-24 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-2xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to clean up onboarding?</p>
+      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to launch your first intake portal?</p>
       <h2 class="text-3xl font-extrabold text-white mb-4">Give your next client project a better start.</h2>
       <p class="text-gray-400 mb-10">Start with XPressUI Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">

@@ -37,7 +37,7 @@ $rows = [
   ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'License valid on up to 5 client sites', 'free' => false, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'Cloud Solo limits', 'free' => false, 'pro' => false, 'cloud' => '1 workspace'],
-  ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => false, 'cloud' => '500/mo'],
+  ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => false, 'cloud' => '100/mo'],
   ['group' => '', 'label' => 'Priority email support (1-2 business days)', 'free' => false, 'pro' => true, 'cloud' => true],
 ];
 
