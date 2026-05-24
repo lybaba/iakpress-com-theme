@@ -18,24 +18,24 @@ get_header(); ?>
   <section class="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5 text-center lg:text-left">
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Client intake portals for WordPress and hosted workflows</p>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Client follow-up workflows for agencies and service teams</p>
         <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-          Collect client documents in one guided portal.
+          Stop chasing clients for missing files.
         </h1>
         <p class="text-xl text-gray-500 mb-10 leading-relaxed">
-          XPressUI replaces email follow-up with private intake links, guided uploads, required steps, and an operator inbox. Run the portal on a client WordPress site or host it with XPressUI Cloud.
+          Send one private link, collect files and answers in a guided checklist, and see exactly what is still missing before your team starts reviewing.
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a href="/contact/"
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-            Try live intake
+            Try the missing-file workflow
           </a>
           <a href="/pricing/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
-            See pricing
+            See how it works
           </a>
         </div>
         <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3 text-sm text-gray-500">
-          <?php foreach (['Private links', 'Guided uploads', 'Operator inbox'] as $point): ?>
+          <?php foreach (['One client link', 'Missing-file status', 'Review inbox'] as $point): ?>
           <span class="inline-flex rounded-full border border-blue-100 bg-blue-50/70 px-4 py-2 font-semibold text-blue-900"><?php echo esc_html($point); ?></span>
           <?php endforeach; ?>
         </div>
@@ -58,28 +58,38 @@ get_header(); ?>
     </div>
   </section>
 
-  <section class="bg-blue-50/60 border-y border-blue-100 py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-      <?php foreach ([
-        ['title' => 'Hosted intake from €299', 'body' => 'One branded private link, operator email, generated summary, and handoff.'],
-        ['title' => 'Client-site delivery from €790', 'body' => 'XPressUI Pro install, page embed, test submission, and admin inbox validation.'],
-        ['title' => 'Agency pilot', 'body' => 'Validate one real intake workflow before turning it into a repeatable offer.'],
-      ] as $item): ?>
-      <article class="bg-white rounded-2xl border border-blue-100 p-5 shadow-sm text-left">
-        <p class="text-sm font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></p>
-        <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($item['body']); ?></p>
-      </article>
-      <?php endforeach; ?>
+  <section class="bg-blue-50/60 border-y border-blue-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <p class="mb-6 text-center text-sm font-bold uppercase tracking-widest text-blue-600">From scattered requests to one reviewable submission</p>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
+        <div class="rounded-2xl border border-red-100 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-red-500">Before XPressUI</p>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <?php foreach (['Email attachment', 'Drive link', 'WhatsApp message', 'Missing ID', 'Half answer', 'No clear status'] as $item): ?>
+            <span class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-700"><?php echo esc_html($item); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-black text-white shadow-lg shadow-blue-500/30 md:flex">→</div>
+        <div class="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-blue-600">With XPressUI</p>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <?php foreach (['One private link', 'Required checklist', 'Guided upload', 'Missing-file status', 'Operator inbox', 'Ready to review'] as $item): ?>
+            <span class="rounded-xl border border-blue-100 bg-blue-50/70 px-4 py-3 text-sm font-semibold text-blue-950"><?php echo esc_html($item); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-4 text-center lg:text-left">
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Product intro</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">See XPressUI in 42 seconds.</h2>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Workflow intro</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">See how a messy client request becomes one reviewable submission.</h2>
         <p class="text-gray-600 leading-relaxed mb-6">
-          A quick tour of the intake link, client submission, notification email, and operator review workflow.
+          A quick tour of the client link, guided submission, notification email, and operator review workflow.
         </p>
         <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
           Open on YouTube
@@ -126,7 +136,7 @@ get_header(); ?>
         </div>
       </div>
 
-      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another inbox full of attachments. You need one guided intake portal.</p>
+      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another form builder. You need a client follow-up workflow.</p>
       <div class="text-center mt-8">
         <a href="/agency-pilot/" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
           Scope the first pilot

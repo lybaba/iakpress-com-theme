@@ -17,20 +17,20 @@ get_header(); ?>
   <section class="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5 text-center lg:text-left">
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Portails d'intake client pour WordPress et workflows hébergés</p>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflows de suivi client pour agences et équipes de service</p>
         <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-          Collectez les documents client dans un portail guidé.
+          Arrêtez de relancer vos clients pour les pièces manquantes.
         </h1>
         <p class="text-xl text-gray-500 mb-10 leading-relaxed">
-          XPressUI remplace les allers-retours par email par un lien privé, des uploads guidés, des étapes obligatoires et une inbox opérateur. Le portail peut vivre sur un site WordPress client ou être hébergé par XPressUI Cloud.
+          Envoyez un lien privé, collectez fichiers et réponses dans une checklist guidée, et voyez tout de suite ce qui manque avant la revue par votre équipe.
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>"
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-            Tester l'intake en direct
+            Tester le parcours client
           </a>
           <a href="<?php echo esc_url(home_url('/fr/pricing/')); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
-            Voir les tarifs
+            Voir le fonctionnement
           </a>
         </div>
       </div>
@@ -53,13 +53,38 @@ get_header(); ?>
     </div>
   </section>
 
+  <section class="bg-blue-50/60 border-y border-blue-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <p class="mb-6 text-center text-sm font-bold uppercase tracking-widest text-blue-600">Des demandes dispersées à une soumission prête à traiter</p>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
+        <div class="rounded-2xl border border-red-100 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-red-500">Avant XPressUI</p>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <?php foreach (['Pièce jointe email', 'Lien Drive', 'Message WhatsApp', 'Pièce manquante', 'Réponse incomplète', 'Aucun statut clair'] as $item): ?>
+            <span class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-700"><?php echo esc_html($item); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-black text-white shadow-lg shadow-blue-500/30 md:flex">→</div>
+        <div class="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-blue-600">Avec XPressUI</p>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <?php foreach (['Un lien privé', 'Checklist obligatoire', 'Upload guidé', 'Statut des pièces', 'Inbox opérateur', 'Prêt pour revue'] as $item): ?>
+            <span class="rounded-xl border border-blue-100 bg-blue-50/70 px-4 py-3 text-sm font-semibold text-blue-950"><?php echo esc_html($item); ?></span>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-4 text-center lg:text-left">
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Vidéo produit</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">XPressUI en 42 secondes.</h2>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Intro workflow</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Voyez comment une demande client dispersée devient une soumission prête à traiter.</h2>
         <p class="text-gray-600 leading-relaxed mb-6">
-          Un tour rapide du lien d'intake, de la soumission client, de la notification email et de la revue opérateur.
+          Un tour rapide du lien client, de la soumission guidée, de la notification email et de la revue opérateur.
         </p>
         <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
           Ouvrir sur YouTube
@@ -108,9 +133,9 @@ get_header(); ?>
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pas un simple formulaire</p>
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">XPressUI couvre le parcours complet de collecte documentaire.</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">L'interface client sert à collecter. Mais la valeur est dans le système complet : lien privé, upload, validation, statut, inbox et revue opérateur.</p>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pas un form builder</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">XPressUI couvre le suivi complet des pièces manquantes.</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">Le formulaire est seulement la porte d'entrée. La valeur est dans le système complet : un lien pour le client, une inbox pour l'équipe et un statut pour chaque pièce manquante.</p>
         <ul class="space-y-3 text-gray-700">
           <?php foreach (['Liens privés pour les demandes sensibles', 'Uploads guidés et champs obligatoires', 'Inbox opérateur pour suivre les soumissions', 'Livraison WordPress ou hébergement XPressUI Cloud'] as $point): ?>
           <li class="flex items-start gap-3">
