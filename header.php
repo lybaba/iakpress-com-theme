@@ -35,20 +35,29 @@
       $nav_active = $nav_base . ' text-blue-600 bg-blue-50';
       $nav_idle   = $nav_base . ' text-gray-600 hover:text-gray-900 hover:bg-gray-50';
       $is_french_request = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+      $current_english_path = function_exists('iakpress_english_path_from_current') ? iakpress_english_path_from_current() : trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
       $contact_href = $is_french_request ? '/fr/contact/' : '/contact/';
+      $product_href = $is_french_request ? '/fr/xpressui/' : '/xpressui/';
+      $cloud_href = $is_french_request ? '/fr/xpressui-cloud/' : '/xpressui-cloud/';
+      $pricing_href = $is_french_request ? '/fr/pricing/' : '/pricing/';
+      $install_href = $is_french_request ? '/fr/install/' : '/install/';
       $product_label = $is_french_request ? 'Produit' : 'Product';
       $pricing_label = $is_french_request ? 'Tarifs' : 'Pricing';
       $install_label = $is_french_request ? 'Installation' : 'Install';
       $contact_cta_label = $is_french_request ? "Tester l'intake" : 'Try live intake';
       $mobile_contact_cta_label = $is_french_request ? 'Tester' : 'Try intake';
+      $english_language_url = function_exists('iakpress_language_switch_url') ? iakpress_language_switch_url('en') : home_url('/');
+      $french_language_url = function_exists('iakpress_language_switch_url') ? iakpress_language_switch_url('fr') : home_url('/fr/');
+      $language_base = 'inline-flex h-8 w-8 items-center justify-center rounded-full border text-sm transition';
+      $language_active = $language_base . ' border-blue-600 bg-blue-50 text-blue-700';
+      $language_idle = $language_base . ' border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:text-gray-900';
       ?>
       <nav class="hidden md:flex space-x-1">
-        <a href="/xpressui/" class="<?php echo is_page('xpressui') || is_front_page() ? $nav_active : $nav_idle; ?>"><?php echo esc_html($product_label); ?></a>
-        <a href="/xpressui-cloud/" class="<?php echo is_page('xpressui-cloud') ? $nav_active : $nav_idle; ?>">Cloud</a>
-        <a href="/pricing/" class="<?php echo is_page('pricing') ? $nav_active : $nav_idle; ?>"><?php echo esc_html($pricing_label); ?></a>
-        <a href="/install/" class="<?php echo is_page('install') ? $nav_active : $nav_idle; ?>"><?php echo esc_html($install_label); ?></a>
+        <a href="<?php echo esc_url($product_href); ?>" class="<?php echo $current_english_path === 'xpressui' || is_front_page() ? $nav_active : $nav_idle; ?>"><?php echo esc_html($product_label); ?></a>
+        <a href="<?php echo esc_url($cloud_href); ?>" class="<?php echo $current_english_path === 'xpressui-cloud' ? $nav_active : $nav_idle; ?>">Cloud</a>
+        <a href="<?php echo esc_url($pricing_href); ?>" class="<?php echo $current_english_path === 'pricing' ? $nav_active : $nav_idle; ?>"><?php echo esc_html($pricing_label); ?></a>
+        <a href="<?php echo esc_url($install_href); ?>" class="<?php echo $current_english_path === 'install' ? $nav_active : $nav_idle; ?>"><?php echo esc_html($install_label); ?></a>
         <a href="/blog/" class="<?php echo ( is_home() && ! is_front_page() ) || is_singular('post') || is_category() || is_tag() ? $nav_active : $nav_idle; ?>">Blog</a>
-        <a href="/fr/" class="<?php echo $is_french_request ? $nav_active : $nav_idle; ?>">FR</a>
       </nav>
 
       <!-- Call to Action & Mobile -->
@@ -60,10 +69,14 @@
         <a href="<?php echo esc_url($contact_href); ?>" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition">
           <?php echo esc_html($contact_cta_label); ?>
         </a>
+        <div class="flex items-center gap-1" aria-label="Language switcher">
+          <a href="<?php echo esc_url($english_language_url); ?>" class="<?php echo $is_french_request ? $language_idle : $language_active; ?>" aria-label="Switch to English" title="English">🇬🇧</a>
+          <a href="<?php echo esc_url($french_language_url); ?>" class="<?php echo $is_french_request ? $language_active : $language_idle; ?>" aria-label="Passer en français" title="Français">🇫🇷</a>
+        </div>
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">
           <a href="<?php echo esc_url($contact_href); ?>" class="text-blue-600 font-bold text-sm mr-4"><?php echo esc_html($mobile_contact_cta_label); ?></a>
-          <a href="/xpressui/" class="text-gray-900 font-medium text-sm">XPressUI</a>
+          <a href="<?php echo esc_url($product_href); ?>" class="text-gray-900 font-medium text-sm">XPressUI</a>
         </div>
       </div>
 
