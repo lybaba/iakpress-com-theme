@@ -4,6 +4,17 @@
     return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
   }
 
+  function withEmbedMode(url) {
+    try {
+      var parsed = new URL(url, window.location.href);
+      parsed.searchParams.set('embed', '1');
+      return parsed.toString();
+    } catch (error) {
+      var separator = url.indexOf('?') === -1 ? '?' : '&';
+      return url + separator + 'embed=1';
+    }
+  }
+
   function mountEmbed(container, index) {
     if (container.dataset.xpressuiEmbedReady === 'true') {
       return;
@@ -18,7 +29,7 @@
     var title = container.getAttribute('data-xpressui-embed-title') || 'XPressUI hosted workflow';
     var iframe = document.createElement('iframe');
 
-    iframe.src = url;
+    iframe.src = withEmbedMode(url);
     iframe.title = title;
     iframe.loading = container.getAttribute('data-xpressui-embed-loading') || 'eager';
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';

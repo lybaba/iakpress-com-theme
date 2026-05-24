@@ -3,6 +3,37 @@
  * The template for displaying the /contact/ page.
  */
 
+if (!function_exists('iakpress_normalize_contact_hosted_link_url')) {
+  function iakpress_normalize_contact_hosted_link_url($url) {
+    if (!is_string($url)) {
+      return '';
+    }
+
+    $normalized_url = trim(html_entity_decode($url, ENT_QUOTES, 'UTF-8'));
+    if ($normalized_url === '') {
+      return '';
+    }
+
+    return esc_url_raw($normalized_url);
+  }
+}
+
+if (!function_exists('iakpress_contact_hosted_link_embed_url')) {
+  function iakpress_contact_hosted_link_embed_url($url) {
+    $normalized_url = iakpress_normalize_contact_hosted_link_url($url);
+    if ($normalized_url === '') {
+      return '';
+    }
+
+    if (function_exists('add_query_arg')) {
+      return esc_url_raw(add_query_arg('embed', '1', $normalized_url));
+    }
+
+    $separator = strpos($normalized_url, '?') === false ? '?' : '&';
+    return esc_url_raw($normalized_url . $separator . 'embed=1');
+  }
+}
+
 if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
   function iakpress_extract_contact_hosted_link_url_from_content($content) {
     if (!is_string($content) || trim($content) === '') {
@@ -29,21 +60,27 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
       if ($candidate === '') {
         $attribute_names = array('xpressui_contact_hosted_link_url', 'hosted_link_url');
         foreach ($attribute_names as $attribute_name) {
-          $pattern = '/(?:^|\s)' . preg_quote($attribute_name, '/') . '\s*=\s*([\'"])(.*?)\1/i';
+          $pattern = '/(?:^|\s)' . preg_quote($attribute_name, '/') . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s\]]+))/i';
           if (preg_match($pattern, $attribute_text, $attribute_match)) {
-            $candidate = (string) $attribute_match[2];
+            if (isset($attribute_match[1]) && $attribute_match[1] !== '') {
+              $candidate = (string) $attribute_match[1];
+            } elseif (isset($attribute_match[2]) && $attribute_match[2] !== '') {
+              $candidate = (string) $attribute_match[2];
+            } elseif (isset($attribute_match[3])) {
+              $candidate = (string) $attribute_match[3];
+            }
             break;
           }
         }
       }
 
-      if ($candidate === '' && preg_match('/https?:\/\/[^\s\'"]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+/i', $attribute_text, $url_match)) {
+      if ($candidate === '' && preg_match('/https?:\/\/[^\s\'"\]]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+(?:[^\s\'"\]]*)?/i', $attribute_text, $url_match)) {
         $candidate = (string) $url_match[0];
       }
 
-      $candidate = trim($candidate);
+      $candidate = iakpress_normalize_contact_hosted_link_url($candidate);
       if ($candidate !== '') {
-        return esc_url_raw($candidate);
+        return $candidate;
       }
     }
 
@@ -52,20 +89,22 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
 }
 
 $contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
-$contact_embed_url = iakpress_extract_contact_hosted_link_url_from_content($contact_content);
+$contact_public_url = iakpress_extract_contact_hosted_link_url_from_content($contact_content);
 if (function_exists('get_the_ID')) {
-  if ($contact_embed_url === '') {
-    $contact_embed_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
+  if ($contact_public_url === '') {
+    $contact_public_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
   }
 }
-if ($contact_embed_url === '') {
-  $contact_embed_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url', ''));
+if ($contact_public_url === '') {
+  $contact_public_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url', ''));
 }
-if ($contact_embed_url === '' && defined('XPRESSUI_CONTACT_HOSTED_LINK_URL')) {
-  $contact_embed_url = trim((string) XPRESSUI_CONTACT_HOSTED_LINK_URL);
+if ($contact_public_url === '' && defined('XPRESSUI_CONTACT_HOSTED_LINK_URL')) {
+  $contact_public_url = trim((string) XPRESSUI_CONTACT_HOSTED_LINK_URL);
 }
-$contact_embed_url = apply_filters('xpressui_contact_hosted_link_url', $contact_embed_url);
-$has_contact_embed = is_string($contact_embed_url) && trim($contact_embed_url) !== '';
+$contact_public_url = apply_filters('xpressui_contact_hosted_link_url', $contact_public_url);
+$contact_public_url = iakpress_normalize_contact_hosted_link_url($contact_public_url);
+$contact_embed_url = iakpress_contact_hosted_link_embed_url($contact_public_url);
+$has_contact_embed = $contact_embed_url !== '';
 
 get_header(); ?>
 
@@ -117,7 +156,7 @@ get_header(); ?>
                 <p class="text-xs font-bold tracking-widest text-blue-600 uppercase">XPressUI hosted workflow</p>
                 <p class="text-sm text-gray-500">Embedded like Calendly. Submissions land in the XPressUI inbox.</p>
               </div>
-              <a href="<?php echo esc_url($contact_embed_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-300 transition">
+              <a href="<?php echo esc_url($contact_public_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-300 transition">
                 Open in new tab →
               </a>
             </div>
@@ -139,7 +178,7 @@ get_header(); ?>
             <noscript>
               <div class="p-4 text-sm text-gray-600">
                 JavaScript is required to show the embedded workflow.
-                <a href="<?php echo esc_url($contact_embed_url); ?>" class="font-bold text-blue-600">Open the workflow in a new tab</a>.
+                <a href="<?php echo esc_url($contact_public_url); ?>" class="font-bold text-blue-600">Open the workflow in a new tab</a>.
               </div>
             </noscript>
           </div>
