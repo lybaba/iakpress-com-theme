@@ -34,53 +34,55 @@ if (!function_exists('iakpress_contact_hosted_link_start_url')) {
   }
 }
 
-if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
-  function iakpress_extract_contact_hosted_link_url_from_content($content) {
-    if (!is_string($content) || trim($content) === '') {
-      return '';
+if (!function_exists('iakpress_clean_contact_card_text')) {
+  function iakpress_clean_contact_card_text($value, $fallback, $max_length = 120) {
+    if (!is_string($value)) {
+      return $fallback;
     }
 
-    if (!preg_match_all('/\[xpressui\b([^\]]*)\]/i', $content, $matches)) {
-      return '';
+    $cleaned = trim(html_entity_decode($value, ENT_QUOTES, 'UTF-8'));
+    $cleaned = function_exists('wp_strip_all_tags') ? wp_strip_all_tags($cleaned) : strip_tags($cleaned);
+    $cleaned = trim($cleaned);
+    if ($cleaned === '') {
+      return $fallback;
     }
 
-    foreach ($matches[1] as $attribute_text) {
-      $candidate = '';
-      if (function_exists('shortcode_parse_atts')) {
-        $attributes = shortcode_parse_atts($attribute_text);
-        if (is_array($attributes)) {
-          if (isset($attributes['xpressui_contact_hosted_link_url'])) {
-            $candidate = (string) $attributes['xpressui_contact_hosted_link_url'];
-          } elseif (isset($attributes['hosted_link_url'])) {
-            $candidate = (string) $attributes['hosted_link_url'];
-          }
+    if (function_exists('mb_substr')) {
+      return mb_substr($cleaned, 0, $max_length);
+    }
+
+    return substr($cleaned, 0, $max_length);
+  }
+}
+
+if (!function_exists('iakpress_find_contact_shortcode_attribute')) {
+  function iakpress_find_contact_shortcode_attribute($attributes, $attribute_text, $attribute_names) {
+    if (is_array($attributes)) {
+      $normalized_attributes = array();
+      foreach ($attributes as $key => $value) {
+        $normalized_attributes[strtolower((string) $key)] = $value;
+      }
+
+      foreach ($attribute_names as $attribute_name) {
+        $normalized_name = strtolower((string) $attribute_name);
+        if (isset($normalized_attributes[$normalized_name])) {
+          return (string) $normalized_attributes[$normalized_name];
         }
       }
+    }
 
-      if ($candidate === '') {
-        $attribute_names = array('xpressui_contact_hosted_link_url', 'hosted_link_url');
-        foreach ($attribute_names as $attribute_name) {
-          $pattern = '/(?:^|\s)' . preg_quote($attribute_name, '/') . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s\]]+))/i';
-          if (preg_match($pattern, $attribute_text, $attribute_match)) {
-            if (isset($attribute_match[1]) && $attribute_match[1] !== '') {
-              $candidate = (string) $attribute_match[1];
-            } elseif (isset($attribute_match[2]) && $attribute_match[2] !== '') {
-              $candidate = (string) $attribute_match[2];
-            } elseif (isset($attribute_match[3])) {
-              $candidate = (string) $attribute_match[3];
-            }
-            break;
-          }
+    foreach ($attribute_names as $attribute_name) {
+      $pattern = '/(?:^|\s)' . preg_quote((string) $attribute_name, '/') . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s\]]+))/i';
+      if (preg_match($pattern, $attribute_text, $attribute_match)) {
+        if (isset($attribute_match[1]) && $attribute_match[1] !== '') {
+          return (string) $attribute_match[1];
         }
-      }
-
-      if ($candidate === '' && preg_match('/https?:\/\/[^\s\'"\]]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+(?:[^\s\'"\]]*)?/i', $attribute_text, $url_match)) {
-        $candidate = (string) $url_match[0];
-      }
-
-      $candidate = iakpress_normalize_contact_hosted_link_url($candidate);
-      if ($candidate !== '') {
-        return $candidate;
+        if (isset($attribute_match[2]) && $attribute_match[2] !== '') {
+          return (string) $attribute_match[2];
+        }
+        if (isset($attribute_match[3])) {
+          return (string) $attribute_match[3];
+        }
       }
     }
 
@@ -88,8 +90,75 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
   }
 }
 
+if (!function_exists('iakpress_extract_contact_hosted_link_config_from_content')) {
+  function iakpress_extract_contact_hosted_link_config_from_content($content) {
+    $empty_config = array(
+      'url' => '',
+      'intro_title' => '',
+      'cta_label' => '',
+    );
+
+    if (!is_string($content) || trim($content) === '') {
+      return $empty_config;
+    }
+
+    if (!preg_match_all('/\[xpressui\b([^\]]*)\]/i', $content, $matches)) {
+      return $empty_config;
+    }
+
+    foreach ($matches[1] as $attribute_text) {
+      $attributes = array();
+      if (function_exists('shortcode_parse_atts')) {
+        $parsed_attributes = shortcode_parse_atts($attribute_text);
+        if (is_array($parsed_attributes)) {
+          $attributes = $parsed_attributes;
+        }
+      }
+
+      $candidate = iakpress_find_contact_shortcode_attribute(
+        $attributes,
+        $attribute_text,
+        array('xpressui_contact_hosted_link_url', 'hosted_link_url', 'url', 'href')
+      );
+
+      if ($candidate === '') {
+        if (preg_match('/https?:\/\/[^\s\'"\]]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+(?:[^\s\'"\]]*)?/i', $attribute_text, $url_match)) {
+          $candidate = (string) $url_match[0];
+        }
+      }
+
+      $candidate = iakpress_normalize_contact_hosted_link_url($candidate);
+      if ($candidate !== '') {
+        return array(
+          'url' => $candidate,
+          'intro_title' => iakpress_find_contact_shortcode_attribute(
+            $attributes,
+            $attribute_text,
+            array('intro_title', 'introTitle', 'title', 'xpressui_intro_title', 'contact_intro_title')
+          ),
+          'cta_label' => iakpress_find_contact_shortcode_attribute(
+            $attributes,
+            $attribute_text,
+            array('cta_label', 'ctaLabel', 'button_label', 'intro_button_label', 'introButtonLabel', 'xpressui_cta_label')
+          ),
+        );
+      }
+    }
+
+    return $empty_config;
+  }
+}
+
+if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
+  function iakpress_extract_contact_hosted_link_url_from_content($content) {
+    $config = iakpress_extract_contact_hosted_link_config_from_content($content);
+    return $config['url'];
+  }
+}
+
 $contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
-$contact_public_url = iakpress_extract_contact_hosted_link_url_from_content($contact_content);
+$contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
+$contact_public_url = $contact_shortcode_config['url'];
 if (function_exists('get_the_ID')) {
   if ($contact_public_url === '') {
     $contact_public_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
@@ -105,6 +174,18 @@ $contact_public_url = apply_filters('xpressui_contact_hosted_link_url', $contact
 $contact_public_url = iakpress_normalize_contact_hosted_link_url($contact_public_url);
 $contact_launch_url = iakpress_contact_hosted_link_start_url($contact_public_url);
 $has_contact_embed = $contact_launch_url !== '';
+$contact_intro_title = iakpress_clean_contact_card_text(
+  $contact_shortcode_config['intro_title'],
+  'Describe your first workflow',
+  140
+);
+$contact_cta_label = iakpress_clean_contact_card_text(
+  $contact_shortcode_config['cta_label'],
+  'Start the brief',
+  80
+);
+$contact_intro_title = apply_filters('xpressui_contact_card_intro_title', $contact_intro_title);
+$contact_cta_label = apply_filters('xpressui_contact_card_cta_label', $contact_cta_label);
 
 get_header(); ?>
 
@@ -154,10 +235,10 @@ get_header(); ?>
           >
             <span class="block">
               <span class="block text-[clamp(28px,3.2vw,36px)] font-black leading-tight tracking-tight text-gray-950">
-                Describe your first workflow
+                <?php echo esc_html($contact_intro_title); ?>
               </span>
               <span class="mt-5 inline-flex items-center justify-center rounded-xl bg-gray-950 px-7 py-3 text-sm font-extrabold text-white shadow-xl shadow-slate-900/20">
-                Start the brief
+                <?php echo esc_html($contact_cta_label); ?>
               </span>
             </span>
           </a>
