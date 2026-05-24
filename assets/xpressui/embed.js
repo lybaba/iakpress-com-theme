@@ -28,6 +28,8 @@
     var minHeight = toPositiveNumber(container.getAttribute('data-xpressui-embed-min-height'), 720);
     var resizeFloor = toPositiveNumber(container.getAttribute('data-xpressui-embed-resize-floor'), 520);
     var resizeBuffer = toPositiveNumber(container.getAttribute('data-xpressui-embed-resize-buffer'), 96);
+    var launchHeight = toPositiveNumber(container.getAttribute('data-xpressui-embed-launch-height'), 0);
+    var initialHeight = launchHeight || minHeight;
     resizeFloor = Math.min(resizeFloor, minHeight);
     var title = container.getAttribute('data-xpressui-embed-title') || 'XPressUI hosted workflow';
     var iframe = document.createElement('iframe');
@@ -36,12 +38,15 @@
     iframe.title = title;
     iframe.loading = container.getAttribute('data-xpressui-embed-loading') || 'eager';
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.scrolling = 'no';
+    iframe.setAttribute('scrolling', 'no');
     iframe.setAttribute('data-xpressui-embed-frame', String(index));
     iframe.setAttribute('data-xpressui-embed-resize-floor', String(resizeFloor));
     iframe.setAttribute('data-xpressui-embed-resize-buffer', String(resizeBuffer));
+    iframe.setAttribute('data-xpressui-embed-launch-height', String(launchHeight));
     iframe.style.display = 'block';
     iframe.style.width = '100%';
-    iframe.style.height = minHeight + 'px';
+    iframe.style.height = initialHeight + 'px';
     iframe.style.minHeight = resizeFloor + 'px';
     iframe.style.border = '0';
     iframe.style.background = '#fff';
@@ -77,11 +82,13 @@
     var frames = Array.prototype.slice.call(document.querySelectorAll('iframe[data-xpressui-embed-frame]'));
     frames.forEach(function (frame) {
       if (event.source === frame.contentWindow) {
+        var isLaunch = data.mode === 'launch';
         var resizeFloor = toPositiveNumber(frame.getAttribute('data-xpressui-embed-resize-floor'), 520);
-        var resizeBuffer = toPositiveNumber(frame.getAttribute('data-xpressui-embed-resize-buffer'), 96);
-        var resizedHeight = Math.max(resizeFloor, Math.ceil(height + resizeBuffer));
+        var resizeBuffer = isLaunch ? 0 : toPositiveNumber(frame.getAttribute('data-xpressui-embed-resize-buffer'), 96);
+        var resizedHeight = Math.max(isLaunch ? 180 : resizeFloor, Math.ceil(height + resizeBuffer));
         frame.style.height = resizedHeight + 'px';
-        frame.style.minHeight = resizeFloor + 'px';
+        frame.style.minHeight = (isLaunch ? Math.min(resizeFloor, resizedHeight) : resizeFloor) + 'px';
+        frame.style.overflow = 'hidden';
       }
     });
   }

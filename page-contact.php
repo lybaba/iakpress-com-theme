@@ -124,12 +124,12 @@ get_header(); ?>
   </section>
 
   <!-- Form -->
-  <section class="bg-gray-50 px-4 pb-8 pt-3 sm:px-6 lg:px-8 lg:pt-4">
-    <div class="max-w-7xl mx-auto grid gap-4 lg:grid-cols-[0.32fr_1.68fr] items-start">
-      <div class="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm lg:sticky lg:top-20">
-        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">What happens next</p>
-        <h2 class="text-lg font-extrabold tracking-tight text-gray-900 mb-2">A small pilot, not a vague discovery call.</h2>
-        <div class="space-y-2 text-sm text-gray-600 leading-relaxed">
+  <section class="bg-gray-50 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
+      <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-20">
+        <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">What happens next</p>
+        <h2 class="text-xl font-extrabold tracking-tight text-gray-900 mb-4">A small pilot, not a vague discovery call.</h2>
+        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
             <p><strong class="text-gray-900">You describe one workflow.</strong> Documents, reservations, catalog orders, payment proofs, or another recurring intake.</p>
@@ -144,15 +144,16 @@ get_header(); ?>
           </div>
         </div>
       </div>
-      <div class="min-w-0 lg:-mt-4">
+      <div class="min-w-0">
         <?php if ($has_contact_embed): ?>
-          <div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-blue-900/10">
+          <div class="max-w-3xl mx-auto overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-2xl shadow-blue-900/10">
             <div
               data-xpressui-embed-url="<?php echo esc_url($contact_embed_url); ?>"
               data-xpressui-embed-title="XPressUI workflow request"
-              data-xpressui-embed-min-height="620"
-              data-xpressui-embed-resize-floor="360"
-              data-xpressui-embed-resize-buffer="18"
+              data-xpressui-embed-min-height="420"
+              data-xpressui-embed-resize-floor="260"
+              data-xpressui-embed-resize-buffer="8"
+              data-xpressui-embed-launch-height="340"
               data-xpressui-embed-loading="eager"
             ></div>
             <noscript>
