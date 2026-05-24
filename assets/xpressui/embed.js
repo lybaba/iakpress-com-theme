@@ -15,6 +15,80 @@
     }
   }
 
+  function createLaunchPlaceholder(container) {
+    var title = (container.getAttribute('data-xpressui-embed-placeholder-title') || '').trim();
+    var cta = (container.getAttribute('data-xpressui-embed-placeholder-cta') || '').trim();
+    if (!title && !cta) {
+      return null;
+    }
+
+    var placeholder = document.createElement('div');
+    var card = document.createElement('div');
+    placeholder.setAttribute('aria-hidden', 'true');
+    placeholder.style.position = 'absolute';
+    placeholder.style.inset = '0';
+    placeholder.style.zIndex = '1';
+    placeholder.style.display = 'grid';
+    placeholder.style.placeItems = 'center';
+    placeholder.style.padding = '18px';
+    placeholder.style.pointerEvents = 'none';
+    placeholder.style.transition = 'opacity 140ms ease';
+
+    card.style.width = '100%';
+    card.style.maxWidth = '760px';
+    card.style.boxSizing = 'border-box';
+    card.style.border = '1px solid #e2e8f0';
+    card.style.borderRadius = '26px';
+    card.style.background = '#fff';
+    card.style.color = '#0f172a';
+    card.style.textAlign = 'center';
+    card.style.padding = '40px 32px';
+    card.style.boxShadow = '0 34px 96px rgba(15,23,42,.16)';
+
+    if (title) {
+      var heading = document.createElement('div');
+      heading.textContent = title;
+      heading.style.fontSize = 'clamp(28px,3.2vw,36px)';
+      heading.style.fontWeight = '900';
+      heading.style.lineHeight = '1.08';
+      heading.style.margin = cta ? '0 0 18px' : '0';
+      card.appendChild(heading);
+    }
+
+    if (cta) {
+      var button = document.createElement('div');
+      button.textContent = cta;
+      button.style.display = 'inline-flex';
+      button.style.alignItems = 'center';
+      button.style.justifyContent = 'center';
+      button.style.borderRadius = '12px';
+      button.style.padding = '13px 28px';
+      button.style.background = '#0f172a';
+      button.style.color = '#f8fafc';
+      button.style.fontSize = '15px';
+      button.style.fontWeight = '800';
+      button.style.boxShadow = '0 16px 34px -22px rgba(15,23,42,.62)';
+      card.appendChild(button);
+    }
+
+    placeholder.appendChild(card);
+    return placeholder;
+  }
+
+  function revealFrame(frame) {
+    frame.style.opacity = '1';
+    frame.dataset.xpressuiEmbedMeasured = 'true';
+    var placeholder = frame.parentElement && frame.parentElement.querySelector('[data-xpressui-embed-placeholder]');
+    if (placeholder) {
+      placeholder.style.opacity = '0';
+      window.setTimeout(function () {
+        if (placeholder.parentElement) {
+          placeholder.parentElement.removeChild(placeholder);
+        }
+      }, 170);
+    }
+  }
+
   function mountEmbed(container, index) {
     if (container.dataset.xpressuiEmbedReady === 'true') {
       return;
@@ -32,6 +106,7 @@
     var initialHeight = launchHeight || minHeight;
     resizeFloor = Math.min(resizeFloor, minHeight);
     var title = container.getAttribute('data-xpressui-embed-title') || 'XPressUI hosted workflow';
+    var placeholder = createLaunchPlaceholder(container);
     var iframe = document.createElement('iframe');
 
     iframe.src = withEmbedMode(url);
@@ -53,18 +128,23 @@
     iframe.style.opacity = '0';
     iframe.style.transition = 'opacity 160ms ease';
 
+    container.style.position = 'relative';
     container.style.minHeight = initialHeight + 'px';
 
     iframe.addEventListener('load', function () {
       window.setTimeout(function () {
         if (iframe.dataset.xpressuiEmbedMeasured !== 'true') {
-          iframe.style.opacity = '1';
+          revealFrame(iframe);
         }
       }, 180);
     });
 
     container.dataset.xpressuiEmbedReady = 'true';
     container.innerHTML = '';
+    if (placeholder) {
+      placeholder.setAttribute('data-xpressui-embed-placeholder', 'true');
+      container.appendChild(placeholder);
+    }
     container.appendChild(iframe);
   }
 
@@ -101,8 +181,7 @@
         frame.style.height = resizedHeight + 'px';
         frame.style.minHeight = (isLaunch ? Math.min(resizeFloor, resizedHeight) : resizeFloor) + 'px';
         frame.style.overflow = 'hidden';
-        frame.style.opacity = '1';
-        frame.dataset.xpressuiEmbedMeasured = 'true';
+        revealFrame(frame);
         if (frame.parentElement) {
           frame.parentElement.style.minHeight = resizedHeight + 'px';
         }

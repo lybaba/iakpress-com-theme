@@ -155,6 +155,8 @@ get_header(); ?>
               data-xpressui-embed-resize-buffer="8"
               data-xpressui-embed-launch-height="220"
               data-xpressui-embed-loading="eager"
+              data-xpressui-embed-placeholder-title="Describe your first workflow"
+              data-xpressui-embed-placeholder-cta="Start the brief"
             ></div>
             <noscript>
               <div class="p-4 text-sm text-gray-600">
