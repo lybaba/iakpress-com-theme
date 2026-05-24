@@ -50,7 +50,10 @@ function iakpress_language_path_map(): array {
         'pricing' => 'fr/pricing',
         'install' => 'fr/install',
         'contact' => 'fr/contact',
-        'agency-pilot' => 'fr/agency-pilot',
+        'agency-pilot'    => 'fr/agency-pilot',
+        'for-accountants' => 'fr/for-accountants',
+        'for-agencies'    => 'fr/for-agencies',
+        'for-operations'  => 'fr/for-operations',
     );
 }
 
@@ -211,7 +214,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Choose where your client intake portal should live.' => 'Choisissez où votre portail d’intake client doit vivre.',
         'Start on a client WordPress site, move to XPressUI Cloud when you want hosted links, files, catalogs, quotas, and team review, or ask us to ship the first workflow with you.' => 'Commencez sur un site WordPress client, passez à XPressUI Cloud quand vous voulez des liens hébergés, fichiers, catalogues, quotas et revue en équipe, ou demandez-nous de livrer le premier workflow avec vous.',
         'XPressUI Free · XPressUI Pro one-time payment · XPressUI Cloud from €19/month' => 'XPressUI Free · XPressUI Pro en paiement unique · XPressUI Cloud à partir de 19 €/mois',
-        'Done For You setup' => 'Configuration Done For You',
+        'Done For You setup' => 'Configuration effectuée pour vous',
         'Agency pilot' => 'Pilote agence',
         'Fast decision' => 'Décision rapide',
         'Choose by the first workflow you need to ship.' => 'Choisissez selon le premier workflow à livrer.',
@@ -230,7 +233,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Most useful after first signal' => 'Le plus utile après les premiers signaux',
         'For repeatable client delivery' => 'Pour une livraison client répétable',
 
-        'Get one branded hosted intake live from €299 setup, including operator email and a generated document summary.' => 'Mettez en ligne un intake hébergé et brandé à partir de 299 € de configuration, avec email opérateur et résumé de document généré.',
+        'Get one branded hosted intake live from €299 setup, including operator email and a generated document summary.' => 'Mettez en ligne un intake hébergé et personnalisé à partir de 299€, avec email opérateur et résumé de document généré.',
         'Products, prices, service slots, options, and members become reusable data instead of static choices.' => 'Produits, prix, créneaux de service, options et membres deviennent des données réutilisables au lieu de choix statiques.',
         'Agencies can validate XPressUI on 1 to 3 client workflows before committing to a larger plan.' => 'Les agences peuvent valider XPressUI sur 1 à 3 workflows clients avant de s’engager sur un plan plus large.',
         'You want to validate one client-site workflow with the bundled starter before buying anything.' => 'Vous voulez valider un workflow sur site client avec le starter inclus avant d’acheter quoi que ce soit.',
@@ -292,7 +295,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Reuse proven intake flows instead of rebuilding each project from scratch.' => 'Réutiliser des parcours d’intake éprouvés au lieu de reconstruire chaque projet à zéro.',
         'Charge more' => 'Vendre plus cher',
         'Package document portals as a premium delivery service for client onboarding.' => 'Packager les portails documentaires comme un service premium pour l’onboarding client.',
-        'Look professional' => 'Faire professionnel',
+        'Look professional' => 'Professionnel',
         'Give clients a cleaner, more structured way to send documents and complete intake.' => 'Donner aux clients une façon plus claire et structurée d’envoyer les documents et compléter l’intake.',
         'Compare plans' => 'Comparer les plans',
         'See exactly what changes when you upgrade.' => 'Voir exactement ce qui change quand vous passez à la suite.',
@@ -344,7 +347,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Where does XPressUI Cloud fit?' => 'Où se place XPressUI Cloud ?',
         'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud starts with Solo at €19/month, then Team and Agency for larger rollout.' => 'XPressUI Cloud s’adresse aux équipes qui veulent que XPressUI héberge le lien public du workflow, l’inbox, les fichiers, quotas, catalogues et revue opérateur au lieu d’exécuter la couche opérationnelle sur les sites clients. Cloud commence avec Solo à 19 €/mois, puis Team et Agency pour les déploiements plus larges.',
         'Can you set up the first workflow for us?' => 'Pouvez-vous configurer le premier workflow pour nous ?',
-        'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.' => 'Oui. La configuration Done For You démarre à 299 € pour un workflow hébergé et à partir de 790 € pour une livraison sur site client. C’est le chemin le plus rapide pour obtenir un premier workflow en ligne et réutilisable.',
+        'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.' => 'Oui. La Configuration effectuée pour vous démarre à 299 € pour un workflow hébergé et à partir de 790 € pour une livraison sur site client. C’est le chemin le plus rapide pour obtenir un premier workflow en ligne et réutilisable.',
         'Is €129 a subscription?' => 'Les 129 € sont-ils un abonnement ?',
         'No. It is a one-time Starter payment for use on up to 5 client sites, with updates included.' => 'Non. C’est un paiement Starter unique pour une utilisation jusqu’à 5 sites clients, avec mises à jour incluses.',
         'Who is XPressUI Pro for?' => 'À qui s’adresse XPressUI Pro ?',
@@ -575,7 +578,10 @@ function iakpress_render_french_routes(): void {
         'fr/pricing' => 'page-pricing.php',
         'fr/install' => 'page-install.php',
         'fr/contact' => 'page-contact.php',
-        'fr/agency-pilot' => 'page-agency-pilot.php',
+        'fr/agency-pilot'    => 'page-agency-pilot.php',
+        'fr/for-accountants' => 'page-for-accountants.php',
+        'fr/for-agencies'    => 'page-for-agencies.php',
+        'fr/for-operations'  => 'page-for-operations.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
