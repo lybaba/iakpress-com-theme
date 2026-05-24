@@ -44,7 +44,7 @@ $rows = [
 $faq_items = [
   ['q' => 'Can I start with XPressUI Free first?', 'a' => 'Yes. XPressUI Free is the easiest way to try the document portal experience on your own client site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
   ['q' => 'What does XPressUI Pro unlock exactly?', 'a' => 'XPressUI Pro adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from the client-site admin), Console Sync, specialized runtime features, automatic updates, and the license for up to 5 client sites.'],
-  ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static forms. XPressUI Pro can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.'],
+  ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. XPressUI Pro can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.'],
   ['q' => 'Where does XPressUI Cloud fit?', 'a' => 'XPressUI Cloud is for teams that want XPressUI to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud starts with Solo at €19/month, then Team and Agency for larger rollout.'],
   ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.'],
   ['q' => 'Is €129 a subscription?', 'a' => 'No. It is a one-time Starter payment for use on up to 5 client sites, with updates included.'],
@@ -122,8 +122,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100 text-center">
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pricing</p>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Choose the right path: XPressUI Free, XPressUI Pro, or XPressUI Cloud.</h1>
-      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">Start with XPressUI Free on a real client site, use XPressUI Pro for production client-site delivery, or move to XPressUI Cloud when you want hosted links, Console inbox, files, quotas, and team review.</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Choose where your client intake portal should live.</h1>
+      <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">Start on a client WordPress site, move to XPressUI Cloud when you want hosted links, files, catalogs, quotas, and team review, or ask us to ship the first workflow with you.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center">Discuss Cloud plan</a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download XPressUI Free</a>
@@ -140,9 +140,9 @@ function xpressui_pricing_cell($value, $color = 'blue') {
   <section class="bg-blue-50/60 py-10 px-4 sm:px-6 lg:px-8 border-b border-blue-100">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
       <?php foreach ([
-        ['title' => 'Done For You setup', 'body' => 'Get one branded hosted workflow live from €299 setup, including operator email and a generated document summary.'],
-        ['title' => 'Dynamic catalogs', 'body' => 'Products, prices, service slots, options, and members become reusable data instead of static form choices.'],
-        ['title' => 'Agency pilot', 'body' => 'agencies can validate XPressUI on 1 to 3 client workflows before committing to a larger plan.'],
+        ['title' => 'Done For You setup', 'body' => 'Get one branded hosted intake live from €299 setup, including operator email and a generated document summary.'],
+        ['title' => 'Dynamic catalogs', 'body' => 'Products, prices, service slots, options, and members become reusable data instead of static choices.'],
+        ['title' => 'Agency pilot', 'body' => 'Agencies can validate XPressUI on 1 to 3 client workflows before committing to a larger plan.'],
       ] as $item): ?>
       <article class="bg-white rounded-2xl border border-blue-100 p-5 shadow-sm">
         <p class="text-sm font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></p>

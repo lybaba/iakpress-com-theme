@@ -55,3 +55,14 @@ function iakpress_favicon(): void {
 }
 add_action( 'wp_head', 'iakpress_favicon', 1 );
 add_action( 'admin_head', 'iakpress_favicon', 1 );
+
+function iakpress_render_french_landing(): void {
+    $path = trim( (string) parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+    if ( $path !== 'fr' ) {
+        return;
+    }
+
+    include get_stylesheet_directory() . '/page-fr.php';
+    exit;
+}
+add_action( 'template_redirect', 'iakpress_render_french_landing', 0 );

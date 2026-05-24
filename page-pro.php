@@ -9,7 +9,7 @@ $pro_features = [
   ['icon' => '⚙️', 'label' => 'Customize on the client site',         'desc' => 'Edit labels, choices, validation rules, colors, and messages from the client-site admin without rebuilding the workflow pack.'],
   ['icon' => '🔄', 'label' => 'Sync from the Console',          'desc' => 'Pull workflow packs directly from your XPressUI Console instead of relying on manual ZIP handling for every update.'],
   ['icon' => '📎', 'label' => 'Collect files properly',          'desc' => 'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.'],
-  ['icon' => '📚', 'label' => 'Connect dynamic catalogs',        'desc' => 'Pair client-site workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when a static form is not enough.'],
+  ['icon' => '📚', 'label' => 'Connect dynamic catalogs',        'desc' => 'Pair client-site workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when static choices are not enough.'],
   ['icon' => '🚀', 'label' => 'Use specialized runtime features', 'desc' => 'Unlock richer guided flows and specialized capture only when the workflow actually needs them.'],
   ['icon' => '🔑', 'label' => 'Starter license for 5 sites',     'desc' => 'One purchase covers your own stack or multiple client sites, with updates included.'],
 ];
@@ -51,7 +51,7 @@ get_header();
         Run repeatable document intake workflows you can ship with confidence.
       </h1>
       <p class="text-xl text-gray-500 mb-10 max-w-3xl mx-auto leading-relaxed">
-        XPressUI Pro is for teams that need structured outcomes, not ad hoc form submissions. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
+        XPressUI Pro is for teams that need structured outcomes, not ad hoc attachments and manual follow-up. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">

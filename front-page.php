@@ -4,29 +4,54 @@
  */
 
 $console_url = 'https://xpressui.iakpress.com/console/';
+$hero_client_portal = xpressui_asset_url('front-step-2.png');
+$hero_upload_flow = xpressui_asset_url('front-step-3.png');
+$hero_inbox = xpressui_asset_url('admin-project-inbox.png');
 
 get_header(); ?>
 
 <div class="iak-home-landing font-sans text-gray-900 antialiased selection:bg-blue-200">
   
   <!-- SECTION 1 : HERO -->
-  <section class="bg-white py-24 px-4 sm:px-6 lg:px-8 text-center">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Pro now · XPressUI Cloud next</p>
-      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Launch one client workflow first. <br class="hidden md:block"/>Then make it repeatable.
-      </h1>
-      <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Start with an assisted pilot for document intake, reservations, service requests, catalog orders, or payment proof review. Use XPressUI Pro for client sites or XPressUI Cloud when operations should be hosted.
-      </p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/agency-pilot/"
-           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-          Launch a workflow in 48h
-        </a>
-        <a href="/xpressui/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
-          See XPressUI
-        </a>
+  <section class="bg-white py-16 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 text-center lg:text-left">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Client intake portals for WordPress and hosted workflows</p>
+        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
+          Collect client documents in one guided portal.
+        </h1>
+        <p class="text-xl text-gray-500 mb-10 leading-relaxed">
+          XPressUI replaces email follow-up with private intake links, guided uploads, required steps, and an operator inbox. Run the portal on a client WordPress site or host it with XPressUI Cloud.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+          <a href="/contact/"
+             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
+            Try live intake
+          </a>
+          <a href="/pricing/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition duration-200">
+            See pricing
+          </a>
+        </div>
+        <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3 text-sm text-gray-500">
+          <?php foreach (['Private links', 'Guided uploads', 'Operator inbox'] as $point): ?>
+          <span class="inline-flex rounded-full border border-blue-100 bg-blue-50/70 px-4 py-2 font-semibold text-blue-900"><?php echo esc_html($point); ?></span>
+          <?php endforeach; ?>
+        </div>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="relative rounded-[2rem] bg-gray-950 p-4 md:p-6 shadow-2xl shadow-blue-900/20 ring-1 ring-gray-900/10">
+          <div class="absolute -left-6 top-10 hidden md:block rounded-2xl bg-white p-3 shadow-xl ring-1 ring-gray-200">
+            <p class="mb-2 text-xs font-extrabold uppercase tracking-widest text-blue-600">Client portal</p>
+            <img src="<?php echo esc_url($hero_client_portal); ?>" alt="XPressUI client intake portal" class="h-40 w-56 rounded-xl object-cover object-top">
+          </div>
+          <div class="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-white/10">
+            <img src="<?php echo esc_url($hero_upload_flow); ?>" alt="Guided upload workflow in XPressUI" class="h-auto w-full object-cover object-top">
+          </div>
+          <div class="absolute -right-4 -bottom-8 hidden md:block w-72 overflow-hidden rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-gray-200">
+            <p class="mb-2 text-xs font-extrabold uppercase tracking-widest text-blue-600">Operator inbox</p>
+            <img src="<?php echo esc_url($hero_inbox); ?>" alt="XPressUI operator inbox" class="h-36 w-full rounded-xl object-cover object-top">
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -34,9 +59,9 @@ get_header(); ?>
   <section class="bg-blue-50/60 border-y border-blue-100 py-8 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
       <?php foreach ([
-        ['title' => 'Hosted setup from €299', 'body' => 'One branded workflow, operator email, generated summary, and handoff.'],
+        ['title' => 'Hosted intake from €299', 'body' => 'One branded private link, operator email, generated summary, and handoff.'],
         ['title' => 'Client-site delivery from €790', 'body' => 'XPressUI Pro install, page embed, test submission, and admin inbox validation.'],
-        ['title' => 'Agency pilot', 'body' => 'Validate XPressUI on one real client workflow before scaling the offer.'],
+        ['title' => 'Agency pilot', 'body' => 'Validate one real intake workflow before turning it into a repeatable offer.'],
       ] as $item): ?>
       <article class="bg-white rounded-2xl border border-blue-100 p-5 shadow-sm text-left">
         <p class="text-sm font-bold text-gray-900 mb-2"><?php echo esc_html($item['title']); ?></p>
@@ -69,7 +94,7 @@ get_header(); ?>
         </div>
       </div>
 
-      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another form. You need a client workflow system.</p>
+      <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another inbox full of attachments. You need one guided intake portal.</p>
       <div class="text-center mt-8">
         <a href="/agency-pilot/" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
           Scope the first pilot

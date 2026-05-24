@@ -23,18 +23,18 @@ $value_points = [
   'Launch hosted or client-site workflows for real business requests',
   'Collect files, structured answers, products, dates, and service choices in one flow',
   'Review submissions on the client site or Console instead of chasing email threads',
-  'Use reusable catalogs so prices, slots, options, and members are not hardcoded in every form',
+  'Use reusable catalogs so prices, slots, options, and members are not duplicated across workflows',
 ];
 
 $compare_rows = [
-  ['feature' => 'What it is',        'xpressui' => '<strong>Business workflow delivery.</strong> Built for document intake, registrations, service requests, product choices, and operator review.', 'others' => '<strong>Single-form interaction.</strong> Great for general forms, but not designed as a full intake or operations flow.'],
-  ['feature' => 'Dynamic data',      'xpressui' => '<strong>Reusable catalogs.</strong> Products, prices, service slots, dates, options, and members can be maintained outside the form.', 'others' => '<strong>Static choices.</strong> Lists often live inside each form and need manual updates across projects.'],
+  ['feature' => 'What it is',        'xpressui' => '<strong>Client intake delivery.</strong> Built for document intake, registrations, service requests, product choices, and operator review.', 'others' => '<strong>Single interaction.</strong> Useful for collecting input, but not designed as a full intake or operations flow.'],
+  ['feature' => 'Dynamic data',      'xpressui' => '<strong>Reusable catalogs.</strong> Products, prices, service slots, dates, options, and members can be maintained outside each workflow.', 'others' => '<strong>Static choices.</strong> Lists often live inside each workflow and need manual updates across projects.'],
   ['feature' => 'Client-site fit',     'xpressui' => '<strong>Theme-proof by design.</strong> UI stays consistent without fighting theme CSS on every project.', 'others' => '<strong>Theme-dependent.</strong> Styling often needs extra overrides or custom fixes.'],
-  ['feature' => 'Best use case',     'xpressui' => '<strong>Agencies and service teams.</strong> Best when you repeatedly collect structured requests, documents, bookings, or catalog-driven choices.', 'others' => '<strong>General-purpose forms.</strong> Best when you need broad form coverage rather than a dedicated workflow.'],
+  ['feature' => 'Best use case',     'xpressui' => '<strong>Agencies and service teams.</strong> Best when you repeatedly collect structured requests, documents, bookings, or catalog-driven choices.', 'others' => '<strong>Generic collection.</strong> Best when you only need a simple one-off request.'],
 ];
 
 $catalog_cards = [
-  ['title' => 'Products and options', 'body' => 'Keep SKUs, prices, quantities, and selectable options in a reusable catalog instead of copying choices into every form.'],
+  ['title' => 'Products and options', 'body' => 'Keep SKUs, prices, quantities, and selectable options in a reusable catalog instead of copying choices into every workflow.'],
   ['title' => 'Services and slots', 'body' => 'Publish available services, dates, capacities, and booking choices so operators can review requests with context.'],
   ['title' => 'Members and lists', 'body' => 'Reuse member, subscriber, or client lists when a workflow needs verification or a known audience.'],
 ];
@@ -59,7 +59,7 @@ $workflow_steps = [
 ];
 
 $faq_items = [
-  ['q' => 'Is XPressUI a form builder?', 'a' => 'Not in the usual sense. It is better understood as a workflow delivery product, built for structured onboarding, document intake, catalogs, and operator review.'],
+  ['q' => 'What is XPressUI?', 'a' => 'XPressUI is a client intake portal system: private links, guided document upload, dynamic choices, and operator review in one delivery path.'],
   ['q' => 'Can I start for free?', 'a' => 'Yes. XPressUI Free includes the client-site runtime, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
   ['q' => 'What is XPressUI Pro?', 'a' => 'XPressUI Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.'],
   ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Solo starts at €19/month, Team at €49/month, and Agency at €129/month.'],
@@ -75,17 +75,17 @@ get_header();
   <section class="bg-gradient-to-b from-white via-blue-50/40 to-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center xpressui-hero-shell">
       <div class="lg:col-span-6 text-center lg:text-left">
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Workflow delivery for agencies and service teams</p>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Client intake portals for agencies and service teams</p>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-          Launch business workflows without rebuilding forms, catalogs, and review screens from scratch.
+          Build client intake portals without stitching together plugins, storage, and review screens.
         </h1>
         <p class="text-lg sm:text-xl text-gray-500 mb-8 leading-relaxed">
-          XPressUI helps agencies and service teams publish branded workflows for document intake, registrations, service requests, catalog choices, and operator review. Use XPressUI Pro for client sites or XPressUI Cloud for hosted links and managed operations.
+          XPressUI gives agencies and service teams one delivery system for private intake links, document upload, dynamic choices, and operator review. Use it on client WordPress sites or host the workflow with XPressUI Cloud.
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
-          <a href="<?php echo esc_url($agency_pilot_url); ?>"
+          <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
              class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-            Launch a workflow in 48h →
+            Try live intake →
           </a>
           <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
              class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
@@ -93,22 +93,14 @@ get_header();
           </a>
         </div>
         <div class="xpressui-hero-points flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-3 text-sm text-gray-500">
-          <?php foreach (['Document intake', 'Dynamic catalogs', 'Operator email and review', 'XPressUI Pro or Cloud'] as $point): ?>
+          <?php foreach (['Private intake links', 'Guided uploads', 'Operator inbox', 'WordPress or Cloud'] as $point): ?>
           <span class="inline-flex items-center rounded-full border border-blue-100 bg-white/90 px-4 py-2 shadow-sm"><?php echo esc_html($point); ?></span>
           <?php endforeach; ?>
         </div>
       </div>
       <div class="lg:col-span-6">
-        <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 aspect-video bg-black ring-1 ring-black/5">
-          <iframe
-            src="<?php echo esc_url($demo_embed_url); ?>"
-            title="XPressUI demo video"
-            loading="eager"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            class="w-full h-full"
-          ></iframe>
+        <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white ring-1 ring-black/5">
+          <img src="<?php echo esc_url(xpressui_asset_url('front-step-2.png')); ?>" alt="XPressUI client intake portal" class="w-full h-auto object-cover object-top">
         </div>
         <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-end text-sm">
           <a href="<?php echo esc_url($demo_video_url); ?>" target="_blank" rel="noreferrer" class="text-blue-600 font-semibold hover:underline">Open video</a>
@@ -191,7 +183,7 @@ get_header();
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <div>
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Why it converts better</p>
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">You do not need another form. You need a system.</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">You do not need another inbox full of attachments. You need a guided intake system.</h2>
         <p class="text-gray-500 leading-relaxed">Most onboarding starts badly: missing files, vague briefs, and too many follow-up emails. XPressUI replaces that chaos with a clear portal your client can actually complete in one sitting.</p>
       </div>
       <ul class="space-y-4 pt-2">
@@ -273,13 +265,13 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Why it stands out</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Not just another static site form plugin.</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">Generic form plugins are useful. XPressUI is simply aimed at a different outcome: a structured client portal that makes onboarding cleaner.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Built for intake, not scattered follow-up.</h2>
+      <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">XPressUI is aimed at the full client intake path: the private link, the guided upload, the submission status, and the operator review screen.</p>
       <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm xpressui-compare-table">
         <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:140px 1fr 1fr">
           <div class="py-3 px-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
           <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 uppercase tracking-wider">XPressUI</div>
-          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 uppercase tracking-wider">Typical form plugins</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 uppercase tracking-wider">Generic collection tools</div>
         </div>
         <?php foreach ($compare_rows as $i => $row): $is_last = ($i === count($compare_rows) - 1); ?>
         <div class="grid items-start <?php echo $is_last ? '' : 'border-b border-gray-100'; ?>" style="grid-template-columns:140px 1fr 1fr">

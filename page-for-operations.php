@@ -10,7 +10,7 @@ $segment_primary_cta = 'Scope an operations workflow';
 $segment_secondary_cta = 'Compare pricing';
 
 $segment_pains = [
-  'Requests arrive through inboxes, messages, spreadsheets, and static forms.',
+  'Requests arrive through inboxes, messages, spreadsheets, and static request pages.',
   'Operators cannot quickly see what is new, waiting, approved, or blocked.',
   'Prices, dates, services, and availability lists change faster than forms do.',
   'Managers need a cleaner audit trail before approving or delivering work.',
@@ -43,7 +43,7 @@ $segment_offer = [
   ],
 ];
 
-$segment_outbound = "If your operations team still manages recurring requests through email, WhatsApp, spreadsheets, or static forms, the follow-up cost adds up quickly.\n\nXPressUI turns one recurring process into a structured workflow with files, catalogs, statuses, and operator review.\n\nWe can start with one workflow and decide whether it deserves to become reusable.";
+$segment_outbound = "If your operations team still manages recurring requests through email, WhatsApp, spreadsheets, or static request pages, the follow-up cost adds up quickly.\n\nXPressUI turns one recurring process into a structured workflow with files, catalogs, statuses, and operator review.\n\nWe can start with one workflow and decide whether it deserves to become reusable.";
 
 $segment_use_cases = [
   ['title' => 'Reservation requests', 'body' => 'Collect date preferences, participants, service options, and required documents.'],

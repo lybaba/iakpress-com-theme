@@ -44,7 +44,7 @@ $deliverables = [
 
 $qualifiers = [
   'You already build or maintain client sites or workflow-heavy service pages.',
-  'A client workflow currently runs through email, spreadsheets, or static forms.',
+  'A client workflow currently runs through email, spreadsheets, or static request pages.',
   'Files, prices, dates, services, or payment proofs create manual follow-up.',
   'You can test one workflow with a real operator within 7 days.',
 ];
@@ -58,7 +58,7 @@ get_header();
       <div class="lg:col-span-7">
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">Agency pilot</p>
         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 leading-tight mb-6">
-          Launch one client workflow first. Turn it into a repeatable agency offer.
+          Launch one client intake first. Turn it into a repeatable agency offer.
         </h1>
         <p class="text-lg md:text-xl text-gray-500 leading-relaxed mb-8">
           XPressUI helps agencies ship document intake, service requests, reservations, catalog orders, and operator review without rebuilding a custom backend for each client.
