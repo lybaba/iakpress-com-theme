@@ -7,6 +7,8 @@ $console_url = 'https://xpressui.iakpress.com/console/';
 $hero_client_portal = xpressui_asset_url('front-step-2.png');
 $hero_upload_flow = xpressui_asset_url('front-step-3.png');
 $hero_inbox = xpressui_asset_url('admin-project-inbox.png');
+$intro_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';
+$intro_video_embed_url = 'https://www.youtube.com/embed/G8dXHAbIgac';
 
 get_header(); ?>
 
@@ -68,6 +70,36 @@ get_header(); ?>
         <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($item['body']); ?></p>
       </article>
       <?php endforeach; ?>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-4 text-center lg:text-left">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Product intro</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">See XPressUI in 42 seconds.</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          A quick tour of the intake link, client submission, notification email, and operator review workflow.
+        </p>
+        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
+          Open on YouTube
+        </a>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-950 shadow-2xl shadow-blue-900/10">
+          <div class="aspect-video">
+            <iframe
+              src="<?php echo esc_url($intro_video_embed_url); ?>"
+              title="XPressUI product intro"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="width: 100%; height: 100%; border: 0;"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

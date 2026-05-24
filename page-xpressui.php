@@ -9,8 +9,8 @@ $repo_url       = 'https://github.com/lybaba/xpressui-packages';
 $console_url    = 'https://xpressui.iakpress.com/console/';
 $contact_url    = home_url('/contact/');
 $agency_pilot_url = home_url('/agency-pilot/');
-$demo_video_url = 'https://www.youtube.com/watch?v=tXjWmTetHpQ';
-$demo_embed_url = 'https://www.youtube.com/embed/tXjWmTetHpQ';
+$demo_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';
+$demo_embed_url = 'https://www.youtube.com/embed/G8dXHAbIgac';
 
 $gallery_shots = [
   ['src' => xpressui_asset_url('front-step-2.png'),            'title' => 'Client portal flow',  'caption' => 'Clients move through a clear multi-step portal instead of sending everything across scattered emails.'],

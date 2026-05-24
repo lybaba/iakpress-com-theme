@@ -7,6 +7,8 @@ $client_portal = xpressui_asset_url('front-step-2.png');
 $upload_flow   = xpressui_asset_url('front-step-3.png');
 $operator_inbox = xpressui_asset_url('admin-project-inbox.png');
 $review_screen = xpressui_asset_url('admin-submission-detail.png');
+$intro_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';
+$intro_video_embed_url = 'https://www.youtube.com/embed/G8dXHAbIgac';
 
 get_header(); ?>
 
@@ -45,6 +47,36 @@ get_header(); ?>
           <div class="absolute -right-4 -bottom-8 hidden md:block w-72 overflow-hidden rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-gray-200">
             <p class="mb-2 text-xs font-extrabold uppercase tracking-widest text-blue-600">Inbox opérateur</p>
             <img src="<?php echo esc_url($operator_inbox); ?>" alt="Inbox opérateur XPressUI" class="h-36 w-full rounded-xl object-cover object-top">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-4 text-center lg:text-left">
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Vidéo produit</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 mb-4">XPressUI en 42 secondes.</h2>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          Un tour rapide du lien d'intake, de la soumission client, de la notification email et de la revue opérateur.
+        </p>
+        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
+          Ouvrir sur YouTube
+        </a>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-950 shadow-2xl shadow-blue-900/10">
+          <div class="aspect-video">
+            <iframe
+              src="<?php echo esc_url($intro_video_embed_url); ?>"
+              title="Introduction produit XPressUI"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="width: 100%; height: 100%; border: 0;"
+            ></iframe>
           </div>
         </div>
       </div>
