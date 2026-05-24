@@ -3,9 +3,45 @@
  * The template for displaying the /contact/ page.
  */
 
-$contact_embed_url = '';
+if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
+  function iakpress_extract_contact_hosted_link_url_from_content($content) {
+    if (!is_string($content) || trim($content) === '' || !function_exists('shortcode_parse_atts')) {
+      return '';
+    }
+
+    if (!preg_match_all('/\[xpressui\b([^\]]*)\]/i', $content, $matches)) {
+      return '';
+    }
+
+    foreach ($matches[1] as $attribute_text) {
+      $attributes = shortcode_parse_atts($attribute_text);
+      if (!is_array($attributes)) {
+        continue;
+      }
+
+      $candidate = '';
+      if (isset($attributes['xpressui_contact_hosted_link_url'])) {
+        $candidate = (string) $attributes['xpressui_contact_hosted_link_url'];
+      } elseif (isset($attributes['hosted_link_url'])) {
+        $candidate = (string) $attributes['hosted_link_url'];
+      }
+
+      $candidate = trim($candidate);
+      if ($candidate !== '') {
+        return esc_url_raw($candidate);
+      }
+    }
+
+    return '';
+  }
+}
+
+$contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
+$contact_embed_url = iakpress_extract_contact_hosted_link_url_from_content($contact_content);
 if (function_exists('get_the_ID')) {
-  $contact_embed_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
+  if ($contact_embed_url === '') {
+    $contact_embed_url = trim((string) get_post_meta(get_the_ID(), 'xpressui_contact_hosted_link_url', true));
+  }
 }
 if ($contact_embed_url === '') {
   $contact_embed_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url', ''));
@@ -101,7 +137,7 @@ get_header(); ?>
               <code class="rounded bg-blue-50 px-1 text-blue-700">xpressui_contact_hosted_link_url</code>.
               The contact page will switch from this setup card to the live XPressUI embed.
             </p>
-            <?php if (trim((string) get_the_content()) !== ''): ?>
+            <?php if (trim($contact_content) !== ''): ?>
               <details class="rounded-2xl border border-gray-100 bg-gray-50 p-4">
                 <summary class="cursor-pointer text-sm font-bold text-gray-900">Show legacy contact form fallback</summary>
                 <div class="mt-4">
