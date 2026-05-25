@@ -226,6 +226,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Start XPressUI Cloud' => 'Démarrer XPressUI Cloud',
         'Not ready to choose a plan?' => 'Pas prêt à choisir un plan ?',
         'Start with one paid workflow pilot.' => 'Commencez par un pilote workflow payant.',
+        'If the buyer is still comparing paths, scope one real workflow first. Hosted pilots start from €299 setup; client-site delivery starts from €790 setup.' => 'Si l’acheteur compare encore les chemins possibles, cadrez d’abord un vrai workflow. Les pilotes hébergés commencent à 299 € de configuration ; la livraison sur site client commence à 790 € de configuration.',
         'Positioning strip' => 'Positionnement',
         'Validate the portal on a client site' => 'Valider le portail sur un site client',
         'Ship production workflows on client sites' => 'Livrer des workflows de production sur sites clients',
