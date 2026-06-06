@@ -322,8 +322,7 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
           <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Discuss Cloud plan</a>
-          <p class="mt-4 text-xs text-gray-400 font-medium">Direct Pro sales are temporarily paused while XPressUI Free is being validated by WordPress.org.</p>
+          <a href="https://buy.stripe.com/test_129pro" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Buy XPressUI Pro</a>
         </div>
       </div>
     </div>

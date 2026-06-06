@@ -265,7 +265,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="<?php echo esc_url($contact_url); ?>" class="mt-auto block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Discuss Cloud plan</a>
+        <a href="https://buy.stripe.com/test_129pro" class="mt-auto block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Buy XPressUI Pro</a>
       </article>
 
       <article class="bg-blue-50 rounded-3xl border border-blue-100 p-8 flex flex-col">
@@ -431,7 +431,6 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center">Discuss Cloud plan</a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition text-center">Download XPressUI Free</a>
       </div>
-      <p class="text-xs text-gray-500 mt-4">Direct Pro sales are temporarily paused while XPressUI Free is being validated by WordPress.org.</p>
     </div>
   </section>
 

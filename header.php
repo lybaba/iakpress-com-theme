@@ -7,6 +7,32 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      if (path.indexOf('/fr/') === 0 || path === '/fr') {
+        return;
+      }
+      var cookies = document.cookie.split(';');
+      var langPref = null;
+      for (var i = 0; i < cookies.length; i++) {
+        var c = cookies[i].trim();
+        if (c.indexOf('lang_pref=') === 0) {
+          langPref = c.substring('lang_pref='.length);
+          break;
+        }
+      }
+      if (langPref) {
+        return;
+      }
+      var browserLang = navigator.language || navigator.userLanguage || '';
+      if (browserLang.toLowerCase().indexOf('fr') === 0) {
+        var cleanPath = path.replace(/^\/+/, '');
+        var newPath = '/fr/' + cleanPath;
+        window.location.href = window.location.origin + newPath + window.location.search + window.location.hash;
+      }
+    })();
+  </script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class( 'antialiased text-gray-900 bg-white flex flex-col min-h-screen' ); ?>>
@@ -70,8 +96,8 @@
           <?php echo esc_html($contact_cta_label); ?>
         </a>
         <div class="flex items-center gap-1" aria-label="Language switcher">
-          <a href="<?php echo esc_url($english_language_url); ?>" class="<?php echo $is_french_request ? $language_idle : $language_active; ?>" aria-label="Switch to English" title="English">🇬🇧</a>
-          <a href="<?php echo esc_url($french_language_url); ?>" class="<?php echo $is_french_request ? $language_active : $language_idle; ?>" aria-label="Passer en français" title="Français">🇫🇷</a>
+          <a href="<?php echo esc_url($english_language_url); ?>" onclick="document.cookie = 'lang_pref=en; path=/; max-age=31536000';" class="<?php echo $is_french_request ? $language_idle : $language_active; ?>" aria-label="Switch to English" title="English">🇬🇧</a>
+          <a href="<?php echo esc_url($french_language_url); ?>" onclick="document.cookie = 'lang_pref=fr; path=/; max-age=31536000';" class="<?php echo $is_french_request ? $language_active : $language_idle; ?>" aria-label="Passer en français" title="Français">🇫🇷</a>
         </div>
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">
