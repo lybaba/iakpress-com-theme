@@ -13,9 +13,9 @@ $booking_url  = 'https://cal.com/xpressui/15min';
 $copy = $is_french_pilot ? [
   'eyebrow'          => 'Pilote agence',
   'h1'               => 'Lancez un premier intake client. Transformez-le en offre d\'agence réutilisable.',
-  'intro'            => 'XPressUI aide les agences à lancer des portails documentaires, des demandes de service, des commandes catalogue et une revue opérateur sans créer un backend sur mesure pour chaque client.',
+  'intro'            => 'IntakeFlow aide les agences à lancer des portails documentaires, des demandes de service, des commandes catalogue et une revue opérateur sans créer un backend sur mesure pour chaque client.',
   'primary_cta'      => 'Demander un pilote',
-  'secondary_cta'    => 'Voir XPressUI',
+  'secondary_cta'    => 'Voir IntakeFlow',
   'qualifiers_eyebrow' => 'Chemin le plus rapide vers les revenus',
   'offers_eyebrow'   => 'Offres',
   'offers_title'     => 'Commencez accompagné, puis décidez ce qui doit devenir réutilisable.',
@@ -39,9 +39,9 @@ $copy = $is_french_pilot ? [
 ] : [
   'eyebrow'          => 'Agency pilot',
   'h1'               => 'Launch one client intake first. Turn it into a repeatable agency offer.',
-  'intro'            => 'XPressUI helps agencies ship document intake, service requests, reservations, catalog orders, and operator review without rebuilding a custom backend for each client.',
+  'intro'            => 'IntakeFlow helps agencies ship document intake, service requests, reservations, catalog orders, and operator review without rebuilding a custom backend for each client.',
   'primary_cta'      => 'Request a pilot',
-  'secondary_cta'    => 'See XPressUI',
+  'secondary_cta'    => 'See IntakeFlow',
   'qualifiers_eyebrow' => 'Fastest path to revenue',
   'offers_eyebrow'   => 'Offers',
   'offers_title'     => 'Start assisted, then decide what should become reusable.',
@@ -74,13 +74,13 @@ $offers = $is_french_pilot ? [
   [
     'title' => 'Livraison sur site client',
     'price' => 'à partir de 790 € de configuration',
-    'body'  => 'Livraison XPressUI Pro, intégration page, test de soumission et validation inbox admin.',
+    'body'  => 'Livraison IntakeFlow Starter, intégration page, test de soumission et validation inbox admin.',
     'fit'   => 'Idéal pour les agences qui livrent sur des sites appartenant au client.',
   ],
   [
     'title' => 'Pilote agence',
     'price' => 'Pilote accompagné 3 mois',
-    'body'  => 'Lancer le premier workflow, préparer des templates réutilisables et valider si XPressUI appartient à votre stack de livraison.',
+    'body'  => 'Lancer le premier workflow, préparer des templates réutilisables et valider si IntakeFlow appartient à votre stack de livraison.',
     'fit'   => 'Idéal pour les agences avec plusieurs projets clients lourds en workflows.',
   ],
 ] : [
@@ -93,13 +93,13 @@ $offers = $is_french_pilot ? [
   [
     'title' => 'Client-site delivery',
     'price' => 'from €790 setup',
-    'body'  => 'XPressUI Pro delivery, page embed guidance, test submission, and admin inbox validation.',
+    'body'  => 'IntakeFlow Starter delivery, page embed guidance, test submission, and admin inbox validation.',
     'fit'   => 'Best for agencies shipping on client-owned sites.',
   ],
   [
     'title' => 'Agency pilot',
     'price' => '3-month assisted pilot',
-    'body'  => 'Launch the first workflow, prepare reusable templates, and validate whether XPressUI belongs in your delivery stack.',
+    'body'  => 'Launch the first workflow, prepare reusable templates, and validate whether IntakeFlow belongs in your delivery stack.',
     'fit'   => 'Best for agencies with several workflow-heavy client projects.',
   ],
 ];
@@ -120,12 +120,12 @@ $deliverables = $is_french_pilot ? [
   ['title' => 'Lien workflow hébergé', 'body' => 'Un lien privé envoyable à un client ou intégrable sur la page commerciale pendant la validation du processus.'],
   ['title' => 'Parcours inbox opérateur', 'body' => 'Les soumissions arrivent avec suffisamment de contexte pour la revue, le suivi, la preuve de paiement ou la complétion.'],
   ['title' => 'Surface catalogue réutilisable', 'body' => 'Produits, services, dates, membres ou options sont séparés du formulaire pour que le workflow puisse passer à l\'échelle.'],
-  ['title' => 'Option livraison sur site client', 'body' => 'Si le workflow doit vivre sur un site client, le pilote définit le chemin de livraison XPressUI Pro et la passation.'],
+  ['title' => 'Option livraison sur site client', 'body' => 'Si le workflow doit vivre sur un site client, le pilote définit le chemin de livraison IntakeFlow Starter et la passation.'],
 ] : [
   ['title' => 'Hosted workflow link', 'body' => 'A private link you can send to one client or embed on the commercial page while the process is validated.'],
   ['title' => 'Operator inbox path', 'body' => 'Submissions arrive with enough context for review, follow-up, payment proof, or completion.'],
   ['title' => 'Reusable catalog surface', 'body' => 'Products, services, dates, members, or options are separated from the form so the workflow can scale.'],
-  ['title' => 'Client-site delivery option', 'body' => 'If the workflow belongs on a client site, the pilot defines the XPressUI Pro delivery path and handoff.'],
+  ['title' => 'Client-site delivery option', 'body' => 'If the workflow belongs on a client site, the pilot defines the IntakeFlow Starter delivery path and handoff.'],
 ];
 
 $qualifiers = $is_french_pilot ? [

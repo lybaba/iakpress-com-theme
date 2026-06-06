@@ -1,6 +1,16 @@
-#!/bin/sh
-# Runs inside the wordpress:cli container at each `docker-compose up`.
-# Idempotent — safe to re-run.
+# Disable SSL verification for MariaDB client (avoid self-signed cert issue with local mysql 8)
+mkdir -p /home/www-data
+cat > /home/www-data/.my.cnf <<'EOF'
+[client]
+ssl=0
+EOF
+chown -R www-data:www-data /home/www-data/.my.cnf 2>/dev/null || true
+
+mkdir -p /root
+cat > /root/.my.cnf <<'EOF'
+[client]
+ssl=0
+EOF
 
 WP=/var/www/html
 URL=http://localhost:8080
@@ -11,7 +21,7 @@ until [ -f "$WP/wp-settings.php" ]; do sleep 2; done
 
 # ── 2. Wait for database ─────────────────────────────────────────────────────
 echo "==> Waiting for database..."
-until wp --allow-root db check --path="$WP" 2>/dev/null; do sleep 2; done
+until wp --allow-root db check --ssl=0 --path="$WP" 2>/dev/null; do sleep 2; done
 
 # ── 3. Install WordPress ─────────────────────────────────────────────────────
 echo "==> Installing WordPress..."
@@ -56,9 +66,8 @@ echo "==> Creating pages..."
 create_page() {
   local title="$1" slug="$2" template="$3"
 
-  local id
   id=$(wp --allow-root post list --path="$WP" \
-    --post_type=page --post_name="$slug" --field=ID 2>/dev/null | head -1)
+    --post_type=page --name="$slug" --field=ID 2>/dev/null | head -1)
 
   if [ -z "$id" ]; then
     id=$(wp --allow-root post create \
@@ -92,7 +101,7 @@ create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.
 
 if [ -n "$XPRESSUI_CONTACT_HOSTED_LINK_URL" ]; then
   CONTACT_ID=$(wp --allow-root post list --path="$WP" \
-    --post_type=page --post_name=contact --field=ID 2>/dev/null | head -1)
+    --post_type=page --name=contact --field=ID 2>/dev/null | head -1)
   if [ -n "$CONTACT_ID" ]; then
     wp --allow-root post meta update --path="$WP" "$CONTACT_ID" xpressui_contact_hosted_link_url "$XPRESSUI_CONTACT_HOSTED_LINK_URL" 2>/dev/null
     echo "   Contact hosted link URL configured from XPRESSUI_CONTACT_HOSTED_LINK_URL."
@@ -102,10 +111,10 @@ fi
 # ── 7. Set home as static front page ─────────────────────────────────────────
 echo "==> Setting home as static front page..."
 FRONT_ID=$(wp --allow-root post list --path="$WP" \
-  --post_type=page --post_name=home --field=ID 2>/dev/null | head -1)
+  --post_type=page --name=home --field=ID 2>/dev/null | head -1)
 if [ -n "$FRONT_ID" ]; then
   BLOG_ID=$(wp --allow-root post list --path="$WP" \
-    --post_type=page --post_name=blog --field=ID 2>/dev/null | head -1)
+    --post_type=page --name=blog --field=ID 2>/dev/null | head -1)
   wp --allow-root rewrite structure '/%postname%/' --hard --path="$WP" 2>/dev/null || true
   cat > "$WP/.htaccess" <<'HTACCESS'
 # BEGIN WordPress
@@ -125,6 +134,9 @@ HTACCESS
     wp --allow-root option update --path="$WP" page_for_posts "$BLOG_ID"
   fi
 fi
+
+# Ensure the Apache container (www-data, UID 33) owns the generated files
+chown -R 33:33 "$WP/wp-content/themes/generatepress" "$WP/.htaccess" 2>/dev/null || true
 
 echo ""
 echo "================================================"

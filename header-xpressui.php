@@ -22,13 +22,13 @@ $is_pro = ($active === 'pro');
   <div class="container nav-inner">
     <a href="<?php echo esc_url( home_url( '/xpressui/' ) ); ?>" class="brand-mark-word"<?php if ($is_pro): ?> style="color:#e8f0f8"<?php endif; ?>>
       <span class="brand-icon">DI</span>
-      <span>XPressUI Pro</span>
+      <span>IntakeFlow Starter</span>
     </a>
     <div class="nav-links">
       <?php
       $nav = [
-        ['href' => home_url( '/xpressui/' ),            'slug' => '',        'label' => 'XPressUI Pro'],
-        ['href' => home_url( '/xpressui-cloud/' ),         'slug' => 'xpressui-cloud', 'label' => 'XPressUI Cloud'],
+        ['href' => home_url( '/xpressui/' ),            'slug' => '',        'label' => 'IntakeFlow Starter'],
+        ['href' => home_url( '/xpressui-cloud/' ),         'slug' => 'xpressui-cloud', 'label' => 'IntakeFlow Cloud'],
         ['href' => home_url( '/pricing/' ),             'slug' => 'pricing', 'label' => 'Pricing'],
         ['href' => home_url( '/install/' ),             'slug' => 'install', 'label' => 'Install'],
         ['href' => $console_url,                        'slug' => '',        'label' => 'Open Console', 'external' => true],

@@ -45,12 +45,12 @@
       
       <!-- Brand -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center gap-3" aria-label="XPressUI home">
+        <a href="/" class="flex items-center gap-3" aria-label="IntakeFlow home">
           <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gray-900 text-white text-sm font-extrabold tracking-tight shadow-sm">
-            XP
+            IF
           </span>
           <span class="hidden sm:inline-flex text-lg font-extrabold tracking-tight text-gray-900">
-            XPress<span class="text-blue-600">UI</span>
+            Intake<span class="text-blue-600">Flow</span>
           </span>
         </a>
       </div>
@@ -102,7 +102,7 @@
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">
           <a href="<?php echo esc_url($contact_href); ?>" class="text-blue-600 font-bold text-sm mr-4"><?php echo esc_html($mobile_contact_cta_label); ?></a>
-          <a href="<?php echo esc_url($product_href); ?>" class="text-gray-900 font-medium text-sm">XPressUI</a>
+          <a href="<?php echo esc_url($product_href); ?>" class="text-gray-900 font-medium text-sm">IntakeFlow</a>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ $agency_url     = home_url('/agency-pilot/');
 $is_french_install = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $install_copy = $is_french_install ? [
   'eyebrow' => 'Guide d’installation',
-  'title' => 'Une page d’intake XPressUI en ligne en moins de 10 minutes.',
+  'title' => 'Une page d’intake IntakeFlow en ligne en moins de 10 minutes.',
   'body' => 'Deux chemins : tester les workflows intégrés sans compte, ou créer un parcours personnalisé dans la console visuelle et le déployer par upload ZIP.',
   'free_badge' => 'Free',
   'free_title' => 'Tester les workflows intégrés',
@@ -27,14 +27,14 @@ $install_copy = $is_french_install ? [
   'message_2' => '<strong class="text-gray-900">1 destination :</strong> lien hébergé ou page sur site client.',
   'message_3' => '<strong class="text-gray-900">1 exemple :</strong> formulaire, tableur, capture ou document.',
   'custom_title' => 'Prêt à créer un workflow personnalisé ?',
-  'custom_body' => 'Les ventes directes Pro sont en pause pendant la validation de XPressUI Free par WordPress.org.',
+  'custom_body' => 'Les ventes directes Pro sont en pause pendant la validation de IntakeFlow Free par WordPress.org.',
   'custom_cta' => 'Discuter du plan Cloud',
   'pilot_title' => 'Besoin de mettre le premier workflow en ligne avec nous ?',
   'pilot_body' => 'Utilisez Agency Pilot quand la priorité est un workflow client opérationnel, pas l’apprentissage complet de l’outil.',
   'pilot_cta' => 'Voir Agency Pilot',
 ] : [
   'eyebrow' => 'Install guide',
-  'title' => 'Live intake page with XPressUI in under 10 minutes.',
+  'title' => 'Live intake page with IntakeFlow in under 10 minutes.',
   'body' => 'Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.',
   'free_badge' => 'Free',
   'free_title' => 'Test the built-in workflows',
@@ -50,7 +50,7 @@ $install_copy = $is_french_install ? [
   'message_2' => '<strong class="text-gray-900">1 destination:</strong> hosted link or client-site page.',
   'message_3' => '<strong class="text-gray-900">1 sample:</strong> form, spreadsheet, screenshot, or document.',
   'custom_title' => 'Ready to build a custom workflow?',
-  'custom_body' => 'Direct Pro sales are paused while XPressUI Free is being validated by WordPress.org.',
+  'custom_body' => 'Direct Pro sales are paused while IntakeFlow Free is being validated by WordPress.org.',
   'custom_cta' => 'Discuss Cloud plan',
   'pilot_title' => 'Need the first workflow live with you?',
   'pilot_body' => 'Use Agency Pilot when the priority is a working client workflow, not learning the whole tool first.',
@@ -75,7 +75,7 @@ $free_steps = $is_french_install ? [
   [
     'number' => '03',
     'title'  => 'Publier la page : c’est en ligne',
-    'body'   => 'Le parcours s’affiche directement dans votre page, isolé du thème. Les soumissions arrivent dans XPressUI → Submissions avec suivi de statut (New / In Review / Done).',
+    'body'   => 'Le parcours s’affiche directement dans votre page, isolé du thème. Les soumissions arrivent dans IntakeFlow → Submissions avec suivi de statut (New / In Review / Done).',
   ],
 ] : [
   [
@@ -95,7 +95,7 @@ $free_steps = $is_french_install ? [
   [
     'number' => '03',
     'title'  => 'Publish the page — you\'re live',
-    'body'   => 'The form renders inline on your page, isolated from your theme. Submissions land in XPressUI → Submissions with status tracking (New / In Review / Done).',
+    'body'   => 'The form renders inline on your page, isolated from your theme. Submissions land in IntakeFlow → Submissions with status tracking (New / In Review / Done).',
   ],
 ];
 
@@ -109,7 +109,7 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '02',
     'title'  => 'Uploader le ZIP du workflow',
-    'body'   => 'Dans l’administration du site client, allez dans XPressUI → Workflows puis uploadez le ZIP exporté. Le plugin extrait la configuration du parcours et enregistre automatiquement le slug du workflow.',
+    'body'   => 'Dans l’administration du site client, allez dans IntakeFlow → Workflows puis uploadez le ZIP exporté. Le plugin extrait la configuration du parcours et enregistre automatiquement le slug du workflow.',
     'note'   => 'Une clé de licence Pro est nécessaire pour uploader des workflows personnalisés.',
   ],
   [
@@ -129,7 +129,7 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '02',
     'title'  => 'Upload the workflow ZIP',
-    'body'   => 'In the client-site admin, go to XPressUI → Workflows and upload the ZIP you exported. The plugin extracts the form config and registers the workflow slug automatically.',
+    'body'   => 'In the client-site admin, go to IntakeFlow → Workflows and upload the ZIP you exported. The plugin extracts the form config and registers the workflow slug automatically.',
     'note'   => 'A Pro license key is required to upload custom workflows.',
   ],
   [
