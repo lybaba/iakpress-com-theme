@@ -37,7 +37,7 @@ $footer_copy = $is_french_footer ? array(
       </a>
     </div>
     <a href="/" class="text-xl font-extrabold tracking-tighter text-white opacity-70 hover:opacity-100 transition">
-      XPress<span class="text-blue-500">UI</span>
+      Intake<span class="text-blue-500">Flow</span>
     </a>
     <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
       <?php
@@ -47,7 +47,7 @@ $footer_copy = $is_french_footer ? array(
       $footer_lang_href    = $is_french_footer ? '/'              : '/fr/';
       $footer_lang_label   = $is_french_footer ? 'English'        : 'Français';
       ?>
-      <a href="<?php echo esc_url($footer_product_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition">XPressUI</a>
+      <a href="<?php echo esc_url($footer_product_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition">IntakeFlow</a>
       <a href="/xpressui-cloud/" class="text-sm text-gray-500 hover:text-gray-300 transition">Cloud</a>
       <a href="<?php echo esc_url($footer_pricing_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_copy['pricing']); ?></a>
       <a href="<?php echo esc_url($footer_install_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_copy['install']); ?></a>
@@ -56,7 +56,7 @@ $footer_copy = $is_french_footer ? array(
       <a href="<?php echo esc_url($footer_contact_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition">Contact</a>
     </nav>
     <p class="text-gray-500 text-sm">
-      &copy; <?php echo date('Y'); ?> XPressUI by IAKPress. All rights reserved.
+      &copy; <?php echo date('Y'); ?> IntakeFlow by IAKPress. All rights reserved.
     </p>
   </div>
 </footer>

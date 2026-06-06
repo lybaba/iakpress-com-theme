@@ -48,22 +48,22 @@ $use_cases = [
 
 $done_for_you_cards = [
   ['title' => 'Hosted workflow setup', 'price' => 'from €299 setup', 'body' => 'We configure one branded hosted workflow with operator email and a generated document summary.'],
-  ['title' => 'Client-site delivery', 'price' => 'from €790 setup', 'body' => 'We install XPressUI Pro, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
+  ['title' => 'Client-site delivery', 'price' => 'from €790 setup', 'body' => 'We install IntakeFlow Starter, configure the workflow, test submissions, and hand it over with a short walkthrough.'],
   ['title' => 'Agency pilot', 'price' => '3 months guided', 'body' => 'For agencies with complex forms, we help ship the first client workflow and turn the result into a repeatable offer.'],
 ];
 
 $workflow_steps = [
-  ['num' => '01', 'title' => 'Install XPressUI Free', 'body' => 'Download XPressUI Free and activate it on your site in a few minutes.'],
-  ['num' => '02', 'title' => 'Install a workflow', 'body' => 'Use the bundled starter or upload a workflow pack exported from the Console. Upgrade to Pro when you want Console Sync and advanced customization.'],
+  ['num' => '01', 'title' => 'Install IntakeFlow Free', 'body' => 'Download IntakeFlow Free and activate it on your site in a few minutes.'],
+  ['num' => '02', 'title' => 'Install a workflow', 'body' => 'Use the bundled starter or upload a workflow pack exported from the Console. Upgrade to Starter when you want Console Sync and advanced customization.'],
   ['num' => '03', 'title' => 'Collect everything cleanly', 'body' => 'Clients submit files and answers in one place, and your team reviews it on client sites.'],
 ];
 
 $faq_items = [
-  ['q' => 'What is XPressUI?', 'a' => 'XPressUI is a client intake portal system: private links, guided document upload, dynamic choices, and operator review in one delivery path.'],
-  ['q' => 'Can I start for free?', 'a' => 'Yes. XPressUI Free includes the client-site runtime, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
-  ['q' => 'What is XPressUI Pro?', 'a' => 'XPressUI Pro is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.'],
-  ['q' => 'What is XPressUI Cloud?', 'a' => 'XPressUI Cloud is the next delivery path for teams that want XPressUI to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Solo starts at €19/month, Team at €49/month, and Agency at €129/month.'],
-  ['q' => 'When should I get Pro?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Pro runtime.'],
+  ['q' => 'What is IntakeFlow?', 'a' => 'IntakeFlow is a client intake portal system: private links, guided document upload, dynamic choices, and operator review in one delivery path.'],
+  ['q' => 'Can I start for free?', 'a' => 'Yes. IntakeFlow Free includes the client-site runtime, a bundled document intake workflow, and custom workflow ZIP installation so you can test the setup on a real site.'],
+  ['q' => 'What is IntakeFlow Starter?', 'a' => 'IntakeFlow Starter is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.'],
+  ['q' => 'What is IntakeFlow Cloud?', 'a' => 'IntakeFlow Cloud is the next delivery path for teams that want IntakeFlow to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.'],
+  ['q' => 'When should I get Starter?', 'a' => 'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Starter runtime.'],
   ['q' => 'Who is it for?', 'a' => 'It fits agencies, operators, and service teams that repeatedly collect client files, briefs, and onboarding information.'],
 ];
 
@@ -80,7 +80,7 @@ get_header();
           Build client intake portals without stitching together plugins, storage, and review screens.
         </h1>
         <p class="text-lg sm:text-xl text-gray-500 mb-8 leading-relaxed">
-          XPressUI gives agencies and service teams one delivery system for private intake links, document upload, dynamic choices, and operator review. Use it on client WordPress sites or host the workflow with XPressUI Cloud.
+          IntakeFlow gives agencies and service teams one delivery system for private intake links, document upload, dynamic choices, and operator review. Use it on client WordPress sites or host the workflow with IntakeFlow Cloud.
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
           <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
@@ -100,7 +100,7 @@ get_header();
       </div>
       <div class="lg:col-span-6">
         <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white ring-1 ring-black/5">
-          <img src="<?php echo esc_url(xpressui_asset_url('front-step-2.png')); ?>" alt="XPressUI client intake portal" class="w-full h-auto object-cover object-top">
+          <img src="<?php echo esc_url(xpressui_asset_url('front-step-2.png')); ?>" alt="IntakeFlow client intake portal" class="w-full h-auto object-cover object-top">
         </div>
         <div class="mt-4 flex flex-col sm:flex-row gap-3 justify-center lg:justify-end text-sm">
           <a href="<?php echo esc_url($demo_video_url); ?>" target="_blank" rel="noreferrer" class="text-blue-600 font-semibold hover:underline">Open video</a>
@@ -117,7 +117,7 @@ get_header();
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">First workflows to sell</p>
         <h2 class="text-3xl font-bold text-gray-900 mb-4">Start with the processes that already create manual follow-up.</h2>
         <p class="text-gray-600 leading-relaxed">
-          XPressUI is easiest to sell when the buyer already feels the pain: missing files, outdated lists, unclear requests, or schedule changes.
+          IntakeFlow is easiest to sell when the buyer already feels the pain: missing files, outdated lists, unclear requests, or schedule changes.
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -184,7 +184,7 @@ get_header();
       <div>
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Why it converts better</p>
         <h2 class="text-3xl font-bold text-gray-900 mb-4">You do not need another inbox full of attachments. You need a guided intake system.</h2>
-        <p class="text-gray-500 leading-relaxed">Most onboarding starts badly: missing files, vague briefs, and too many follow-up emails. XPressUI replaces that chaos with a clear portal your client can actually complete in one sitting.</p>
+        <p class="text-gray-500 leading-relaxed">Most onboarding starts badly: missing files, vague briefs, and too many follow-up emails. IntakeFlow replaces that chaos with a clear portal your client can actually complete in one sitting.</p>
       </div>
       <ul class="space-y-4 pt-2">
         <?php foreach ($value_points as $point): ?>
@@ -266,11 +266,11 @@ get_header();
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Why it stands out</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Built for intake, not scattered follow-up.</h2>
-      <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">XPressUI is aimed at the full client intake path: the private link, the guided upload, the submission status, and the operator review screen.</p>
+      <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">IntakeFlow is aimed at the full client intake path: the private link, the guided upload, the submission status, and the operator review screen.</p>
       <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm xpressui-compare-table">
         <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:140px 1fr 1fr">
           <div class="py-3 px-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
-          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 uppercase tracking-wider">XPressUI</div>
+          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 uppercase tracking-wider">IntakeFlow</div>
           <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 uppercase tracking-wider">Generic collection tools</div>
         </div>
         <?php foreach ($compare_rows as $i => $row): $is_last = ($i === count($compare_rows) - 1); ?>
@@ -287,11 +287,11 @@ get_header();
   <section class="bg-gray-50 border-t border-gray-100 py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with XPressUI Pro now. Move to hosted when operations need to scale.</h2>
-      <p class="text-gray-500 text-center mb-10">Launch quickly with XPressUI Free, upgrade to XPressUI Pro for production client-site delivery, then add XPressUI Cloud when you want XPressUI to manage links, inbox, files, quotas, and team review.</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with IntakeFlow Starter now. Move to hosted when operations need to scale.</h2>
+      <p class="text-gray-500 text-center mb-10">Launch quickly with IntakeFlow Free, upgrade to IntakeFlow Starter for production client-site delivery, then add IntakeFlow Cloud PRO when you want IntakeFlow to manage links, inbox, files, quotas, and team review.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article class="bg-white rounded-2xl border border-gray-100 p-8 flex flex-col shadow-sm">
-          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">XPressUI Free</span>
+          <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">IntakeFlow Free</span>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Ship the intake workflow on client sites</h3>
           <div class="flex items-baseline gap-2 mb-6">
             <span class="text-4xl font-extrabold text-gray-900">€0</span>
@@ -307,14 +307,14 @@ get_header();
           </ul>
           <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
              class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Start with XPressUI Free
+            Start with IntakeFlow Free
           </a>
         </article>
         <article class="bg-gray-900 rounded-2xl border border-gray-800 p-8 flex flex-col shadow-sm">
-          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">XPressUI Cloud</span>
-          <h3 class="text-xl font-bold text-white mb-2">Let XPressUI host the workflow and operations inbox</h3>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Cloud PRO</span>
+          <h3 class="text-xl font-bold text-white mb-2">Let IntakeFlow host the workflow and operations inbox</h3>
           <div class="flex items-baseline gap-2 mb-6">
-            <span class="text-4xl font-extrabold text-white">€19</span>
+            <span class="text-4xl font-extrabold text-white">€39</span>
             <span class="text-gray-400 text-sm">/month</span>
           </div>
           <ul class="space-y-3 mb-8 flex-1">
@@ -353,7 +353,7 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Ready to launch your first intake portal?</p>
       <h2 class="text-3xl font-extrabold text-white mb-4">Give your next client project a better start.</h2>
-      <p class="text-gray-400 mb-10">Start with XPressUI Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
+      <p class="text-gray-400 mb-10">Start with IntakeFlow Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
@@ -361,7 +361,7 @@ get_header();
         </a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">
-          Download XPressUI Free
+          Download IntakeFlow Free
         </a>
       </div>
     </div>

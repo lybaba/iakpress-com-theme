@@ -44,14 +44,14 @@ get_header(); ?>
         <div class="relative rounded-[2rem] bg-gray-950 p-4 md:p-6 shadow-2xl shadow-blue-900/20 ring-1 ring-gray-900/10">
           <div class="absolute -left-6 top-10 hidden md:block rounded-2xl bg-white p-3 shadow-xl ring-1 ring-gray-200">
             <p class="mb-2 text-xs font-extrabold uppercase tracking-widest text-blue-600">Client portal</p>
-            <img src="<?php echo esc_url($hero_client_portal); ?>" alt="XPressUI client intake portal" class="h-40 w-56 rounded-xl object-cover object-top">
+            <img src="<?php echo esc_url($hero_client_portal); ?>" alt="IntakeFlow client intake portal" class="h-40 w-56 rounded-xl object-cover object-top">
           </div>
           <div class="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-white/10">
-            <img src="<?php echo esc_url($hero_upload_flow); ?>" alt="Guided upload workflow in XPressUI" class="h-auto w-full object-cover object-top">
+            <img src="<?php echo esc_url($hero_upload_flow); ?>" alt="Guided upload workflow in IntakeFlow" class="h-auto w-full object-cover object-top">
           </div>
           <div class="absolute -right-4 -bottom-8 hidden md:block w-72 overflow-hidden rounded-2xl bg-white p-3 shadow-2xl ring-1 ring-gray-200">
             <p class="mb-2 text-xs font-extrabold uppercase tracking-widest text-blue-600">Operator inbox</p>
-            <img src="<?php echo esc_url($hero_inbox); ?>" alt="XPressUI operator inbox" class="h-36 w-full rounded-xl object-cover object-top">
+            <img src="<?php echo esc_url($hero_inbox); ?>" alt="IntakeFlow operator inbox" class="h-36 w-full rounded-xl object-cover object-top">
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ get_header(); ?>
       <p class="mb-6 text-center text-sm font-bold uppercase tracking-widest text-blue-600">From scattered requests to one reviewable submission</p>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-[1fr_auto_1fr] md:items-center">
         <div class="rounded-2xl border border-red-100 bg-white p-6 shadow-sm">
-          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-red-500">Before XPressUI</p>
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-red-500">Before IntakeFlow</p>
           <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <?php foreach (['Email attachment', 'Drive link', 'WhatsApp message', 'Missing ID', 'Half answer', 'No clear status'] as $item): ?>
             <span class="rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 text-sm font-semibold text-gray-700"><?php echo esc_html($item); ?></span>
@@ -72,7 +72,7 @@ get_header(); ?>
         </div>
         <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-black text-white shadow-lg shadow-blue-500/30 md:flex">→</div>
         <div class="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
-          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-blue-600">With XPressUI</p>
+          <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-blue-600">With IntakeFlow</p>
           <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <?php foreach (['One private link', 'Required checklist', 'Guided upload', 'Missing-file status', 'Operator inbox', 'Ready to review'] as $item): ?>
             <span class="rounded-xl border border-blue-100 bg-blue-50/70 px-4 py-3 text-sm font-semibold text-blue-950"><?php echo esc_html($item); ?></span>
@@ -100,7 +100,7 @@ get_header(); ?>
           <div class="aspect-video">
             <iframe
               src="<?php echo esc_url($intro_video_embed_url); ?>"
-              title="XPressUI product intro"
+              title="IntakeFlow product intro"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
@@ -225,9 +225,9 @@ get_header(); ?>
           </ul>
         </div>
         <div class="landing-compare-card bg-gray-50 p-8 rounded-2xl border border-gray-100">
-          <h3 class="font-bold text-lg mb-4 text-gray-900">XPressUI</h3>
+          <h3 class="font-bold text-lg mb-4 text-gray-900">IntakeFlow</h3>
           <ul class="text-gray-600 space-y-2">
-            <li>• XPressUI Pro for site-owned delivery, XPressUI Cloud when operations should live in XPressUI</li>
+            <li>• IntakeFlow Starter for site-owned delivery, IntakeFlow Cloud when operations should live in IntakeFlow</li>
             <li>• Clear checklists, private links, and submission status</li>
             <li>• A branded experience your clients already recognize</li>
             <li>• A foundation for AI-assisted review and validation</li>
@@ -252,7 +252,7 @@ get_header(); ?>
         </div>
         <div class="landing-value-card bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <h3 class="text-xl font-bold mb-3 text-gray-900">Choose the right pack</h3>
-          <p class="text-gray-600">Use XPressUI Pro first, then move to XPressUI Cloud from €19/month when shared operations, quotas, catalogs, and review should live in Console.</p>
+          <p class="text-gray-600">Use IntakeFlow Starter first, then move to IntakeFlow Cloud from €39/month when shared operations, quotas, catalogs, and review should live in Console.</p>
         </div>
       </div>
     </div>
@@ -304,25 +304,25 @@ get_header(); ?>
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Simple pricing to launch your first repeatable intake workflow</h2>
-          <p class="mt-4 text-xl text-gray-400">Start with XPressUI Free or XPressUI Pro for client-site delivery. Use XPressUI Cloud when your team wants hosted workflow operations.</p>
+          <p class="mt-4 text-xl text-gray-400">Start with IntakeFlow Free or IntakeFlow Starter for client-site delivery. Use IntakeFlow Cloud when your team wants hosted workflow operations.</p>
       </div>
 
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">XPressUI Pro</h3>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">IntakeFlow Starter</h3>
           <p class="text-gray-500 mb-8">Build structured client document portals on the client site and replace scattered email follow-ups with a clear intake workflow.</p>
           <ul class="space-y-4">
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use it on up to <strong>5 production sites</strong></span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use it on <strong>1 production site</strong></span></li>
             <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Automatic updates via the client-site admin</span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Pro components included for document collection</span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Early-access Starter pricing while Scale plans are being prepared</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Starter components included for document collection</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Visual Builder access and local workflow builder</span></li>
           </ul>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
-          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">One-time payment</p>
-          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€129</span></div>
-          <p class="mt-2 text-gray-500 text-sm">excl. VAT, no hidden fees.</p>
-          <a href="https://buy.stripe.com/test_129pro" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Buy XPressUI Pro</a>
+          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly subscription</p>
+          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€99</span></div>
+          <p class="mt-2 text-gray-500 text-sm">per site per year, excl. VAT.</p>
+          <a href="https://buy.stripe.com/test_99starter" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Buy IntakeFlow Starter</a>
         </div>
       </div>
     </div>

@@ -103,10 +103,10 @@ get_header(); ?>
   <section class="bg-white border-t border-gray-100 py-16 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold text-gray-900 mb-4">If the demo feels right, the next step is simple.</h2>
-      <p class="text-gray-500 leading-relaxed mb-8">Start with XPressUI Pro when the workflow belongs on a client site, or use XPressUI Cloud when the team needs hosted links, catalogs, files, and operator review.</p>
+      <p class="text-gray-500 leading-relaxed mb-8">Start with IntakeFlow Starter when the workflow belongs on a client site, or use IntakeFlow Cloud when the team needs hosted links, catalogs, files, and operator review.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($pricing_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">See pricing</a>
-        <a href="<?php echo esc_url($pro_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">Explore Pro</a>
+        <a href="<?php echo esc_url($pro_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">Explore Starter</a>
       </div>
     </div>
   </section>

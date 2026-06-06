@@ -12,7 +12,7 @@ get_header(); ?>
     <div class="max-w-3xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">From the Blog</p>
       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Articles</h1>
-      <p class="text-gray-500 mt-3">Insights on XPressUI, agency workflow, client delivery, and decoupled development.</p>
+      <p class="text-gray-500 mt-3">Insights on IntakeFlow, agency workflow, client delivery, and decoupled development.</p>
     </div>
   </section>
 

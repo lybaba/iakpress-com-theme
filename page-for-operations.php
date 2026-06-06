@@ -14,8 +14,8 @@ $segment_title = $is_fr
   : 'Replace manual follow-up with a structured collection and review workflow.';
 
 $segment_intro = $is_fr
-  ? "XPressUI aide les équipes opérations à lancer des workflows d'intake structurés pour les demandes internes, les approbations, les collectes de preuves et la coordination entre services."
-  : 'XPressUI helps operations teams launch structured intake workflows for internal requests, approvals, evidence collection, and cross-team coordination.';
+  ? "IntakeFlow aide les équipes opérations à lancer des workflows d'intake structurés pour les demandes internes, les approbations, les collectes de preuves et la coordination entre services."
+  : 'IntakeFlow helps operations teams launch structured intake workflows for internal requests, approvals, evidence collection, and cross-team coordination.';
 
 $segment_pains = $is_fr ? [
   "Les demandes internes arrivent par email, messages, formulaires ad hoc et fichiers partagés.",
@@ -78,8 +78,8 @@ $segment_offer = $is_fr ? [
 ];
 
 $segment_outbound = $is_fr
-  ? "Les équipes opérations passent souvent des heures à relancer les mêmes demandes internes chaque semaine.\n\nXPressUI transforme un processus récurrent en workflow structuré avec fichiers, statuts et revue opérateur.\n\nSi une demande interne ou un flux d'approbation est déjà douloureux, nous pouvons cadrer un petit pilote payant autour de lui."
-  : "Operations teams often spend hours chasing the same internal requests every week.\n\nXPressUI turns one recurring process into a structured workflow with files, statuses, and operator review.\n\nIf one internal request or approval flow is already painful, we can scope a small paid pilot around it.";
+  ? "Les équipes opérations passent souvent des heures à relancer les mêmes demandes internes chaque semaine.\n\nIntakeFlow transforme un processus récurrent en workflow structuré avec fichiers, statuts et revue opérateur.\n\nSi une demande interne ou un flux d'approbation est déjà douloureux, nous pouvons cadrer un petit pilote payant autour de lui."
+  : "Operations teams often spend hours chasing the same internal requests every week.\n\nIntakeFlow turns one recurring process into a structured workflow with files, statuses, and operator review.\n\nIf one internal request or approval flow is already painful, we can scope a small paid pilot around it.";
 
 $segment_use_cases = $is_fr ? [
   ['title' => "Intake de demandes internes",       'body' => "Collectez et traitez les demandes répétitives avec fichiers, contexte et statut de progression."],

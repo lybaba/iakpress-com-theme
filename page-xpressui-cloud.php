@@ -17,7 +17,7 @@ $features = [
 ];
 
 $comparison = [
-  ['label' => 'Best fit', 'wordpress' => 'Existing client site, client-owned delivery', 'hosted' => 'No client-site dependency, XPressUI-managed operations'],
+  ['label' => 'Best fit', 'wordpress' => 'Existing client site, client-owned delivery', 'hosted' => 'No client-site dependency, IntakeFlow-managed operations'],
   ['label' => 'Public entry', 'wordpress' => 'Embedded on a client-site page', 'hosted' => 'Hosted workflow URL'],
   ['label' => 'Dynamic catalogs', 'wordpress' => 'Cloud-backed catalogs can be integrated case by case', 'hosted' => 'Products, services, dates, options, and members managed in Console'],
   ['label' => 'Operations inbox', 'wordpress' => 'Client-site submission screens', 'hosted' => 'Console inbox and workspace review'],
@@ -26,26 +26,26 @@ $comparison = [
 
 $plans = [
   [
-    'name' => 'Solo',
-    'price' => '€19',
-    'period' => '/month',
-    'summary' => 'Validate one hosted workflow with real users.',
-    'items' => ['1 workspace', '100 submissions/month', 'Hosted workflow links', 'Dynamic catalogs', 'Console inbox and files'],
+    'name' => 'Starter (Self-Hosted / WP)',
+    'price' => '€99',
+    'period' => '/year',
+    'summary' => 'Deploy intake workflows on your own WordPress site.',
+    'items' => ['Visual Builder (3 projects)', 'WordPress ZIP export', 'Client-site runtime', 'Local inbox and storage', 'No Cloud dependency'],
   ],
   [
-    'name' => 'Team',
-    'price' => '€49',
+    'name' => 'Cloud PRO',
+    'price' => '€39',
     'period' => '/month',
-    'summary' => 'Run shared operations with several workflows and operators.',
-    'items' => ['5 workspaces', '500 submissions/month', 'Team operators/admins', 'Reusable catalogs', 'Basic AI extraction/validation path'],
+    'summary' => 'Designed for professionals and agencies with regular intake needs.',
+    'items' => ['Unlimited projects', '1,000 submissions/month', '10 GB Cloud storage', 'Stripe payment integration', 'Webhooks with HMAC signatures', 'White-label widget'],
     'featured' => true,
   ],
   [
-    'name' => 'Agency',
-    'price' => '€129',
+    'name' => 'Cloud ENTERPRISE',
+    'price' => '€149',
     'period' => '/month',
-    'summary' => 'Turn workflows into a repeatable client delivery offer.',
-    'items' => ['Higher limits', 'White-label rollout path', 'Advanced AI extraction/digest path', 'Template reuse', 'Assisted onboarding option'],
+    'summary' => 'For organizations managing large volumes of client files.',
+    'items' => ['10,000 submissions/month', '100 GB Cloud storage', 'Workspaces with 5 operators included', 'Automatic assignees', 'GDPR retention rules', 'Priority support & SLA'],
   ],
 ];
 
@@ -55,13 +55,13 @@ get_header();
 <div class="font-sans text-gray-900 antialiased">
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto text-center">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">XPressUI Cloud · Solo, Team, Agency</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">IntakeFlow Cloud · PRO & ENTERPRISE</p>
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-        Host the workflow link, catalogs, inbox, files, and review operations with XPressUI.
+        Host the workflow link, catalogs, inbox, files, and review operations with IntakeFlow.
       </h1>
       <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
-        XPressUI Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites.
-        XPressUI hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
+        IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites.
+        IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
       </p>
       <div class="mb-10 max-w-4xl mx-auto rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-4 sm:p-6 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5 text-left">
@@ -75,26 +75,26 @@ get_header();
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
-            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Solo</p>
-            <p class="text-2xl font-extrabold text-gray-900">€19<span class="text-sm font-semibold text-gray-500">/mo</span></p>
-            <p class="text-xs text-gray-500 mt-1">Prove one hosted workflow.</p>
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter (WP)</p>
+            <p class="text-2xl font-extrabold text-gray-900">€99<span class="text-sm font-semibold text-gray-500">/yr</span></p>
+            <p class="text-xs text-gray-500 mt-1">Self-hosted site delivery.</p>
           </div>
           <div class="rounded-2xl bg-gray-900 border border-gray-800 p-4 text-white shadow-md shadow-blue-900/10">
-            <p class="mb-2 inline-flex rounded-full bg-blue-600 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">Most likely next</p>
-            <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-1">Team</p>
-            <p class="text-2xl font-extrabold">€49<span class="text-sm font-semibold text-gray-300">/mo</span></p>
-            <p class="text-xs text-gray-300 mt-1">Run shared operations.</p>
+            <p class="mb-2 inline-flex rounded-full bg-blue-600 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">Most popular</p>
+            <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-1">Cloud PRO</p>
+            <p class="text-2xl font-extrabold">€39<span class="text-sm font-semibold text-gray-300">/mo</span></p>
+            <p class="text-xs text-gray-300 mt-1">Host operations & pay.</p>
           </div>
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
-            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Agency</p>
-            <p class="text-2xl font-extrabold text-gray-900">€129<span class="text-sm font-semibold text-gray-500">/mo</span></p>
-            <p class="text-xs text-gray-500 mt-1">Repeat delivery for clients.</p>
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Cloud ENT</p>
+            <p class="text-2xl font-extrabold text-gray-900">€149<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">Organizations & SLA.</p>
           </div>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-sm text-gray-600">
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Solo:</strong> one real form, real users, real submissions.</p>
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Team:</strong> shared inbox, operators, files, and reusable catalogs.</p>
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Agency:</strong> reusable delivery pattern for multiple client workflows.</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> host intake on your own WordPress site.</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Cloud PRO:</strong> hosted links, Stripe payment, and webhooks.</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Enterprise:</strong> workspaces, operators, GDPR rules, and SLA.</p>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -102,7 +102,7 @@ get_header();
           Discuss Cloud plan
         </a>
         <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Compare with XPressUI Pro
+          Compare with IntakeFlow Starter
         </a>
       </div>
     </div>
@@ -112,7 +112,7 @@ get_header();
     <div class="max-w-6xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with the smallest plan that proves the workflow.</h2>
-      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">The Cloud path is intentionally simple: Solo for one workflow, Team for shared operations, Agency for repeatable client delivery.</p>
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">The Cloud path is intentionally simple: Starter for self-hosted site delivery, Cloud PRO for hosted operations, and Enterprise for organizations.</p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
         <?php foreach ($plans as $plan): $featured = !empty($plan['featured']); ?>
         <article class="<?php echo $featured ? 'bg-gray-900 border-gray-800 text-white' : 'bg-white border-gray-100 text-gray-900'; ?> rounded-3xl border p-8 shadow-sm flex flex-col relative overflow-hidden">
@@ -171,7 +171,7 @@ get_header();
 
   <section class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-6xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">What XPressUI Cloud includes</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">What IntakeFlow Cloud includes</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">A managed operations layer for client workflows.</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <?php foreach ($features as $feature): ?>
@@ -187,12 +187,12 @@ get_header();
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Choosing the right pack</p>
-      <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">XPressUI Pro remains the fast path. XPressUI Cloud is the managed path.</h2>
+      <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">IntakeFlow Starter remains the fast path. IntakeFlow Cloud is the managed path.</h2>
       <div class="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
         <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:160px 1fr 1fr">
           <div class="py-3 px-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Decision</div>
-          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 uppercase tracking-wider">XPressUI Pro</div>
-          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 uppercase tracking-wider">XPressUI Cloud</div>
+          <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 uppercase tracking-wider">IntakeFlow Starter</div>
+          <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 uppercase tracking-wider">IntakeFlow Cloud</div>
         </div>
         <?php foreach ($comparison as $row): ?>
         <div class="grid border-b border-gray-50 last:border-b-0" style="grid-template-columns:160px 1fr 1fr">
@@ -207,9 +207,9 @@ get_header();
 
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €19/month</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use XPressUI Cloud when the workflow needs shared operations, not another site admin.</h2>
-      <p class="text-gray-400 mb-8">We are opening Solo, Team, and Agency plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
+      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €39/month</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.</h2>
+      <p class="text-gray-400 mb-8">We are opening Cloud PRO and ENTERPRISE plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
       <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
         Discuss Cloud plan
       </a>
