@@ -6,7 +6,7 @@
  * @var string $xpressui_active_route  Optional: current page slug for active nav state.
  */
 $active = $xpressui_active_route ?? '';
-$console_url = 'https://xpressui.iakpress.com/console/';
+$console_url = 'https://xpressui.iakpress.com';
 $is_pro = ($active === 'pro');
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
