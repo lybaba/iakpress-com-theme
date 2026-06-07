@@ -14,7 +14,7 @@ $steps = [
     'n'    => '02',
     'title'=> 'Download and install the free plugin',
     'body' => 'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.',
-    'cta'  => ['label' => 'Download XPressUI Bridge on GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest'],
+    'cta'  => ['label' => 'Download XPressUI Bridge on WordPress.org', 'href' => 'https://wordpress.org/plugins/xpressui-bridge/'],
   ],
   [
     'n'    => '03',
