@@ -4,7 +4,7 @@
  * WordPress automatically loads this for a page with slug "pricing".
  */
 
-$download_url = 'https://github.com/lybaba/xpressui-packages/releases/latest';
+$download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
 $agency_pilot_url = home_url('/agency-pilot/');
 $contact_url = home_url('/contact/');
 
@@ -225,7 +225,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         <p class="text-gray-500 mb-6">Best when you want to test the intake experience before buying or rolling out a hosted workflow.</p>
         <div class="flex items-baseline gap-2 mb-6">
           <span class="text-5xl font-extrabold text-gray-900">€0</span>
-          <span class="text-gray-500 text-sm">GitHub download</span>
+          <span class="text-gray-500 text-sm">WordPress.org download</span>
         </div>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([

@@ -3,7 +3,7 @@
  * The front page template file for IAKPress.com
  */
 
-$console_url = 'https://xpressui.iakpress.com/console/';
+$console_url = '';
 $hero_client_portal = xpressui_asset_url('front-step-2.png');
 $hero_upload_flow = xpressui_asset_url('front-step-3.png');
 $hero_inbox = xpressui_asset_url('admin-project-inbox.png');

@@ -4,9 +4,9 @@
  * WordPress automatically loads this for a page with slug "xpressui".
  */
 
-$download_url   = 'https://github.com/lybaba/xpressui-packages/releases/latest';
+$download_url   = 'https://wordpress.org/plugins/xpressui-bridge/';
 $repo_url       = 'https://github.com/lybaba/xpressui-packages';
-$console_url    = 'https://xpressui.iakpress.com/console/';
+$console_url    = 'https://xpressui.iakpress.com';
 $contact_url    = home_url('/contact/');
 $agency_pilot_url = home_url('/agency-pilot/');
 $demo_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';

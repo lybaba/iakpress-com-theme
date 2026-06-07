@@ -4,8 +4,8 @@
  * WordPress automatically loads this for a page with slug "install".
  */
 
-$github_release = 'https://github.com/lybaba/xpressui-packages/releases/latest';
-$console_url    = 'https://xpressui.iakpress.com/console/';
+$free_download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
+$console_url    = 'https://xpressui.iakpress.com';
 $contact_url    = home_url('/contact/');
 $agency_url     = home_url('/agency-pilot/');
 $is_french_install = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
@@ -61,8 +61,8 @@ $free_steps = $is_french_install ? [
   [
     'number' => '01',
     'title'  => 'Télécharger et installer le plugin',
-    'body'   => 'Téléchargez la dernière version depuis GitHub. Installez et activez le plugin depuis l’administration du site.',
-    'cta'    => ['label' => 'Télécharger la dernière version sur GitHub', 'href' => $github_release, 'external' => true],
+    'body'   => 'Téléchargez la dernière version depuis WordPress.org. Installez et activez le plugin depuis l’administration du site.',
+    'cta'    => ['label' => 'Télécharger la dernière version sur WordPress.org', 'href' => $free_download_url, 'external' => true],
     'note'   => 'Nécessite un runtime compatible côté site client avec PHP 7.4+.',
   ],
   [
@@ -81,8 +81,8 @@ $free_steps = $is_french_install ? [
   [
     'number' => '01',
     'title'  => 'Download and install the plugin',
-    'body'   => 'Download the latest release from GitHub. Install and activate it from your site admin.',
-    'cta'    => ['label' => 'Download latest release on GitHub', 'href' => $github_release, 'external' => true],
+    'body'   => 'Download the latest release from WordPress.org. Install and activate it from your site admin.',
+    'cta'    => ['label' => 'Download latest release on WordPress.org', 'href' => $free_download_url, 'external' => true],
     'note'   => 'Requires a compatible client-site runtime with PHP 7.4+.',
   ],
   [
