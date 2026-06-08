@@ -60,6 +60,8 @@ function iakpress_language_path_map(): array {
         'for-accountants' => 'fr/for-accountants',
         'for-agencies'    => 'fr/for-agencies',
         'for-operations'  => 'fr/for-operations',
+        'document-intake' => 'fr/document-intake',
+        'pro'             => 'fr/pro',
     );
 }
 
@@ -589,6 +591,8 @@ function iakpress_render_french_routes(): void {
         'fr/for-accountants' => 'page-for-accountants.php',
         'fr/for-agencies'    => 'page-for-agencies.php',
         'fr/for-operations'  => 'page-for-operations.php',
+        'fr/document-intake' => 'page-document-intake.php',
+        'fr/pro'             => 'page-pro.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {

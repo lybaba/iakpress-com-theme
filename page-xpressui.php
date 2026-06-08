@@ -7,8 +7,9 @@
 $download_url   = 'https://wordpress.org/plugins/xpressui-bridge/';
 $repo_url       = 'https://github.com/lybaba/xpressui-packages';
 $console_url    = 'https://xpressui.iakpress.com';
-$contact_url    = home_url('/contact/');
-$agency_pilot_url = home_url('/agency-pilot/');
+$is_fr            = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_url      = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$agency_pilot_url = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 $demo_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';
 $demo_embed_url = 'https://www.youtube.com/embed/G8dXHAbIgac';
 

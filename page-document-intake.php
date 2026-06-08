@@ -3,8 +3,10 @@
  * The template for displaying the /document-intake/ live demo page.
  */
 
-$pricing_url = home_url('/pricing/');
-$contact_url = home_url('/contact/');
+$is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
+$contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$pro_url     = $is_fr ? home_url('/fr/pro/')     : home_url('/pro/');
 
 get_header(); ?>
 

@@ -4,11 +4,11 @@
  * WordPress automatically loads this for a page with slug "install".
  */
 
+$is_french_install = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $free_download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
 $console_url    = 'https://xpressui.iakpress.com';
-$contact_url    = home_url('/contact/');
-$agency_url     = home_url('/agency-pilot/');
-$is_french_install = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_url    = $is_french_install ? home_url('/fr/contact/') : home_url('/contact/');
+$agency_url     = $is_french_install ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 $install_copy = $is_french_install ? [
   'eyebrow' => 'Guide d’installation',
   'title' => 'Une page d’intake IntakeFlow en ligne en moins de 10 minutes.',
@@ -274,7 +274,7 @@ get_header();
           <strong class="block text-gray-900 mb-1"><?php echo esc_html($install_copy['pilot_title']); ?></strong>
           <p class="text-sm text-gray-600 leading-relaxed"><?php echo esc_html($install_copy['pilot_body']); ?></p>
         </div>
-        <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>"
+        <a href="<?php echo esc_url($agency_url); ?>"
            class="flex-shrink-0 inline-flex items-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 text-sm font-bold py-2.5 px-5 rounded-lg transition whitespace-nowrap">
           <?php echo esc_html($install_copy['pilot_cta']); ?>
         </a>

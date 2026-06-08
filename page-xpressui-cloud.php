@@ -4,9 +4,10 @@
  * WordPress automatically loads this for a page with slug "xpressui-cloud".
  */
 
-$contact_url = home_url('/contact/');
-$pricing_url = home_url('/pricing/');
-$agency_url  = home_url('/agency-pilot/');
+$is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
+$agency_url  = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 
 $features = [
   ['title' => 'Hosted workflow links', 'body' => 'Publish a public workflow URL without asking the client to install or maintain client-site infrastructure.'],
