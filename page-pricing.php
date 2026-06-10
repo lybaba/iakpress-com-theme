@@ -49,6 +49,7 @@ $faq_items = [
   ['q' => 'Where does IntakeFlow Cloud fit?', 'a' => 'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.'],
   ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.'],
   ['q' => 'Is €99/year a subscription?', 'a' => 'Yes. It is a yearly subscription per site, which includes all updates, Visual Builder access, and client-site runtime features.'],
+  ['q' => 'Is there a free trial?', 'a' => 'Yes — both plans have a 15-day free trial, no card required. Start the Starter trial to test the self-hosted plugin on one site (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox. Media Library and catalogs unlock on a paid Cloud plan.'],
   ['q' => 'Who is IntakeFlow Starter for?', 'a' => 'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake with less back-and-forth.'],
   ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward IntakeFlow Cloud, higher quotas, team workspace access, and managed rollout. The current Starter plan is the fastest client-site path today.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.'],
@@ -136,7 +137,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           Need the first workflow live? See Agency Pilot
         </a>
       </div>
-      <p class="mt-4 text-sm text-gray-500">IntakeFlow Free · IntakeFlow Starter per site · IntakeFlow Cloud from €39/month</p>
+      <p class="mt-4 text-sm font-semibold text-emerald-600">Start free — 15-day trial on Starter or Cloud, no card required.</p>
+      <p class="mt-1 text-sm text-gray-500">IntakeFlow Free · IntakeFlow Starter per site · IntakeFlow Cloud from €39/month</p>
     </div>
   </section>
 
@@ -253,13 +255,14 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <span class="text-5xl font-extrabold text-white">€99</span>
           <span class="text-gray-400 text-sm">/year</span>
         </div>
-        <p class="text-sm text-blue-200 mb-6">Starter plan · per site · updates included</p>
+        <p class="text-sm text-blue-200 mb-2">Starter plan · per site · updates included</p>
+        <p class="text-sm font-semibold text-emerald-300 mb-6">15-day free trial · no card required</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             'Everything in IntakeFlow Free',
             'Customize Workflow — labels, choices, colors, and messages per workflow from the client-site admin',
             'Console Sync for direct workflow pull',
-            'Advanced fields including QR and document scan',
+            'Advanced fields (camera capture, signature, e-payment proof, date & month ranges)',
             'Priority email support and automatic updates'
           ] as $item): ?>
           <li class="flex items-start gap-3 text-sm text-gray-200">
@@ -268,7 +271,10 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="https://buy.stripe.com/test_99starter" class="mt-auto block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Buy IntakeFlow Starter</a>
+        <div class="mt-auto">
+          <a href="https://app.intakeflow.dev/" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
+          <a href="https://buy.stripe.com/test_99starter" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline">or buy now — €99/year</a>
+        </div>
       </article>
 
       <article class="bg-blue-50 rounded-3xl border border-blue-100 p-8 flex flex-col">
@@ -279,7 +285,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <span class="text-5xl font-extrabold text-gray-900">€39</span>
           <span class="text-gray-500 text-sm">/month</span>
         </div>
-        <p class="text-sm text-blue-700 mb-6">Cloud PRO at €39/month · Cloud ENTERPRISE available</p>
+        <p class="text-sm text-blue-700 mb-2">Cloud PRO at €39/month · Cloud ENTERPRISE available</p>
+        <p class="text-sm font-semibold text-emerald-600 mb-6">15-day free Cloud trial · hosted links + inbox · no card</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             'Unlimited projects & workflows',
@@ -295,7 +302,10 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="mt-auto block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Discuss Cloud plan</a>
+        <div class="mt-auto">
+          <a href="https://app.intakeflow.dev/" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
+          <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline">or discuss Cloud plan</a>
+        </div>
       </article>
 
     </div>
