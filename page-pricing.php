@@ -73,6 +73,7 @@ $cloud_tiers = [
       'Local inbox and storage',
       'No Cloud dependency',
     ],
+    'buy_url' => $starter_buy_url,
   ],
   [
     'name' => 'Cloud PRO',
@@ -89,6 +90,7 @@ $cloud_tiers = [
       'White-label widget',
     ],
     'featured' => true,
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro'),
   ],
   [
     'name' => 'Cloud ENTERPRISE',
@@ -104,6 +106,7 @@ $cloud_tiers = [
       'GDPR retention rules',
       'Priority support & SLA',
     ],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-enterprise'),
   ],
 ];
 
@@ -275,7 +278,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="<?php echo esc_url($app_url); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
+          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
           <a href="<?php echo esc_url($starter_buy_url); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline">or buy now — €99/year</a>
         </div>
       </article>
@@ -306,8 +309,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="<?php echo esc_url($app_url); ?>" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
-          <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline">or discuss Cloud plan</a>
+          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline">or buy now — €39/month</a>
         </div>
       </article>
 
@@ -341,8 +344,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
-            Discuss <?php echo esc_html($tier['name']); ?>
+          <a href="<?php echo esc_url($tier['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
+            Choose <?php echo esc_html($tier['name']); ?>
           </a>
         </article>
         <?php endforeach; ?>

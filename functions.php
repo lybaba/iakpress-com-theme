@@ -27,7 +27,7 @@ function xpressui_app_url( string $path = '' ): string {
  * or the `xpressui_starter_buy_url` filter.
  */
 function xpressui_starter_buy_url(): string {
-    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan' );
+    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan&checkout_plan=starter' );
     return (string) apply_filters( 'xpressui_starter_buy_url', $url );
 }
 
@@ -220,6 +220,11 @@ function iakpress_translate_french_output( string $html ): string {
         'Files and quotas' => 'Fichiers et quotas',
         'Cloud starts at €39/month' => 'Cloud à partir de 39 €/mois',
         'Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.' => 'Utilisez IntakeFlow Cloud quand le workflow a besoin d’opérations partagées, pas d’un autre admin de site.',
+        'Choose Starter (Self-Hosted)' => 'Choisir Starter (Auto-hébergé)',
+        'Choose Starter (Self-Hosted / WP)' => 'Choisir Starter (Auto-hébergé / WP)',
+        'Choose Cloud PRO' => 'Choisir Cloud PRO',
+        'Choose Cloud ENTERPRISE' => 'Choisir Cloud ENTERPRISE',
+        'or buy now — €39/month' => 'ou acheter maintenant — 39 €/mois',
 
         'Install guide' => 'Guide d’installation',
         'Live intake page with IntakeFlow in under 10 minutes.' => 'Une page d’intake IntakeFlow en ligne en moins de 10 minutes.',

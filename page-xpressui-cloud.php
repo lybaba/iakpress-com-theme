@@ -32,6 +32,7 @@ $plans = [
     'period' => '/year',
     'summary' => 'Deploy intake workflows on your own WordPress site.',
     'items' => ['Visual Builder (3 projects)', 'WordPress ZIP export', 'Client-site runtime', 'Local inbox and storage', 'No Cloud dependency'],
+    'buy_url' => xpressui_starter_buy_url(),
   ],
   [
     'name' => 'Cloud PRO',
@@ -40,6 +41,7 @@ $plans = [
     'summary' => 'Designed for professionals and agencies with regular intake needs.',
     'items' => ['Unlimited projects', '1,000 submissions/month', '10 GB Cloud storage', 'Stripe payment integration', 'Webhooks with HMAC signatures', 'White-label widget'],
     'featured' => true,
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro'),
   ],
   [
     'name' => 'Cloud ENTERPRISE',
@@ -47,6 +49,7 @@ $plans = [
     'period' => '/month',
     'summary' => 'For organizations managing large volumes of client files.',
     'items' => ['10,000 submissions/month', '100 GB Cloud storage', 'Workspaces with 5 operators included', 'Automatic assignees', 'GDPR retention rules', 'Priority support & SLA'],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-enterprise'),
   ],
 ];
 
@@ -134,6 +137,9 @@ get_header();
             </li>
             <?php endforeach; ?>
           </ul>
+          <a href="<?php echo esc_url($plan['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
+            Choose <?php echo esc_html($plan['name']); ?>
+          </a>
         </article>
         <?php endforeach; ?>
       </div>
