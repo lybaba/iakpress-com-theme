@@ -12,6 +12,25 @@ function xpressui_asset_url( string $path ): string {
     return get_stylesheet_directory_uri() . '/assets/xpressui/' . ltrim( $path, '/' );
 }
 
+/**
+ * IntakeFlow Console app entry point.
+ */
+function xpressui_app_url( string $path = '' ): string {
+    $base = defined( 'XPRESSUI_APP_URL' ) ? rtrim( XPRESSUI_APP_URL, '/' ) . '/' : 'https://app.intakeflow.dev/';
+    return $base . ltrim( $path, '/' );
+}
+
+/**
+ * Starter (self-hosted) "buy now" link. Defaults to the in-app plan/checkout
+ * page (which starts a Stripe Checkout session via lookup key). Override with a
+ * Stripe Payment Link via the XPRESSUI_STARTER_BUY_URL constant in wp-config.php
+ * or the `xpressui_starter_buy_url` filter.
+ */
+function xpressui_starter_buy_url(): string {
+    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan' );
+    return (string) apply_filters( 'xpressui_starter_buy_url', $url );
+}
+
 // The theme is fully built with Tailwind CSS — GeneratePress parent styles are not needed
 // and conflict with Tailwind's reset/base layer.
 function iakpress_dequeue_generatepress_styles(): void {

@@ -322,7 +322,7 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly subscription</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€99</span></div>
           <p class="mt-2 text-gray-500 text-sm">per site per year, excl. VAT.</p>
-          <a href="https://buy.stripe.com/test_99starter" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Buy IntakeFlow Starter</a>
+          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="mt-8 w-full block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition duration-200 shadow-lg shadow-blue-600/30">Buy IntakeFlow Starter</a>
         </div>
       </div>
     </div>

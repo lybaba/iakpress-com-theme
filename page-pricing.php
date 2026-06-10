@@ -9,6 +9,9 @@ $is_fr            = function_exists('iakpress_is_french_request') && iakpress_is
 $agency_pilot_url = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 $contact_url      = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 
+$app_url = xpressui_app_url();
+$starter_buy_url = xpressui_starter_buy_url();
+
 $rows = [
   ['group' => 'Start with IntakeFlow Free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
   ['group' => '', 'label' => 'Client-site submission inbox', 'free' => true, 'pro' => true, 'cloud' => false],
@@ -272,8 +275,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="https://app.intakeflow.dev/" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
-          <a href="https://buy.stripe.com/test_99starter" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline">or buy now — €99/year</a>
+          <a href="<?php echo esc_url($app_url); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
+          <a href="<?php echo esc_url($starter_buy_url); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline">or buy now — €99/year</a>
         </div>
       </article>
 
@@ -303,7 +306,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="https://app.intakeflow.dev/" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
+          <a href="<?php echo esc_url($app_url); ?>" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
           <a href="<?php echo esc_url(home_url('/xpressui-cloud/')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline">or discuss Cloud plan</a>
         </div>
       </article>
