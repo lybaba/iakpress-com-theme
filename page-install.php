@@ -6,7 +6,7 @@
 
 $is_french_install = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $free_download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
-$console_url    = 'https://xpressui.iakpress.com';
+$console_url    = 'https://app.intakeflow.dev';
 $contact_url    = $is_french_install ? home_url('/fr/contact/') : home_url('/contact/');
 $agency_url     = $is_french_install ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 $install_copy = $is_french_install ? [

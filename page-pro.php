@@ -198,7 +198,7 @@ get_header();
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly Plan</p>
           <div class="text-6xl font-extrabold text-gray-900 mb-1">€99</div>
           <p class="text-gray-400 text-xs mb-6">per year per site.</p>
-          <a href="https://buy.stripe.com/test_99starter" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30">
+          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30">
             Buy IntakeFlow Starter
           </a>
           <p class="mt-3 text-xs text-gray-400">Direct sales are managed through secure checkout.</p>

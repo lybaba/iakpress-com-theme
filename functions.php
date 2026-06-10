@@ -12,6 +12,25 @@ function xpressui_asset_url( string $path ): string {
     return get_stylesheet_directory_uri() . '/assets/xpressui/' . ltrim( $path, '/' );
 }
 
+/**
+ * IntakeFlow Console app entry point.
+ */
+function xpressui_app_url( string $path = '' ): string {
+    $base = defined( 'XPRESSUI_APP_URL' ) ? rtrim( XPRESSUI_APP_URL, '/' ) . '/' : 'https://app.intakeflow.dev/';
+    return $base . ltrim( $path, '/' );
+}
+
+/**
+ * Starter (self-hosted) "buy now" link. Defaults to the in-app plan/checkout
+ * page (which starts a Stripe Checkout session via lookup key). Override with a
+ * Stripe Payment Link via the XPRESSUI_STARTER_BUY_URL constant in wp-config.php
+ * or the `xpressui_starter_buy_url` filter.
+ */
+function xpressui_starter_buy_url(): string {
+    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan' );
+    return (string) apply_filters( 'xpressui_starter_buy_url', $url );
+}
+
 // The theme is fully built with Tailwind CSS — GeneratePress parent styles are not needed
 // and conflict with Tailwind's reset/base layer.
 function iakpress_dequeue_generatepress_styles(): void {
@@ -199,7 +218,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Public entry' => 'Entrée publique',
         'Operations inbox' => 'Inbox opérationnelle',
         'Files and quotas' => 'Fichiers et quotas',
-        'Cloud starts at €19/month' => 'Cloud commence à 19€ /mois',
+        'Cloud starts at €39/month' => 'Cloud à partir de 39 €/mois',
         'Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.' => 'Utilisez IntakeFlow Cloud quand le workflow a besoin d’opérations partagées, pas d’un autre admin de site.',
 
         'Install guide' => 'Guide d’installation',
@@ -265,8 +284,17 @@ function iakpress_translate_french_output( string $html ): string {
         'Everything in IntakeFlow Free' => 'Tout ce qui est dans IntakeFlow Free',
         'Customize Workflow — labels, choices, colors, and messages per workflow from the client-site admin' => 'Customize Workflow : libellés, choix, couleurs et messages par workflow depuis l’admin du site client',
         'Console Sync for direct workflow pull' => 'Console Sync pour récupérer directement les workflows',
-        'Advanced fields including QR and document scan' => 'Champs avancés incluant QR et scan de document',
+        'Advanced fields (camera capture, signature, e-payment proof, date & month ranges)' => 'Champs avancés (capture caméra, signature, preuve de paiement, plages de dates et de mois)',
         'Priority email support and automatic updates' => 'Support email prioritaire et mises à jour automatiques',
+        '15-day free trial · no card required' => 'Essai gratuit 15 jours · sans carte',
+        'Start 15-day free trial' => 'Démarrer l’essai gratuit 15 jours',
+        'or buy now — €99/year' => 'ou acheter maintenant — 99 €/an',
+        '15-day free Cloud trial · hosted links + inbox · no card' => 'Essai Cloud gratuit 15 jours · liens hébergés + inbox · sans carte',
+        'Start free Cloud trial' => 'Démarrer l’essai Cloud gratuit',
+        'or discuss Cloud plan' => 'ou discuter de l’offre Cloud',
+        'Start free — 15-day trial on Starter or Cloud, no card required.' => 'Commencez gratuitement — essai 15 jours sur Starter ou Cloud, sans carte.',
+        'Is there a free trial?' => 'Y a-t-il un essai gratuit ?',
+        'Yes — both plans have a 15-day free trial, no card required. Start the Starter trial to test the self-hosted plugin on one site (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox. Media Library and catalogs unlock on a paid Cloud plan.' => 'Oui — les deux offres ont un essai gratuit de 15 jours, sans carte. Lancez l’essai Starter pour tester le plugin auto-hébergé sur un site (le compteur de 15 jours démarre à la première activation), ou l’essai Cloud pour les liens hébergés et l’inbox de soumissions. La Media Library et les catalogues se débloquent avec une offre Cloud payante.',
         'Let IntakeFlow run hosted operations' => 'Laisser IntakeFlow gérer les opérations hébergées',
         'Best when the client does not want client-site operations, or when your team needs shared review, quotas, audit, and file handling in Console.' => 'Idéal quand le client ne veut pas d’opérations sur son site, ou quand votre équipe a besoin de revue partagée, quotas, audit et gestion des fichiers dans la Console.',
         '/month' => '/mois',
