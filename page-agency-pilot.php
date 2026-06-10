@@ -8,7 +8,7 @@ $is_french_pilot = function_exists('iakpress_is_french_request') && iakpress_is_
 $contact_url  = $is_french_pilot ? home_url('/fr/contact/')  : home_url('/contact/');
 $pricing_url  = $is_french_pilot ? home_url('/fr/pricing/')  : home_url('/pricing/');
 $xpressui_url = $is_french_pilot ? home_url('/fr/xpressui/') : home_url('/xpressui/');
-$booking_url  = 'https://cal.com/xpressui/15min';
+$booking_url  = $contact_url;
 
 $copy = $is_french_pilot ? [
   'eyebrow'          => 'Pilote agence',
@@ -155,7 +155,7 @@ get_header();
           <?php echo esc_html($copy['intro']); ?>
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="<?php echo esc_url($booking_url); ?>" data-cal-link="xpressui/15min" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+          <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
             <?php echo esc_html($copy['primary_cta']); ?>
           </a>
           <a href="<?php echo esc_url($xpressui_url); ?>" class="inline-flex justify-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
@@ -193,7 +193,7 @@ get_header();
             <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($offer['fit']); ?></p>
           </div>
           <div class="mt-auto pt-6">
-            <a href="<?php echo esc_url($booking_url); ?>" data-cal-link="xpressui/15min" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
+            <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
               <?php echo esc_html($copy['scope_item_cta']); ?>
             </a>
           </div>
@@ -211,7 +211,7 @@ get_header();
         <p class="text-gray-600 leading-relaxed mb-6">
           <?php echo esc_html($copy['output_body']); ?>
         </p>
-        <a href="<?php echo esc_url($booking_url); ?>" data-cal-link="xpressui/15min" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
           <?php echo esc_html($copy['output_cta']); ?>
         </a>
       </div>
@@ -235,7 +235,7 @@ get_header();
           <?php echo esc_html($copy['scope_body']); ?>
         </p>
       </div>
-      <a href="<?php echo esc_url($booking_url); ?>" data-cal-link="xpressui/15min" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+      <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
         <?php echo esc_html($copy['scope_cta']); ?>
       </a>
     </div>
@@ -263,7 +263,7 @@ get_header();
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5"><?php echo esc_html($copy['final_title']); ?></h2>
       <p class="text-gray-400 mb-8"><?php echo esc_html($copy['final_body']); ?></p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($booking_url); ?>" data-cal-link="xpressui/15min" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
           <?php echo esc_html($copy['final_primary']); ?>
         </a>
         <a href="<?php echo esc_url($pricing_url); ?>" class="inline-flex justify-center bg-gray-800 border border-gray-700 hover:border-gray-600 text-white font-bold py-4 px-8 rounded-lg transition">
@@ -272,15 +272,7 @@ get_header();
       </div>
     </div>
   </section>
-  <!-- Cal element-click embed code begins -->
-  <script type="text/javascript">
-    (function (C, A, L) { _c = C._c || []; L = A.createElement(g = "script"); L.async = 1; L.src = "https://embed.cal.com/embed/embed.js"; L.onload = g = function () { _c.each(function (e) { key = e[0]; (C[key] = C[key] || function () { (C[key].q = C[key].q || []).push(arguments) }) }); C.init() }; L.onerror = function () { console.warn("cal.com embed failed") }; F = A.getElementsByTagName(g)[0]; F.parentNode.insertBefore(L, F); C.cal = C.cal || function () { (C.cal.q = C.cal.q || []).push(arguments) } })(window, document);
-    cal("init", {
-      origin: "https://cal.com"
-    });
-    cal("ui", {"styles":{"branding":{"brandColor":"#2563eb"}},"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
-  <!-- Cal element-click embed code ends -->
+  <!-- Cal.com integration disabled -->
 
 </div>
 

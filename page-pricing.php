@@ -5,8 +5,9 @@
  */
 
 $download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
-$agency_pilot_url = home_url('/agency-pilot/');
-$contact_url = home_url('/contact/');
+$is_fr            = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$agency_pilot_url = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
+$contact_url      = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 
 $rows = [
   ['group' => 'Start with IntakeFlow Free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
