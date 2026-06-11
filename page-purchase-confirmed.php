@@ -18,8 +18,9 @@ $steps = [
   ],
   [
     'n'    => '03',
-    'title'=> 'Install XPressUI Pro from your email link',
-    'body' => 'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
+    'title'=> 'Download and install XPressUI Pro',
+    'body' => 'Download the latest XPressUI Pro ZIP from the releases page, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
+    'cta'  => ['label' => 'Download XPressUI Pro from GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest'],
   ],
   [
     'n'    => '04',
