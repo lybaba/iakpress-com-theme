@@ -27,7 +27,7 @@ function xpressui_app_url( string $path = '' ): string {
  * or the `xpressui_starter_buy_url` filter.
  */
 function xpressui_starter_buy_url(): string {
-    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan&checkout_plan=starter' );
+    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'checkout/starter' );
     return (string) apply_filters( 'xpressui_starter_buy_url', $url );
 }
 
