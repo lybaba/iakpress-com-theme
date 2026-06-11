@@ -641,3 +641,57 @@ function iakpress_render_french_routes(): void {
     exit;
 }
 add_action( 'template_redirect', 'iakpress_render_french_routes', 0 );
+
+function iakpress_document_title_parts( array $parts ): array {
+    $path = iakpress_current_path();
+    $title_map = array(
+        'fr' => 'Portails d’intake client pour agences et équipes de service',
+        'fr/xpressui' => 'Portail d’intake documentaire',
+        'fr/xpressui-cloud' => 'IntakeFlow Cloud · PRO & ENTERPRISE',
+        'fr/pricing' => 'Tarifs et Plans de souscription',
+        'fr/install' => 'Guide d’installation d’IntakeFlow',
+        'fr/contact' => 'Contacter IntakeFlow',
+        'fr/agency-pilot' => 'Pilote agence et accompagnement',
+        'fr/for-accountants' => 'IntakeFlow pour les experts-comptables',
+        'fr/for-agencies' => 'IntakeFlow pour les agences',
+        'fr/for-operations' => 'IntakeFlow pour les équipes opérationnelles',
+        'fr/document-intake' => 'Intake documentaire et suivi de pièces',
+        'fr/pro' => 'IntakeFlow Pro',
+    );
+
+    if ( isset( $title_map[$path] ) ) {
+        $parts['title'] = $title_map[$path];
+        $parts['site'] = 'IntakeFlow';
+    }
+
+    return $parts;
+}
+add_filter( 'document_title_parts', 'iakpress_document_title_parts', 50 );
+
+function iakpress_custom_seo_meta_description(): void {
+    $path = iakpress_current_path();
+    $desc_map = array(
+        'fr' => 'Envoyez un lien privé, collectez fichiers et réponses dans une checklist guidée, et voyez tout de suite ce qui manque avant la revue par votre équipe.',
+        'fr/xpressui' => 'Découvrez notre portail d’intake documentaire complet pour collecter et valider les fichiers clients sans relances manuelles.',
+        'fr/xpressui-cloud' => 'Hébergez vos liens de workflow, catalogues, inbox, fichiers et revues d’opérations avec IntakeFlow Cloud PRO et ENTERPRISE.',
+        'fr/pricing' => 'Découvrez nos tarifs et plans de souscription : IntakeFlow Free, Starter, ou Cloud à partir de 39 €/mois.',
+        'fr/install' => 'Installez le plugin IntakeFlow sur votre site WordPress et mettez en ligne votre portail d’intake en moins de 10 minutes.',
+        'fr/contact' => 'Contactez l’équipe d’IntakeFlow pour toute question ou pour configurer votre premier workflow client.',
+        'fr/agency-pilot' => 'Bénéficiez de notre accompagnement agence pour cadrer, concevoir et mettre en ligne votre premier workflow client.',
+        'fr/for-accountants' => 'Automatisez la collecte de documents comptables auprès de vos clients et réduisez le temps passé en relances.',
+        'fr/for-agencies' => 'Intégrez des portails de collecte de documents premium dans vos livraisons de sites clients et simplifiez l’onboarding.',
+        'fr/for-operations' => 'Pilotez l’ensemble des demandes clients depuis une inbox centralisée et standardisez vos processus d’onboarding.',
+        'fr/document-intake' => 'Simplifiez la collecte de documents administratifs avec une checklist claire et guidée pour vos clients.',
+        'fr/pro' => 'Passez à IntakeFlow Pro pour débloquer la personnalisation des workflows et l’accès complet au builder de formulaires.',
+    );
+
+    if ( isset( $desc_map[$path] ) ) {
+        echo '<meta name="description" content="' . esc_attr( $desc_map[$path] ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'iakpress_custom_seo_meta_description', 5 );
+
+function iakpress_setup_theme(): void {
+    add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'iakpress_setup_theme' );
