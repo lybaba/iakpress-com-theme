@@ -85,13 +85,9 @@ get_header();
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
           <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
-             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-            Try live intake →
-          </a>
+             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Try live intake →</a>
           <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
-             class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-            See pricing
-          </a>
+             class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">See pricing</a>
         </div>
         <div class="xpressui-hero-points flex flex-wrap justify-center lg:justify-start gap-x-3 gap-y-3 text-sm text-gray-500">
           <?php foreach (['Private intake links', 'Guided uploads', 'Operator inbox', 'WordPress or Cloud'] as $point): ?>
@@ -130,9 +126,7 @@ get_header();
         <?php endforeach; ?>
       </div>
       <div class="mt-8 text-center">
-        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700">
-          Pick one pilot workflow
-        </a>
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700 whitespace-nowrap">Pick one pilot workflow</a>
       </div>
     </div>
   </section>
@@ -173,9 +167,7 @@ get_header();
         <?php endforeach; ?>
       </div>
       <div class="text-center mt-10">
-        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Request a setup call
-        </a>
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Request a setup call</a>
       </div>
     </div>
   </section>
@@ -307,9 +299,7 @@ get_header();
             <?php endforeach; ?>
           </ul>
           <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
-             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Start with IntakeFlow Free
-          </a>
+             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start with IntakeFlow Free</a>
         </article>
         <article class="bg-gray-900 rounded-2xl border border-gray-800 p-8 flex flex-col shadow-sm">
           <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">Cloud PRO</span>
@@ -327,9 +317,7 @@ get_header();
             <?php endforeach; ?>
           </ul>
           <a href="<?php echo esc_url($contact_url); ?>"
-             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">
-            Discuss Cloud plan →
-          </a>
+             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Discuss Cloud plan →</a>
         </article>
       </div>
     </div>
@@ -357,13 +345,9 @@ get_header();
       <p class="text-gray-400 mb-10">Start with IntakeFlow Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>"
-           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Discuss Cloud plan →
-        </a>
+           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan →</a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
-           class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition">
-          Download IntakeFlow Free
-        </a>
+           class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Download IntakeFlow Free</a>
       </div>
     </div>
   </section>

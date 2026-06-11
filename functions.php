@@ -403,8 +403,6 @@ function iakpress_translate_french_output( string $html ): string {
         'Ready to build?' => 'Prêt à construire ?',
         'Use IntakeFlow Free today. Upgrade when your team needs repeatable intake at speed.' => 'Utilisez IntakeFlow Free aujourd’hui. Passez à la suite quand votre équipe a besoin d’un intake répétable et rapide.',
         'If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.' => 'Si vous voulez simplement tester l’expérience, commencez gratuitement. Si vous voulez créer des portails clients personnalisés que vous pouvez réutiliser et vendre, la version Pro est le choix idéal.',
-        'Direct Pro sales are temporarily paused while IntakeFlow Free is being validated by WordPress.org.' => 'Les ventes directes Pro sont temporairement en pause pendant la validation de IntakeFlow Free par WordPress.org.',
-
         'Publish a public workflow URL without asking the client to install or maintain client-site infrastructure.' => 'Publiez une URL de workflow publique sans demander au client d’installer ou maintenir une infrastructure côté site.',
         'Manage products, services, dates, options, or member lists once and reuse them across hosted workflows.' => 'Gérez une fois les produits, services, dates, options ou listes de membres, puis réutilisez-les dans les workflows hébergés.',
         'Operators review submissions, statuses, files, and internal notes from the same workspace.' => 'Les opérateurs relisent les soumissions, statuts, fichiers et notes internes depuis le même workspace.',

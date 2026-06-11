@@ -67,13 +67,13 @@ $copy = $is_french_pilot ? [
 $offers = $is_french_pilot ? [
   [
     'title' => 'Configuration workflow hébergé',
-    'price' => 'à partir de 299 € de configuration',
+    'price' => 'à partir de €299 de configuration',
     'body'  => 'Un workflow hébergé avec marque, email opérateur, checklist de revue et résumé généré.',
     'fit'   => 'Idéal quand le client a besoin d\'un lien public rapidement.',
   ],
   [
     'title' => 'Livraison sur site client',
-    'price' => 'à partir de 790 € de configuration',
+    'price' => 'à partir de €790 de configuration',
     'body'  => 'Livraison IntakeFlow Starter, intégration page, test de soumission et validation inbox admin.',
     'fit'   => 'Idéal pour les agences qui livrent sur des sites appartenant au client.',
   ],
@@ -193,7 +193,7 @@ get_header();
             <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($offer['fit']); ?></p>
           </div>
           <div class="mt-auto pt-6">
-            <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition">
+            <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-4 py-3 text-sm font-bold text-blue-700 hover:border-blue-200 hover:bg-blue-100 transition whitespace-nowrap">
               <?php echo esc_html($copy['scope_item_cta']); ?>
             </a>
           </div>
@@ -211,7 +211,7 @@ get_header();
         <p class="text-gray-600 leading-relaxed mb-6">
           <?php echo esc_html($copy['output_body']); ?>
         </p>
-        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20 whitespace-nowrap">
           <?php echo esc_html($copy['output_cta']); ?>
         </a>
       </div>
@@ -235,7 +235,7 @@ get_header();
           <?php echo esc_html($copy['scope_body']); ?>
         </p>
       </div>
-      <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
+      <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-500/20 whitespace-nowrap">
         <?php echo esc_html($copy['scope_cta']); ?>
       </a>
     </div>
@@ -263,10 +263,10 @@ get_header();
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5"><?php echo esc_html($copy['final_title']); ?></h2>
       <p class="text-gray-400 mb-8"><?php echo esc_html($copy['final_body']); ?></p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
+        <a href="<?php echo esc_url($booking_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">
           <?php echo esc_html($copy['final_primary']); ?>
         </a>
-        <a href="<?php echo esc_url($pricing_url); ?>" class="inline-flex justify-center bg-gray-800 border border-gray-700 hover:border-gray-600 text-white font-bold py-4 px-8 rounded-lg transition">
+        <a href="<?php echo esc_url($pricing_url); ?>" class="inline-flex justify-center bg-gray-800 border border-gray-700 hover:border-gray-600 text-white font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">
           <?php echo esc_html($copy['final_secondary']); ?>
         </a>
       </div>

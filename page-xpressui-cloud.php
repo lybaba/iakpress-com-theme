@@ -70,9 +70,7 @@ get_header();
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Pick the smallest live test</p>
             <p class="text-lg font-extrabold text-gray-900">Start with one hosted workflow, then upgrade only when usage proves it.</p>
           </div>
-          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-gray-900 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 transition">
-            Scope my first workflow
-          </a>
+          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-gray-900 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 transition whitespace-nowrap">Scope my first workflow</a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
@@ -99,12 +97,8 @@ get_header();
         </div>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Discuss Cloud plan
-        </a>
-        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Compare with IntakeFlow Starter
-        </a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
+        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Compare with IntakeFlow Starter</a>
       </div>
     </div>
   </section>
@@ -134,7 +128,7 @@ get_header();
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="<?php echo esc_url($plan['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
+          <a href="<?php echo esc_url($plan['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">
             Choose <?php echo esc_html($plan['name']); ?>
           </a>
         </article>
@@ -161,12 +155,8 @@ get_header();
             <li><strong class="text-gray-900">Good fit:</strong> files, reservations, catalog orders, payment proofs.</li>
           </ul>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition">
-              Scope hosted pilot
-            </a>
-            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
-              See pilot offer
-            </a>
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition whitespace-nowrap">Scope hosted pilot</a>
+            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition whitespace-nowrap">See pilot offer</a>
           </div>
         </div>
       </div>
@@ -214,9 +204,7 @@ get_header();
       <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €39/month</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.</h2>
       <p class="text-gray-400 mb-8">We are opening Cloud PRO and ENTERPRISE plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
-      <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-        Discuss Cloud plan
-      </a>
+      <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
     </div>
   </section>
 </div>

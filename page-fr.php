@@ -33,10 +33,10 @@ get_header(); ?>
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>"
-             class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform">
+             class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform whitespace-nowrap">
             Tester le parcours client
           </a>
-          <a href="<?php echo esc_url(home_url('/fr/pricing/')); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow">
+          <a href="<?php echo esc_url(home_url('/fr/pricing/')); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:-translate-y-0.5 shadow-sm hover:shadow whitespace-nowrap">
             Voir le fonctionnement
           </a>
         </div>
@@ -95,7 +95,7 @@ get_header(); ?>
         <p class="text-gray-600 leading-relaxed mb-6">
           Un tour rapide du lien client, de la soumission guidée, de la notification email et de la revue opérateur.
         </p>
-        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
+        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100 whitespace-nowrap">
           Ouvrir sur YouTube
         </a>
       </div>
@@ -170,8 +170,8 @@ get_header(); ?>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5">Commencez avec un vrai workflow client, pas une démo abstraite.</h2>
       <p class="text-gray-300 leading-relaxed mb-10">On peut livrer un premier portail hébergé ou l'installer sur un site WordPress client, puis transformer ce premier cas en offre réutilisable.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform">Tester l'intake</a>
-        <a href="<?php echo esc_url(home_url('/fr/agency-pilot/')); ?>" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition">Voir l'accompagnement</a>
+        <a href="<?php echo esc_url(home_url('/fr/contact/')); ?>" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform whitespace-nowrap">Tester l'intake</a>
+        <a href="<?php echo esc_url(home_url('/fr/agency-pilot/')); ?>" class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-xl transition whitespace-nowrap">Voir l'accompagnement</a>
       </div>
     </div>
   </section>

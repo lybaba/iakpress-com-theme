@@ -33,10 +33,10 @@ get_header(); ?>
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a href="/contact/"
-             class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform">
+             class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transform whitespace-nowrap">
             Try the missing-file workflow
           </a>
-          <a href="/pricing/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-xl transition duration-200">
+          <a href="/pricing/" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-xl transition duration-200 whitespace-nowrap">
             See how it works
           </a>
         </div>
@@ -97,7 +97,7 @@ get_header(); ?>
         <p class="text-gray-600 leading-relaxed mb-6">
           A quick tour of the client link, guided submission, notification email, and operator review workflow.
         </p>
-        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100">
+        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100 whitespace-nowrap">
           Open on YouTube
         </a>
       </div>
@@ -144,7 +144,7 @@ get_header(); ?>
 
       <p class="text-center text-lg font-semibold mt-10 text-gray-900">You do not need another form builder. You need a client follow-up workflow.</p>
       <div class="text-center mt-8">
-        <a href="/agency-pilot/" class="inline-flex justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:-translate-y-0.5">
+        <a href="/agency-pilot/" class="inline-flex justify-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 px-8 rounded-xl transition-all duration-300 shadow-lg shadow-blue-500/25 hover:-translate-y-0.5 whitespace-nowrap">
           Scope the first pilot
         </a>
       </div>
@@ -322,7 +322,7 @@ get_header(); ?>
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly subscription</p>
           <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€99</span></div>
           <p class="mt-2 text-gray-500 text-sm">per site per year, excl. VAT.</p>
-          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="mt-8 w-full block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-indigo-600/35 hover:-translate-y-0.5 transform">Buy IntakeFlow Starter</a>
+          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="mt-8 w-full block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-indigo-600/35 hover:-translate-y-0.5 transform whitespace-nowrap">Buy IntakeFlow Starter</a>
         </div>
       </div>
     </div>

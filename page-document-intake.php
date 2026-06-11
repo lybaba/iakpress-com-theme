@@ -23,12 +23,8 @@ get_header(); ?>
         This is not just a form. It is a guided intake flow for collecting files, project details, and missing documents in one clean client-site or hosted experience.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#live-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Try the portal below
-        </a>
-        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          See pricing
-        </a>
+        <a href="#live-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">Try the portal below</a>
+        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">See pricing</a>
       </div>
     </div>
   </section>

@@ -56,13 +56,9 @@ get_header();
         IntakeFlow Starter is for teams that need structured outcomes, not ad hoc attachments and manual follow-up. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Discuss Cloud plan
-        </a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
-           class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Compare plans
-        </a>
+           class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Compare plans</a>
       </div>
       <p class="mt-4 text-sm text-gray-400">Starter plan: €99/year · per site · 30-day money-back guarantee</p>
     </div>
@@ -86,12 +82,8 @@ get_header();
             <li><strong class="text-gray-900">From €790:</strong> client-site delivery and validation.</li>
           </ul>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition">
-              Scope my workflow
-            </a>
-            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
-              See pilot
-            </a>
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition whitespace-nowrap">Scope my workflow</a>
+            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition whitespace-nowrap">See pilot</a>
           </div>
         </div>
       </div>
@@ -200,9 +192,7 @@ get_header();
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly Plan</p>
           <div class="text-6xl font-extrabold text-gray-900 mb-1">€99</div>
           <p class="text-gray-400 text-xs mb-6">per year per site.</p>
-          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30">
-            Buy IntakeFlow Starter
-          </a>
+          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 whitespace-nowrap">Buy IntakeFlow Starter</a>
           <p class="mt-3 text-xs text-gray-400">Direct sales are managed through secure checkout.</p>
         </div>
       </div>
@@ -231,13 +221,9 @@ get_header();
       <h2 class="text-3xl font-bold text-gray-900 mb-4">If you want cleaner onboarding, Starter is the fastest path.</h2>
       <p class="text-gray-500 mb-8 leading-relaxed">Use it to standardize client intake, collect files properly, and deliver a more professional workflow experience from the start.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Discuss Cloud plan
-        </a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
         <a href="<?php echo esc_url($demo_url); ?>"
-           class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Try the live demo
-        </a>
+           class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Try the live demo</a>
       </div>
     </div>
   </section>

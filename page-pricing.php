@@ -135,13 +135,11 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5">Choose where your client intake portal should live.</h1>
       <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">Start on a client WordPress site, move to IntakeFlow Cloud when you want hosted links, files, catalogs, quotas, and team review, or ask us to ship the first workflow with you.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center">Discuss Cloud plan</a>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center">Download IntakeFlow Free</a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center whitespace-nowrap">Discuss Cloud plan</a>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-center whitespace-nowrap">Download IntakeFlow Free</a>
       </div>
       <div class="mt-4">
-        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-5 rounded-lg transition text-sm">
-          Need the first workflow live? See Agency Pilot
-        </a>
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-5 rounded-lg transition text-sm whitespace-nowrap">Need the first workflow live? See Agency Pilot</a>
       </div>
       <p class="mt-4 text-sm font-semibold text-emerald-600">Start free — 15-day trial on Starter or Cloud, no card required.</p>
       <p class="mt-1 text-sm text-gray-500">IntakeFlow Free · IntakeFlow Starter per site · IntakeFlow Cloud from €39/month</p>
@@ -197,12 +195,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         </p>
       </div>
       <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
-        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20">
-          Scope a pilot
-        </a>
-        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-6 rounded-lg transition">
-          See pilot details
-        </a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20 whitespace-nowrap">Scope a pilot</a>
+        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">See pilot details</a>
       </div>
     </div>
   </section>
@@ -249,7 +243,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           </li>
           <?php endforeach; ?>
         </ul>
-        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="mt-auto block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition">Download IntakeFlow Free</a>
+        <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="mt-auto block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Download IntakeFlow Free</a>
       </article>
 
       <article class="bg-gray-900 rounded-3xl border border-gray-800 p-8 flex flex-col relative overflow-hidden">
@@ -278,8 +272,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start 15-day free trial</a>
-          <a href="<?php echo esc_url($starter_buy_url); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline">or buy now — €99/year</a>
+          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start 15-day free trial</a>
+          <a href="<?php echo esc_url($starter_buy_url); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €99/year</a>
         </div>
       </article>
 
@@ -309,8 +303,8 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           <?php endforeach; ?>
         </ul>
         <div class="mt-auto">
-          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Start free Cloud trial</a>
-          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline">or buy now — €39/month</a>
+          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start free Cloud trial</a>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro')); ?>" class="block text-center text-blue-700 hover:text-blue-900 text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €39/month</a>
         </div>
       </article>
 
@@ -344,7 +338,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
             </li>
             <?php endforeach; ?>
           </ul>
-          <a href="<?php echo esc_url($tier['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition">
+          <a href="<?php echo esc_url($tier['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">
             Choose <?php echo esc_html($tier['name']); ?>
           </a>
         </article>
