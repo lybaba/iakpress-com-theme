@@ -539,7 +539,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Operate submissions and files from Console' => 'Gérer soumissions et fichiers depuis la Console',
         'Use workspace quotas and audit trail' => 'Utiliser quotas workspace et piste d’audit',
         'Add team review without sharing client-site access' => 'Ajouter la revue équipe sans partager l’accès au site client',
-        'Discuss Cloud plan →' => 'Discuter du plan Cloud →',
+        'Discuss Cloud plan' => 'Discuter du plan Cloud',
         'Questions people ask before trying it.' => 'Questions fréquentes avant d’essayer.',
         'What is IntakeFlow?' => 'Qu’est-ce que IntakeFlow ?',
         'IntakeFlow is a client intake portal system: private links, guided document upload, dynamic choices, and operator review in one delivery path.' => 'IntakeFlow est un système de portail d’intake client : liens privés, upload documentaire guidé, choix dynamiques et revue opérateur dans un même chemin de livraison.',
@@ -736,8 +736,8 @@ function iakpress_translate_french_output( string $html ): string {
         'Request a setup call' => 'Demander un appel de cadrage',
         'Pick one pilot workflow' => 'Choisir un workflow pilote',
         'Start with IntakeFlow Free' => 'Commencer avec IntakeFlow Free',
-        'Discuss Cloud plan →' => 'Discuter du plan Cloud →',
-        'Try live intake →' => 'Tester l’intake →',
+        'Discuss Cloud plan' => 'Discuter du plan Cloud',
+        'Try live intake' => 'Tester l’intake',
         'After:' => 'Après :',
         'Before:' => 'Avant :',
         'Common questions.' => 'Questions fréquentes.',
@@ -876,3 +876,17 @@ function iakpress_setup_theme(): void {
     add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'iakpress_setup_theme' );
+
+function xpressui_arrow_svg( string $class = 'inline-block w-4 h-4 ml-1.5 align-middle stroke-current' ): string {
+    return sprintf(
+        '<svg class="%s" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>',
+        esc_attr( $class )
+    );
+}
+
+function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 align-middle stroke-current' ): string {
+    return sprintf(
+        '<svg class="%s" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>',
+        esc_attr( $class )
+    );
+}

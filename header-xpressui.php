@@ -42,7 +42,7 @@ $is_pro = ($active === 'pro');
       ?>
       <a href="<?php echo esc_url($item['href']); ?>"<?php echo $class . $external . $dim; ?>><?php echo esc_html($item['label']); ?></a>
       <?php endforeach; ?>
-      <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="nav-cta<?php echo ($active === 'contact') ? ' is-active' : ''; ?>">Discuss Cloud plan →</a>
+      <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="nav-cta<?php echo ($active === 'contact') ? ' is-active' : ''; ?>">Discuss Cloud plan<?php echo xpressui_arrow_svg(); ?></a>
     </div>
   </div>
 </nav>

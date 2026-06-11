@@ -76,7 +76,9 @@ get_header(); ?>
             <?php endforeach; ?>
           </div>
         </div>
-        <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-black text-white shadow-lg shadow-blue-500/20 md:flex hover:scale-110 transition-transform duration-300">→</div>
+        <div class="hidden h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-lg font-black text-white shadow-lg shadow-blue-500/20 md:flex hover:scale-110 transition-transform duration-300">
+          <?php echo xpressui_arrow_svg('h-6 w-6 stroke-current'); ?>
+        </div>
         <div class="rounded-2xl border border-blue-200 bg-white p-6 shadow-md shadow-blue-500/5 hover:shadow-blue-500/10 hover:border-blue-300 transition-all duration-300">
           <p class="mb-4 text-sm font-extrabold uppercase tracking-widest text-blue-600">With IntakeFlow</p>
           <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -269,7 +271,7 @@ get_header(); ?>
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center justify-between mb-10">
         <h2 class="text-2xl font-bold text-gray-900">From the Blog</h2>
-        <a href="/blog/" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition">All articles &rarr;</a>
+        <a href="/blog/" class="text-sm font-bold text-blue-600 hover:text-blue-800 transition">All articles <?php echo xpressui_arrow_svg(); ?></a>
       </div>
 
       <a href="<?php echo get_permalink( $post->ID ); ?>"

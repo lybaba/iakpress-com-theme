@@ -190,7 +190,7 @@ $contact_copy = $is_french_contact ? array(
   'promo_eyebrow' => 'Construit avec XPressUI',
   'promo_title' => 'Ce parcours fonctionne avec XPressUI.',
   'promo_body' => 'Pas de code, pas de conflit CSS. Conçu dans la console visuelle, déployé sur un site client ou en lien hébergé.',
-  'promo_cta' => 'Voir comment ça marche →',
+  'promo_cta' => 'Voir comment ça marche',
 ) : array(
   'default_intro_title' => 'Describe your first workflow',
   'default_cta_label' => 'Start the brief',
@@ -214,7 +214,7 @@ $contact_copy = $is_french_contact ? array(
   'promo_eyebrow' => 'Built with XPressUI',
   'promo_title' => 'This intake runs on XPressUI.',
   'promo_body' => 'No code, no CSS conflicts. Designed in the visual console, deployed on a client site in under 30 minutes.',
-  'promo_cta' => 'See how it works →',
+  'promo_cta' => 'See how it works',
 );
 
 $contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
@@ -336,6 +336,7 @@ get_header(); ?>
         </div>
         <a href="/xpressui/" class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-sm whitespace-nowrap">
           <?php echo esc_html($contact_copy['promo_cta']); ?>
+          <?php echo xpressui_arrow_svg(); ?>
         </a>
       </div>
     </div>
