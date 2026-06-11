@@ -35,8 +35,10 @@ $faq_items = [
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
-$contact_url = home_url('/contact/');
-$agency_url  = home_url('/agency-pilot/');
+$is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$agency_url  = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
+$demo_url    = $is_fr ? home_url('/fr/document-intake/') : home_url('/document-intake/');
 
 get_header();
 ?>
@@ -232,7 +234,7 @@ get_header();
         <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
           Discuss Cloud plan
         </a>
-        <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
+        <a href="<?php echo esc_url($demo_url); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
           Try the live demo
         </a>

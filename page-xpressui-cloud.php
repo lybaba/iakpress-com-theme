@@ -63,10 +63,7 @@ get_header();
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Host the workflow link, catalogs, inbox, files, and review operations with IntakeFlow.
       </h1>
-      <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
-        IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites.
-        IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
-      </p>
+      <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites. IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.</p>
       <div class="mb-10 max-w-4xl mx-auto rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-4 sm:p-6 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5 text-left">
           <div>
