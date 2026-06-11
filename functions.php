@@ -81,6 +81,7 @@ function iakpress_language_path_map(): array {
         'for-operations'  => 'fr/for-operations',
         'document-intake' => 'fr/document-intake',
         'pro'             => 'fr/pro',
+        'purchase-confirmed' => 'fr/purchase-confirmed',
     );
 }
 
@@ -744,6 +745,38 @@ function iakpress_translate_french_output( string $html ): string {
         'After:' => 'Après :',
         'Before:' => 'Avant :',
         'Common questions.' => 'Questions fréquentes.',
+
+        // Purchase Confirmed page translations
+        'Welcome to XPressUI Pro.' => 'Bienvenue sur XPressUI Pro.',
+        'Your license key and download link are on their way to your inbox. Follow the steps below to go from ZIP file to live intake page.' => 'Votre clé de licence et votre lien de téléchargement sont en route vers votre boîte de réception. Suivez les étapes ci-dessous pour passer du fichier ZIP à votre page d’intake en ligne.',
+        'Check your email' => 'Vérifiez vos e-mails',
+        'Your license key and download link have been sent to your inbox. Check your spam folder if it doesn&#039;t show up within a minute.' => 'Votre clé de licence et votre lien de téléchargement ont été envoyés dans votre boîte de réception. Vérifiez votre dossier de spam s’ils n’apparaissent pas d’ici une minute.',
+        'Download and install the free plugin' => 'Télécharger et installer le plugin gratuit',
+        'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.' => 'Installez et activez d’abord XPressUI Bridge sur votre site client. Il s’agit du runtime de base requis par le plugin Pro.',
+        'Download XPressUI Bridge on WordPress.org' => 'Télécharger XPressUI Bridge sur WordPress.org',
+        'Install XPressUI Pro from your email link' => 'Installer XPressUI Pro depuis le lien reçu par e-mail',
+        'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.' => 'Téléchargez le ZIP d’XPressUI Pro depuis votre e-mail, puis téléversez-le et activez-le sur le site client › Extensions › Ajouter › Téléverser une extension.',
+        'Enter your license key' => 'Saisir votre clé de licence',
+        'In the client-site admin, go to XPressUI › Settings › License. Paste your license key from the email and click Activate. A green badge confirms it&#039;s active.' => 'Dans l’administration du site client, allez dans XPressUI › Réglages › Licence. Collez votre clé de licence reçue par e-mail et cliquez sur Activer. Un badge vert confirme qu’elle est active.',
+        'Upload your workflow pack' => 'Téléverser votre pack de workflow',
+        'Go to XPressUI › Workflows › Upload and install your workflow pack ZIP. Create a page embed to go live.' => 'Allez dans XPressUI › Workflows › Téléverser et installez le ZIP de votre pack de workflow. Créez un embed de page pour le mettre en ligne.',
+        'workflow slug or client project name' => 'slug du workflow ou nom du projet client',
+        'client-site URL and active theme if this is a client-site delivery' => 'URL du site client et thème actif s’il s’agit d’une livraison sur site client',
+        'who should receive operator emails' => 'qui doit recevoir les e-mails opérateur',
+        'one test submission you expect to see' => 'une soumission de test que vous vous attendez à voir',
+        'whether you need a hosted link, client-site page, or both' => 'si vous avez besoin d’un lien hébergé, d’une page sur site client, ou des deux',
+        '✓ Payment confirmed' => '✓ Paiement confirmé',
+        'You\'re in' => 'Vous y êtes',
+        'We\'ve sent your <strong class="text-gray-700">license key</strong> and a protected <strong class="text-gray-700">download link</strong> to your inbox.' => 'Nous avons envoyé votre <strong class="text-gray-700">clé de licence</strong> et un <strong class="text-gray-700">lien de téléchargement</strong> sécurisé dans votre boîte de réception.',
+        'If it doesn\'t arrive within a couple of minutes, check your spam folder or' => 'S’il n’arrive pas d’ici quelques minutes, vérifiez votre dossier de spam ou',
+        'contact support' => 'contacter le support',
+        'Need help with the setup?' => 'Besoin d’aide pour la configuration ?',
+        'We can walk you through installation or help tailor the workflow to your site.' => 'Nous pouvons vous guider lors de l’installation ou vous aider à adapter le workflow à votre site.',
+        'Email support' => 'Support par e-mail',
+        'Want an assisted launch?' => 'Vous souhaitez un lancement accompagné ?',
+        'Send the details once, then we can scope the smallest useful setup.' => 'Envoyez-nous les détails une fois, puis nous pouvons cadrer la configuration la plus simple et utile.',
+        'See assisted setup options' => 'Voir les options de configuration accompagnée',
+        'Full install guide' => 'Guide d’installation complet',
     );
 
     return strtr( $html, $translations );
@@ -810,6 +843,7 @@ function iakpress_render_french_routes(): void {
         'fr/for-operations'  => 'page-for-operations.php',
         'fr/document-intake' => 'page-document-intake.php',
         'fr/pro'             => 'page-pro.php',
+        'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
@@ -841,6 +875,7 @@ function iakpress_document_title_parts( array $parts ): array {
         'fr/for-operations' => 'IntakeFlow pour les équipes opérationnelles',
         'fr/document-intake' => 'Intake documentaire et suivi de pièces',
         'fr/pro' => 'IntakeFlow Pro',
+        'fr/purchase-confirmed' => 'Achat confirmé',
     );
 
     if ( isset( $title_map[$path] ) ) {
@@ -867,6 +902,7 @@ function iakpress_custom_seo_meta_description(): void {
         'fr/for-operations' => 'Pilotez l’ensemble des demandes clients depuis une inbox centralisée et standardisez vos processus d’onboarding.',
         'fr/document-intake' => 'Simplifiez la collecte de documents administratifs avec une checklist claire et guidée pour vos clients.',
         'fr/pro' => 'Passez à IntakeFlow Pro pour débloquer la personnalisation des workflows et l’accès complet au builder de formulaires.',
+        'fr/purchase-confirmed' => 'Suivez ces étapes simples pour configurer votre licence IntakeFlow Pro et mettre en ligne votre premier portail.',
     );
 
     if ( isset( $desc_map[$path] ) ) {

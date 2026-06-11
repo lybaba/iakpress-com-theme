@@ -124,11 +124,13 @@ get_header();
         <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>"
            class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition">
           See assisted setup options
+          <?php echo xpressui_arrow_svg('inline-block w-4 h-4 ml-2 align-middle stroke-current'); ?>
         </a>
       </div>
 
-      <a href="<?php echo esc_url(home_url('/install/')); ?>" class="inline-block text-sm text-gray-400 hover:text-gray-600 transition">
-        ← Full install guide
+      <a href="<?php echo esc_url(home_url('/install/')); ?>" class="inline-flex items-center text-sm text-gray-400 hover:text-gray-600 transition">
+        <?php echo xpressui_arrow_left_svg('inline-block w-4 h-4 mr-2 align-middle stroke-current'); ?>
+        Full install guide
       </a>
 
     </div>
