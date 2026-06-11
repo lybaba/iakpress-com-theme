@@ -246,7 +246,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer" class="mt-auto block text-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Download IntakeFlow Free</a>
       </article>
 
-      <article class="bg-gray-900 rounded-3xl border border-gray-800 p-8 flex flex-col relative overflow-hidden">
+      <article class="bg-gray-900 rounded-3xl border border-gray-800 px-8 pb-8 pt-14 flex flex-col relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Best value</div>
         <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">IntakeFlow Starter</span>
         <h2 class="text-2xl font-bold text-white mb-2">Ship production workflows on client sites</h2>
