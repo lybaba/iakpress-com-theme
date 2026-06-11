@@ -104,18 +104,24 @@ $free_steps = $is_french_install ? [
 $pro_steps = $is_french_install ? [
   [
     'number' => '01',
+    'title'  => 'Télécharger et installer XPressUI Pro',
+    'body'   => 'Téléchargez la dernière version du plugin Pro depuis le dépôt GitHub, puis installez-la et activez-la sur votre site via l’administration (Extensions › Ajouter › Téléverser).',
+    'cta'    => ['label' => 'Télécharger XPressUI Pro sur GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest', 'external' => true],
+  ],
+  [
+    'number' => '02',
     'title'  => 'Créer le workflow dans la console visuelle',
     'body'   => 'Ouvrez la console, créez un projet, puis concevez votre parcours d’intake : étapes, champs, uploads de fichiers et logique conditionnelle. Une fois terminé, exportez-le en ZIP.',
     'cta'    => ['label' => 'Ouvrir la console', 'href' => $console_url, 'external' => true],
   ],
   [
-    'number' => '02',
+    'number' => '03',
     'title'  => 'Uploader le ZIP du workflow',
     'body'   => 'Dans l’administration du site client, allez dans IntakeFlow → Workflows puis uploadez le ZIP exporté. Le plugin extrait la configuration du parcours et enregistre automatiquement le slug du workflow.',
     'note'   => 'Une clé de licence Pro est nécessaire pour uploader des workflows personnalisés.',
   ],
   [
-    'number' => '03',
+    'number' => '04',
     'title'  => 'Intégrer le workflow',
     'body'   => 'Collez l’embed sur n’importe quelle page du site client en utilisant le slug du workflow.',
     'code'   => '[xpressui id="votre-slug-workflow"]',
@@ -124,18 +130,24 @@ $pro_steps = $is_french_install ? [
 ] : [
   [
     'number' => '01',
+    'title'  => 'Download and install XPressUI Pro',
+    'body'   => 'Download the latest Pro plugin release from our GitHub packages repository. Install and activate the ZIP via your site admin (Plugins › Add New › Upload Plugin).',
+    'cta'    => ['label' => 'Download XPressUI Pro from GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest', 'external' => true],
+  ],
+  [
+    'number' => '02',
     'title'  => 'Build your workflow in the visual console',
     'body'   => 'Open the console, create a project, and design your intake flow — steps, fields, file uploads, conditional logic. When you\'re done, export it as a ZIP.',
     'cta'    => ['label' => 'Open the console', 'href' => $console_url, 'external' => true],
   ],
   [
-    'number' => '02',
+    'number' => '03',
     'title'  => 'Upload the workflow ZIP',
     'body'   => 'In the client-site admin, go to IntakeFlow → Workflows and upload the ZIP you exported. The plugin extracts the form config and registers the workflow slug automatically.',
     'note'   => 'A Pro license key is required to upload custom workflows.',
   ],
   [
-    'number' => '03',
+    'number' => '04',
     'title'  => 'Embed the workflow',
     'body'   => 'Paste the embed on any client-site page using the slug from your workflow.',
     'code'   => '[xpressui id="your-workflow-slug"]',
