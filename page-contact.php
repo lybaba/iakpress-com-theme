@@ -335,8 +335,7 @@ get_header(); ?>
           <p class="text-sm text-gray-500 leading-relaxed"><?php echo esc_html($contact_copy['promo_body']); ?></p>
         </div>
         <a href="/xpressui/" class="flex-shrink-0 inline-flex items-center bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition text-sm whitespace-nowrap">
-          <?php echo esc_html($contact_copy['promo_cta']); ?>
-          <?php echo xpressui_arrow_svg(); ?>
+          <?php echo esc_html($contact_copy['promo_cta']); ?> <?php echo xpressui_arrow_svg(); ?>
         </a>
       </div>
     </div>

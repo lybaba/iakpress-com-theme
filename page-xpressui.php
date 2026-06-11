@@ -85,7 +85,7 @@ get_header();
         </p>
         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
           <a href="<?php echo esc_url(home_url('/document-intake/')); ?>"
-             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Try live intake<?php echo xpressui_arrow_svg(); ?></a>
+             class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Try live intake <?php echo xpressui_arrow_svg(); ?></a>
           <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
              class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">See pricing</a>
         </div>
@@ -317,7 +317,7 @@ get_header();
             <?php endforeach; ?>
           </ul>
           <a href="<?php echo esc_url($contact_url); ?>"
-             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Discuss Cloud plan<?php echo xpressui_arrow_svg(); ?></a>
+             class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Discuss Cloud plan <?php echo xpressui_arrow_svg(); ?></a>
         </article>
       </div>
     </div>
@@ -345,7 +345,7 @@ get_header();
       <p class="text-gray-400 mb-10">Start with IntakeFlow Free, then discuss the hosted or client-site path once the first workflow is clear.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($contact_url); ?>"
-           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan<?php echo xpressui_arrow_svg(); ?></a>
+           class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan <?php echo xpressui_arrow_svg(); ?></a>
         <a href="<?php echo esc_url($download_url); ?>" target="_blank" rel="noreferrer"
            class="bg-white/10 border border-white/20 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Download IntakeFlow Free</a>
       </div>
