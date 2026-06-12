@@ -32,7 +32,7 @@ $faq_items = [
   ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install IntakeFlow and publish an embed, you can use IntakeFlow Starter.'],
   ['q' => 'What does Starter unlock?',              'a' => 'Starter adds the full runtime, advanced field types, local workflow customization in the client-site admin, Console Sync, automatic updates, and the license for one production site.'],
   ['q' => 'Is €21/month a subscription?',            'a' => 'Yes. It is a monthly subscription, which includes WordPress export & activation, Cloud access (100 submissions/month, 100 MB secure storage), Visual Builder access (limit to 3 projects), and client-site runtime features.'],
-  ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
+  ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@intakeflow.dev within 30 days.'],
 ];
 
 $is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
@@ -186,7 +186,7 @@ get_header();
             </li>
             <?php endforeach; ?>
           </ul>
-          <p class="text-xs text-gray-400">30-day money-back guarantee. Questions? <a href="mailto:hello@iakpress.com" class="text-blue-600 hover:underline">hello@iakpress.com</a></p>
+          <p class="text-xs text-gray-400">30-day money-back guarantee. Questions? <a href="mailto:hello@intakeflow.dev" class="text-blue-600 hover:underline">hello@intakeflow.dev</a></p>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
           <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Monthly Plan</p>

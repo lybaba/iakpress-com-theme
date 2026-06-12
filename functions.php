@@ -402,7 +402,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Can I use it on client sites?' => 'Puis-je l’utiliser sur des sites clients ?',
         'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.' => 'Oui. La licence Starter couvre un site client de production par abonnement, ce qui la rend adaptée à la livraison client et à l’usage interne.',
         'What if it is not a fit?' => 'Et si ce n’est pas adapté ?',
-        'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.' => 'Vous êtes couvert par une garantie satisfait ou remboursé de 30 jours. Si cela ne convient pas à votre workflow, envoyez un email à hello@iakpress.com sous 30 jours.',
+        'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@intakeflow.dev within 30 days.' => 'Vous êtes couvert par une garantie satisfait ou remboursé de 30 jours. Si cela ne convient pas à votre workflow, envoyez un email à hello@intakeflow.dev sous 30 jours.',
         'Ready to build?' => 'Prêt à construire ?',
         'Use IntakeFlow Free today. Upgrade when your team needs repeatable intake at speed.' => 'Utilisez IntakeFlow Free aujourd’hui. Passez à la suite quand votre équipe a besoin d’un intake répétable et rapide.',
         'If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.' => 'Si vous voulez simplement tester l’expérience, commencez gratuitement. Si vous voulez créer des portails clients personnalisés que vous pouvez réutiliser et vendre, la version Pro est le choix idéal.',

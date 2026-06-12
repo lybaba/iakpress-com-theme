@@ -72,7 +72,7 @@ get_header();
           <p class="text-sm text-gray-500 leading-relaxed">
             We've sent your <strong class="text-gray-700">license key</strong> and a protected <strong class="text-gray-700">download link</strong> to your inbox.
             If it doesn't arrive within a couple of minutes, check your spam folder or
-            <a href="mailto:hello@iakpress.com?subject=XPressUI%20Pro%20%E2%80%94%20missing%20license%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
+            <a href="mailto:hello@intakeflow.dev?subject=XPressUI%20Pro%20%E2%80%94%20missing%20license%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
           </p>
         </div>
       </div>

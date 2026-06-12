@@ -56,7 +56,7 @@ $faq_items = [
   ['q' => 'Who is IntakeFlow Starter for?', 'a' => 'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake and basic Cloud hosting with less back-and-forth.'],
   ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward Cloud PRO or ENTERPRISE for higher quotas, team workspace access, and managed rollout.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.'],
-  ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
+  ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@intakeflow.dev within 30 days.'],
 ];
 
 $cloud_tiers = [
