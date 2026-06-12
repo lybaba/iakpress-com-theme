@@ -312,19 +312,19 @@ get_header(); ?>
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-blue-500/5">
         <div class="p-8 md:p-10 md:w-2/3">
           <h3 class="text-2xl font-bold text-gray-900 mb-2">IntakeFlow Starter</h3>
-          <p class="text-gray-500 mb-8">Build structured client document portals on the client site and replace scattered email follow-ups with a clear intake workflow.</p>
+          <p class="text-gray-500 mb-8">Build custom client portals with WordPress export/activation and Cloud access like Cloud PRO.</p>
           <ul class="space-y-4">
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use it on <strong>1 production site</strong></span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Automatic updates via the client-site admin</span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Starter components included for document collection</span></li>
-            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Visual Builder access and local workflow builder</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Visual Builder online (limit to 3 projects)</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">WordPress ZIP export & activation</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Cloud access (100 submissions/month & 100 MB secure storage)</span></li>
+            <li class="flex items-center"><svg class="h-6 w-6 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Use on 1 production site, updates included</span></li>
           </ul>
         </div>
         <div class="bg-gradient-to-br from-gray-50 to-blue-50/30 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
-          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly subscription</p>
-          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€99</span></div>
-          <p class="mt-2 text-gray-500 text-sm">per site per year, excl. VAT.</p>
-          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="mt-8 w-full block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-indigo-600/35 hover:-translate-y-0.5 transform whitespace-nowrap">Buy IntakeFlow Starter</a>
+          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Monthly Plan</p>
+          <div class="flex items-baseline justify-center text-6xl font-extrabold text-gray-900"><span>€21</span></div>
+          <p class="mt-2 text-gray-500 text-sm">per month, excl. VAT.</p>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=starter')); ?>" class="mt-8 w-full block bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-indigo-600/35 hover:-translate-y-0.5 transform whitespace-nowrap">Buy IntakeFlow Starter</a>
         </div>
       </div>
     </div>

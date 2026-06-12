@@ -35,7 +35,7 @@ $rows = [
   ['group' => '', 'label' => 'Hosted workflow links', 'free' => false, 'pro' => false, 'cloud' => true],
   ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'cloud' => true],
 
-  ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€99/year', 'cloud' => '€39/mo'],
+  ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€21/month', 'cloud' => '€39/mo'],
   ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => 'from €790', 'cloud' => 'from €299'],
   ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
@@ -47,33 +47,33 @@ $rows = [
 
 $faq_items = [
   ['q' => 'Can I start with IntakeFlow Free first?', 'a' => 'Yes. IntakeFlow Free is the easiest way to try the document portal experience on your own client site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
-  ['q' => 'What does IntakeFlow Starter unlock exactly?', 'a' => 'IntakeFlow Starter adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from the client-site admin), Console Sync, specialized runtime features, automatic updates, and the license per site.'],
-  ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. IntakeFlow Starter can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.'],
-  ['q' => 'Where does IntakeFlow Cloud fit?', 'a' => 'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.'],
+  ['q' => 'What does IntakeFlow Starter unlock exactly?', 'a' => 'IntakeFlow Starter adds Visual Builder online (limit to 3 projects), WordPress export/activation + Cloud access (100 submissions/month, 100 MB secure storage), Customize Workflow directly from the client-site admin, Console Sync, specialized runtime features, and automatic updates.'],
+  ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. IntakeFlow Starter has full Cloud access to integrate catalogs.'],
+  ['q' => 'Where does IntakeFlow Cloud fit?', 'a' => 'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review. Starter includes 3 projects, 100 submissions/month and 100 MB storage, Cloud PRO starts at €39/month for 1,000 submissions/month and 10 GB storage, and Cloud ENTERPRISE is €149/month.'],
   ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.'],
-  ['q' => 'Is €99/year a subscription?', 'a' => 'Yes. It is a yearly subscription per site, which includes all updates, Visual Builder access, and client-site runtime features.'],
-  ['q' => 'Is there a free trial?', 'a' => 'Yes — both plans have a 15-day free trial, no card required. Start the Starter trial to test the self-hosted plugin on one site (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox. Media Library and catalogs unlock on a paid Cloud plan.'],
-  ['q' => 'Who is IntakeFlow Starter for?', 'a' => 'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake with less back-and-forth.'],
-  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward IntakeFlow Cloud, higher quotas, team workspace access, and managed rollout. The current Starter plan is the fastest client-site path today.'],
+  ['q' => 'Is €21/month a subscription?', 'a' => 'Yes. It is a monthly subscription, which includes all updates, Visual Builder access, client-site runtime features, and Cloud access.'],
+  ['q' => 'Is there a free trial?', 'a' => 'Yes — plans have a 15-day free trial, no card required. Start the Starter trial to test the plugin and Cloud features (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox.'],
+  ['q' => 'Who is IntakeFlow Starter for?', 'a' => 'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake and basic Cloud hosting with less back-and-forth.'],
+  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward Cloud PRO or ENTERPRISE for higher quotas, team workspace access, and managed rollout.'],
   ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.'],
   ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
 $cloud_tiers = [
   [
-    'name' => 'Starter (Self-Hosted)',
-    'price' => '€99',
-    'period' => '/year',
-    'tag' => 'WordPress delivery',
-    'body' => 'Best for creators who want to host intake workflows on their own WordPress servers.',
+    'name' => 'Starter (WordPress + Cloud)',
+    'price' => '€21',
+    'period' => '/month',
+    'tag' => 'WordPress & Cloud',
+    'body' => 'Best for creators who want WordPress ZIP export & activation plus Cloud features.',
     'items' => [
-      'Visual Builder (3 projects)',
-      'WordPress ZIP export',
-      'Client-site runtime',
-      'Local inbox and storage',
-      'No Cloud dependency',
+      'Visual Builder online (limit to 3 projects)',
+      'WordPress ZIP export & activation',
+      'Cloud access like Cloud PRO',
+      '100 submissions/month',
+      '100 MB secure cloud storage',
     ],
-    'buy_url' => $starter_buy_url,
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=starter'),
   ],
   [
     'name' => 'Cloud PRO',
@@ -142,7 +142,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-5 rounded-lg transition text-sm whitespace-nowrap">Need the first workflow live? See Agency Pilot</a>
       </div>
       <p class="mt-4 text-sm font-semibold text-emerald-600">Start free — 15-day trial on Starter or Cloud, no card required.</p>
-      <p class="mt-1 text-sm text-gray-500">IntakeFlow Free · IntakeFlow Starter per site · IntakeFlow Cloud from €39/month</p>
+      <p class="mt-1 text-sm text-gray-500">IntakeFlow Free · IntakeFlow Starter from €21/month · IntakeFlow Cloud PRO from €39/month</p>
     </div>
   </section>
 
@@ -249,20 +249,22 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <article class="bg-gray-900 rounded-3xl border border-gray-800 px-8 pb-8 pt-14 flex flex-col relative overflow-hidden">
         <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Best value</div>
         <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">IntakeFlow Starter</span>
-        <h2 class="text-2xl font-bold text-white mb-2">Ship production workflows on client sites</h2>
-        <p class="text-gray-300 mb-6">Best for agencies and teams that need custom, repeatable document portals on client sites.</p>
+        <h2 class="text-2xl font-bold text-white mb-2">Ship workflows on client sites with Cloud integration</h2>
+        <p class="text-gray-300 mb-6">Best for agencies and teams that need custom document portals and Cloud access.</p>
         <div class="flex items-baseline gap-2 mb-2">
-          <span class="text-5xl font-extrabold text-white">€99</span>
-          <span class="text-gray-400 text-sm">/year</span>
+          <span class="text-5xl font-extrabold text-white">€21</span>
+          <span class="text-gray-400 text-sm">/month</span>
         </div>
-        <p class="text-sm text-blue-200 mb-2">Starter plan · per site · updates included</p>
+        <p class="text-sm text-blue-200 mb-2">Starter plan · WordPress export/activation & Cloud access</p>
         <p class="text-sm font-semibold text-emerald-300 mb-6">15-day free trial · no card required</p>
         <ul class="space-y-3 mb-8 flex-1">
           <?php foreach ([
             'Everything in IntakeFlow Free',
-            'Customize Workflow — labels, choices, colors, and messages per workflow from the client-site admin',
-            'Console Sync for direct workflow pull',
-            'Advanced fields (camera capture, signature, e-payment proof, date & month ranges)',
+            'Visual Builder online (limit to 3 projects)',
+            'WordPress ZIP export & activation',
+            'Cloud access like Cloud PRO',
+            '100 submissions/month',
+            '100 MB secure cloud storage',
             'Priority email support and automatic updates'
           ] as $item): ?>
           <li class="flex items-start gap-3 text-sm text-gray-200">
@@ -273,7 +275,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         </ul>
         <div class="mt-auto">
           <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start 15-day free trial</a>
-          <a href="<?php echo esc_url($starter_buy_url); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €99/year</a>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=starter')); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €21/month</a>
         </div>
       </article>
 

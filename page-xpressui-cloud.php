@@ -27,12 +27,12 @@ $comparison = [
 
 $plans = [
   [
-    'name' => 'Starter (Self-Hosted / WP)',
-    'price' => '€99',
-    'period' => '/year',
-    'summary' => 'Deploy intake workflows on your own WordPress site.',
-    'items' => ['Visual Builder (3 projects)', 'WordPress ZIP export', 'Client-site runtime', 'Local inbox and storage', 'No Cloud dependency'],
-    'buy_url' => xpressui_starter_buy_url(),
+    'name' => 'Starter (WordPress + Cloud)',
+    'price' => '€21',
+    'period' => '/month',
+    'summary' => 'WordPress export & activation + Cloud access like Cloud PRO.',
+    'items' => ['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & activation', 'Cloud access like Cloud PRO', '100 submissions/month', '100 MB secure cloud storage'],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=starter'),
   ],
   [
     'name' => 'Cloud PRO',
@@ -74,9 +74,9 @@ get_header();
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
-            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter (WP)</p>
-            <p class="text-2xl font-extrabold text-gray-900">€99<span class="text-sm font-semibold text-gray-500">/yr</span></p>
-            <p class="text-xs text-gray-500 mt-1">Self-hosted site delivery.</p>
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter</p>
+            <p class="text-2xl font-extrabold text-gray-900">€21<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">WordPress + Cloud access.</p>
           </div>
           <div class="rounded-2xl bg-gray-900 border border-gray-800 p-4 text-white shadow-md shadow-blue-900/10">
             <p class="mb-2 inline-flex rounded-full bg-blue-600 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">Most popular</p>
@@ -91,7 +91,7 @@ get_header();
           </div>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-sm text-gray-600">
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> host intake on your own WordPress site.</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> Visual Builder (3 proj), WordPress export/activation + Cloud access (100 sub/mo, 100MB storage).</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Cloud PRO:</strong> hosted links, Stripe payment, and webhooks.</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Enterprise:</strong> workspaces, operators, GDPR rules, and SLA.</p>
         </div>
@@ -201,7 +201,7 @@ get_header();
 
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €39/month</p>
+      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €21/month</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.</h2>
       <p class="text-gray-400 mb-8">We are opening Cloud PRO and ENTERPRISE plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
       <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>

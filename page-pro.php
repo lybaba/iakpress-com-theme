@@ -31,7 +31,7 @@ $faq_items = [
   ['q' => 'Can I use it on client sites?',          'a' => 'Yes. The Starter license covers one production client site per subscription.'],
   ['q' => 'Do I need to code the portals?',         'a' => 'No. The builder is visual. If you can install IntakeFlow and publish an embed, you can use IntakeFlow Starter.'],
   ['q' => 'What does Starter unlock?',              'a' => 'Starter adds the full runtime, advanced field types, local workflow customization in the client-site admin, Console Sync, automatic updates, and the license for one production site.'],
-  ['q' => 'Is €99/year a subscription?',            'a' => 'Yes. It is a yearly subscription per site, which includes all updates, Visual Builder access, and client-site runtime features.'],
+  ['q' => 'Is €21/month a subscription?',            'a' => 'Yes. It is a monthly subscription, which includes WordPress export & activation, Cloud access (100 submissions/month, 100 MB secure storage), Visual Builder access (limit to 3 projects), and client-site runtime features.'],
   ['q' => 'What if it is not a fit?',               'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
@@ -60,7 +60,7 @@ get_header();
         <a href="<?php echo esc_url(home_url('/pricing/')); ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Compare plans</a>
       </div>
-      <p class="mt-4 text-sm text-gray-400">Starter plan: €99/year · per site · 30-day money-back guarantee</p>
+      <p class="mt-4 text-sm text-gray-400">Starter plan: €21/month · 30-day money-back guarantee</p>
     </div>
   </section>
 
@@ -77,7 +77,7 @@ get_header();
         <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5">
           <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3">Fast commercial route</p>
           <ul class="space-y-3 text-sm text-gray-700 mb-5">
-            <li><strong class="text-gray-900">€99/year:</strong> Starter license for self-managed WordPress delivery.</li>
+            <li><strong class="text-gray-900">€21/month:</strong> Starter plan with WordPress export/activation and Cloud access.</li>
             <li><strong class="text-gray-900">From €299:</strong> hosted workflow setup.</li>
             <li><strong class="text-gray-900">From €790:</strong> client-site delivery and validation.</li>
           </ul>
@@ -175,11 +175,11 @@ get_header();
     <div class="max-w-2xl mx-auto">
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
         <div class="p-8 md:p-10 md:w-2/3">
-          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4">Starter (Self-Hosted / WP)</span>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals for real client work</h3>
-          <p class="text-gray-500 mb-6 text-sm">Deploy intake workflows on your own WordPress site. Standardize and reuse form templates across client accounts.</p>
+          <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4">Starter (WordPress + Cloud)</span>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Custom portals with Cloud integration</h3>
+          <p class="text-gray-500 mb-6 text-sm">Visual Builder online (limit to 3 projects), WordPress export & activation + Cloud access like Cloud PRO. 100 submissions/month & 100 MB secure cloud storage.</p>
           <ul class="space-y-3 mb-6">
-            <?php foreach (['Full runtime + specialized workflow features', 'Customize Workflow in the client-site admin', 'Console Sync + Starter license', 'Use on 1 production site', 'Updates and Visual Builder included'] as $t): ?>
+            <?php foreach (['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & activation', 'Cloud access like Cloud PRO', '100 submissions per month', '100 MB secure cloud storage', 'Updates included'] as $t): ?>
             <li class="flex items-center gap-3 text-sm text-gray-700">
               <svg class="h-5 w-5 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
               <?php echo esc_html($t); ?>
@@ -189,10 +189,10 @@ get_header();
           <p class="text-xs text-gray-400">30-day money-back guarantee. Questions? <a href="mailto:hello@iakpress.com" class="text-blue-600 hover:underline">hello@iakpress.com</a></p>
         </div>
         <div class="bg-gray-50 p-8 md:p-10 md:w-1/3 flex flex-col justify-center items-center text-center border-l border-gray-100">
-          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Yearly Plan</p>
-          <div class="text-6xl font-extrabold text-gray-900 mb-1">€99</div>
-          <p class="text-gray-400 text-xs mb-6">per year per site.</p>
-          <a href="<?php echo esc_url(xpressui_starter_buy_url()); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 whitespace-nowrap">Buy IntakeFlow Starter</a>
+          <p class="text-gray-500 text-sm font-bold uppercase tracking-widest mb-2">Monthly Plan</p>
+          <div class="text-6xl font-extrabold text-gray-900 mb-1">€21</div>
+          <p class="text-gray-400 text-xs mb-6">per month.</p>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=starter')); ?>" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition shadow-lg shadow-blue-600/30 whitespace-nowrap">Buy IntakeFlow Starter</a>
           <p class="mt-3 text-xs text-gray-400">Direct sales are managed through secure checkout.</p>
         </div>
       </div>
