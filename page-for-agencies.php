@@ -61,8 +61,8 @@ $segment_offer = $is_fr ? [
   'title' => "Vendez un workflow en premier, puis réutilisez-le.",
   'body'  => "Utilisez le premier pilote pour valider la demande, puis ajoutez le workflow à votre menu de livraison agence.",
   'items' => [
-    "Configuration workflow hébergé à partir de 299 €",
-    "Livraison sur site client à partir de 790 €",
+    "Configuration workflow hébergé à partir de €299",
+    "Livraison sur site client à partir de €790",
     "XPressUI Pro pour la livraison sur site possédé",
     "Cloud Team ou Agency pour les opérations répétables",
   ],
@@ -70,8 +70,8 @@ $segment_offer = $is_fr ? [
   'title' => 'Sell one workflow first, then reuse it.',
   'body'  => 'Use the first pilot to validate demand, then add the workflow to your agency delivery menu.',
   'items' => [
-    'Hosted workflow setup from 299 EUR',
-    'Client-site delivery from 790 EUR',
+    'Hosted workflow setup from €299',
+    'Client-site delivery from €790',
     'XPressUI Pro for owned-site delivery',
     'Cloud Team or Agency for repeatable operations',
   ],

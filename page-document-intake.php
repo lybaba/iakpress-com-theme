@@ -3,8 +3,10 @@
  * The template for displaying the /document-intake/ live demo page.
  */
 
-$pricing_url = home_url('/pricing/');
-$contact_url = home_url('/contact/');
+$is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
+$contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$pro_url     = $is_fr ? home_url('/fr/pro/')     : home_url('/pro/');
 
 get_header(); ?>
 
@@ -21,12 +23,8 @@ get_header(); ?>
         This is not just a form. It is a guided intake flow for collecting files, project details, and missing documents in one clean client-site or hosted experience.
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#live-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Try the portal below
-        </a>
-        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          See pricing
-        </a>
+        <a href="#live-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">Try the portal below</a>
+        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">See pricing</a>
       </div>
     </div>
   </section>

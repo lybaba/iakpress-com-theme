@@ -61,8 +61,8 @@ $segment_offer = $is_fr ? [
   'title' => "Commencez par le processus le plus douloureux.",
   'body'  => "Lancez d'abord le workflow le plus répétitif ou le plus manuel, puis décidez s'il doit devenir le schéma standard pour d'autres processus.",
   'items' => [
-    "Configuration workflow hébergé à partir de 299 €",
-    "Livraison sur site interne à partir de 790 €",
+    "Configuration workflow hébergé à partir de €299",
+    "Livraison sur site interne à partir de €790",
     "Cloud Team pour la revue opérateur partagée",
     "Templates de workflow réutilisables pour les processus récurrents",
   ],
@@ -70,8 +70,8 @@ $segment_offer = $is_fr ? [
   'title' => 'Start with the most painful process.',
   'body'  => 'Launch the most repetitive or manual workflow first, then decide whether it should become the standard pattern for more processes.',
   'items' => [
-    'Hosted workflow setup from 299 EUR',
-    'Internal-site delivery from 790 EUR',
+    'Hosted workflow setup from €299',
+    'Internal-site delivery from €790',
     'Cloud Team for shared operator review',
     'Reusable workflow templates for recurring processes',
   ],

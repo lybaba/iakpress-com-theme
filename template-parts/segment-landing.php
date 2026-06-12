@@ -12,7 +12,7 @@ $is_french = function_exists('iakpress_is_french_request') && iakpress_is_french
 
 $contact_url      = $is_french ? home_url('/fr/contact/')      : home_url('/contact/');
 $pricing_url      = $is_french ? home_url('/fr/pricing/')      : home_url('/pricing/');
-$cloud_url        = $is_french ? home_url('/xpressui-cloud/')  : home_url('/xpressui-cloud/');
+$cloud_url        = $is_french ? home_url('/fr/xpressui-cloud/')  : home_url('/xpressui-cloud/');
 $agency_pilot_url = $is_french ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 
 $seg_ui = $is_french ? [

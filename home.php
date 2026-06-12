@@ -48,7 +48,7 @@ get_header(); ?>
               <?php echo ceil( str_word_count( get_the_content() ) / 200 ); ?> min read
             </time>
             <span class="text-sm font-bold text-blue-600 group-hover:underline">
-              Read &rarr;
+              Read <?php echo xpressui_arrow_svg(); ?>
             </span>
           </div>
         </a>
@@ -58,8 +58,8 @@ get_header(); ?>
       <!-- Pagination -->
       <?php if ( get_next_posts_link() || get_previous_posts_link() ) : ?>
         <div class="flex justify-between pt-6">
-          <div><?php next_posts_link( '&larr; Older articles' ); ?></div>
-          <div><?php previous_posts_link( 'Newer articles &rarr;' ); ?></div>
+          <div><?php next_posts_link( xpressui_arrow_left_svg() . ' Older articles' ); ?></div>
+          <div><?php previous_posts_link( 'Newer articles ' . xpressui_arrow_svg() ); ?></div>
         </div>
       <?php endif; ?>
 

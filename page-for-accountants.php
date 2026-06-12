@@ -61,8 +61,8 @@ $segment_offer = $is_fr ? [
   'title' => 'Commencez par un workflow client.',
   'body'  => "Lancez d'abord un processus lourd en documents, puis décidez s'il doit devenir le schéma d'intake standard pour d'autres clients.",
   'items' => [
-    'Configuration workflow hébergé à partir de 299 €',
-    'Livraison sur site client à partir de 790 €',
+    'Configuration workflow hébergé à partir de €299',
+    'Livraison sur site client à partir de €790',
     'Cloud Team pour la revue opérateur partagée',
     'Templates de workflow réutilisables pour les périodes récurrentes',
   ],
@@ -70,8 +70,8 @@ $segment_offer = $is_fr ? [
   'title' => 'Start with one client workflow.',
   'body'  => 'Launch one document-heavy process first, then decide whether it should become the standard intake pattern for more clients.',
   'items' => [
-    'Hosted workflow setup from 299 EUR',
-    'Client-site delivery from 790 EUR',
+    'Hosted workflow setup from €299',
+    'Client-site delivery from €790',
     'Cloud Team for shared operator review',
     'Reusable workflow templates for recurring periods',
   ],

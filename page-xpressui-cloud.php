@@ -4,9 +4,10 @@
  * WordPress automatically loads this for a page with slug "xpressui-cloud".
  */
 
-$contact_url = home_url('/contact/');
-$pricing_url = home_url('/pricing/');
-$agency_url  = home_url('/agency-pilot/');
+$is_fr       = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+$contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
+$pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
+$agency_url  = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
 
 $features = [
   ['title' => 'Hosted workflow links', 'body' => 'Publish a public workflow URL without asking the client to install or maintain client-site infrastructure.'],
@@ -26,11 +27,12 @@ $comparison = [
 
 $plans = [
   [
-    'name' => 'Starter (Self-Hosted / WP)',
-    'price' => '€99',
-    'period' => '/year',
-    'summary' => 'Deploy intake workflows on your own WordPress site.',
-    'items' => ['Visual Builder (3 projects)', 'WordPress ZIP export', 'Client-site runtime', 'Local inbox and storage', 'No Cloud dependency'],
+    'name' => 'Starter (WordPress + Cloud)',
+    'price' => '€21',
+    'period' => '/month',
+    'summary' => 'WordPress export & activation + Cloud access like Cloud PRO.',
+    'items' => ['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & activation', 'Cloud access like Cloud PRO', '100 submissions/month', '100 MB secure cloud storage'],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=starter'),
   ],
   [
     'name' => 'Cloud PRO',
@@ -39,6 +41,7 @@ $plans = [
     'summary' => 'Designed for professionals and agencies with regular intake needs.',
     'items' => ['Unlimited projects', '1,000 submissions/month', '10 GB Cloud storage', 'Stripe payment integration', 'Webhooks with HMAC signatures', 'White-label widget'],
     'featured' => true,
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-pro'),
   ],
   [
     'name' => 'Cloud ENTERPRISE',
@@ -46,6 +49,7 @@ $plans = [
     'period' => '/month',
     'summary' => 'For organizations managing large volumes of client files.',
     'items' => ['10,000 submissions/month', '100 GB Cloud storage', 'Workspaces with 5 operators included', 'Automatic assignees', 'GDPR retention rules', 'Priority support & SLA'],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=cloud-enterprise'),
   ],
 ];
 
@@ -59,25 +63,20 @@ get_header();
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
         Host the workflow link, catalogs, inbox, files, and review operations with IntakeFlow.
       </h1>
-      <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">
-        IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites.
-        IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.
-      </p>
+      <p class="text-lg md:text-xl text-gray-500 leading-relaxed max-w-3xl mx-auto mb-10">IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites. IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.</p>
       <div class="mb-10 max-w-4xl mx-auto rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-slate-50 p-4 sm:p-6 shadow-sm">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5 text-left">
           <div>
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Pick the smallest live test</p>
             <p class="text-lg font-extrabold text-gray-900">Start with one hosted workflow, then upgrade only when usage proves it.</p>
           </div>
-          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-gray-900 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 transition">
-            Scope my first workflow
-          </a>
+          <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-gray-900 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 transition whitespace-nowrap">Scope my first workflow</a>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
-            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter (WP)</p>
-            <p class="text-2xl font-extrabold text-gray-900">€99<span class="text-sm font-semibold text-gray-500">/yr</span></p>
-            <p class="text-xs text-gray-500 mt-1">Self-hosted site delivery.</p>
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter</p>
+            <p class="text-2xl font-extrabold text-gray-900">€21<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">WordPress + Cloud access.</p>
           </div>
           <div class="rounded-2xl bg-gray-900 border border-gray-800 p-4 text-white shadow-md shadow-blue-900/10">
             <p class="mb-2 inline-flex rounded-full bg-blue-600 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">Most popular</p>
@@ -92,18 +91,14 @@ get_header();
           </div>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-sm text-gray-600">
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> host intake on your own WordPress site.</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> Visual Builder (3 proj), WordPress export/activation + Cloud access (100 sub/mo, 100MB storage).</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Cloud PRO:</strong> hosted links, Stripe payment, and webhooks.</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Enterprise:</strong> workspaces, operators, GDPR rules, and SLA.</p>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-          Discuss Cloud plan
-        </a>
-        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition">
-          Compare with IntakeFlow Starter
-        </a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
+        <a href="<?php echo esc_url($pricing_url); ?>" class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-4 px-8 rounded-lg transition whitespace-nowrap">Compare with IntakeFlow Starter</a>
       </div>
     </div>
   </section>
@@ -133,6 +128,9 @@ get_header();
             </li>
             <?php endforeach; ?>
           </ul>
+          <a href="<?php echo esc_url($plan['buy_url']); ?>" class="<?php echo $featured ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-white border-2 border-blue-100 hover:border-blue-200 text-blue-700'; ?> mt-8 block text-center font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">
+            Choose <?php echo esc_html($plan['name']); ?>
+          </a>
         </article>
         <?php endforeach; ?>
       </div>
@@ -157,12 +155,8 @@ get_header();
             <li><strong class="text-gray-900">Good fit:</strong> files, reservations, catalog orders, payment proofs.</li>
           </ul>
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition">
-              Scope hosted pilot
-            </a>
-            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition">
-              See pilot offer
-            </a>
+            <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-bold text-white hover:bg-blue-700 transition whitespace-nowrap">Scope hosted pilot</a>
+            <a href="<?php echo esc_url($agency_url); ?>" class="inline-flex justify-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-gray-900 border border-blue-100 hover:border-blue-200 transition whitespace-nowrap">See pilot offer</a>
           </div>
         </div>
       </div>
@@ -207,12 +201,10 @@ get_header();
 
   <section class="bg-gray-900 py-20 px-4 sm:px-6 lg:px-8 text-center">
     <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €39/month</p>
+      <p class="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">Cloud starts at €21/month</p>
       <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.</h2>
       <p class="text-gray-400 mb-8">We are opening Cloud PRO and ENTERPRISE plans case by case for teams with active intake workflows, file-heavy submissions, reusable catalogs, or multi-operator review needs.</p>
-      <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
-        Discuss Cloud plan
-      </a>
+      <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30 whitespace-nowrap">Discuss Cloud plan</a>
     </div>
   </section>
 </div>

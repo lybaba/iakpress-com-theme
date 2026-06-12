@@ -18,8 +18,9 @@ $steps = [
   ],
   [
     'n'    => '03',
-    'title'=> 'Install XPressUI Pro from your email link',
-    'body' => 'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
+    'title'=> 'Download and install XPressUI Pro',
+    'body' => 'Download the latest XPressUI Pro ZIP from the releases page, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
+    'cta'  => ['label' => 'Download XPressUI Pro from GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest'],
   ],
   [
     'n'    => '04',
@@ -71,7 +72,7 @@ get_header();
           <p class="text-sm text-gray-500 leading-relaxed">
             We've sent your <strong class="text-gray-700">license key</strong> and a protected <strong class="text-gray-700">download link</strong> to your inbox.
             If it doesn't arrive within a couple of minutes, check your spam folder or
-            <a href="mailto:hello@iakpress.com?subject=XPressUI%20Pro%20%E2%80%94%20missing%20license%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
+            <a href="mailto:hello@intakeflow.dev?subject=XPressUI%20Pro%20%E2%80%94%20missing%20license%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
           </p>
         </div>
       </div>
@@ -124,11 +125,13 @@ get_header();
         <a href="<?php echo esc_url(home_url('/agency-pilot/')); ?>"
            class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2.5 px-5 rounded-lg transition">
           See assisted setup options
+          <?php echo xpressui_arrow_svg('inline-block w-4 h-4 ml-2 align-middle stroke-current'); ?>
         </a>
       </div>
 
-      <a href="<?php echo esc_url(home_url('/install/')); ?>" class="inline-block text-sm text-gray-400 hover:text-gray-600 transition">
-        ← Full install guide
+      <a href="<?php echo esc_url(home_url('/install/')); ?>" class="inline-flex items-center text-sm text-gray-400 hover:text-gray-600 transition">
+        <?php echo xpressui_arrow_left_svg('inline-block w-4 h-4 mr-2 align-middle stroke-current'); ?>
+        Full install guide
       </a>
 
     </div>

@@ -12,6 +12,25 @@ function xpressui_asset_url( string $path ): string {
     return get_stylesheet_directory_uri() . '/assets/xpressui/' . ltrim( $path, '/' );
 }
 
+/**
+ * IntakeFlow Console app entry point.
+ */
+function xpressui_app_url( string $path = '' ): string {
+    $base = defined( 'XPRESSUI_APP_URL' ) ? rtrim( XPRESSUI_APP_URL, '/' ) . '/' : 'https://app.intakeflow.dev/';
+    return $base . ltrim( $path, '/' );
+}
+
+/**
+ * Starter (self-hosted) "buy now" link. Defaults to the in-app plan/checkout
+ * page (which starts a Stripe Checkout session via lookup key). Override with a
+ * Stripe Payment Link via the XPRESSUI_STARTER_BUY_URL constant in wp-config.php
+ * or the `xpressui_starter_buy_url` filter.
+ */
+function xpressui_starter_buy_url(): string {
+    $url = defined( 'XPRESSUI_STARTER_BUY_URL' ) ? XPRESSUI_STARTER_BUY_URL : xpressui_app_url( 'profile?tab=plan&checkout_plan=starter' );
+    return (string) apply_filters( 'xpressui_starter_buy_url', $url );
+}
+
 // The theme is fully built with Tailwind CSS — GeneratePress parent styles are not needed
 // and conflict with Tailwind's reset/base layer.
 function iakpress_dequeue_generatepress_styles(): void {
@@ -60,6 +79,9 @@ function iakpress_language_path_map(): array {
         'for-accountants' => 'fr/for-accountants',
         'for-agencies'    => 'fr/for-agencies',
         'for-operations'  => 'fr/for-operations',
+        'document-intake' => 'fr/document-intake',
+        'pro'             => 'fr/pro',
+        'purchase-confirmed' => 'fr/purchase-confirmed',
     );
 }
 
@@ -197,8 +219,15 @@ function iakpress_translate_french_output( string $html ): string {
         'Public entry' => 'Entrée publique',
         'Operations inbox' => 'Inbox opérationnelle',
         'Files and quotas' => 'Fichiers et quotas',
-        'Cloud starts at €19/month' => 'Cloud commence à 19€ /mois',
+        'Cloud starts at €39/month' => 'Cloud à partir de €39/mois',
         'Use IntakeFlow Cloud when the workflow needs shared operations, not another site admin.' => 'Utilisez IntakeFlow Cloud quand le workflow a besoin d’opérations partagées, pas d’un autre admin de site.',
+        'Starter (Self-Hosted)' => 'Starter (Auto-hébergé)',
+        'Starter (Self-Hosted / WP)' => 'Starter (Auto-hébergé / WP)',
+        'Choose Starter (Self-Hosted)' => 'Choisir Starter (Auto-hébergé)',
+        'Choose Starter (Self-Hosted / WP)' => 'Choisir Starter (Auto-hébergé / WP)',
+        'Choose Cloud PRO' => 'Choisir Cloud PRO',
+        'Choose Cloud ENTERPRISE' => 'Choisir Cloud ENTERPRISE',
+        'or buy now — €39/month' => 'ou acheter maintenant — €39/mois',
 
         'Install guide' => 'Guide d’installation',
         'Live intake page with IntakeFlow in under 10 minutes.' => 'Une page d’intake IntakeFlow en ligne en moins de 10 minutes.',
@@ -219,7 +248,7 @@ function iakpress_translate_french_output( string $html ): string {
 
         'Choose where your client intake portal should live.' => 'Choisissez où votre portail d’intake client doit vivre.',
         'Start on a client WordPress site, move to IntakeFlow Cloud when you want hosted links, files, catalogs, quotas, and team review, or ask us to ship the first workflow with you.' => 'Commencez sur un site WordPress client, passez à IntakeFlow Cloud quand vous voulez des liens hébergés, fichiers, catalogues, quotas et revue en équipe, ou demandez-nous de livrer le premier workflow avec vous.',
-        'IntakeFlow Free · IntakeFlow Starter per site · IntakeFlow Cloud from €39/month' => 'IntakeFlow Free · IntakeFlow Starter par site · IntakeFlow Cloud à partir de 39 €/mois',
+        'IntakeFlow Free · IntakeFlow Starter from €21/month · IntakeFlow Cloud PRO from €39/month' => 'IntakeFlow Free · IntakeFlow Starter à partir de €21/mois · IntakeFlow Cloud PRO à partir de €39/mois',
         'Done For You setup' => 'Configuration effectuée pour vous',
         'Agency pilot' => 'Pilote agence',
         'Fast decision' => 'Décision rapide',
@@ -232,7 +261,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Start IntakeFlow Cloud' => 'Démarrer IntakeFlow Cloud',
         'Not ready to choose a plan?' => 'Pas prêt à choisir un plan ?',
         'Start with one paid workflow pilot.' => 'Commencez par un pilote workflow payant.',
-        'If the buyer is still comparing paths, scope one real workflow first. Hosted pilots start from €299 setup; client-site delivery starts from €790 setup.' => 'Si l’acheteur compare encore les chemins possibles, cadrez d’abord un vrai workflow. Les pilotes hébergés commencent à 299 € de configuration ; la livraison sur site client commence à 790 € de configuration.',
+        'If the buyer is still comparing paths, scope one real workflow first. Hosted pilots start from €299 setup; client-site delivery starts from €790 setup.' => 'Si vous hésitez encore sur la solution à adopter, cadrez d’abord un premier workflow réel. Les pilotes hébergés commencent à €299 de configuration ; la livraison sur site client commence à €790 de configuration.',
         'Positioning strip' => 'Positionnement',
         'Validate the portal on a client site' => 'Valider le portail sur un site client',
         'Ship production workflows on client sites' => 'Livrer des workflows de production sur sites clients',
@@ -240,7 +269,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Most useful after first signal' => 'Le plus utile après les premiers signaux',
         'For repeatable client delivery' => 'Pour une livraison client répétable',
 
-        'Get one branded hosted intake live from €299 setup, including operator email and a generated document summary.' => 'Mettez en ligne un intake hébergé et personnalisé à partir de 299€, avec email opérateur et résumé de document généré.',
+        'Get one branded hosted intake live from €299 setup, including operator email and a generated document summary.' => 'Mettez en ligne un intake hébergé et personnalisé à partir de €299, avec email opérateur et résumé de document généré.',
         'Products, prices, service slots, options, and members become reusable data instead of static choices.' => 'Produits, prix, créneaux de service, options et membres deviennent des données réutilisables au lieu de choix statiques.',
         'Agencies can validate IntakeFlow on 1 to 3 client workflows before committing to a larger plan.' => 'Les agences peuvent valider IntakeFlow sur 1 à 3 workflows clients avant de s’engager sur un plan plus large.',
         'You want to validate one client-site workflow with the bundled starter before buying anything.' => 'Vous voulez valider un workflow sur site client avec le starter inclus avant d’acheter quoi que ce soit.',
@@ -256,19 +285,28 @@ function iakpress_translate_french_output( string $html ): string {
         'Bundled document intake workflow' => 'Workflow d’intake documentaire inclus',
         'Custom workflow ZIP installation' => 'Installation de workflows personnalisés en ZIP',
         'Submission inbox and file uploads on the client site' => 'Inbox de soumissions et uploads de fichiers sur le site client',
-        'Best value' => 'Meilleure valeur',
+        'Best value' => 'Meilleur rapport qualité-prix',
         'Best for agencies and teams that need custom, repeatable document portals on client sites.' => 'Idéal pour les agences et équipes qui ont besoin de portails documentaires personnalisés et répétables sur des sites clients.',
         'one-time' => 'paiement unique',
         'Starter plan · per site · updates included' => 'Plan Starter · par site · mises à jour incluses',
         'Everything in IntakeFlow Free' => 'Tout ce qui est dans IntakeFlow Free',
         'Customize Workflow — labels, choices, colors, and messages per workflow from the client-site admin' => 'Customize Workflow : libellés, choix, couleurs et messages par workflow depuis l’admin du site client',
         'Console Sync for direct workflow pull' => 'Console Sync pour récupérer directement les workflows',
-        'Advanced fields including QR and document scan' => 'Champs avancés incluant QR et scan de document',
+        'Advanced fields (camera capture, signature, e-payment proof, date & month ranges)' => 'Champs avancés (capture caméra, signature, preuve de paiement, plages de dates et de mois)',
         'Priority email support and automatic updates' => 'Support email prioritaire et mises à jour automatiques',
+        '15-day free trial · no card required' => 'Essai gratuit 15 jours · sans carte',
+        'Start 15-day free trial' => 'Démarrer l’essai gratuit 15 jours',
+        'or buy now — €21/month' => 'ou acheter maintenant — €21/mois',
+        '15-day free Cloud trial · hosted links + inbox · no card' => 'Essai Cloud gratuit 15 jours · liens hébergés + inbox · sans carte',
+        'Start free Cloud trial' => 'Démarrer l’essai Cloud gratuit',
+        'or discuss Cloud plan' => 'ou discuter de l’offre Cloud',
+        'Start free — 15-day trial on Starter or Cloud, no card required.' => 'Commencez gratuitement — essai 15 jours sur Starter ou Cloud, sans carte.',
+        'Is there a free trial?' => 'Y a-t-il un essai gratuit ?',
+        'Yes — plans have a 15-day free trial, no card required. Start the Starter trial to test the plugin and Cloud features (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox.' => 'Oui — les plans disposent d’un essai gratuit de 15 jours, sans carte requise. Démarrez l’essai de Starter pour tester le plugin et les fonctionnalités Cloud (la période de 15 jours commence à la première activation), ou démarrez l’essai Cloud pour les liens hébergés et l’inbox de soumission.',
         'Let IntakeFlow run hosted operations' => 'Laisser IntakeFlow gérer les opérations hébergées',
         'Best when the client does not want client-site operations, or when your team needs shared review, quotas, audit, and file handling in Console.' => 'Idéal quand le client ne veut pas d’opérations sur son site, ou quand votre équipe a besoin de revue partagée, quotas, audit et gestion des fichiers dans la Console.',
         '/month' => '/mois',
-        'Cloud PRO at €39/month · Cloud ENTERPRISE available' => 'Cloud PRO à 39 €/mois · Cloud ENTERPRISE disponible',
+        'Cloud PRO at €39/month · Cloud ENTERPRISE available' => 'Cloud PRO à €39/mois · Cloud ENTERPRISE disponible',
         '1 workspace and 3 hosted workflows' => '1 workspace et 3 workflows hébergés',
         '500 submissions/month' => '500 soumissions/mois',
         'Console inbox, statuses, and operator notes' => 'Inbox Console, statuts et notes opérateur',
@@ -331,10 +369,10 @@ function iakpress_translate_french_output( string $html ): string {
         'Workspace storage, quotas, and audit trail' => 'Stockage workspace, quotas et piste d’audit',
         'Support and license' => 'Support et licence',
         'Price' => 'Prix',
-        '€99/year' => '99 €/an',
-        '€39/mo' => '39 €/mois',
-        'from €790' => 'à partir de 790 €',
-        'from €299' => 'à partir de 299 €',
+        '€21/month' => '€21/mois',
+        '€39/mo' => '€39/mois',
+        'from €790' => 'à partir de €790',
+        'from €299' => 'à partir de €299',
         'Community support via GitHub Issues' => 'Support communauté via GitHub Issues',
         'Automatic plugin updates' => 'Mises à jour automatiques du plugin',
         'License valid per site' => 'Licence valide par site',
@@ -348,28 +386,26 @@ function iakpress_translate_french_output( string $html ): string {
         'Can I start with IntakeFlow Free first?' => 'Puis-je commencer avec IntakeFlow Free ?',
         'Yes. IntakeFlow Free is the easiest way to try the document portal experience on your own client site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.' => 'Oui. IntakeFlow Free est le moyen le plus simple de tester l’expérience du portail documentaire sur votre propre site client. Vous pouvez installer le starter inclus, uploader des ZIP de workflow personnalisés, tester le flux d’intake, puis passer à la suite seulement quand vous avez besoin de champs avancés, Console Sync ou personnalisation de workflow.',
         'What does IntakeFlow Starter unlock exactly?' => 'Qu’est-ce que IntakeFlow Starter débloque exactement ?',
-        'IntakeFlow Starter adds Customize Workflow (edit labels, choice labels, colors, messages, and validation rules per workflow directly from the client-site admin), Console Sync, specialized runtime features, automatic updates, and the license per site.' => 'IntakeFlow Starter ajoute Customize Workflow (édition des libellés, choix, couleurs, messages et règles de validation par workflow directement depuis l’admin du site client), Console Sync, des fonctions runtime spécialisées, les mises à jour automatiques et la licence par site.',
+        'IntakeFlow Starter adds Visual Builder online (limit to 3 projects), WordPress export/activation + Cloud access (100 submissions/month, 100 MB secure storage), Customize Workflow directly from the client-site admin, Console Sync, specialized runtime features, and automatic updates.' => 'IntakeFlow Starter ajoute le Visual Builder en ligne (limite à 3 projets), l’export & activation WordPress + l’accès Cloud (100 soumissions/mois, 100 Mo de stockage sécurisé), Customize Workflow directement depuis l’admin du site client, Console Sync, des fonctionnalités de runtime spécialisées et les mises à jour automatiques.',
         'Where do dynamic catalogs fit?' => 'À quoi servent les catalogues dynamiques ?',
-        'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. IntakeFlow Starter can integrate Cloud catalogs when needed, but product catalogs are not exported as portable PHP.' => 'Les catalogues sont l’un des points forts de Cloud : produits, prix, créneaux, dates et listes de membres peuvent être réutilisés entre workflows au lieu d’être codés en dur dans des pages de demande statiques. IntakeFlow Starter peut intégrer les catalogues Cloud si nécessaire, mais les catalogues produit ne sont pas exportés en PHP portable.',
+        'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. IntakeFlow Starter has full Cloud access to integrate catalogs.' => 'Les catalogues sont l’un des points forts de Cloud : produits, prix, créneaux, dates et listes de membres peuvent être réutilisés entre workflows au lieu d’être codés en dur dans des pages de demande statiques. IntakeFlow Starter dispose d’un accès Cloud complet pour intégrer les catalogues.',
         'Where does IntakeFlow Cloud fit?' => 'Où se place IntakeFlow Cloud ?',
-        'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review instead of running the operations layer on client sites. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.' => 'IntakeFlow Cloud s’adresse aux équipes qui veulent que IntakeFlow héberge le lien public du workflow, l’inbox, les fichiers, quotas, catalogues et revue opérateur au lieu d’exécuter la couche opérationnelle sur les sites clients. Cloud PRO commence à 39 €/mois, et Cloud ENTERPRISE est à 149 €/mois.',
+        'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review. Starter includes 3 projects, 100 submissions/month and 100 MB storage, Cloud PRO starts at €39/month for 1,000 submissions/month and 10 GB storage, and Cloud ENTERPRISE is €149/month.' => 'IntakeFlow Cloud s’adresse aux équipes qui veulent que IntakeFlow héberge le lien public du workflow, l’inbox de soumission, les fichiers, les quotas, les catalogues et la revue opérateur. Starter comprend 3 projets, 100 soumissions/mois et 100 Mo de stockage, Cloud PRO commence à €39/mois pour 1 000 soumissions/mois et 10 Go de stockage, et Cloud ENTERPRISE est à €149/mois.',
         'Can you set up the first workflow for us?' => 'Pouvez-vous configurer le premier workflow pour nous ?',
-        'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.' => 'Oui. La Configuration effectuée pour vous démarre à 299 € pour un workflow hébergé et à partir de 790 € pour une livraison sur site client. C’est le chemin le plus rapide pour obtenir un premier workflow en ligne et réutilisable.',
-        'Is €99/year a subscription?' => 'Les 99 €/an sont-ils un abonnement ?',
-        'Yes. It is a yearly subscription per site, which includes all updates, Visual Builder access, and client-site runtime features.' => 'Oui. Il s’agit d’un abonnement annuel par site, qui comprend toutes les mises à jour, l’accès au Visual Builder et les fonctionnalités du runtime côté client.',
+        'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.' => 'Oui. La Configuration effectuée pour vous démarre à €299 pour un workflow hébergé et à partir de €790 pour une livraison sur site client. C’est le chemin le plus rapide pour obtenir un premier workflow en ligne et réutilisable.',
+        'Is €21/month a subscription?' => 'Les €21/mois sont-ils un abonnement ?',
+        'Yes. It is a monthly subscription, which includes all updates, Visual Builder access, client-site runtime features, and Cloud access.' => 'Oui. Il s’agit d’un abonnement mensuel, qui comprend toutes les mises à jour, l’accès au Visual Builder, les fonctionnalités du runtime côté site client et l’accès au Cloud.',
         'Who is IntakeFlow Starter for?' => 'À qui s’adresse IntakeFlow Starter ?',
-        'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake with less back-and-forth.' => 'IntakeFlow Starter est conçu pour les cabinets comptables et agences qui ont besoin d’un intake documentaire client répétable avec moins d’allers-retours.',
+        'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake and basic Cloud hosting with less back-and-forth.' => 'IntakeFlow Starter est conçu pour les cabinets comptables et agences qui ont besoin d’un intake documentaire client répétable et d’un hébergement Cloud de base avec moins d’allers-retours.',
         'Do you offer a larger agency plan?' => 'Proposez-vous un plan agence plus large ?',
-        'Yes. Larger teams can move toward IntakeFlow Cloud, higher quotas, team workspace access, and managed rollout. The current Starter plan is the fastest client-site path today.' => 'Oui. Les équipes plus larges peuvent évoluer vers IntakeFlow Cloud, des quotas plus élevés, l’accès workspace en équipe et un déploiement managé. L’offre Starter actuelle reste le chemin site client le plus rapide aujourd’hui.',
+        'Yes. Larger teams can move toward Cloud PRO or ENTERPRISE for higher quotas, team workspace access, and managed rollout.' => 'Oui. Les équipes plus importantes peuvent s’orienter vers Cloud PRO ou ENTERPRISE pour des quotas plus élevés, un accès workspace en équipe et un déploiement managé.',
         'Can I use it on client sites?' => 'Puis-je l’utiliser sur des sites clients ?',
         'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.' => 'Oui. La licence Starter couvre un site client de production par abonnement, ce qui la rend adaptée à la livraison client et à l’usage interne.',
         'What if it is not a fit?' => 'Et si ce n’est pas adapté ?',
-        'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.' => 'Vous êtes couvert par une garantie satisfait ou remboursé de 30 jours. Si cela ne convient pas à votre workflow, envoyez un email à hello@iakpress.com sous 30 jours.',
+        'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@intakeflow.dev within 30 days.' => 'Vous êtes couvert par une garantie satisfait ou remboursé de 30 jours. Si cela ne convient pas à votre workflow, envoyez un email à hello@intakeflow.dev sous 30 jours.',
         'Ready to build?' => 'Prêt à construire ?',
         'Use IntakeFlow Free today. Upgrade when your team needs repeatable intake at speed.' => 'Utilisez IntakeFlow Free aujourd’hui. Passez à la suite quand votre équipe a besoin d’un intake répétable et rapide.',
-        'If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.' => 'Si vous voulez simplement tester l’expérience, commencez gratuitement. Si vous voulez créer des portails clients personnalisés que vous pouvez réutiliser et vendre, Pro is the right move.',
-        'Direct Pro sales are temporarily paused while IntakeFlow Free is being validated by WordPress.org.' => 'Les ventes directes Pro sont temporairement en pause pendant la validation de IntakeFlow Free par WordPress.org.',
-
+        'If you just want to test the experience, start free. If you want to build custom client portals you can reuse and sell, Pro is the right move.' => 'Si vous voulez simplement tester l’expérience, commencez gratuitement. Si vous voulez créer des portails clients personnalisés que vous pouvez réutiliser et vendre, la version Pro est le choix idéal.',
         'Publish a public workflow URL without asking the client to install or maintain client-site infrastructure.' => 'Publiez une URL de workflow publique sans demander au client d’installer ou maintenir une infrastructure côté site.',
         'Manage products, services, dates, options, or member lists once and reuse them across hosted workflows.' => 'Gérez une fois les produits, services, dates, options ou listes de membres, puis réutilisez-les dans les workflows hébergés.',
         'Operators review submissions, statuses, files, and internal notes from the same workspace.' => 'Les opérateurs relisent les soumissions, statuts, fichiers et notes internes depuis le même workspace.',
@@ -395,7 +431,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Template reuse' => 'Réutilisation de templates',
         'Self-hosted site delivery.' => 'Livraison sur site auto-hébergé.',
         'Host operations & pay.' => 'Hébergez les opérations et paiements.',
-        'from €299 for one workflow.' => 'à partir de 299 € pour un workflow.',
+        'from €299 for one workflow.' => 'à partir de €299 pour un workflow.',
         'Starter, Cloud PRO, ENTERPRISE, or client-site delivery.' => 'Starter, Cloud PRO, ENTERPRISE ou livraison sur site client.',
         'files, reservations, catalog orders, payment proofs.' => 'fichiers, réservations, commandes catalogue, preuves de paiement.',
         'See pilot offer' => 'Voir l’offre pilote',
@@ -413,7 +449,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Portal, file collection, and admin review in one flow.' => 'Portail, collecte de fichiers et revue admin dans un même flux.',
         'First workflows to sell' => 'Premiers workflows à vendre',
         'Start with the processes that already create manual follow-up.' => 'Commencez par les processus qui créent déjà des relances manuelles.',
-        'IntakeFlow is easiest to sell when the buyer already feels the pain: missing files, outdated lists, unclear requests, or schedule changes.' => 'IntakeFlow se vend plus facilement quand l’acheteur ressent déjà la douleur : fichiers manquants, listes obsolètes, demandes floues ou changements de planning.',
+        'IntakeFlow is easiest to sell when the buyer already feels the pain: missing files, outdated lists, unclear requests, or schedule changes.' => 'IntakeFlow se vend plus facilement quand votre client ressent déjà la douleur : fichiers manquants, listes obsolètes, demandes floues ou changements de planning.',
         'Document intake' => 'Intake documentaire',
         'Collect files, missing information, and approvals before an operator starts review.' => 'Collectez fichiers, informations manquantes et validations avant le début de la revue opérateur.',
         'Service requests' => 'Demandes de service',
@@ -432,14 +468,14 @@ function iakpress_translate_french_output( string $html ): string {
         'Members and lists' => 'Membres et listes',
         'Reuse member, subscriber, or client lists when a workflow needs verification or a known audience.' => 'Réutilisez listes de membres, abonnés ou clients quand un workflow nécessite une vérification ou une audience connue.',
         'Best for agencies and teams replacing spreadsheets, duplicated choice lists, and manually maintained prices or schedules.' => 'Idéal pour les agences et équipes qui remplacent tableurs, listes de choix dupliquées et prix ou plannings maintenus manuellement.',
-        'Done For You' => 'Done For You',
+        'Done For You' => 'Clé en main',
         'Want the first workflow live quickly?' => 'Vous voulez mettre le premier workflow en ligne rapidement ?',
         'We can configure the first workflow with you, test it, and leave you with a reusable pattern for the next client or service.' => 'Nous pouvons configurer le premier workflow avec vous, le tester, et vous laisser un modèle réutilisable pour le prochain client ou service.',
         'Hosted workflow setup' => 'Configuration workflow hébergé',
-        'from €299 setup' => 'à partir de 299 € de configuration',
+        'from €299 setup' => 'à partir de €299 de configuration',
         'We configure one branded hosted workflow with operator email and a generated document summary.' => 'Nous configurons un workflow hébergé brandé avec email opérateur et résumé de document généré.',
         'Client-site delivery' => 'Livraison sur site client',
-        'from €790 setup' => 'à partir de 790 € de configuration',
+        'from €790 setup' => 'à partir de €790 de configuration',
         'We install IntakeFlow Starter, configure the workflow, test submissions, and hand it over with a short walkthrough.' => 'Nous installons IntakeFlow Starter, configurons le workflow, testons les soumissions et livrons avec une courte prise en main.',
         '3 months guided' => '3 mois accompagnés',
         'For agencies with complex forms, we help ship the first client workflow and turn the result into a repeatable offer.' => 'Pour les agences avec des parcours complexes, nous aidons à livrer le premier workflow client et à transformer le résultat en offre répétable.',
@@ -506,7 +542,7 @@ function iakpress_translate_french_output( string $html ): string {
         'Operate submissions and files from Console' => 'Gérer soumissions et fichiers depuis la Console',
         'Use workspace quotas and audit trail' => 'Utiliser quotas workspace et piste d’audit',
         'Add team review without sharing client-site access' => 'Ajouter la revue équipe sans partager l’accès au site client',
-        'Discuss Cloud plan →' => 'Discuter du plan Cloud →',
+        'Discuss Cloud plan' => 'Discuter du plan Cloud',
         'Questions people ask before trying it.' => 'Questions fréquentes avant d’essayer.',
         'What is IntakeFlow?' => 'Qu’est-ce que IntakeFlow ?',
         'IntakeFlow is a client intake portal system: private links, guided document upload, dynamic choices, and operator review in one delivery path.' => 'IntakeFlow est un système de portail d’intake client : liens privés, upload documentaire guidé, choix dynamiques et revue opérateur dans un même chemin de livraison.',
@@ -515,7 +551,7 @@ function iakpress_translate_french_output( string $html ): string {
         'What is IntakeFlow Starter?' => 'Qu’est-ce que IntakeFlow Starter ?',
         'IntakeFlow Starter is the fastest path to production today: plugin install, workflow setup, and submission review directly in the client-site admin.' => 'IntakeFlow Starter est aujourd’hui le chemin le plus rapide vers la production : installation du plugin, configuration du workflow et revue des soumissions directement dans l’admin du site client.',
         'What is IntakeFlow Cloud?' => 'Qu’est-ce que IntakeFlow Cloud ?',
-        'IntakeFlow Cloud is the next delivery path for teams that want IntakeFlow to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.' => 'IntakeFlow Cloud est le chemin suivant pour les équipes qui veulent que IntakeFlow héberge le lien public du workflow, l’inbox de soumissions, les fichiers, catalogues et revue opérateur hors du site client. Cloud PRO commence à 39 €/mois, et Cloud ENTERPRISE est à 149 €/mois.',
+        'IntakeFlow Cloud is the next delivery path for teams that want IntakeFlow to host the public workflow link, submissions inbox, files, catalogs, and operator review outside a client site. Cloud PRO starts at €39/month, and Cloud ENTERPRISE is €149/month.' => 'IntakeFlow Cloud est le chemin suivant pour les équipes qui veulent que IntakeFlow héberge le lien public du workflow, l’inbox de soumissions, les fichiers, catalogues et revue opérateur hors du site client. Cloud PRO commence à €39/mois, et Cloud ENTERPRISE est à €149/mois.',
         'When should I get Starter?' => 'Quand passer à Starter ?',
         'Upgrade when you want advanced field types, Customize Workflow in the client-site admin, direct Console Sync, commercial updates, and the full Starter runtime.' => 'Passez à Starter quand vous voulez les champs avancés, Customize Workflow dans l’admin du site client, Console Sync direct, les mises à jour commerciales et le runtime Starter complet.',
         'Who is it for?' => 'À qui s’adresse IntakeFlow ?',
@@ -525,6 +561,223 @@ function iakpress_translate_french_output( string $html ): string {
         'Give your next client project a better start.' => 'Donnez un meilleur départ à votre prochain projet client.',
         'Start with IntakeFlow Free, then discuss the hosted or client-site path once the first workflow is clear.' => 'Commencez avec IntakeFlow Free, puis discutez du chemin hébergé ou site client une fois le premier workflow clarifié.',
         'Close' => 'Fermer',
+
+        // Missing Pricing and UI translations
+        '/year' => '/an',
+        '/month' => '/mois',
+        'Unlimited projects & workflows' => 'Projets et workflows illimités',
+        'Unlimited projects &amp; workflows' => 'Projets et workflows illimités',
+        'Up to 1,000 submissions/month' => 'Jusqu’à 1 000 soumissions/mois',
+        '1,000 submissions/month' => '1 000 soumissions/mois',
+        '10 GB secure Cloud storage (S3) for attachments' => '10 Go de stockage Cloud sécurisé (S3) pour les pièces jointes',
+        'Stripe payment integration & tracking' => 'Intégration et suivi des paiements Stripe',
+        'Stripe payment integration &amp; tracking' => 'Intégration et suivi des paiements Stripe',
+        'Webhooks with HMAC signatures (Zapier, Make, Notion)' => 'Webhooks avec signatures HMAC (Zapier, Make, Notion)',
+        'White-label widget (IntakeFlow branding removed)' => 'Widget en marque blanche (sans logo IntakeFlow)',
+        'WordPress delivery' => 'Livraison WordPress',
+        'Most popular' => 'Le plus populaire',
+        'For organizations' => 'Pour les organisations',
+        'Best for creators who want to host intake workflows on their own WordPress servers.' => 'Idéal pour les créateurs qui souhaitent héberger les workflows d’intake sur leurs propres serveurs WordPress.',
+        'Best for professionals, freelancers, and agencies with regular client document collection needs.' => 'Idéal pour les professionnels, indépendants et agences ayant des besoins réguliers de collecte de documents.',
+        'For organizations managing large volumes of client files and requiring team management.' => 'Pour les organisations gérant de grands volumes de fichiers clients et nécessitant une gestion d’équipe.',
+        'Visual Builder (3 projects)' => 'Visual Builder (3 projets)',
+        'WordPress ZIP export' => 'Export ZIP pour WordPress',
+        'Client-site runtime' => 'Runtime sur site client',
+        'Local inbox and storage' => 'Inbox et stockage locaux',
+        'No Cloud dependency' => 'Aucune dépendance Cloud',
+        'Unlimited projects' => 'Projets illimités',
+        '10 GB Cloud storage' => '10 Go de stockage Cloud',
+        'Stripe payment integration' => 'Intégration de paiement Stripe',
+        'Webhooks with HMAC signatures' => 'Webhooks avec signatures HMAC',
+        'White-label widget' => 'Widget en marque blanche',
+        '100 GB Cloud storage' => '100 Go de stockage Cloud',
+        '5 operators included' => '5 opérateurs inclus',
+        'Automatic assignees' => 'Assignations automatiques',
+        'GDPR retention rules' => 'Règles de rétention RGPD',
+        'Priority support & SLA' => 'Support prioritaire & SLA',
+        'Priority support &amp; SLA' => 'Support prioritaire et SLA',
+        '1,000/mo' => '1 000/mois',
+        '/mo</span>' => '/mois</span>',
+        'submissions' => 'soumissions',
+        'submissions/month' => 'soumissions/mois',
+        'Advanced fields (camera capture, signature, e-payment proof, date & month ranges)' => 'Champs avancés (capture caméra, signature, preuve de paiement, plages de dates et de mois)',
+        'Advanced fields (camera capture, signature, e-payment proof, date &amp; month ranges)' => 'Champs avancés (capture caméra, signature, preuve de paiement, plages de dates et de mois)',
+        'IntakeFlow by IAKPress. All rights reserved.' => 'IntakeFlow par IAKPress. Tous droits réservés.',
+        'All rights reserved.' => 'Tous droits réservés.',
+
+        // XPressUI Cloud missing translations
+        'IntakeFlow Cloud is for teams that want structured intake, reusable catalogs, and operator review without running the operations layer on client sites. IntakeFlow hosts the public link and centralizes submissions, products, services, dates, files, quotas, and review in Console.' => 'IntakeFlow Cloud s’adresse aux équipes qui veulent un intake structuré, des catalogues réutilisables et une revue opérateur sans gérer la couche opérationnelle sur les sites clients. IntakeFlow héberge le lien public et centralise les soumissions, produits, services, dates, fichiers, quotas et revues dans la Console.',
+        'If the workflow is still messy, do not start by debating limits. Start with the smallest live test: one hosted link, one inbox, one reusable catalog or file intake, and one operator review path.' => 'Si le workflow est encore flou, ne commencez pas par débattre des limites. Commencez par le plus petit test réel : un lien hébergé, une inbox, un catalogue ou intake fichier réutilisable, et un chemin de revue opérateur.',
+        'Workspaces with 5 operators included' => 'Workspaces avec 5 opérateurs inclus',
+        '10,000 submissions/month' => '10 000 soumissions/mois',
+        'Enterprise: workspaces, operators, GDPR rules, and SLA.' => 'Enterprise : workspaces, opérateurs, règles RGPD et SLA.',
+        'Starter: host intake on your own WordPress site.' => 'Starter : hébergez l’intake sur votre propre site WordPress.',
+        'Cloud PRO: hosted links, Stripe payment, and webhooks.' => 'Cloud PRO : liens hébergés, paiement Stripe et webhooks.',
+        'The Cloud path is intentionally simple: Starter for self-hosted site delivery, Cloud PRO for hosted operations, and Enterprise for organizations.' => 'Le chemin Cloud reste volontairement simple : Starter pour une livraison sur site auto-hébergé, Cloud PRO pour les opérations hébergées et Enterprise pour les organisations.',
+        'Organizations & SLA.' => 'Organisations et SLA.',
+        'Solo, Team, Agency, or client-site delivery.' => 'Solo, Team, Agency ou livraison sur site client.',
+        'host intake on your own WordPress site.' => 'hébergez l’intake sur votre propre site WordPress.',
+        'hosted links, Stripe payment, and webhooks.' => 'liens hébergés, paiement Stripe et webhooks.',
+        'workspaces, operators, GDPR rules, and SLA.' => 'workspaces, opérateurs, règles RGPD et SLA.',
+        '/yr' => '/an',
+        
+        // Document Intake page missing translations
+        'See the document intake workflow your clients will actually complete.' => 'Découvrez le workflow d’intake documentaire que vos clients vont réellement compléter.',
+        'This is not just a form. It is a guided intake flow for collecting files, project details, and missing documents in one clean client-site or hosted experience.' => 'Ce n’est pas un simple formulaire. C’est un flux d’intake guidé pour collecter les fichiers, les détails du projet et les pièces manquantes dans une expérience propre, hébergée ou sur site client.',
+        'Try the portal below' => 'Tester le portail ci-dessous',
+        'Clear for clients' => 'Clair pour les clients',
+        'A guided flow that tells clients exactly what to upload and what is still missing.' => 'Un flux guidé qui indique aux clients exactement quoi uploader et ce qui est encore manquant.',
+        'Cleaner for your team' => 'Plus propre pour votre équipe',
+        'Files, answers, and submission status are structured from the start instead of scattered in email.' => 'Fichiers, réponses et statuts sont structurés dès le départ au lieu d’être dispensés par email.',
+        'Ready for delivery' => 'Prêt pour la livraison',
+        'Use it on client sites or as a hosted workflow when the client needs a faster operational path.' => 'Utilisez-le sur des sites clients ou comme workflow hébergé quand le client a besoin d’un chemin opérationnel plus rapide.',
+        'Try the intake flow directly' => 'Tester le flux d’intake directement',
+
+        // Pro page translations
+        'Scope my workflow' => 'Cadrer mon workflow',
+        'See pilot' => 'Voir le pilote',
+        'Ship faster' => 'Livrer plus vite',
+        'Reduce follow-ups' => 'Réduire les relances',
+        'Reuse data' => 'Réutiliser les données',
+        'Turn the same intake pattern into a reusable workflow instead of rebuilding every cycle.' => 'Transformez le même modèle d’intake en un workflow réutilisable au lieu de tout reconstruire à chaque cycle.',
+        'Give clients one checklist flow and reduce back-and-forth for missing documents.' => 'Offrez aux clients un flux de checklist unique et réduisez les allers-retours pour les documents manquants.',
+        'Connect products, dates, service slots, and members through Cloud catalogs when the workflow needs live business data.' => 'Connectez des produits, des dates, des créneaux de service et des membres via des catalogues Cloud lorsque le workflow nécessite des données métier en direct.',
+        'Accounting and document-heavy teams' => 'Équipes comptables et administratives',
+        'Client files arrive late, incomplete, or scattered across channels during monthly and annual cycles.' => 'Les fichiers clients arrivent en retard, incomplets ou dispersés sur différents canaux pendant les cycles mensuels et annuels.',
+        'Run one repeatable checklist flow and receive cleaner document sets from day one.' => 'Exécutez une liste de contrôle répétable et recevez des ensembles de documents plus propres dès le premier jour.',
+        'Agency serving accounting clients' => 'Agences au service de clients comptables',
+        'Your team keeps rebuilding similar intake pages and follow-up flows for each client account.' => 'Votre équipe continue de reconstruire des pages d’intake et des flux de relance similaires pour chaque compte client.',
+        'Reuse a proven intake structure and deliver a consistent kickoff experience faster.' => 'Réutilisez une structure d’intake éprouvée et offrez plus rapidement une expérience de lancement cohérente.',
+        'Operations team with recurring intake' => 'Équipes opérationnelles avec intake récurrent',
+        'Manual relaunches and missing-file chases slow delivery every cycle.' => 'Les relances manuelles et la recherche de fichiers manquants ralentissent la livraison à chaque cycle.',
+        'Standardize intake once, then run the same process with better completion rates.' => 'Standardisez l’intake une fois, puis exécutez le même processus avec de meilleurs taux de complétion.',
+        'Portal builder' => 'Builder de portail',
+        'Design your intake structure, steps, and logic visually.' => 'Concevez votre structure d’intake, vos étapes et votre logique de manière visuelle.',
+        'See incoming client submissions in one place instead of across email threads.' => 'Visualisez les soumissions des clients en un seul endroit au lieu d’utiliser des fils d’e-mails.',
+        'Submission detail' => 'Détail de la soumission',
+        'Open a submission and review answers, files, and progress in one screen.' => 'Ouvrez une soumission et examinez les réponses, les fichiers et la progression sur un seul écran.',
+        'Build reusable portals' => 'Créer des portails réutilisables',
+        'Create structured intakes once, then reuse them across client projects instead of rebuilding each time.' => 'Créez des parcours structurés une fois, puis réutilisez-les sur vos projets clients au lieu de les reconstruire à chaque fois.',
+        'Customize on the client site' => 'Personnaliser sur le site client',
+        'Edit labels, choices, validation rules, colors, and messages from the client-site admin without rebuilding the workflow pack.' => 'Éditez les libellés, les choix, les règles de validation, les couleurs et les messages depuis l’admin du site client sans reconstruire le pack de workflow.',
+        'Sync from the Console' => 'Synchroniser depuis la Console',
+        'Pull workflow packs directly from your IntakeFlow Console instead of relying on manual ZIP handling for every update.' => 'Récupérez vos packs de workflows directement depuis votre Console IntakeFlow au lieu de gérer manuellement des fichiers ZIP à chaque mise à jour.',
+        'Collect files properly' => 'Collecter proprement les fichiers',
+        'Use uploads, statuses, and structured steps to stop chasing missing documents after kickoff.' => 'Utilisez les téléversements, les statuts et des étapes structurées pour ne plus courir après les documents manquants.',
+        'Connect dynamic catalogs' => 'Connecter des catalogues dynamiques',
+        'Pair client-site workflows with Cloud catalogs for reusable products, options, slots, dates, and member lists when static choices are not enough.' => 'Associez des workflows sur site client avec des catalogues Cloud pour réutiliser des listes de produits, options, créneaux, dates et membres quand des choix statiques ne suffisent plus.',
+        'Use specialized runtime features' => 'Utiliser des fonctionnalités de runtime spécialisées',
+        'Unlock richer guided flows and specialized capture only when the workflow actually needs them.' => 'Débloquez des parcours guidés plus riches et des captures spécialisées uniquement lorsque le workflow en a réellement besoin.',
+        'Starter license per site' => 'Licence Starter par site',
+        'One purchase covers one production client site, with updates included.' => 'Un seul achat couvre un site client en production, mises à jour incluses.',
+        'Custom portals for real client work' => 'Des portails personnalisés pour de vrais projets clients',
+        'Full runtime + specialized workflow features' => 'Runtime complet et fonctionnalités de workflow spécialisées',
+        'Use on 1 production site' => 'Utilisation sur 1 site de production',
+        'Who should buy Starter?' => 'Qui devrait acheter Starter ?',
+        'Do I need to code the portals?' => 'Dois-je coder les portails ?',
+        'No. The builder is visual. If you can install IntakeFlow and publish an embed, you can use IntakeFlow Starter.' => 'Non. Le builder est visuel. Si vous pouvez installer IntakeFlow et publier un embed, vous pouvez utiliser IntakeFlow Starter.',
+        'What does Starter unlock?' => 'Qu’est-ce que Starter débloque ?',
+        'Starter adds the full runtime, advanced field types, local workflow customization in the client-site admin, Console Sync, automatic updates, and the license for one production site.' => 'Starter ajoute le runtime complet, des types de champs avancés, la personnalisation locale du workflow dans l’admin du site client, la Console Sync, les mises à jour automatiques et la licence pour un site de production.',
+        'Try the live demo' => 'Tester la démo en direct',
+        'Customize Workflow in the client-site admin' => 'Personnalisation du workflow dans l’administration du site client',
+        'Console Sync + Starter license' => 'Console Sync et licence Starter',
+        'Updates and Visual Builder included' => 'Mises à jour et Visual Builder inclus',
+        'Buy IntakeFlow Starter' => 'Acheter IntakeFlow Starter',
+        'Starter is for accounting firms and agencies that need repeatable client document intake with less back-and-forth.' => 'Starter est conçu pour les cabinets comptables et agences qui ont besoin d’un intake documentaire client répétable avec moins d’allers-retours.',
+        'Yes. The Starter license covers one production client site per subscription.' => 'Oui. La licence Starter couvre un site client de production par abonnement.',
+
+        // XPressUI / page-xpressui.php page translations
+        'Submission inbox on the client site' => 'Inbox de soumissions sur le site client',
+        'Use the bundled starter or upload a workflow pack exported from the Console. Upgrade to Starter when you want Console Sync and advanced customization.' => 'Utilisez le starter inclus ou uploadez un pack workflow exporté depuis la Console. Passez à Starter quand vous voulez la Console Sync et la personnalisation avancée.',
+
+        'Complete a few steps, upload sample files if you want, and experience the portal as a client would.' => 'Complétez quelques étapes, chargez des fichiers d’exemple si vous voulez, et testez le portail comme un client.',
+        'What to notice:' => 'Points clés :',
+        'the portal stays focused, structured, and easy to complete — exactly what you want when clients are sending critical documents.' => 'le portail reste ciblé, structuré et facile à remplir — exactement ce qu’il vous faut pour la transmission de documents critiques.',
+        'Why this matters' => 'Pourquoi c’est important',
+        'It turns file chaos into a repeatable process.' => 'Cela transforme le chaos des fichiers en un processus répétable.',
+        'Clients know exactly what to submit and in what order.' => 'Les clients savent exactement quoi soumettre et dans quel ordre.',
+        'You stop chasing missing files across long email threads.' => 'Vous arrêtez de courir après les fichiers manquants dans de longs fils d’emails.',
+        'Your intake feels more professional from the very first interaction.' => 'Votre intake paraît plus professionnel dès la première interaction.',
+        'Built for agencies and service teams with document-heavy workflows.' => 'Conçu pour les agences et les équipes de service avec des workflows riches en documents.',
+        '• agencies collecting briefs and assets' => '• agences collectant des briefs et des assets',
+        '• freelancers onboarding new clients' => '• freelances accueillant de nouveaux clients',
+        '• teams gathering forms and supporting documents' => '• équipes rassemblant des formulaires et des pièces justificatives',
+        'If the demo feels right, the next step is simple.' => 'Si la démo vous plaît, l’étape suivante est simple.',
+        'Start with IntakeFlow Starter when the workflow belongs on a client site, or use IntakeFlow Cloud when the team needs hosted links, catalogs, files, and operator review.' => 'Commencez avec IntakeFlow Starter si le workflow doit être sur un site client, ou utilisez IntakeFlow Cloud si l’équipe a besoin de liens hébergés, de catalogues, de fichiers et de revue opérateur.',
+        'Explore Starter' => 'Découvrir Starter',
+
+        // Pro page missing translations
+        'Built for teams that run recurring document intake.' => 'Conçu pour les équipes qui gèrent des collectes récurrentes de documents.',
+        'Custom portals for real client work' => 'Portails personnalisés pour des projets clients réels',
+        'Deploy intake workflows on your own WordPress site. Standardize and reuse form templates across client accounts.' => 'Déployez des workflows d’intake sur votre propre site WordPress. Standardisez et réutilisez les modèles de formulaires entre vos clients.',
+        'Direct sales are managed through secure checkout.' => 'Les ventes directes sont gérées via un paiement sécurisé.',
+        'Everything you need to deliver portals faster.' => 'Tout ce dont vous avez besoin pour livrer des portails plus rapidement.',
+        'Fast commercial route' => 'Voie commerciale rapide',
+        'From €299:' => 'À partir de €299 :',
+        'From €790:' => 'À partir de €790 :',
+        'If you want cleaner onboarding, Starter is the fastest path.' => 'Si vous voulez un onboarding plus propre, Starter est le chemin le plus rapide.',
+        'IntakeFlow Starter is for teams that need structured outcomes, not ad hoc attachments and manual follow-up. Add local workflow customization, Console Sync, reusable workflow delivery, and optional Cloud catalogs when client projects need dynamic products, dates, slots, or member lists.' => 'IntakeFlow Starter s’adresse aux équipes qui ont besoin de résultats structurés, pas de pièces jointes volantes ni de relances manuelles. Ajoutez la personnalisation locale, la Console Sync, la livraison de workflows réutilisables et des catalogues Cloud en option pour vos produits, dates, créneaux ou membres.',
+        'Need delivery, not just a license?' => 'Besoin de livraison opérationnelle, pas seulement d’une licence ?',
+        'One Starter purchase unlocks the full runtime, local workflow customization, Console Sync, updates for your commercial add-on, and a clean upgrade path to Cloud catalogs.' => 'Un achat de Starter débloque le runtime complet, la personnalisation locale des workflows, la Console Sync, les mises à jour et un chemin d’évolution propre vers les catalogues Cloud.',
+        'Prepare the Pro runtime path. Start a pilot when you want the first workflow delivered with you.' => 'Préparez le runtime Pro. Démarrez un pilote si vous souhaitez que nous livrions le premier workflow avec vous.',
+        'Run repeatable document intake workflows you can ship with confidence.' => 'Exécutez des workflows d’intake documentaire répétables que vous pouvez livrer en toute confiance.',
+        'Starter license for self-managed WordPress delivery.' => 'Licence Starter pour une livraison WordPress auto-gérée.',
+        'Starter plan: €21/month · 30-day money-back guarantee' => 'Plan Starter : €21/mois · garantie satisfait ou remboursé de 30 jours',
+        'The assisted path turns one real intake, reservation, catalog order, or payment-proof workflow into a working delivery before you standardize it for more clients.' => 'Le chemin accompagné transforme un premier workflow réel d’intake, de réservation, de commande ou de preuve de paiement en une solution opérationnelle avant de la standardiser.',
+        'The important screens are already there.' => 'Les écrans importants sont déjà là.',
+        'Use it to standardize client intake, collect files properly, and deliver a more professional workflow experience from the start.' => 'Utilisez-le pour standardiser l’intake client, collecter les fichiers proprement et offrir une expérience plus professionnelle dès le début.',
+        'What Pro gives you' => 'Ce que Pro vous apporte',
+        'What is included' => 'Ce qui est inclus',
+        'Who buys Pro' => 'Qui achète Pro',
+        'Monthly Plan' => 'Plan Mensuel',
+        'client-site delivery and validation.' => 'livraison et validation sur site client.',
+        'hosted workflow setup.' => 'configuration de workflow hébergé.',
+        'per month.' => 'par mois.',
+        '€21/month:' => '€21/mois :',
+        '30-day money-back guarantee. Questions?' => 'Garantie satisfait ou remboursé de 30 jours. Des questions ?',
+        'Starter (WordPress + Cloud)' => 'Starter (WordPress + Cloud)',
+
+        'See pricing' => 'Voir les tarifs',
+        'Request a setup call' => 'Demander un appel de cadrage',
+        'Pick one pilot workflow' => 'Choisir un workflow pilote',
+        'Start with IntakeFlow Free' => 'Commencer avec IntakeFlow Free',
+        'Discuss Cloud plan' => 'Discuter du plan Cloud',
+        'Try live intake' => 'Tester l’intake',
+        'After:' => 'Après :',
+        'Before:' => 'Avant :',
+        'Common questions.' => 'Questions fréquentes.',
+
+        // Purchase Confirmed page translations
+        'Welcome to XPressUI Pro.' => 'Bienvenue sur XPressUI Pro.',
+        'Your license key and download link are on their way to your inbox. Follow the steps below to go from ZIP file to live intake page.' => 'Votre clé de licence et votre lien de téléchargement sont en route vers votre boîte de réception. Suivez les étapes ci-dessous pour passer du fichier ZIP à votre page d’intake en ligne.',
+        'Check your email' => 'Vérifiez vos e-mails',
+        'Your license key and download link have been sent to your inbox. Check your spam folder if it doesn&#039;t show up within a minute.' => 'Votre clé de licence et votre lien de téléchargement ont été envoyés dans votre boîte de réception. Vérifiez votre dossier de spam s’ils n’apparaissent pas d’ici une minute.',
+        'Download and install the free plugin' => 'Télécharger et installer le plugin gratuit',
+        'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.' => 'Installez et activez d’abord XPressUI Bridge sur votre site client. Il s’agit du runtime de base requis par le plugin Pro.',
+        'Download XPressUI Bridge on WordPress.org' => 'Télécharger XPressUI Bridge sur WordPress.org',
+        'Install XPressUI Pro from your email link' => 'Installer XPressUI Pro depuis le lien reçu par e-mail',
+        'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.' => 'Téléchargez le ZIP d’XPressUI Pro depuis votre e-mail, puis téléversez-le et activez-le sur le site client › Extensions › Ajouter › Téléverser une extension.',
+        'Enter your license key' => 'Saisir votre clé de licence',
+        'In the client-site admin, go to XPressUI › Settings › License. Paste your license key from the email and click Activate. A green badge confirms it&#039;s active.' => 'Dans l’administration du site client, allez dans XPressUI › Réglages › Licence. Collez votre clé de licence reçue par e-mail et cliquez sur Activer. Un badge vert confirme qu’elle est active.',
+        'Upload your workflow pack' => 'Téléverser votre pack de workflow',
+        'Go to XPressUI › Workflows › Upload and install your workflow pack ZIP. Create a page embed to go live.' => 'Allez dans XPressUI › Workflows › Téléverser et installez le ZIP de votre pack de workflow. Créez un embed de page pour le mettre en ligne.',
+        'workflow slug or client project name' => 'slug du workflow ou nom du projet client',
+        'client-site URL and active theme if this is a client-site delivery' => 'URL du site client et thème actif s’il s’agit d’une livraison sur site client',
+        'who should receive operator emails' => 'qui doit recevoir les e-mails opérateur',
+        'one test submission you expect to see' => 'une soumission de test que vous vous attendez à voir',
+        'whether you need a hosted link, client-site page, or both' => 'si vous avez besoin d’un lien hébergé, d’une page sur site client, ou des deux',
+        '✓ Payment confirmed' => '✓ Paiement confirmé',
+        'You\'re in' => 'Vous y êtes',
+        'We\'ve sent your <strong class="text-gray-700">license key</strong> and a protected <strong class="text-gray-700">download link</strong> to your inbox.' => 'Nous avons envoyé votre <strong class="text-gray-700">clé de licence</strong> et un <strong class="text-gray-700">lien de téléchargement</strong> sécurisé dans votre boîte de réception.',
+        'If it doesn\'t arrive within a couple of minutes, check your spam folder or' => 'S’il n’arrive pas d’ici quelques minutes, vérifiez votre dossier de spam ou',
+        'contact support' => 'contacter le support',
+        'Need help with the setup?' => 'Besoin d’aide pour la configuration ?',
+        'We can walk you through installation or help tailor the workflow to your site.' => 'Nous pouvons vous guider lors de l’installation ou vous aider à adapter le workflow à votre site.',
+        'Email support' => 'Support par e-mail',
+        'Want an assisted launch?' => 'Vous souhaitez un lancement accompagné ?',
+        'Send the details once, then we can scope the smallest useful setup.' => 'Envoyez-nous les détails une fois, puis nous pouvons cadrer la configuration la plus simple et utile.',
+        'See assisted setup options' => 'Voir les options de configuration accompagnée',
+        'Full install guide' => 'Guide d’installation complet',
     );
 
     return strtr( $html, $translations );
@@ -589,6 +842,9 @@ function iakpress_render_french_routes(): void {
         'fr/for-accountants' => 'page-for-accountants.php',
         'fr/for-agencies'    => 'page-for-agencies.php',
         'fr/for-operations'  => 'page-for-operations.php',
+        'fr/document-intake' => 'page-document-intake.php',
+        'fr/pro'             => 'page-pro.php',
+        'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
@@ -604,3 +860,73 @@ function iakpress_render_french_routes(): void {
     exit;
 }
 add_action( 'template_redirect', 'iakpress_render_french_routes', 0 );
+
+function iakpress_document_title_parts( array $parts ): array {
+    $path = iakpress_current_path();
+    $title_map = array(
+        'fr' => 'Portails d’intake client pour agences et équipes de service',
+        'fr/xpressui' => 'Portail d’intake documentaire',
+        'fr/xpressui-cloud' => 'IntakeFlow Cloud · PRO & ENTERPRISE',
+        'fr/pricing' => 'Tarifs et Plans de souscription',
+        'fr/install' => 'Guide d’installation d’IntakeFlow',
+        'fr/contact' => 'Contacter IntakeFlow',
+        'fr/agency-pilot' => 'Pilote agence et accompagnement',
+        'fr/for-accountants' => 'IntakeFlow pour les experts-comptables',
+        'fr/for-agencies' => 'IntakeFlow pour les agences',
+        'fr/for-operations' => 'IntakeFlow pour les équipes opérationnelles',
+        'fr/document-intake' => 'Intake documentaire et suivi de pièces',
+        'fr/pro' => 'IntakeFlow Pro',
+        'fr/purchase-confirmed' => 'Achat confirmé',
+    );
+
+    if ( isset( $title_map[$path] ) ) {
+        $parts['title'] = $title_map[$path];
+        $parts['site'] = 'IntakeFlow';
+    }
+
+    return $parts;
+}
+add_filter( 'document_title_parts', 'iakpress_document_title_parts', 50 );
+
+function iakpress_custom_seo_meta_description(): void {
+    $path = iakpress_current_path();
+    $desc_map = array(
+        'fr' => 'Envoyez un lien privé, collectez fichiers et réponses dans une checklist guidée, et voyez tout de suite ce qui manque avant la revue par votre équipe.',
+        'fr/xpressui' => 'Découvrez notre portail d’intake documentaire complet pour collecter et valider les fichiers clients sans relances manuelles.',
+        'fr/xpressui-cloud' => 'Hébergez vos liens de workflow, catalogues, inbox, fichiers et revues d’opérations avec IntakeFlow Cloud PRO et ENTERPRISE.',
+        'fr/pricing' => 'Découvrez nos tarifs et plans de souscription : IntakeFlow Free, Starter, ou Cloud à partir de €39/mois.',
+        'fr/install' => 'Installez le plugin IntakeFlow sur votre site WordPress et mettez en ligne votre portail d’intake en moins de 10 minutes.',
+        'fr/contact' => 'Contactez l’équipe d’IntakeFlow pour toute question ou pour configurer votre premier workflow client.',
+        'fr/agency-pilot' => 'Bénéficiez de notre accompagnement agence pour cadrer, concevoir et mettre en ligne votre premier workflow client.',
+        'fr/for-accountants' => 'Automatisez la collecte de documents comptables auprès de vos clients et réduisez le temps passé en relances.',
+        'fr/for-agencies' => 'Intégrez des portails de collecte de documents premium dans vos livraisons de sites clients et simplifiez l’onboarding.',
+        'fr/for-operations' => 'Pilotez l’ensemble des demandes clients depuis une inbox centralisée et standardisez vos processus d’onboarding.',
+        'fr/document-intake' => 'Simplifiez la collecte de documents administratifs avec une checklist claire et guidée pour vos clients.',
+        'fr/pro' => 'Passez à IntakeFlow Pro pour débloquer la personnalisation des workflows et l’accès complet au builder de formulaires.',
+        'fr/purchase-confirmed' => 'Suivez ces étapes simples pour configurer votre licence IntakeFlow Pro et mettre en ligne votre premier portail.',
+    );
+
+    if ( isset( $desc_map[$path] ) ) {
+        echo '<meta name="description" content="' . esc_attr( $desc_map[$path] ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'iakpress_custom_seo_meta_description', 5 );
+
+function iakpress_setup_theme(): void {
+    add_theme_support( 'title-tag' );
+}
+add_action( 'after_setup_theme', 'iakpress_setup_theme' );
+
+function xpressui_arrow_svg( string $class = 'inline-block w-4 h-4 ml-1.5 align-middle stroke-current' ): string {
+    return sprintf(
+        '<svg class="%s" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>',
+        esc_attr( $class )
+    );
+}
+
+function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 align-middle stroke-current' ): string {
+    return sprintf(
+        '<svg class="%s" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>',
+        esc_attr( $class )
+    );
+}
