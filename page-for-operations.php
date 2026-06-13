@@ -41,7 +41,7 @@ $segment_workflow = $is_fr ? [
   'steps' => [
     ['title' => 'Define the workflow',   'body' => 'Pick the request type: document intake, approval, report, internal order, or evidence collection.'],
     ['title' => 'Collect and structure', 'body' => 'Receive files, answers, supporting proofs, and metadata in one reviewable submission.'],
-    ['title' => 'Process with status',   'body' => 'Track each dossier from receipt to closure with clear statuses and operator notes.'],
+    ['title' => 'Process with status',   'body' => 'Track each intake from receipt to closure with clear statuses and operator notes.'],
   ],
 ];
 

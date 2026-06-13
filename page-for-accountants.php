@@ -41,7 +41,7 @@ $segment_workflow = $is_fr ? [
   'steps' => [
     ['title' => 'Publish one client link',   'body' => 'Give each client a branded intake workflow for the recurring period.'],
     ['title' => 'Collect files and answers', 'body' => 'Receive invoices, bank statements, IDs, payroll inputs, payment proofs, and notes in one submission.'],
-    ['title' => 'Review with status',        'body' => 'Operators see new, blocked, reviewed, and completed dossiers without digging through inboxes.'],
+    ['title' => 'Review with status',        'body' => 'Operators see new, blocked, reviewed, and completed submissions without digging through inboxes.'],
   ],
 ];
 
