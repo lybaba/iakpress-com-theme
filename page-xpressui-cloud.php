@@ -31,8 +31,16 @@ $plans = [
     'price' => '€21',
     'period' => '/month',
     'summary' => 'WordPress export & activation + Cloud access like Cloud PRO.',
-    'items' => ['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & activation', 'Cloud access like Cloud PRO', '100 submissions/month', '100 MB secure cloud storage'],
+    'items' => ['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & activation', 'Cloud access like Cloud PRO', '100 submissions/month', '1 GB secure cloud storage'],
     'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=starter'),
+  ],
+  [
+    'name' => 'Agency (WordPress + Cloud)',
+    'price' => '€99',
+    'period' => '/month',
+    'summary' => 'WordPress export & 25 site activations + Cloud access.',
+    'items' => ['Visual Builder online (limit to 3 projects)', 'WordPress ZIP export & 25 site activations', 'Cloud access like Cloud PRO', '2,500 submissions/month', '25 GB secure cloud storage'],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=agency'),
   ],
   [
     'name' => 'Cloud PRO',
@@ -72,17 +80,21 @@ get_header();
           </div>
           <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center rounded-xl bg-gray-900 px-4 py-3 text-sm font-bold text-white hover:bg-gray-800 transition whitespace-nowrap">Scope my first workflow</a>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-left">
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Starter</p>
             <p class="text-2xl font-extrabold text-gray-900">€21<span class="text-sm font-semibold text-gray-500">/mo</span></p>
             <p class="text-xs text-gray-500 mt-1">WordPress + Cloud access.</p>
           </div>
-          <div class="rounded-2xl bg-gray-900 border border-gray-800 p-4 text-white shadow-md shadow-blue-900/10">
-            <p class="mb-2 inline-flex rounded-full bg-blue-600 px-2 py-1 text-[10px] font-bold uppercase tracking-wider">Most popular</p>
-            <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-1">Cloud PRO</p>
-            <p class="text-2xl font-extrabold">€39<span class="text-sm font-semibold text-gray-300">/mo</span></p>
-            <p class="text-xs text-gray-300 mt-1">Host operations & pay.</p>
+          <div class="rounded-2xl bg-blue-950 border border-blue-900 p-4 text-white shadow-md shadow-blue-900/10">
+            <p class="text-xs font-bold tracking-widest text-blue-300 uppercase mb-1">Agency</p>
+            <p class="text-2xl font-extrabold">€99<span class="text-sm font-semibold text-gray-300">/mo</span></p>
+            <p class="text-xs text-gray-300 mt-1">25 sites & 25 GB storage.</p>
+          </div>
+          <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
+            <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Cloud PRO</p>
+            <p class="text-2xl font-extrabold text-gray-900">€39<span class="text-sm font-semibold text-gray-500">/mo</span></p>
+            <p class="text-xs text-gray-500 mt-1">Host operations & pay.</p>
           </div>
           <div class="rounded-2xl bg-white border border-blue-100 p-4 shadow-sm">
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-1">Cloud ENT</p>
@@ -90,8 +102,9 @@ get_header();
             <p class="text-xs text-gray-500 mt-1">Organizations & SLA.</p>
           </div>
         </div>
-        <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left text-sm text-gray-600">
-          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> Visual Builder (3 proj), WordPress export/activation + Cloud access (100 sub/mo, 100MB storage).</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-left text-sm text-gray-600">
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Starter:</strong> Visual Builder (3 proj), WordPress export/activation + Cloud (100 sub/mo, 1GB storage).</p>
+          <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Agency:</strong> WordPress export & 25 site activations + Cloud (2,500 sub/mo, 25GB storage).</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Cloud PRO:</strong> hosted links, Stripe payment, and webhooks.</p>
           <p class="rounded-2xl bg-white/70 border border-blue-100 p-3"><strong class="text-gray-900">Enterprise:</strong> workspaces, operators, GDPR rules, and SLA.</p>
         </div>
@@ -104,11 +117,11 @@ get_header();
   </section>
 
   <section class="bg-white py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Plans</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Start with the smallest plan that proves the workflow.</h2>
-      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">The Cloud path is intentionally simple: Starter for self-hosted site delivery, Cloud PRO for hosted operations, and Enterprise for organizations.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">The Cloud path is intentionally simple: Starter for self-hosted site delivery, Agency for scale, Cloud PRO for hosted operations, and Enterprise for organizations.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         <?php foreach ($plans as $plan): $featured = !empty($plan['featured']); ?>
         <article class="<?php echo $featured ? 'bg-gray-900 border-gray-800 text-white' : 'bg-white border-gray-100 text-gray-900'; ?> rounded-3xl border p-8 shadow-sm flex flex-col relative overflow-hidden">
           <?php if ($featured): ?>

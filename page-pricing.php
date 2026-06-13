@@ -13,49 +13,49 @@ $app_url = xpressui_app_url();
 $starter_buy_url = xpressui_starter_buy_url();
 
 $rows = [
-  ['group' => 'Start with IntakeFlow Free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Client-site submission inbox', 'free' => true, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'Console submission inbox', 'free' => false, 'pro' => false, 'cloud' => true],
-  ['group' => '', 'label' => 'File uploads and status tracking', 'free' => true, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Email notifications and redirect flow', 'free' => true, 'pro' => true, 'cloud' => 'Hosted'],
+  ['group' => 'Start with IntakeFlow Free', 'label' => 'Ready-to-use Document Intake portal', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Client-site submission inbox', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Console submission inbox', 'free' => false, 'pro' => false, 'agency' => false, 'cloud' => true],
+  ['group' => '', 'label' => 'File uploads and status tracking', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Email notifications and redirect flow', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => 'Hosted'],
 
-  ['group' => 'Build custom portals', 'label' => 'Export workflow packs from the Console (.zip)', 'free' => true, 'pro' => true, 'cloud' => 'N/A'],
-  ['group' => '', 'label' => 'Install custom workflow packs on the client site', 'free' => true, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'Console Sync / hosted publish path', 'free' => false, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Custom workflows', 'free' => true, 'pro' => true, 'cloud' => '3 hosted'],
+  ['group' => 'Build custom portals', 'label' => 'Export workflow packs from the Console (.zip)', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => 'N/A'],
+  ['group' => '', 'label' => 'Install custom workflow packs on the client site', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Console Sync / hosted publish path', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Custom workflows', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => '3 hosted'],
 
-  ['group' => 'Workflow data', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Dynamic product, service, date, and member catalogs', 'free' => false, 'pro' => 'Cloud embed', 'cloud' => true],
-  ['group' => '', 'label' => 'CSV import and catalog-backed checkout/review', 'free' => false, 'pro' => 'Cloud embed', 'cloud' => true],
-  ['group' => '', 'label' => 'Specialized capture fields when needed', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => 'Workflow data', 'label' => 'Core fields (text, email, file, select...)', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Dynamic product, service, date, and member catalogs', 'free' => false, 'pro' => 'Cloud embed', 'agency' => 'Cloud embed', 'cloud' => true],
+  ['group' => '', 'label' => 'CSV import and catalog-backed checkout/review', 'free' => false, 'pro' => 'Cloud embed', 'agency' => 'Cloud embed', 'cloud' => true],
+  ['group' => '', 'label' => 'Specialized capture fields when needed', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
 
-  ['group' => 'Client delivery', 'label' => 'Customize labels, help text, and choice labels', 'free' => false, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Customize validation rules and upload limits', 'free' => false, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Design tokens — colors, fonts, border radius', 'free' => false, 'pro' => true, 'cloud' => true],
-  ['group' => '', 'label' => 'Hosted workflow links', 'free' => false, 'pro' => false, 'cloud' => true],
-  ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'cloud' => true],
+  ['group' => 'Client delivery', 'label' => 'Customize labels, help text, and choice labels', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Customize validation rules and upload limits', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Design tokens — colors, fonts, border radius', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
+  ['group' => '', 'label' => 'Hosted workflow links', 'free' => false, 'pro' => false, 'agency' => false, 'cloud' => true],
+  ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'agency' => false, 'cloud' => true],
 
-  ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€21/month', 'cloud' => '€39/mo'],
-  ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => 'from €790', 'cloud' => 'from €299'],
-  ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'License valid per site', 'free' => false, 'pro' => true, 'cloud' => false],
-  ['group' => '', 'label' => 'Cloud PRO limits', 'free' => false, 'pro' => false, 'cloud' => 'Unlimited projects'],
-  ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => false, 'cloud' => '1,000/mo'],
-  ['group' => '', 'label' => 'Priority email support (1-2 business days)', 'free' => false, 'pro' => true, 'cloud' => true],
+  ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€21/month', 'agency' => '€99/month', 'cloud' => '€39/mo'],
+  ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => 'from €790', 'agency' => 'from €790', 'cloud' => 'from €299'],
+  ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'agency' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => false],
+  ['group' => '', 'label' => 'License valid per site', 'free' => false, 'pro' => '1 site', 'agency' => '25 sites', 'cloud' => false],
+  ['group' => '', 'label' => 'Cloud PRO limits', 'free' => false, 'pro' => false, 'agency' => false, 'cloud' => 'Unlimited projects'],
+  ['group' => '', 'label' => 'Submission allowance', 'free' => false, 'pro' => '100/mo', 'agency' => '2,500/mo', 'cloud' => '1,000/mo'],
+  ['group' => '', 'label' => 'Priority email support (1-2 business days)', 'free' => false, 'pro' => true, 'agency' => true, 'cloud' => true],
 ];
 
 $faq_items = [
   ['q' => 'Can I start with IntakeFlow Free first?', 'a' => 'Yes. IntakeFlow Free is the easiest way to try the document portal experience on your own client site. You can install the bundled starter, upload custom workflow ZIPs, test the intake flow, and only upgrade when you need advanced fields, Console Sync, or workflow customization.'],
-  ['q' => 'What does IntakeFlow Starter unlock exactly?', 'a' => 'IntakeFlow Starter adds Visual Builder online (limit to 3 projects), WordPress export/activation + Cloud access (100 submissions/month, 100 MB secure storage), Customize Workflow directly from the client-site admin, Console Sync, specialized runtime features, and automatic updates.'],
+  ['q' => 'What does IntakeFlow Starter unlock exactly?', 'a' => 'IntakeFlow Starter adds Visual Builder online (limit to 3 projects), WordPress export/activation + Cloud access (100 submissions/month, 1 GB secure storage), Customize Workflow directly from the client-site admin, Console Sync, specialized runtime features, and automatic updates.'],
   ['q' => 'Where do dynamic catalogs fit?', 'a' => 'Catalogs are the strongest Cloud feature: products, prices, service slots, dates, and member lists can be reused across workflows instead of being hardcoded into static request pages. IntakeFlow Starter has full Cloud access to integrate catalogs.'],
-  ['q' => 'Where does IntakeFlow Cloud fit?', 'a' => 'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review. Starter includes 3 projects, 100 submissions/month and 100 MB storage, Cloud PRO starts at €39/month for 1,000 submissions/month and 10 GB storage, and Cloud ENTERPRISE is €149/month.'],
+  ['q' => 'Where does IntakeFlow Cloud fit?', 'a' => 'IntakeFlow Cloud is for teams that want IntakeFlow to host the public workflow link, submission inbox, files, quotas, catalogs, and operator review. Starter includes 3 projects, 100 submissions/month and 1 GB storage, Cloud PRO starts at €39/month for 1,000 submissions/month and 10 GB storage, and Cloud ENTERPRISE is €149/month.'],
   ['q' => 'Can you set up the first workflow for us?', 'a' => 'Yes. Done For You setup starts at €299 for a hosted workflow and from €790 for client-site delivery. It is the fastest way to get the first workflow live and reusable.'],
   ['q' => 'Is €21/month a subscription?', 'a' => 'Yes. It is a monthly subscription, which includes all updates, Visual Builder access, client-site runtime features, and Cloud access.'],
   ['q' => 'Is there a free trial?', 'a' => 'Yes — plans have a 15-day free trial, no card required. Start the Starter trial to test the plugin and Cloud features (the 15-day clock starts at first activation), or start the Cloud trial for hosted links and the submission inbox.'],
   ['q' => 'Who is IntakeFlow Starter for?', 'a' => 'IntakeFlow Starter is built for accounting firms and agencies that need repeatable client document intake and basic Cloud hosting with less back-and-forth.'],
-  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. Larger teams can move toward Cloud PRO or ENTERPRISE for higher quotas, team workspace access, and managed rollout.'],
-  ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Starter license covers one production client site per subscription, which makes it practical for client delivery and internal use.'],
+  ['q' => 'Do you offer a larger agency plan?', 'a' => 'Yes. IntakeFlow Agency is priced at €99/month and allows up to 25 production WordPress site activations, 2,500 submissions/month, and 25 GB secure cloud storage, perfect for agencies delivering client portals at scale.'],
+  ['q' => 'Can I use it on client sites?', 'a' => 'Yes. The Starter license covers one production client site per subscription, and the Agency plan covers up to 25 site activations.'],
   ['q' => 'What if it is not a fit?', 'a' => 'You are covered by a 30-day money-back guarantee. If it does not fit your workflow, email hello@iakpress.com within 30 days.'],
 ];
 
@@ -71,9 +71,24 @@ $cloud_tiers = [
       'WordPress ZIP export & activation',
       'Cloud access like Cloud PRO',
       '100 submissions/month',
-      '100 MB secure cloud storage',
+      '1 GB secure cloud storage',
     ],
     'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=starter'),
+  ],
+  [
+    'name' => 'Agency (WordPress + Cloud)',
+    'price' => '€99',
+    'period' => '/month',
+    'tag' => 'For agencies',
+    'body' => 'Best for agencies and creators delivering client portals across multiple sites.',
+    'items' => [
+      'Visual Builder online (limit to 3 projects)',
+      'Up to 25 production WordPress sites',
+      'Cloud access like Cloud PRO',
+      '2,500 submissions/month',
+      '25 GB secure cloud storage',
+    ],
+    'buy_url' => xpressui_app_url('profile?tab=plan&checkout_plan=agency'),
   ],
   [
     'name' => 'Cloud PRO',
@@ -221,7 +236,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
 
   <!-- Offer cards -->
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
       <article class="bg-gray-50 rounded-3xl border border-gray-100 p-8 flex flex-col">
         <span class="inline-block px-3 py-1 rounded-full bg-white border border-gray-200 text-xs font-bold text-gray-600 uppercase tracking-wider mb-4 w-fit">IntakeFlow Free</span>
         <h2 class="text-2xl font-bold text-gray-900 mb-2">Validate the portal on a client site</h2>
@@ -264,7 +279,7 @@ function xpressui_pricing_cell($value, $color = 'blue') {
             'WordPress ZIP export & activation',
             'Cloud access like Cloud PRO',
             '100 submissions/month',
-            '100 MB secure cloud storage',
+            '1 GB secure cloud storage',
             'Priority email support and automatic updates'
           ] as $item): ?>
           <li class="flex items-start gap-3 text-sm text-gray-200">
@@ -276,6 +291,37 @@ function xpressui_pricing_cell($value, $color = 'blue') {
         <div class="mt-auto">
           <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start 15-day free trial</a>
           <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=starter')); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €21/month</a>
+        </div>
+      </article>
+
+      <article class="bg-blue-950 rounded-3xl border border-blue-900 px-8 pb-8 pt-14 flex flex-col relative overflow-hidden text-white shadow-lg shadow-blue-950/10">
+        <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-bl-2xl">Agency setup</div>
+        <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-xs font-bold text-white uppercase tracking-wider mb-4 w-fit">IntakeFlow Agency</span>
+        <h2 class="text-2xl font-bold text-white mb-2">Deploy portals across multiple client sites</h2>
+        <p class="text-gray-300 mb-6">Best for agencies and creators delivering client portals at scale with higher quotas.</p>
+        <div class="flex items-baseline gap-2 mb-2">
+          <span class="text-5xl font-extrabold text-white">€99</span>
+          <span class="text-gray-400 text-sm">/month</span>
+        </div>
+        <p class="text-sm text-blue-200 mb-2">Agency plan · 25 WordPress site activations & Cloud access</p>
+        <p class="text-sm font-semibold text-emerald-300 mb-6">15-day free trial · no card required</p>
+        <ul class="space-y-3 mb-8 flex-1">
+          <?php foreach ([
+            'Everything in IntakeFlow Starter',
+            'Up to 25 production WordPress sites',
+            '2,500 submissions/month',
+            '25 GB secure cloud storage',
+            'Priority email support and automatic updates'
+          ] as $item): ?>
+          <li class="flex items-start gap-3 text-sm text-gray-200">
+            <svg class="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <?php echo esc_html($item); ?>
+          </li>
+          <?php endforeach; ?>
+        </ul>
+        <div class="mt-auto">
+          <a href="<?php echo esc_url(xpressui_app_url('signup?redirect=%2Fprofile%3Ftab%3Dplan')); ?>" class="block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Start 15-day free trial</a>
+          <a href="<?php echo esc_url(xpressui_app_url('profile?tab=plan&checkout_plan=agency')); ?>" class="block text-center w-full text-blue-200 hover:text-white text-sm font-semibold mt-3 underline whitespace-nowrap">or buy now — €99/month</a>
         </div>
       </article>
 
@@ -313,13 +359,12 @@ function xpressui_pricing_cell($value, $color = 'blue') {
     </div>
   </section>
 
-  <!-- Cloud pricing -->
   <section class="bg-blue-50/60 py-20 px-4 sm:px-6 lg:px-8 border-y border-blue-100">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3 text-center">Cloud pricing</p>
       <h2 class="text-3xl font-bold text-gray-900 mb-4 text-center">Choose the Cloud tier by workflow volume, not by guesswork.</h2>
       <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">Starter is enough to validate one site-hosted workflow. Cloud PRO adds hosted operations, payments, and webhooks. Enterprise is the path for organizations requiring team management.</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
         <?php foreach ($cloud_tiers as $tier): $featured = !empty($tier['featured']); ?>
         <article class="<?php echo $featured ? 'bg-gray-900 border-gray-800 text-white' : 'bg-white border-blue-100 text-gray-900'; ?> rounded-3xl border p-8 flex flex-col shadow-sm relative overflow-hidden">
           <?php if ($featured): ?>
@@ -379,11 +424,12 @@ function xpressui_pricing_cell($value, $color = 'blue') {
       <p class="text-center text-gray-500 max-w-2xl mx-auto mb-10">Start with IntakeFlow Free if you only need the bundled portal. Upgrade to IntakeFlow Starter for client-site delivery, or choose IntakeFlow Cloud when the hosted operations layer should live in Console.</p>
 
       <div class="rounded-2xl border border-gray-100 overflow-x-auto bg-white shadow-sm">
-        <div style="min-width:620px">
-        <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
+        <div style="min-width:720px">
+        <div class="grid bg-gray-50 border-b border-gray-100" style="grid-template-columns:minmax(240px,1fr) 96px 96px 96px 112px">
           <div class="py-3 px-5 text-xs font-bold text-gray-500 uppercase tracking-wider">Feature</div>
           <div class="py-3 px-4 text-xs font-bold text-gray-500 border-l border-gray-100 text-center uppercase tracking-wider">IntakeFlow Free</div>
           <div class="py-3 px-4 text-xs font-bold text-gray-900 border-l border-gray-100 text-center uppercase tracking-wider">IntakeFlow Starter</div>
+          <div class="py-3 px-4 text-xs font-bold text-indigo-700 border-l border-gray-100 text-center uppercase tracking-wider">IntakeFlow Agency</div>
           <div class="py-3 px-4 text-xs font-bold text-blue-600 border-l border-gray-100 text-center uppercase tracking-wider">Cloud PRO</div>
         </div>
 
@@ -396,20 +442,24 @@ function xpressui_pricing_cell($value, $color = 'blue') {
           if ($row['group'] !== '') $current_group = $row['group'];
         ?>
           <?php if ($is_new_group): ?>
-          <div class="grid bg-gray-50 <?php echo $i > 0 ? 'border-t border-gray-100' : ''; ?> border-b border-gray-100" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
+          <div class="grid bg-gray-50 <?php echo $i > 0 ? 'border-t border-gray-100' : ''; ?> border-b border-gray-100" style="grid-template-columns:minmax(240px,1fr) 96px 96px 96px 112px">
             <div class="py-2 px-5 text-xs font-bold text-gray-400 uppercase tracking-wider"><?php echo esc_html($row['group']); ?></div>
+            <div class="border-l border-gray-100"></div>
             <div class="border-l border-gray-100"></div>
             <div class="border-l border-gray-100"></div>
             <div class="border-l border-gray-100"></div>
           </div>
           <?php endif; ?>
-          <div class="grid items-center <?php echo $is_last ? '' : 'border-b border-gray-50'; ?>" style="grid-template-columns:minmax(260px,1fr) 96px 96px 112px">
+          <div class="grid items-center <?php echo $is_last ? '' : 'border-b border-gray-50'; ?>" style="grid-template-columns:minmax(240px,1fr) 96px 96px 96px 112px">
             <div class="py-3 px-5 text-sm text-gray-600"><?php echo esc_html($row['label']); ?></div>
             <div class="py-3 px-4 text-center border-l border-gray-50 text-base">
               <?php xpressui_pricing_cell($row['free'], 'green'); ?>
             </div>
             <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['pro'] === true ? ' bg-blue-50/40' : ''; ?>">
               <?php xpressui_pricing_cell($row['pro']); ?>
+            </div>
+            <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['agency'] === true ? ' bg-blue-50/40' : ''; ?>">
+              <?php xpressui_pricing_cell($row['agency']); ?>
             </div>
             <div class="py-3 px-4 text-center border-l border-gray-50 text-base<?php echo $row['cloud'] === true ? ' bg-blue-50/50' : ''; ?>">
               <?php xpressui_pricing_cell($row['cloud']); ?>
