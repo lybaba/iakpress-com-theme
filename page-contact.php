@@ -327,6 +327,18 @@ $contact_intro_title = apply_filters('xpressui_contact_card_intro_title', $conta
 $contact_cta_label = apply_filters('xpressui_contact_card_cta_label', $contact_cta_label);
 
 get_header(); ?>
+<?php if ( isset( $_GET['xpressui_debug'] ) && function_exists('current_user_can') && current_user_can('manage_options') ) {
+  echo "\n<!-- xpressui-contact is_fr=" . ( $is_french_contact ? '1' : '0' )
+     . " page_id=" . (int) $contact_page_id
+     . " content_len=" . strlen( (string) $contact_content )
+     . " has_fr=" . ( strpos( (string) $contact_content, 'xpressui_contact_hosted_link_url_fr' ) !== false ? '1' : '0' )
+     . " has_en=" . ( strpos( (string) $contact_content, 'xpressui_contact_hosted_link_url_en' ) !== false ? '1' : '0' )
+     . " mod_fr=[" . esc_html( (string) get_theme_mod('xpressui_contact_hosted_link_url_fr', '') ) . "]"
+     . " mod_en=[" . esc_html( (string) get_theme_mod('xpressui_contact_hosted_link_url_en', '') ) . "]"
+     . " shortcode_url=[" . esc_html( (string) $contact_shortcode_config['url'] ) . "]"
+     . " resolved=[" . esc_html( (string) $contact_public_url ) . "]"
+     . " launch=[" . esc_html( (string) $contact_launch_url ) . "] -->\n";
+} ?>
 
 <div class="font-sans text-gray-900 antialiased">
 

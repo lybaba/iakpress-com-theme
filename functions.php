@@ -996,9 +996,12 @@ function iakpress_extract_hosted_link_url_from_content( string $content, bool $i
     if ( ! is_string( $normalized ) ) {
         $normalized = $content;
     }
+    // Only the per-language attributes — never the generic key — so a generic
+    // single URL in the content cannot resolve the same link for both languages
+    // (let the Customizer / legacy fallbacks handle the generic case instead).
     $keys = $is_french
-        ? array( 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url' )
-        : array( 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url' );
+        ? array( 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url_en' )
+        : array( 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url_fr' );
     foreach ( $keys as $key ) {
         $pattern = '/' . preg_quote( $key, '/' ) . '\s*=\s*(?:"([^"]+)"|\'([^\']+)\'|([^\s\]"\']+))/u';
         if ( preg_match( $pattern, $normalized, $m ) ) {
