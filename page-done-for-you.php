@@ -12,6 +12,16 @@ $contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 // shortcode in this page's content, then the Customizer URLs; falls back to the
 // contact page when nothing is configured.
 $dfy_content = function_exists('iakpress_current_page_content') ? iakpress_current_page_content() : '';
+// This URL is served by the custom router (iakpress_render_french_routes), so it
+// usually has no real $post. Borrow the content of a real "done-for-you" page if
+// one exists, so an [xpressui …] shortcode placed there is still read (mirrors
+// how the contact route reads the real "contact" page).
+if ($dfy_content === '' && function_exists('get_page_by_path')) {
+  $dfy_source_page = get_page_by_path('done-for-you');
+  if ($dfy_source_page instanceof WP_Post) {
+    $dfy_content = (string) $dfy_source_page->post_content;
+  }
+}
 $booking_url = function_exists('iakpress_contact_hosted_launch_url')
   ? iakpress_contact_hosted_launch_url($is_fr, $dfy_content)
   : '';
