@@ -70,9 +70,9 @@ $free_steps = $is_french_install ? [
   [
     'number' => '02',
     'title'  => 'Créer une page et coller l’embed',
-    'body'   => 'Créez une nouvelle page côté site client, puis collez l’un des deux embeds intégrés ci-dessous. Aucun compte ni clé de licence nécessaire : ces workflows sont inclus dans le plugin.',
-    'code'   => '[xpressui id="document-intake"]',
-    'note'   => 'Ou utilisez [xpressui id="validation-playground"] pour explorer toute la bibliothèque de types de champs.',
+    'body'   => 'Créez une nouvelle page côté site client, puis collez l’un des embeds intégrés ci-dessous. Aucun compte ni clé de licence nécessaire : ces workflows sont inclus dans le plugin.',
+    'code'   => '[xpressui id="file-request"]',
+    'note'   => 'Ou utilisez [xpressui id="demande-carte-grise"] ou [xpressui id="association-registration"].',
   ],
   [
     'number' => '03',
@@ -90,9 +90,9 @@ $free_steps = $is_french_install ? [
   [
     'number' => '02',
     'title'  => 'Create a page and paste the embed',
-    'body'   => 'Create a new client-site page, then paste one of the two built-in embeds below. No account or license key needed — these workflows are embedded in the plugin.',
-    'code'   => '[xpressui id="document-intake"]',
-    'note'   => 'Or use [xpressui id="validation-playground"] to explore the full field type library.',
+    'body'   => 'Create a new client-site page, then paste one of the built-in embeds below. No account or license key needed — these workflows are embedded in the plugin.',
+    'code'   => '[xpressui id="file-request"]',
+    'note'   => 'Or use [xpressui id="demande-carte-grise"] or [xpressui id="association-registration"].',
   ],
   [
     'number' => '03',

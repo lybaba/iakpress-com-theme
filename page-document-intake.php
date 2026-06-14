@@ -58,7 +58,7 @@ get_header(); ?>
           </div>
 
           <div class="p-4 sm:p-8 md:p-12 min-h-[420px] bg-white">
-            <?php echo do_shortcode('[xpressui id="document-intake"]'); ?>
+            <?php echo do_shortcode('[xpressui id="file-request"]'); ?>
           </div>
 
           <div class="bg-gray-50 border-t border-gray-200 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
