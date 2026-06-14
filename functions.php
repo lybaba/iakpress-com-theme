@@ -1071,7 +1071,7 @@ function iakpress_contact_hosted_launch_url( bool $is_french, string $content = 
 
 /**
  * Customizer: the per-language hosted-link URLs opened by the contact page's
- * "Démarrer le brief" / "Start the brief" button. Set both once here; the FR
+ * "Nous contacter" / "Contact us" button. Set both once here; the FR
  * page (/fr/contact/) uses the French URL and the EN page (/contact/) the
  * English one. These take precedence over any generic field or in-content URL.
  */
@@ -1084,11 +1084,11 @@ function iakpress_register_contact_customizer( WP_Customize_Manager $wp_customiz
     $controls = array(
         'xpressui_contact_hosted_link_url_fr' => array(
             'label'       => 'Hosted link URL (French)',
-            'description' => 'Opened by the "Démarrer le brief" button on /fr/contact/.',
+            'description' => 'Opened by the "Nous contacter" button on /fr/contact/.',
         ),
         'xpressui_contact_hosted_link_url_en' => array(
             'label'       => 'Hosted link URL (English)',
-            'description' => 'Opened by the "Start the brief" button on /contact/.',
+            'description' => 'Opened by the "Contact us" button on /contact/.',
         ),
     );
 

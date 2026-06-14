@@ -209,8 +209,8 @@ if ($contact_shortcode_config['url'] === '' && $is_french_contact && function_ex
 }
 
 $contact_copy = $is_french_contact ? array(
-  'default_intro_title' => 'Décrivez votre premier intake client',
-  'default_cta_label' => 'Démarrer le brief',
+  'default_intro_title' => '',
+  'default_cta_label' => 'Nous contacter',
   'hero_eyebrow' => 'Contact',
   'hero_title_line_1' => 'Lancez un premier intake client.',
   'hero_title_line_2' => 'Puis décidez ce qui doit être répété.',
@@ -233,8 +233,8 @@ $contact_copy = $is_french_contact ? array(
   'promo_body' => 'Pas de code, pas de conflit CSS. Conçu dans la console visuelle, déployé sur un site client ou en lien hébergé.',
   'promo_cta' => 'Voir comment ça marche',
 ) : array(
-  'default_intro_title' => 'Describe your first workflow',
-  'default_cta_label' => 'Start the brief',
+  'default_intro_title' => '',
+  'default_cta_label' => 'Contact us',
   'hero_eyebrow' => 'Contact',
   'hero_title_line_1' => 'Launch one workflow first.',
   'hero_title_line_2' => 'Then decide what should scale.',
@@ -360,11 +360,11 @@ get_header(); ?>
 
   <!-- Form -->
   <section class="bg-gray-50 px-4 pb-8 pt-6 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
-      <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-20">
+    <?php if ($has_contact_embed): ?>
+      <div class="max-w-2xl mx-auto bg-white rounded-3xl border border-gray-200 p-6 sm:p-8 shadow-sm">
         <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo esc_html($contact_copy['next_eyebrow']); ?></p>
         <h2 class="text-xl font-extrabold tracking-tight text-gray-900 mb-4"><?php echo esc_html($contact_copy['next_title']); ?></h2>
-        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+        <div class="space-y-4 text-sm text-gray-600 leading-relaxed mb-6">
           <div class="flex gap-3">
             <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
             <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_1_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_1_body']); ?></p>
@@ -378,23 +378,37 @@ get_header(); ?>
             <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_3_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_3_body']); ?></p>
           </div>
         </div>
-      </div>
-      <div class="min-w-0">
-        <?php if ($has_contact_embed): ?>
+        
+        <div class="pt-6 border-t border-gray-100 flex justify-center">
           <a
             href="<?php echo esc_url($contact_launch_url); ?>"
-            class="mx-auto grid min-h-[220px] max-w-3xl place-items-center rounded-[26px] border border-gray-200 bg-white px-8 py-10 text-center shadow-2xl shadow-slate-900/10 transition duration-150 hover:-translate-y-0.5 hover:shadow-slate-900/15 focus:outline-none focus:ring-4 focus:ring-blue-200"
+            class="inline-flex items-center justify-center rounded-xl bg-gray-950 px-8 py-3.5 text-sm font-extrabold text-white shadow-xl shadow-slate-900/20 transition duration-150 hover:-translate-y-0.5 hover:shadow-slate-900/25 focus:outline-none focus:ring-4 focus:ring-blue-200"
           >
-            <span class="block">
-              <span class="block text-[clamp(28px,3.2vw,36px)] font-black leading-tight tracking-tight text-gray-950">
-                <?php echo esc_html($contact_intro_title); ?>
-              </span>
-              <span class="mt-5 inline-flex items-center justify-center rounded-xl bg-gray-950 px-7 py-3 text-sm font-extrabold text-white shadow-xl shadow-slate-900/20">
-                <?php echo esc_html($contact_cta_label); ?>
-              </span>
-            </span>
+            <?php echo esc_html($contact_cta_label); ?>
           </a>
-        <?php else: ?>
+        </div>
+      </div>
+    <?php else: ?>
+      <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-start">
+        <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm lg:sticky lg:top-20">
+          <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo esc_html($contact_copy['next_eyebrow']); ?></p>
+          <h2 class="text-xl font-extrabold tracking-tight text-gray-900 mb-4"><?php echo esc_html($contact_copy['next_title']); ?></h2>
+          <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+            <div class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+              <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_1_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_1_body']); ?></p>
+            </div>
+            <div class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+              <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_2_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_2_body']); ?></p>
+            </div>
+            <div class="flex gap-3">
+              <span class="mt-1 h-2 w-2 rounded-full bg-blue-600 flex-shrink-0"></span>
+              <p><strong class="text-gray-900"><?php echo esc_html($contact_copy['bullet_3_title']); ?></strong> <?php echo esc_html($contact_copy['bullet_3_body']); ?></p>
+            </div>
+          </div>
+        </div>
+        <div class="min-w-0">
           <div class="rounded-3xl border border-blue-100 bg-white p-6 shadow-2xl shadow-blue-900/10">
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo esc_html($contact_copy['missing_eyebrow']); ?></p>
             <h2 class="text-2xl font-extrabold tracking-tight text-gray-900 mb-3"><?php echo esc_html($contact_copy['missing_title']); ?></h2>
@@ -412,9 +426,9 @@ get_header(); ?>
               </details>
             <?php endif; ?>
           </div>
-        <?php endif; ?>
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
   </section>
 
   <!-- XpressUI promo -->
