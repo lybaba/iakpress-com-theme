@@ -258,21 +258,25 @@ $contact_copy = $is_french_contact ? array(
   'promo_cta' => 'See how it works',
 );
 
-// URL precedence (consistent with the done-for-you page): a per-language
-// [xpressui … xpressui_contact_hosted_link_url_fr/_en] shortcode in the page
-// content wins — parsed by the same shared parser — then the contact page's own
-// shortcode config, then the per-language Customizer URL.
+// URL precedence: per-LANGUAGE sources win over any generic/single URL so the FR
+// and EN buttons resolve to their own hosted link.
+// 1. A per-language [xpressui … xpressui_contact_hosted_link_url_fr/_en] shortcode
+//    in the page content (same shared parser as done-for-you).
 $contact_public_url = function_exists('iakpress_extract_hosted_link_url_from_content')
   ? iakpress_extract_hosted_link_url_from_content($contact_content, $is_french_contact)
   : '';
-if ($contact_public_url === '') {
-  $contact_public_url = $contact_shortcode_config['url'];
-}
+// 2. The per-language Customizer URL — must beat a generic URL embedded in the
+//    content (e.g. a bare hosted-link URL the contact parser regex-matches),
+//    otherwise both languages would resolve to that single URL.
 if ($contact_public_url === '') {
   $contact_public_url = trim((string) get_theme_mod(
     $is_french_contact ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
     ''
   ));
+}
+// 3. The contact page's own shortcode config (legacy / generic URL in content).
+if ($contact_public_url === '') {
+  $contact_public_url = $contact_shortcode_config['url'];
 }
 if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
