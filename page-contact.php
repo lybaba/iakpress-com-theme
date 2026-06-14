@@ -328,16 +328,19 @@ $contact_cta_label = apply_filters('xpressui_contact_card_cta_label', $contact_c
 
 get_header(); ?>
 <?php if ( isset( $_GET['xpressui_debug'] ) ) { // temporary: ungated so it shows in incognito too
+  $dbg_c = (string) $contact_content;
+  $dbg_fp = strpos( $dbg_c, 'xpressui_contact_hosted_link_url_fr' );
+  $dbg_ep = strpos( $dbg_c, 'xpressui_contact_hosted_link_url_en' );
+  $dbg_frctx = $dbg_fp !== false ? substr( $dbg_c, $dbg_fp, 110 ) : 'NF';
+  $dbg_enctx = $dbg_ep !== false ? substr( $dbg_c, $dbg_ep, 110 ) : 'NF';
   echo "\n<!-- xpressui-contact is_fr=" . ( $is_french_contact ? '1' : '0' )
      . " page_id=" . (int) $contact_page_id
-     . " content_len=" . strlen( (string) $contact_content )
-     . " has_fr=" . ( strpos( (string) $contact_content, 'xpressui_contact_hosted_link_url_fr' ) !== false ? '1' : '0' )
-     . " has_en=" . ( strpos( (string) $contact_content, 'xpressui_contact_hosted_link_url_en' ) !== false ? '1' : '0' )
+     . " content_len=" . strlen( $dbg_c )
      . " mod_fr=[" . esc_html( (string) get_theme_mod('xpressui_contact_hosted_link_url_fr', '') ) . "]"
      . " mod_en=[" . esc_html( (string) get_theme_mod('xpressui_contact_hosted_link_url_en', '') ) . "]"
-     . " shortcode_url=[" . esc_html( (string) $contact_shortcode_config['url'] ) . "]"
-     . " resolved=[" . esc_html( (string) $contact_public_url ) . "]"
-     . " launch=[" . esc_html( (string) $contact_launch_url ) . "] -->\n";
+     . " resolved=[" . esc_html( (string) $contact_public_url ) . "]\n"
+     . "     frctx=[" . esc_html( $dbg_frctx ) . "]\n"
+     . "     enctx=[" . esc_html( $dbg_enctx ) . "] -->\n";
 } ?>
 
 <div class="font-sans text-gray-900 antialiased">
