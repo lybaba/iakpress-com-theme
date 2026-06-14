@@ -996,26 +996,23 @@ function iakpress_extract_hosted_link_url_from_content( string $content, bool $i
     if ( ! is_string( $normalized ) ) {
         $normalized = $content;
     }
-    // Only the per-language attributes — never the generic key — so a generic
-    // single URL in the content cannot resolve the same link for both languages
-    // (let the Customizer / legacy fallbacks handle the generic case instead).
-    $keys = $is_french
-        ? array( 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url_en' )
-        : array( 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url_fr' );
-    foreach ( $keys as $key ) {
-        $pattern = '/' . preg_quote( $key, '/' ) . '\s*=\s*(?:"([^"]+)"|\'([^\']+)\'|([^\s\]"\']+))/u';
-        if ( preg_match( $pattern, $normalized, $m ) ) {
-            $value = '';
-            foreach ( array( 1, 2, 3 ) as $group ) {
-                if ( isset( $m[ $group ] ) && $m[ $group ] !== '' ) {
-                    $value = $m[ $group ];
-                    break;
-                }
+    // STRICTLY the current language's attribute — no cross-language and no
+    // generic fallback. Otherwise a page whose content only carries the other
+    // language's URL (the FR and EN contact routes read different content) would
+    // mask the per-language Customizer value for the missing language.
+    $key = $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en';
+    $pattern = '/' . preg_quote( $key, '/' ) . '\s*=\s*(?:"([^"]+)"|\'([^\']+)\'|([^\s\]"\']+))/u';
+    if ( preg_match( $pattern, $normalized, $m ) ) {
+        $value = '';
+        foreach ( array( 1, 2, 3 ) as $group ) {
+            if ( isset( $m[ $group ] ) && $m[ $group ] !== '' ) {
+                $value = $m[ $group ];
+                break;
             }
-            $value = trim( html_entity_decode( $value, ENT_QUOTES, 'UTF-8' ) );
-            if ( $value !== '' ) {
-                return $value;
-            }
+        }
+        $value = trim( html_entity_decode( $value, ENT_QUOTES, 'UTF-8' ) );
+        if ( $value !== '' ) {
+            return $value;
         }
     }
 
