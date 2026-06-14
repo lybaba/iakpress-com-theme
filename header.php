@@ -76,6 +76,7 @@
       $install_href = $is_french_request ? '/fr/install/' : '/install/';
       $resources_href = $is_french_request ? '/fr/resources/' : '/resources/';
       $dfy_href = $is_french_request ? '/fr/done-for-you/' : '/done-for-you/';
+      $dfy_label = $is_french_request ? 'Clé en Main' : 'Done For You';
       $product_label = $is_french_request ? 'Produit' : 'Product';
       $pricing_label = $is_french_request ? 'Tarifs' : 'Pricing';
       $install_label = $is_french_request ? 'Installation' : 'Install';
@@ -91,6 +92,7 @@
       <nav class="hidden md:flex space-x-1 items-center">
         <a href="<?php echo esc_url($product_href); ?>" class="<?php echo $current_english_path === 'xpressui' || is_front_page() ? $nav_active : $nav_idle; ?>"><?php echo esc_html($product_label); ?></a>
         <a href="<?php echo esc_url($cloud_href); ?>" class="<?php echo $current_english_path === 'xpressui-cloud' ? $nav_active : $nav_idle; ?>">Cloud</a>
+        <a href="<?php echo esc_url($dfy_href); ?>" class="<?php echo $current_english_path === 'done-for-you' ? $nav_active : $nav_idle; ?>"><?php echo esc_html($dfy_label); ?></a>
         <a href="<?php echo esc_url($pricing_href); ?>" class="<?php echo $current_english_path === 'pricing' ? $nav_active : $nav_idle; ?>"><?php echo esc_html($pricing_label); ?></a>
         <a href="<?php echo esc_url($install_href); ?>" class="<?php echo $current_english_path === 'install' ? $nav_active : $nav_idle; ?>"><?php echo esc_html($install_label); ?></a>
         
@@ -164,6 +166,7 @@
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">
           <a href="<?php echo esc_url($contact_href); ?>" class="text-blue-600 font-bold text-sm mr-4"><?php echo esc_html($mobile_contact_cta_label); ?></a>
+          <a href="<?php echo esc_url($dfy_href); ?>" class="text-gray-900 font-medium text-sm mr-4"><?php echo esc_html($dfy_label); ?></a>
           <a href="<?php echo esc_url($resources_href); ?>" class="text-gray-900 font-medium text-sm mr-4"><?php echo esc_html($resources_label); ?></a>
           <a href="<?php echo esc_url($product_href); ?>" class="text-gray-900 font-medium text-sm">IntakeFlow</a>
         </div>
