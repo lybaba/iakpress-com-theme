@@ -28,6 +28,15 @@
           break;
         }
       }
+      if (!langPref) {
+        for (var i = 0; i < cookies.length; i++) {
+          var c = cookies[i].trim();
+          if (c.indexOf('lang_pref=') === 0) {
+            langPref = c.substring('lang_pref='.length);
+            break;
+          }
+        }
+      }
       if (langPref) {
         return;
       }
@@ -160,8 +169,8 @@
           <?php echo esc_html($contact_cta_label); ?>
         </a>
         <div class="flex items-center gap-1" aria-label="Language switcher">
-          <a href="<?php echo esc_url($english_language_url); ?>" onclick="document.cookie = 'iakpress_lang=en; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : '');" class="<?php echo $is_french_request ? $language_idle : $language_active; ?>" aria-label="Switch to English" title="English">🇬🇧</a>
-          <a href="<?php echo esc_url($french_language_url); ?>" onclick="document.cookie = 'iakpress_lang=fr; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : '');" class="<?php echo $is_french_request ? $language_active : $language_idle; ?>" aria-label="Passer en français" title="Français">🇫🇷</a>
+          <a href="<?php echo esc_url($english_language_url); ?>" onclick="document.cookie = 'iakpress_lang=en; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : ''); document.cookie = 'lang_pref=en; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : '');" class="<?php echo $is_french_request ? $language_idle : $language_active; ?>" aria-label="Switch to English" title="English">🇬🇧</a>
+          <a href="<?php echo esc_url($french_language_url); ?>" onclick="document.cookie = 'iakpress_lang=fr; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : ''); document.cookie = 'lang_pref=fr; path=/; max-age=31536000' + (window.location.protocol === 'https:' ? '; Secure' : '');" class="<?php echo $is_french_request ? $language_active : $language_idle; ?>" aria-label="Passer en français" title="Français">🇫🇷</a>
         </div>
         <!-- Mobile Menu (simplified) -->
         <div class="md:hidden flex items-center">

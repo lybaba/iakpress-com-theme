@@ -124,6 +124,7 @@ function iakpress_handle_language_preference(): void {
     $cookie_path = '/';
     $cookie_domain = defined( 'COOKIE_DOMAIN' ) && COOKIE_DOMAIN ? COOKIE_DOMAIN : '';
     setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
+    setcookie( 'lang_pref', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
     $_COOKIE['iakpress_lang'] = $requested_language;
 
     $redirect_url = remove_query_arg( 'iakpress_lang' );
