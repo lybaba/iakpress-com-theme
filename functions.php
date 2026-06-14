@@ -996,6 +996,12 @@ function iakpress_extract_hosted_link_url_from_content( string $content, bool $i
     if ( ! is_string( $normalized ) ) {
         $normalized = $content;
     }
+    // The block editor can wrap parts of the shortcode in HTML tags (seen in the
+    // wild: a stray </span> between the attribute name and '='), which breaks the
+    // attribute regex. Strip tags so "…url_fr</span>=" becomes "…url_fr=".
+    $normalized = function_exists( 'wp_strip_all_tags' )
+        ? wp_strip_all_tags( (string) $normalized )
+        : strip_tags( (string) $normalized );
     // STRICTLY the current language's attribute — no cross-language and no
     // generic fallback. Otherwise a page whose content only carries the other
     // language's URL (the FR and EN contact routes read different content) would

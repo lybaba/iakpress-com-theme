@@ -327,7 +327,7 @@ $contact_intro_title = apply_filters('xpressui_contact_card_intro_title', $conta
 $contact_cta_label = apply_filters('xpressui_contact_card_cta_label', $contact_cta_label);
 
 get_header(); ?>
-<?php if ( isset( $_GET['xpressui_debug'] ) ) { // temporary: ungated so it shows in incognito too
+<?php if ( isset( $_GET['xpressui_debug'] ) && function_exists('current_user_can') && current_user_can('manage_options') ) {
   $dbg_c = (string) $contact_content;
   $dbg_fp = strpos( $dbg_c, 'xpressui_contact_hosted_link_url_fr' );
   $dbg_ep = strpos( $dbg_c, 'xpressui_contact_hosted_link_url_en' );
