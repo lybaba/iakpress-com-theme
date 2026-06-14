@@ -100,6 +100,8 @@ create_page "Document Intake Demo" "document-intake"   "page-document-intake.php
 create_page "Blog"                "blog"               "default"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"
 create_page "Resources"           "resources"          "page-resources.php"
+create_page "Done-For-You"        "done-for-you"       "page-done-for-you.php"
+
 
 if [ -n "$XPRESSUI_CONTACT_HOSTED_LINK_URL" ]; then
   CONTACT_ID=$(wp --allow-root post list --path="$WP" \

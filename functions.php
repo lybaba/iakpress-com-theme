@@ -83,6 +83,7 @@ function iakpress_language_path_map(): array {
         'pro'             => 'fr/pro',
         'purchase-confirmed' => 'fr/purchase-confirmed',
         'resources'          => 'fr/resources',
+        'done-for-you'       => 'fr/done-for-you',
     );
 }
 
@@ -251,6 +252,12 @@ function iakpress_translate_french_output( string $html ): string {
         'Start on a client WordPress site, move to IntakeFlow Cloud when you want hosted links, files, catalogs, quotas, and team review, or ask us to ship the first workflow with you.' => 'Commencez sur un site WordPress client, passez à IntakeFlow Cloud quand vous voulez des liens hébergés, fichiers, catalogues, quotas et revue en équipe, ou demandez-nous de livrer le premier workflow avec vous.',
         'IntakeFlow Free · IntakeFlow Starter from €21/month · IntakeFlow Cloud PRO from €39/month' => 'IntakeFlow Free · IntakeFlow Starter à partir de €21/mois · IntakeFlow Cloud PRO à partir de €39/mois',
         'Done For You setup' => 'Configuration effectuée pour vous',
+        '€499 (includes 1yr Pro)' => '499 € (inclut 1 an Pro)',
+        'Want a custom turnkey portal?' => 'Vous préférez un portail clé en main ?',
+        'Get it Done-For-You under 7 days.' => 'Notre équipe s’occupe de tout sous 7 jours.',
+        'No time to configure your portal? Our team handles the design, setup, WordPress embedding, and tools integration for a single flat fee of €499 (includes 1 year of Starter license).' => 'Pas le temps de configurer votre portail ? Notre équipe gère le design, la configuration, l’intégration WordPress et la connexion à vos outils pour un tarif unique de 499 € (incluant 1 an de licence Starter).',
+        'Done-For-You Setup' => 'Service Clé en Main',
+        'Discuss custom pilot' => 'Discuter d’un pilote',
         'Agency pilot' => 'Pilote agence',
         'Fast decision' => 'Décision rapide',
         'Choose by the first workflow you need to ship.' => 'Choisissez selon le premier workflow à livrer.',
@@ -847,6 +854,7 @@ function iakpress_render_french_routes(): void {
         'fr/pro'             => 'page-pro.php',
         'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
         'fr/resources'          => 'page-resources.php',
+        'fr/done-for-you'       => 'page-done-for-you.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
@@ -881,6 +889,8 @@ function iakpress_document_title_parts( array $parts ): array {
         'fr/purchase-confirmed' => 'Achat confirmé',
         'resources' => 'Resources and Documentation',
         'fr/resources' => 'Ressources et Documentation',
+        'done-for-you' => 'Done-For-You Client Portal Setup',
+        'fr/done-for-you' => 'Service Clé en Main - Configuration Portail Client',
     );
 
     if ( isset( $title_map[$path] ) ) {
@@ -910,6 +920,8 @@ function iakpress_custom_seo_meta_description(): void {
         'fr/purchase-confirmed' => 'Suivez ces étapes simples pour configurer votre licence IntakeFlow Pro et mettre en ligne votre premier portail.',
         'resources' => 'Access tutorials, default workflows, API documentation, and help resources for IntakeFlow.',
         'fr/resources' => 'Accédez aux tutoriels, aux workflows par défaut, à la documentation de l’API et aux ressources d’aide d’IntakeFlow.',
+        'done-for-you' => 'Get your custom client portal fully designed, set up, and integrated under 7 days with our Done-For-You service.',
+        'fr/done-for-you' => 'Confiez la création et l’intégration de votre portail client à nos experts. Votre système opérationnel clé en main en 7 jours.',
     );
 
     if ( isset( $desc_map[$path] ) ) {

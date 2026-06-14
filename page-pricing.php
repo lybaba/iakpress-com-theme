@@ -7,6 +7,7 @@
 $download_url = 'https://wordpress.org/plugins/xpressui-bridge/';
 $is_fr            = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $agency_pilot_url = $is_fr ? home_url('/fr/agency-pilot/') : home_url('/agency-pilot/');
+$dfy_url          = $is_fr ? home_url('/fr/done-for-you/')  : home_url('/done-for-you/');
 $contact_url      = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 
 $app_url = xpressui_app_url();
@@ -36,7 +37,7 @@ $rows = [
   ['group' => '', 'label' => 'Workspace storage, quotas, and audit trail', 'free' => false, 'pro' => false, 'cloud' => true],
 
   ['group' => 'Support and license', 'label' => 'Price', 'free' => '€0', 'pro' => '€21/month', 'cloud' => '€39/mo'],
-  ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => 'from €790', 'cloud' => 'from €299'],
+  ['group' => '', 'label' => 'Done For You setup', 'free' => false, 'pro' => '€499 (includes 1yr Pro)', 'cloud' => '€499 (includes 1yr Pro)'],
   ['group' => '', 'label' => 'Community support via GitHub Issues', 'free' => true, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'Automatic plugin updates', 'free' => false, 'pro' => true, 'cloud' => false],
   ['group' => '', 'label' => 'License valid per site', 'free' => false, 'pro' => true, 'cloud' => false],
@@ -188,15 +189,15 @@ function xpressui_pricing_cell($value, $color = 'blue') {
   <section class="bg-white py-10 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-5xl mx-auto rounded-3xl border border-blue-100 bg-blue-50 p-6 md:p-8 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-center">
       <div>
-        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Not ready to choose a plan?</p>
-        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Start with one paid workflow pilot.</h2>
+        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-2">Want a custom turnkey portal?</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3">Get it Done-For-You under 7 days.</h2>
         <p class="text-gray-600 leading-relaxed">
-          If the buyer is still comparing paths, scope one real workflow first. Hosted pilots start from €299 setup; client-site delivery starts from €790 setup.
+          No time to configure your portal? Our team handles the design, setup, WordPress embedding, and tools integration for a single flat fee of €499 (includes 1 year of Starter license).
         </p>
       </div>
       <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
-        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20 whitespace-nowrap">Scope a pilot</a>
-        <a href="<?php echo esc_url($agency_pilot_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">See pilot details</a>
+        <a href="<?php echo esc_url($dfy_url); ?>" class="inline-flex justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition shadow-lg shadow-blue-500/20 whitespace-nowrap">Done-For-You Setup</a>
+        <a href="<?php echo esc_url($contact_url); ?>" class="inline-flex justify-center bg-white border border-blue-100 hover:border-blue-200 text-blue-700 font-bold py-3 px-6 rounded-lg transition whitespace-nowrap">Discuss custom pilot</a>
       </div>
     </div>
   </section>

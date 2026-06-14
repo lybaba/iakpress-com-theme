@@ -75,6 +75,7 @@
       $pricing_href = $is_french_request ? '/fr/pricing/' : '/pricing/';
       $install_href = $is_french_request ? '/fr/install/' : '/install/';
       $resources_href = $is_french_request ? '/fr/resources/' : '/resources/';
+      $dfy_href = $is_french_request ? '/fr/done-for-you/' : '/done-for-you/';
       $product_label = $is_french_request ? 'Produit' : 'Product';
       $pricing_label = $is_french_request ? 'Tarifs' : 'Pricing';
       $install_label = $is_french_request ? 'Installation' : 'Install';
@@ -110,6 +111,7 @@
                   <a href="<?php echo esc_url($resources_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Documentation' : 'Documentation'; ?></a>
                   <a href="<?php echo esc_url($install_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Guide d’installation' : 'Installation Guide'; ?></a>
                   <a href="<?php echo esc_url($pricing_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Tarifs & Plans' : 'Pricing & Plans'; ?></a>
+                  <a href="<?php echo esc_url($dfy_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Service Clé en Main' : 'Done-For-You Setup'; ?></a>
                   <a href="<?php echo esc_url($contact_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Obtenir de l’aide' : 'Get Help'; ?></a>
                 </div>
               </div>
