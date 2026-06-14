@@ -258,15 +258,21 @@ $contact_copy = $is_french_contact ? array(
   'promo_cta' => 'See how it works',
 );
 
-// Language-authoritative source: a per-language Customizer URL, when set, wins
-// over a generic field or any URL embedded in the page content — so the FR and
-// EN "Démarrer le brief" buttons always point to their own hosted link.
-$contact_public_url = trim((string) get_theme_mod(
-  $is_french_contact ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
-  ''
-));
+// URL precedence (consistent with the done-for-you page): a per-language
+// [xpressui … xpressui_contact_hosted_link_url_fr/_en] shortcode in the page
+// content wins — parsed by the same shared parser — then the contact page's own
+// shortcode config, then the per-language Customizer URL.
+$contact_public_url = function_exists('iakpress_extract_hosted_link_url_from_content')
+  ? iakpress_extract_hosted_link_url_from_content($contact_content, $is_french_contact)
+  : '';
 if ($contact_public_url === '') {
   $contact_public_url = $contact_shortcode_config['url'];
+}
+if ($contact_public_url === '') {
+  $contact_public_url = trim((string) get_theme_mod(
+    $is_french_contact ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
+    ''
+  ));
 }
 if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
