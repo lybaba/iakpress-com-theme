@@ -11,7 +11,7 @@ $contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 // brief" button. Precedence: an [xpressui … xpressui_contact_hosted_link_url_fr/_en]
 // shortcode in this page's content, then the Customizer URLs; falls back to the
 // contact page when nothing is configured.
-$dfy_content = function_exists('get_the_content') ? (string) get_the_content() : '';
+$dfy_content = function_exists('iakpress_current_page_content') ? iakpress_current_page_content() : '';
 $booking_url = function_exists('iakpress_contact_hosted_launch_url')
   ? iakpress_contact_hosted_launch_url($is_fr, $dfy_content)
   : '';

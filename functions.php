@@ -960,6 +960,19 @@ function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 a
 }
 
 /**
+ * Raw post content of the current page, read straight from the global $post.
+ * More reliable than get_the_content() when called outside the loop (which can
+ * return an empty string), and it returns the full body — including any shortcode
+ * placed after a <!--more--> marker.
+ */
+function iakpress_current_page_content(): string {
+    if ( isset( $GLOBALS['post'] ) && $GLOBALS['post'] instanceof WP_Post ) {
+        return (string) $GLOBALS['post']->post_content;
+    }
+    return function_exists( 'get_the_content' ) ? (string) get_the_content() : '';
+}
+
+/**
  * Pull a hosted-link URL for the current language out of page content that
  * carries a shortcode such as
  *   [xpressui id="done-for-you" xpressui_contact_hosted_link_url_fr="…" xpressui_contact_hosted_link_url_en="…"]

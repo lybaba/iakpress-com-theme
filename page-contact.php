@@ -192,7 +192,7 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
 
 $is_french_contact = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $contact_page_id = function_exists('get_the_ID') ? (int) get_the_ID() : 0;
-$contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
+$contact_content = function_exists('iakpress_current_page_content') ? iakpress_current_page_content() : '';
 $contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
 
 if ($contact_shortcode_config['url'] === '' && $is_french_contact && function_exists('get_page_by_path')) {
