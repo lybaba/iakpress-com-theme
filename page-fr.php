@@ -149,7 +149,7 @@ get_header(); ?>
       <div>
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">Pas un form builder</p>
         <h2 class="text-3xl font-bold text-gray-900 mb-4">IntakeFlow couvre le suivi complet des pièces manquantes.</h2>
-        <p class="text-gray-600 leading-relaxed mb-6">Le formulaire est seulement la porte d'entrée. La valeur est dans le système complet : un lien pour le client, une inbox pour l'équipe et un statut pour chaque pièce manquante.</p>
+        <p class="text-gray-600 leading-relaxed mb-6">Le portail de saisie est seulement la porte d'entrée. La valeur est dans le système complet : un lien pour le client, une inbox pour l'équipe et un statut pour chaque pièce manquante.</p>
         <ul class="space-y-3 text-gray-700">
           <?php foreach (['Liens privés pour les demandes sensibles', 'Uploads guidés et champs obligatoires', 'Inbox opérateur pour suivre les soumissions', 'Livraison WordPress ou hébergement IntakeFlow Cloud'] as $point): ?>
           <li class="flex items-start gap-3">

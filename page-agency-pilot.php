@@ -26,7 +26,7 @@ $copy = $is_french_pilot ? [
   'output_cta'       => 'Cadrer le premier workflow',
   'scope_eyebrow'    => 'Meilleur premier message',
   'scope_title'      => 'Envoyez le workflow tel quel, pas une spec peaufinée.',
-  'scope_body'       => 'Une courte description avec un formulaire, une capture, un tableur ou un lien vers un document suffit pour estimer si le premier pilote doit être hébergé ou livré sur site client.',
+  'scope_body'       => 'Une courte description avec un parcours existant, une capture, un tableur ou un lien vers un document suffit pour estimer si le premier pilote doit être hébergé ou livré sur site client.',
   'scope_cta'        => 'Envoyer le workflow',
   'steps_eyebrow'    => 'Comment fonctionne le pilote',
   'steps_title'      => 'Quatre étapes, un workflow, sans promesse self-serve trop large.',
@@ -119,7 +119,7 @@ $steps = $is_french_pilot ? [
 $deliverables = $is_french_pilot ? [
   ['title' => 'Lien workflow hébergé', 'body' => 'Un lien privé envoyable à un client ou intégrable sur la page commerciale pendant la validation du processus.'],
   ['title' => 'Parcours inbox opérateur', 'body' => 'Les soumissions arrivent avec suffisamment de contexte pour la revue, le suivi, la preuve de paiement ou la complétion.'],
-  ['title' => 'Surface catalogue réutilisable', 'body' => 'Produits, services, dates, membres ou options sont séparés du formulaire pour que le workflow puisse passer à l\'échelle.'],
+  ['title' => 'Surface catalogue réutilisable', 'body' => 'Produits, services, dates, membres ou options sont séparés du portail pour que le workflow puisse passer à l\'échelle.'],
   ['title' => 'Option livraison sur site client', 'body' => 'Si le workflow doit vivre sur un site client, le pilote définit le chemin de livraison IntakeFlow Starter et la passation.'],
 ] : [
   ['title' => 'Hosted workflow link', 'body' => 'A private link you can send to one client or embed on the commercial page while the process is validated.'],

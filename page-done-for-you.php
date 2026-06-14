@@ -27,8 +27,8 @@ get_header(); ?>
       </h1>
       <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10">
         <?php echo $is_fr 
-          ? 'Pas le temps de configurer vos formulaires ? Nous gérons l’intégralité de la configuration, du design, de l’intégration WordPress et des automatisations.' 
-          : 'No time to configure your forms? We handle the entire configuration, custom styling, WordPress embedding, and automations setup.'; ?>
+          ? 'Pas le temps de configurer vos portails de collecte ? Nous gérons l’intégralité de la configuration, du design, de l’intégration WordPress et des automatisations.' 
+          : 'No time to configure your portals? We handle the entire configuration, custom styling, WordPress embedding, and automations setup.'; ?>
       </p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="<?php echo esc_url($booking_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition shadow-lg shadow-blue-500/30">
@@ -46,11 +46,11 @@ get_header(); ?>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <?php
       $benefits = $is_fr ? [
-        ['title' => 'Gain de Temps Total', 'desc' => 'Envoyez-nous votre checklist ou formulaire brut, nous nous chargeons de concevoir le parcours idéal.'],
+        ['title' => 'Gain de Temps Total', 'desc' => 'Envoyez-nous votre checklist ou modèle brut, nous nous chargeons de concevoir le parcours idéal.'],
         ['title' => 'Design & Marque Alignés', 'desc' => 'Intégration fluide à votre charte graphique et sur votre site WordPress existant (sans iframe).'],
         ['title' => 'Automatisations Opérationnelles', 'desc' => 'Connexion directe à vos outils métiers (Zapier, Notion, Webhooks) et configuration des relances automatiques.']
       ] : [
-        ['title' => 'Save Precious Time', 'desc' => 'Send us your checklist or raw forms, we take care of structuring the perfect client experience.'],
+        ['title' => 'Save Precious Time', 'desc' => 'Send us your checklist or raw requirements, we take care of structuring the perfect client experience.'],
         ['title' => 'Branded & Embedded', 'desc' => 'Seamless styling to match your colors and fonts, directly embedded on WordPress (no iframe).'],
         ['title' => 'Ready to Automate', 'desc' => 'Direct connection to your business tools (Zapier, Notion, Webhooks) and emails follow-up configuration.']
       ];
@@ -79,14 +79,14 @@ get_header(); ?>
         </h2>
         <p class="text-gray-500 leading-relaxed mb-8">
           <?php echo $is_fr
-            ? 'Nous ne nous contentons pas de créer un simple formulaire. Nous mettons sur pied un canal de collecte opérationnel qui protège le temps de votre équipe.'
-            : 'We do not just build a simple form. We set up an operational collection channel that saves your team time.'; ?>
+            ? 'Nous ne nous contentons pas de créer un simple portail de saisie. Nous mettons sur pied un canal de collecte opérationnel qui protège le temps de votre équipe.'
+            : 'We do not just build a simple questionnaire. We set up an operational collection channel that saves your team time.'; ?>
         </p>
 
         <ul class="space-y-4">
           <?php
           $inclusions = $is_fr ? [
-            '<strong>Modélisation de vos formulaires</strong> : Conception et mise en page de vos formulaires par étapes.',
+            '<strong>Modélisation de vos parcours</strong> : Conception et mise en page de vos portails par étapes.',
             '<strong>Personnalisation graphique</strong> : Intégration de votre logo, de vos couleurs et polices.',
             '<strong>Intégration WordPress</strong> : Intégration sur votre site WordPress avec le plugin IntakeFlow.',
             '<strong>Mise en place des e-mails</strong> : Configuration du résumé de soumission et des relances de pièces manquantes.',
@@ -94,7 +94,7 @@ get_header(); ?>
             '<strong>1 an de licence Starter incluse</strong> (valeur : 252 €) pour bénéficier des mises à jour automatiques.',
             '<strong>Support prioritaire (12 mois)</strong> : Assistance par e-mail en 24-48h.'
           ] : [
-            '<strong>Form configuration</strong>: Multi-step layout design of your custom client questions.',
+            '<strong>Portal configuration</strong>: Multi-step layout design of your custom client questions.',
             '<strong>Branding & CSS styling</strong>: Implementation of your logo, custom colors, and typography.',
             '<strong>WordPress embedding</strong>: Seamless output on your site pages using shortcodes.',
             '<strong>Email notifications</strong>: Scoped template layout with operator summaries and 1-click reminders.',
@@ -190,12 +190,12 @@ get_header(); ?>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
         <?php
         $steps = $is_fr ? [
-          ['title' => '1. Envoi du Modèle', 'desc' => 'Vous nous partagez vos formulaires actuels (PDF, tableur Excel, email type).'],
-          ['title' => '2. Maquettage', 'desc' => 'Notre équipe configure et stylise vos formulaires par étapes aux couleurs de votre marque.'],
+          ['title' => '1. Envoi du Modèle', 'desc' => 'Vous nous partagez vos checklists de collecte actuelles (PDF, tableur Excel, email type).'],
+          ['title' => '2. Maquettage', 'desc' => 'Notre équipe configure et stylise vos parcours par étapes aux couleurs de votre marque.'],
           ['title' => '3. Intégration', 'desc' => 'Nous intégrons le shortcode sur votre site WordPress et paramétrons les emails et Webhooks.'],
           ['title' => '4. Livraison', 'desc' => 'Nous effectuons un test complet en direct et vous remettons le projet avec un tutoriel rapide.']
         ] : [
-          ['title' => '1. Send Your Draft', 'desc' => 'Send us your current sheets, forms, PDF list of questions, or email templates.'],
+          ['title' => '1. Send Your Draft', 'desc' => 'Send us your current sheets, checklists, PDF list of questions, or email templates.'],
           ['title' => '2. Portal Design', 'desc' => 'Our team builds the step-by-step UI and styles it with your fonts and brand colors.'],
           ['title' => '3. Embed & Link', 'desc' => 'We deploy the shortcode on your WordPress site and set up Zapier or Notion hooks.'],
           ['title' => '4. Live Handoff', 'desc' => 'We test the submission experience live with you and hand off with a 10-minute guide.']
@@ -221,11 +221,11 @@ get_header(); ?>
       <?php
       $faqs = $is_fr ? [
         ['q' => 'Que se passe-t-il après la première année ?', 'a' => 'Le service inclut 1 an de licence Starter d’une valeur de 252 €. Après 12 mois, vous pouvez soit renouveler la licence à 21 €/mois pour continuer à recevoir les mises à jour et la synchronisation Cloud, soit repasser à la version gratuite (IntakeFlow Free) tout en conservant vos portails existants sur votre site.'],
-        ['q' => 'Pourrai-je modifier mes formulaires plus tard de manière autonome ?', 'a' => 'Absolument. Vos formulaires sont créés sur votre interface. Vous pouvez ajouter, modifier ou supprimer des étapes et des questions à tout moment via le Visual Builder par glisser-déposer sans aucune connaissance technique.'],
+        ['q' => 'Pourrai-je modifier mes portails plus tard de manière autonome ?', 'a' => 'Absolument. Vos parcours sont créés sur votre interface. Vous pouvez ajouter, modifier ou supprimer des étapes et des questions à tout moment via le Visual Builder par glisser-déposer sans aucune connaissance technique.'],
         ['q' => 'Quels outils métiers puis-je connecter ?', 'a' => 'Nous pouvons connecter votre portail à plus de 5 000 outils tiers via Zapier ou Webhook standard (ex. Google Drive, Notion, HubSpot, Slack, Trello ou votre boîte mail de traitement).' ]
       ] : [
         ['q' => 'What happens after the first year?', 'a' => 'The package includes a 1-year Starter license (worth €252). After 12 months, you can choose to renew the Starter license at €21/month to continue receiving updates and Cloud synchronization, or downgrade to the free version while keeping your existing embedded portals.'],
-        ['q' => 'Can I modify the forms myself later?', 'a' => 'Yes. You retain complete ownership. You can add, modify, or delete steps and fields at any time using the visual drag-and-drop builder directly inside your WordPress dashboard.'],
+        ['q' => 'Can I modify the portals myself later?', 'a' => 'Yes. You retain complete ownership. You can add, modify, or delete steps and fields at any time using the visual drag-and-drop builder directly inside your WordPress dashboard.'],
         ['q' => 'Which business tools can you connect to?', 'a' => 'We can connect your submissions to Google Drive, Notion, Slack, HubSpot, Trello, or standard operational emails, either natively or using Zapier integrations.' ]
       ];
       foreach ($faqs as $faq):
@@ -246,8 +246,8 @@ get_header(); ?>
       </h2>
       <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
         <?php echo $is_fr 
-          ? 'Contactez notre équipe aujourd’hui. Discutons de vos formulaires actuels pour cadrer votre installation sous 7 jours.' 
-          : 'Get in touch with our team today. Let us review your current form flow and start building your custom portal.'; ?>
+          ? 'Contactez notre équipe aujourd’hui. Discutons de vos flux de collecte actuels pour cadrer votre installation sous 7 jours.' 
+          : 'Get in touch with our team today. Let us review your current collection flow and start building your custom portal.'; ?>
       </p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
         <a href="<?php echo esc_url($booking_url); ?>" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition text-center whitespace-nowrap">

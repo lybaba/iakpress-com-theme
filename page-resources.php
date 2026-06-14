@@ -38,7 +38,7 @@ get_header(); ?>
       <?php
       $hubs = $is_fr ? [
         ['title' => 'Démarrage Rapide', 'desc' => 'Mettre en ligne votre premier portail en 3 étapes.', 'link' => '#quickstart', 'color' => 'blue'],
-        ['title' => 'Workflows Inclus', 'desc' => 'Explorer les 3 formulaires embarqués.', 'link' => '#workflows', 'color' => 'indigo'],
+        ['title' => 'Workflows Inclus', 'desc' => 'Explorer les 3 portails de collecte embarqués.', 'link' => '#workflows', 'color' => 'indigo'],
         ['title' => 'Référence API & REST', 'desc' => 'Endpoints de soumission et sécurité.', 'link' => '#developer-api', 'color' => 'slate'],
         ['title' => 'Périmètre du Support', 'desc' => 'Découvrir nos garanties et assistance.', 'link' => '#support', 'color' => 'teal']
       ] : [
@@ -108,7 +108,7 @@ get_header(); ?>
           <h3 class="text-lg font-bold text-gray-900 mb-2">3. <?php echo $is_fr ? 'Activer et Intégrer' : 'Activate & Embed'; ?></h3>
           <p class="text-sm text-gray-600 leading-relaxed">
             <?php echo $is_fr
-              ? 'Collez le jeton dans les réglages du plugin dans votre admin WordPress. Synchronisez vos formulaires en un clic et intégrez le shortcode.'
+              ? 'Collez le jeton dans les réglages du plugin dans votre admin WordPress. Synchronisez vos portails en un clic et intégrez le shortcode.'
               : 'Paste the token in the plugin settings in WordPress. Synchronize your workflows in one click and paste the shortcode into any page.'; ?>
           </p>
         </div>
@@ -125,7 +125,7 @@ get_header(); ?>
       </h2>
       <p class="text-gray-500 leading-relaxed">
         <?php echo $is_fr
-          ? 'Le plugin IntakeFlow est livré par défaut avec 3 modèles de formulaires intégrés et utilisables immédiatement sans compte SaaS.'
+          ? 'Le plugin IntakeFlow est livré par défaut avec 3 modèles de portails intégrés et utilisables immédiatement sans compte SaaS.'
           : 'The IntakeFlow plugin ships by default with 3 built-in workflow templates, fully operational with no SaaS account required.'; ?>
       </p>
     </div>
@@ -195,7 +195,7 @@ get_header(); ?>
           <p class="text-sm text-gray-500 leading-relaxed mb-6"><?php echo esc_html($wf['desc']); ?></p>
 
           <div class="mb-6">
-            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2"><?php echo $is_fr ? 'Étapes du formulaire' : 'Form Steps'; ?></h4>
+            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2"><?php echo $is_fr ? 'Étapes du parcours' : 'Workflow Steps'; ?></h4>
             <ol class="space-y-1.5">
               <?php foreach ($wf['steps'] as $idx => $step): ?>
                 <li class="text-xs text-gray-700 flex items-center gap-2">
@@ -238,8 +238,8 @@ get_header(); ?>
               <h3 class="text-base font-bold text-gray-900 mb-1.5"><?php echo $is_fr ? 'Fonctionnement de la soumission' : 'How submission works'; ?></h3>
               <p class="text-sm text-gray-600 leading-relaxed">
                 <?php echo $is_fr 
-                  ? 'Le runtime frontend XPressUI envoie les soumissions de formulaire directement à l’endpoint REST interne de votre site WordPress.' 
-                  : 'The XPressUI frontend runtime submits form payloads directly to your WordPress site\'s internal REST endpoint.'; ?>
+                  ? 'Le runtime frontend XPressUI envoie les données de collecte directement à l’endpoint REST interne de votre site WordPress.' 
+                  : 'The XPressUI frontend runtime submits intake payloads directly to your WordPress site\'s internal REST endpoint.'; ?>
               </p>
             </div>
 

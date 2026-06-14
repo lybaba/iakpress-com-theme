@@ -18,7 +18,7 @@ $segment_intro = $is_fr
   : 'IntakeFlow helps operations teams launch structured intake workflows for internal requests, approvals, evidence collection, and cross-team coordination.';
 
 $segment_pains = $is_fr ? [
-  "Les demandes internes arrivent par email, messages, formulaires ad hoc et fichiers partagés.",
+  "Les demandes internes arrivent par email, messages, demandes ad hoc et fichiers partagés.",
   "Les approbations et validations se perdent dans les fils de discussion sans statut clair.",
   "Chaque processus récurrent recommence avec le même setup manuel et les mêmes relances.",
   "Les responsables n'ont pas de vue consolidée sur ce qui est en attente, bloqué ou terminé.",
@@ -46,7 +46,7 @@ $segment_workflow = $is_fr ? [
 ];
 
 $segment_proofs = $is_fr ? [
-  ['title' => 'Demandes internes',          'body' => "Formulaires de demande structurés avec pièces jointes, justificatifs et contexte pour les équipes concernées."],
+  ['title' => 'Demandes internes',          'body' => "Portails de demande structurés avec pièces jointes, justificatifs et contexte pour les équipes concernées."],
   ['title' => "Flux d'approbation",         'body' => "Soumissions à valider avec preuves, notes de décision et traçabilité des statuts."],
   ['title' => 'Collecte de preuves',        'body' => "Photos, PDFs, captures, relevés et documents de conformité rassemblés en une seule soumission."],
   ['title' => 'Coordination inter-équipes', 'body' => "Handoffs structurés entre équipes avec contexte, fichiers et statut de progression visibles."],
