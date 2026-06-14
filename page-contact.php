@@ -115,11 +115,37 @@ if (!function_exists('iakpress_extract_contact_hosted_link_config_from_content')
         }
       }
 
-      $candidate = iakpress_find_contact_shortcode_attribute(
-        $attributes,
-        $attribute_text,
-        array('xpressui_contact_hosted_link_url', 'hosted_link_url', 'url', 'href')
-      );
+      $is_french = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
+      $candidate = '';
+      if ($is_french) {
+        $candidate = iakpress_find_contact_shortcode_attribute(
+          $attributes,
+          $attribute_text,
+          array('xpressui_contact_hosted_link_url_fr', 'contact_hosted_link_url_fr')
+        );
+      } else {
+        $candidate = iakpress_find_contact_shortcode_attribute(
+          $attributes,
+          $attribute_text,
+          array('xpressui_contact_hosted_link_url_en', 'contact_hosted_link_url_en')
+        );
+      }
+
+      if ($candidate === '') {
+        $candidate = iakpress_find_contact_shortcode_attribute(
+          $attributes,
+          $attribute_text,
+          array('xpressui_contact_hosted_link_url', 'hosted_link_url', 'url', 'href')
+        );
+      }
+
+      if ($candidate === '') {
+        $candidate = iakpress_find_contact_shortcode_attribute(
+          $attributes,
+          $attribute_text,
+          $is_french ? array('xpressui_contact_hosted_link_url_en', 'contact_hosted_link_url_en') : array('xpressui_contact_hosted_link_url_fr', 'contact_hosted_link_url_fr')
+        );
+      }
 
       if ($candidate === '') {
         if (preg_match('/https?:\/\/[^\s\'"\]]+\/api\/v1\/hosted-links\/[A-Za-z0-9_\-]+(?:[^\s\'"\]]*)?/i', $attribute_text, $url_match)) {
@@ -221,11 +247,31 @@ $contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_con
 $contact_public_url = $contact_shortcode_config['url'];
 if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
-    $contact_public_url = trim((string) get_post_meta($contact_page_id, 'xpressui_contact_hosted_link_url', true));
+    if ($is_french_contact) {
+      $contact_public_url = trim((string) get_post_meta($contact_page_id, 'xpressui_contact_hosted_link_url_fr', true));
+    } else {
+      $contact_public_url = trim((string) get_post_meta($contact_page_id, 'xpressui_contact_hosted_link_url_en', true));
+    }
+    if ($contact_public_url === '') {
+      $contact_public_url = trim((string) get_post_meta($contact_page_id, 'xpressui_contact_hosted_link_url', true));
+    }
+    if ($contact_public_url === '') {
+      $contact_public_url = trim((string) get_post_meta($contact_page_id, $is_french_contact ? 'xpressui_contact_hosted_link_url_en' : 'xpressui_contact_hosted_link_url_fr', true));
+    }
   }
 }
 if ($contact_public_url === '') {
-  $contact_public_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url', ''));
+  if ($is_french_contact) {
+    $contact_public_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url_fr', ''));
+  } else {
+    $contact_public_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url_en', ''));
+  }
+  if ($contact_public_url === '') {
+    $contact_public_url = trim((string) get_theme_mod('xpressui_contact_hosted_link_url', ''));
+  }
+  if ($contact_public_url === '') {
+    $contact_public_url = trim((string) get_theme_mod($is_french_contact ? 'xpressui_contact_hosted_link_url_en' : 'xpressui_contact_hosted_link_url_fr', ''));
+  }
 }
 if ($contact_public_url === '' && defined('XPRESSUI_CONTACT_HOSTED_LINK_URL')) {
   $contact_public_url = trim((string) XPRESSUI_CONTACT_HOSTED_LINK_URL);
