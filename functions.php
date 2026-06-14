@@ -123,8 +123,9 @@ function iakpress_handle_language_preference(): void {
 
     $cookie_path = '/';
     $cookie_domain = defined( 'COOKIE_DOMAIN' ) && COOKIE_DOMAIN ? COOKIE_DOMAIN : '';
-    setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
-    setcookie( 'lang_pref', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
+    $secure = is_ssl() || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' );
+    setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, $secure, false );
+    setcookie( 'lang_pref', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, $secure, false );
     $_COOKIE['iakpress_lang'] = $requested_language;
 
     $redirect_url = remove_query_arg( 'iakpress_lang' );
@@ -157,6 +158,12 @@ function iakpress_redirect_to_persistent_language(): void {
     }
 
     if ( $target_path !== $current_path ) {
+        $cookie_path = '/';
+        $cookie_domain = defined( 'COOKIE_DOMAIN' ) && COOKIE_DOMAIN ? COOKIE_DOMAIN : '';
+        $secure = is_ssl() || ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' );
+        setcookie( 'iakpress_lang', $language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, $secure, false );
+        setcookie( 'lang_pref', $language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, $secure, false );
+
         wp_safe_redirect( home_url( $target_path ) );
         exit;
     }
