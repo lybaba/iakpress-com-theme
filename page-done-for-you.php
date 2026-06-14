@@ -20,6 +20,13 @@ if ($booking_url === '') {
 }
 
 get_header(); ?>
+<?php if ( isset( $_GET['xpressui_debug'] ) && function_exists('current_user_can') && current_user_can('manage_options') ) {
+  echo "\n<!-- xpressui-dfy is_fr=" . ( $is_fr ? '1' : '0' )
+     . " page_id=" . ( function_exists('get_the_ID') ? (int) get_the_ID() : 0 )
+     . " content_len=" . strlen( $dfy_content )
+     . " has_attr=" . ( strpos( $dfy_content, 'xpressui_contact_hosted_link_url' ) !== false ? '1' : '0' )
+     . " booking_url=[" . esc_html( $booking_url ) . "] -->\n";
+} ?>
 
 <div class="font-sans text-gray-900 antialiased bg-gray-50 min-h-screen pb-20">
 

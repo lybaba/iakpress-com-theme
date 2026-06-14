@@ -1029,6 +1029,20 @@ function iakpress_extract_hosted_link_url_from_content( string $content, bool $i
  */
 function iakpress_contact_hosted_launch_url( bool $is_french, string $content = '' ): string {
     $url = iakpress_extract_hosted_link_url_from_content( $content, $is_french );
+    // Per-page custom field, mirroring the contact page's options.
+    if ( $url === '' && function_exists( 'get_the_ID' ) ) {
+        $page_id = (int) get_the_ID();
+        if ( $page_id > 0 ) {
+            $url = trim( (string) get_post_meta(
+                $page_id,
+                $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
+                true
+            ) );
+            if ( $url === '' ) {
+                $url = trim( (string) get_post_meta( $page_id, 'xpressui_contact_hosted_link_url', true ) );
+            }
+        }
+    }
     if ( $url === '' ) {
         $url = trim( (string) get_theme_mod(
             $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
