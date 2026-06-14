@@ -258,7 +258,16 @@ $contact_copy = $is_french_contact ? array(
   'promo_cta' => 'See how it works',
 );
 
-$contact_public_url = $contact_shortcode_config['url'];
+// Language-authoritative source: a per-language Customizer URL, when set, wins
+// over a generic field or any URL embedded in the page content — so the FR and
+// EN "Démarrer le brief" buttons always point to their own hosted link.
+$contact_public_url = trim((string) get_theme_mod(
+  $is_french_contact ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
+  ''
+));
+if ($contact_public_url === '') {
+  $contact_public_url = $contact_shortcode_config['url'];
+}
 if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
     if ($is_french_contact) {

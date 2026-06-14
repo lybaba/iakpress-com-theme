@@ -958,3 +958,44 @@ function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 a
         esc_attr( $class )
     );
 }
+
+/**
+ * Customizer: the per-language hosted-link URLs opened by the contact page's
+ * "Démarrer le brief" / "Start the brief" button. Set both once here; the FR
+ * page (/fr/contact/) uses the French URL and the EN page (/contact/) the
+ * English one. These take precedence over any generic field or in-content URL.
+ */
+function iakpress_register_contact_customizer( WP_Customize_Manager $wp_customize ): void {
+    $wp_customize->add_section( 'iakpress_contact', array(
+        'title'    => 'IntakeFlow — Contact hosted links',
+        'priority' => 160,
+    ) );
+
+    $controls = array(
+        'xpressui_contact_hosted_link_url_fr' => array(
+            'label'       => 'Hosted link URL (French)',
+            'description' => 'Opened by the "Démarrer le brief" button on /fr/contact/.',
+        ),
+        'xpressui_contact_hosted_link_url_en' => array(
+            'label'       => 'Hosted link URL (English)',
+            'description' => 'Opened by the "Start the brief" button on /contact/.',
+        ),
+    );
+
+    foreach ( $controls as $setting_id => $meta ) {
+        $wp_customize->add_setting( $setting_id, array(
+            'default'           => '',
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
+            'transport'         => 'refresh',
+        ) );
+        $wp_customize->add_control( $setting_id, array(
+            'label'       => $meta['label'],
+            'description' => $meta['description'],
+            'section'     => 'iakpress_contact',
+            'type'        => 'url',
+            'input_attrs' => array( 'placeholder' => 'https://app.intakeflow.dev/api/v1/hosted-links/…' ),
+        ) );
+    }
+}
+add_action( 'customize_register', 'iakpress_register_contact_customizer' );
