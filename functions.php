@@ -123,7 +123,7 @@ function iakpress_handle_language_preference(): void {
 
     $cookie_path = defined( 'COOKIEPATH' ) && COOKIEPATH ? COOKIEPATH : '/';
     $cookie_domain = defined( 'COOKIE_DOMAIN' ) && COOKIE_DOMAIN ? COOKIE_DOMAIN : '';
-    setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), true );
+    setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
     $_COOKIE['iakpress_lang'] = $requested_language;
 
     $redirect_url = remove_query_arg( 'iakpress_lang' );
@@ -855,6 +855,8 @@ function iakpress_render_french_routes(): void {
         'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
         'fr/resources'          => 'page-resources.php',
         'fr/done-for-you'       => 'page-done-for-you.php',
+        'resources'             => 'page-resources.php',
+        'done-for-you'          => 'page-done-for-you.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
