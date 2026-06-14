@@ -8,9 +8,12 @@ $is_fr = function_exists('iakpress_is_french_request') && iakpress_is_french_req
 $pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
 $contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
 // CTA opens the same per-language hosted link as the contact page's "Démarrer le
-// brief" button; falls back to the contact page when no hosted link is configured.
+// brief" button. Precedence: an [xpressui … xpressui_contact_hosted_link_url_fr/_en]
+// shortcode in this page's content, then the Customizer URLs; falls back to the
+// contact page when nothing is configured.
+$dfy_content = function_exists('get_the_content') ? (string) get_the_content() : '';
 $booking_url = function_exists('iakpress_contact_hosted_launch_url')
-  ? iakpress_contact_hosted_launch_url($is_fr)
+  ? iakpress_contact_hosted_launch_url($is_fr, $dfy_content)
   : '';
 if ($booking_url === '') {
   $booking_url = $contact_url;

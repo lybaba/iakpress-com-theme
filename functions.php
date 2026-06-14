@@ -960,17 +960,61 @@ function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 a
 }
 
 /**
- * Resolve the contact hosted-link URL for the current language, ready to use as
- * a button href: it returns the per-language Customizer URL (French or English),
- * falling back to the generic one, with the same `?start=1&lang=…` query args the
- * contact page adds. Returns '' when nothing is configured. Shared by the contact
- * and done-for-you pages so their CTA buttons open the same hosted link.
+ * Pull a hosted-link URL for the current language out of page content that
+ * carries a shortcode such as
+ *   [xpressui id="done-for-you" xpressui_contact_hosted_link_url_fr="…" xpressui_contact_hosted_link_url_en="…"]
+ * Tries the current language first, then the other language, then a generic
+ * attribute. Tolerant of spaces (incl. non-breaking) around '=' and of single,
+ * double, or unquoted values. Returns '' when no matching attribute is present.
  */
-function iakpress_contact_hosted_launch_url( bool $is_french ): string {
-    $url = trim( (string) get_theme_mod(
-        $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
-        ''
-    ) );
+function iakpress_extract_hosted_link_url_from_content( string $content, bool $is_french ): string {
+    if ( $content === '' ) {
+        return '';
+    }
+    // A rich editor can insert non-breaking / narrow spaces around '='.
+    $normalized = preg_replace( '/[\x{00A0}\x{2007}\x{202F}]/u', ' ', $content );
+    if ( ! is_string( $normalized ) ) {
+        $normalized = $content;
+    }
+    $keys = $is_french
+        ? array( 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url' )
+        : array( 'xpressui_contact_hosted_link_url_en', 'xpressui_contact_hosted_link_url_fr', 'xpressui_contact_hosted_link_url' );
+    foreach ( $keys as $key ) {
+        $pattern = '/' . preg_quote( $key, '/' ) . '\s*=\s*(?:"([^"]+)"|\'([^\']+)\'|([^\s\]"\']+))/u';
+        if ( preg_match( $pattern, $normalized, $m ) ) {
+            $value = '';
+            foreach ( array( 1, 2, 3 ) as $group ) {
+                if ( isset( $m[ $group ] ) && $m[ $group ] !== '' ) {
+                    $value = $m[ $group ];
+                    break;
+                }
+            }
+            $value = trim( html_entity_decode( $value, ENT_QUOTES, 'UTF-8' ) );
+            if ( $value !== '' ) {
+                return $value;
+            }
+        }
+    }
+
+    return '';
+}
+
+/**
+ * Resolve the contact hosted-link URL for the current language, ready to use as
+ * a button href. Precedence: a shortcode in the page $content (if provided) wins,
+ * then the per-language Customizer URL, then the generic one — and the same
+ * `?start=1&lang=…` query args the contact page adds are appended. Returns ''
+ * when nothing is configured. Shared by the contact and done-for-you pages so
+ * their CTA buttons open the same hosted link.
+ */
+function iakpress_contact_hosted_launch_url( bool $is_french, string $content = '' ): string {
+    $url = iakpress_extract_hosted_link_url_from_content( $content, $is_french );
+    if ( $url === '' ) {
+        $url = trim( (string) get_theme_mod(
+            $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
+            ''
+        ) );
+    }
     if ( $url === '' ) {
         $url = trim( (string) get_theme_mod( 'xpressui_contact_hosted_link_url', '' ) );
     }
