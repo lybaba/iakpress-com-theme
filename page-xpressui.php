@@ -5,7 +5,6 @@
  */
 
 $download_url   = 'https://wordpress.org/plugins/xpressui-bridge/';
-$repo_url       = 'https://github.com/lybaba/xpressui-packages';
 $console_url    = 'https://app.intakeflow.dev';
 $is_fr            = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $contact_url      = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');

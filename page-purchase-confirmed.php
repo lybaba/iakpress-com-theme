@@ -8,30 +8,24 @@ $steps = [
   [
     'n'    => '01',
     'title'=> 'Check your email',
-    'body' => 'Your license key and download link have been sent to your inbox. Check your spam folder if it doesn\'t show up within a minute.',
+    'body' => 'Your welcome email and setup instructions are on their way. Check your spam folder if they don\'t show up within a minute.',
   ],
   [
     'n'    => '02',
     'title'=> 'Download and install the free plugin',
-    'body' => 'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.',
+    'body' => 'Install and activate XPressUI Bridge on your site first. This is the only plugin you need on WordPress.',
     'cta'  => ['label' => 'Download XPressUI Bridge on WordPress.org', 'href' => 'https://wordpress.org/plugins/xpressui-bridge/'],
   ],
   [
     'n'    => '03',
-    'title'=> 'Download and install XPressUI Pro',
-    'body' => 'Download the latest XPressUI Pro ZIP from the releases page, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.',
-    'cta'  => ['label' => 'Download XPressUI Pro from GitHub', 'href' => 'https://github.com/lybaba/xpressui-packages/releases/latest'],
+    'title'=> 'Connect your Console account',
+    'body' => 'Generate an API token under Profile → API Tokens in your Console, then enter it in the WordPress settings under XPressUI → Workflows → Console Sync.',
   ],
   [
     'n'    => '04',
-    'title'=> 'Enter your license key',
-    'body' => 'In the client-site admin, go to XPressUI › Settings › License. Paste your license key from the email and click Activate. A green badge confirms it\'s active.',
-  ],
-  [
-    'n'    => '05',
-    'title'=> 'Upload your workflow pack',
-    'body' => 'Go to XPressUI › Workflows › Upload and install your workflow pack ZIP. Create a page embed to go live.',
-    'code' => '[xpressui id="your-pack-slug"]',
+    'title'=> 'Sync and embed your workflows',
+    'body' => 'Design your workflows in the Console, then pull them to your WordPress site with a single click. Copy the shortcode to go live.',
+    'code' => '[xpressui id="your-workflow-slug"]',
   ],
 ];
 
@@ -50,14 +44,14 @@ get_header();
 
   <!-- Hero -->
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-    <div class="max-w-3xl mx-auto">
-      <span class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
-        ✓ Payment confirmed
-      </span>
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">You're in</p>
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Welcome to XPressUI Pro.</h1>
-      <p class="text-gray-500 leading-relaxed">Your license key and download link are on their way to your inbox. Follow the steps below to go from ZIP file to live intake page.</p>
-    </div>
+     <div class="max-w-3xl mx-auto">
+       <span class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
+         ✓ Payment confirmed
+       </span>
+       <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">You're in</p>
+       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Welcome to XPressUI Pro.</h1>
+       <p class="text-gray-500 leading-relaxed">Your welcome email and setup instructions are on their way to your inbox. Follow the steps below to connect your site to the Console.</p>
+     </div>
   </section>
 
   <!-- Steps -->
@@ -70,9 +64,9 @@ get_header();
         <div>
           <strong class="block text-gray-900 mb-1">Check your email</strong>
           <p class="text-sm text-gray-500 leading-relaxed">
-            We've sent your <strong class="text-gray-700">license key</strong> and a protected <strong class="text-gray-700">download link</strong> to your inbox.
+            We've sent setup instructions to your inbox. Access the Console directly to generate your API token.
             If it doesn't arrive within a couple of minutes, check your spam folder or
-            <a href="mailto:hello@intakeflow.dev?subject=XPressUI%20Pro%20%E2%80%94%20missing%20license%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
+            <a href="mailto:hello@intakeflow.dev?subject=XPressUI%20Pro%20%E2%80%94%20missing%20setup%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
           </p>
         </div>
       </div>
