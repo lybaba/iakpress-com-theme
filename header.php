@@ -7,6 +7,12 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php
+  // Only output the JS redirect script if the current page has a French version mapped
+  $current_eng_path = function_exists('iakpress_english_path_from_current') ? iakpress_english_path_from_current() : '';
+  $lang_map = function_exists('iakpress_language_path_map') ? iakpress_language_path_map() : [];
+  if ( array_key_exists( $current_eng_path, $lang_map ) ) :
+  ?>
   <script>
     (function() {
       var path = window.location.pathname;
@@ -33,6 +39,7 @@
       }
     })();
   </script>
+  <?php endif; ?>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class( 'antialiased text-gray-900 bg-white flex flex-col min-h-screen' ); ?>>
