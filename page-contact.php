@@ -364,8 +364,6 @@ get_header(); ?>
         <?php if ($has_contact_embed): ?>
           <a
             href="<?php echo esc_url($contact_launch_url); ?>"
-            target="_blank"
-            rel="noopener noreferrer"
             class="mx-auto grid min-h-[220px] max-w-3xl place-items-center rounded-[26px] border border-gray-200 bg-white px-8 py-10 text-center shadow-2xl shadow-slate-900/10 transition duration-150 hover:-translate-y-0.5 hover:shadow-slate-900/15 focus:outline-none focus:ring-4 focus:ring-blue-200"
           >
             <span class="block">

@@ -971,8 +971,15 @@ function iakpress_extract_hosted_link_url_from_content( string $content, bool $i
     if ( $content === '' ) {
         return '';
     }
-    // A rich editor can insert non-breaking / narrow spaces around '='.
-    $normalized = preg_replace( '/[\x{00A0}\x{2007}\x{202F}]/u', ' ', $content );
+    // WordPress often stores the shortcode with HTML-encoded or "smart"/curly
+    // quotes and non-breaking spaces, which would defeat the attribute regex.
+    // Decode entities, straighten the quotes, and flatten odd spaces first.
+    $normalized = html_entity_decode( $content, ENT_QUOTES, 'UTF-8' );
+    $normalized = strtr( $normalized, array(
+        "\u{201C}" => '"', "\u{201D}" => '"', "\u{201E}" => '"', "\u{00AB}" => '"', "\u{00BB}" => '"',
+        "\u{2018}" => "'", "\u{2019}" => "'", "\u{201A}" => "'",
+    ) );
+    $normalized = preg_replace( '/[\x{00A0}\x{2007}\x{202F}]/u', ' ', $normalized );
     if ( ! is_string( $normalized ) ) {
         $normalized = $content;
     }
