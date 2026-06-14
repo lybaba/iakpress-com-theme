@@ -960,6 +960,32 @@ function xpressui_arrow_left_svg( string $class = 'inline-block w-4 h-4 mr-1.5 a
 }
 
 /**
+ * Resolve the contact hosted-link URL for the current language, ready to use as
+ * a button href: it returns the per-language Customizer URL (French or English),
+ * falling back to the generic one, with the same `?start=1&lang=…` query args the
+ * contact page adds. Returns '' when nothing is configured. Shared by the contact
+ * and done-for-you pages so their CTA buttons open the same hosted link.
+ */
+function iakpress_contact_hosted_launch_url( bool $is_french ): string {
+    $url = trim( (string) get_theme_mod(
+        $is_french ? 'xpressui_contact_hosted_link_url_fr' : 'xpressui_contact_hosted_link_url_en',
+        ''
+    ) );
+    if ( $url === '' ) {
+        $url = trim( (string) get_theme_mod( 'xpressui_contact_hosted_link_url', '' ) );
+    }
+    $url = esc_url_raw( trim( html_entity_decode( $url, ENT_QUOTES, 'UTF-8' ) ) );
+    if ( $url === '' ) {
+        return '';
+    }
+
+    return esc_url_raw( add_query_arg(
+        array( 'start' => '1', 'lang' => $is_french ? 'fr' : 'en' ),
+        $url
+    ) );
+}
+
+/**
  * Customizer: the per-language hosted-link URLs opened by the contact page's
  * "Démarrer le brief" / "Start the brief" button. Set both once here; the FR
  * page (/fr/contact/) uses the French URL and the EN page (/contact/) the

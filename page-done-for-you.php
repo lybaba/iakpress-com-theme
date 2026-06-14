@@ -7,7 +7,14 @@
 $is_fr = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $pricing_url = $is_fr ? home_url('/fr/pricing/') : home_url('/pricing/');
 $contact_url = $is_fr ? home_url('/fr/contact/') : home_url('/contact/');
-$booking_url = $contact_url;
+// CTA opens the same per-language hosted link as the contact page's "Démarrer le
+// brief" button; falls back to the contact page when no hosted link is configured.
+$booking_url = function_exists('iakpress_contact_hosted_launch_url')
+  ? iakpress_contact_hosted_launch_url($is_fr)
+  : '';
+if ($booking_url === '') {
+  $booking_url = $contact_url;
+}
 
 get_header(); ?>
 
