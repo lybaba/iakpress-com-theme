@@ -25,12 +25,19 @@ if (!function_exists('iakpress_contact_hosted_link_start_url')) {
       return '';
     }
 
+    $args = array('start' => '1');
+    if (function_exists('iakpress_is_french_request') && iakpress_is_french_request()) {
+      $args['lang'] = 'fr';
+    } else {
+      $args['lang'] = 'en';
+    }
+
     if (function_exists('add_query_arg')) {
-      return esc_url_raw(add_query_arg('start', '1', $normalized_url));
+      return esc_url_raw(add_query_arg($args, $normalized_url));
     }
 
     $separator = strpos($normalized_url, '?') === false ? '?' : '&';
-    return esc_url_raw($normalized_url . $separator . 'start=1');
+    return esc_url_raw($normalized_url . $separator . http_build_query($args));
   }
 }
 
@@ -60,7 +67,8 @@ if (!function_exists('iakpress_find_contact_shortcode_attribute')) {
     if (is_array($attributes)) {
       $normalized_attributes = array();
       foreach ($attributes as $key => $value) {
-        $normalized_attributes[strtolower((string) $key)] = $value;
+        $clean_key = preg_replace('/^[\s\x{00a0}]+|[\s\x{00a0}]+$/u', '', (string) $key);
+        $normalized_attributes[strtolower($clean_key)] = $value;
       }
 
       foreach ($attribute_names as $attribute_name) {
@@ -72,7 +80,7 @@ if (!function_exists('iakpress_find_contact_shortcode_attribute')) {
     }
 
     foreach ($attribute_names as $attribute_name) {
-      $pattern = '/(?:^|\s)' . preg_quote((string) $attribute_name, '/') . '\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s\]]+))/i';
+      $pattern = '/(?:^|[\s\x{00a0}])' . preg_quote((string) $attribute_name, '/') . '[\s\x{00a0}]*=[\s\x{00a0}]*(?:"([^"]*)"|\'([^\']*)\'|([^\s\]]+))/iu';
       if (preg_match($pattern, $attribute_text, $attribute_match)) {
         if (isset($attribute_match[1]) && $attribute_match[1] !== '') {
           return (string) $attribute_match[1];
@@ -185,11 +193,18 @@ if (!function_exists('iakpress_extract_contact_hosted_link_url_from_content')) {
 $is_french_contact = function_exists('iakpress_is_french_request') && iakpress_is_french_request();
 $contact_page_id = function_exists('get_the_ID') ? (int) get_the_ID() : 0;
 $contact_content = function_exists('get_the_content') ? (string) get_the_content() : '';
-if ($is_french_contact && function_exists('get_page_by_path')) {
+$contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
+
+if ($contact_shortcode_config['url'] === '' && $is_french_contact && function_exists('get_page_by_path')) {
   $source_contact_page = get_page_by_path('contact');
   if ($source_contact_page instanceof WP_Post) {
-    $contact_page_id = (int) $source_contact_page->ID;
-    $contact_content = (string) $source_contact_page->post_content;
+    $fallback_content = (string) $source_contact_page->post_content;
+    $fallback_config = iakpress_extract_contact_hosted_link_config_from_content($fallback_content);
+    if ($fallback_config['url'] !== '') {
+      $contact_page_id = (int) $source_contact_page->ID;
+      $contact_content = $fallback_content;
+      $contact_shortcode_config = $fallback_config;
+    }
   }
 }
 
@@ -243,7 +258,6 @@ $contact_copy = $is_french_contact ? array(
   'promo_cta' => 'See how it works',
 );
 
-$contact_shortcode_config = iakpress_extract_contact_hosted_link_config_from_content($contact_content);
 $contact_public_url = $contact_shortcode_config['url'];
 if ($contact_page_id > 0) {
   if ($contact_public_url === '') {
