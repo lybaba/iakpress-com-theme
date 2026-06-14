@@ -121,7 +121,7 @@ function iakpress_handle_language_preference(): void {
         return;
     }
 
-    $cookie_path = defined( 'COOKIEPATH' ) && COOKIEPATH ? COOKIEPATH : '/';
+    $cookie_path = '/';
     $cookie_domain = defined( 'COOKIE_DOMAIN' ) && COOKIE_DOMAIN ? COOKIE_DOMAIN : '';
     setcookie( 'iakpress_lang', $requested_language, time() + YEAR_IN_SECONDS, $cookie_path, $cookie_domain, is_ssl(), false );
     $_COOKIE['iakpress_lang'] = $requested_language;
