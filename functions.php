@@ -82,6 +82,7 @@ function iakpress_language_path_map(): array {
         'document-intake' => 'fr/document-intake',
         'pro'             => 'fr/pro',
         'purchase-confirmed' => 'fr/purchase-confirmed',
+        'resources'          => 'fr/resources',
     );
 }
 
@@ -845,6 +846,7 @@ function iakpress_render_french_routes(): void {
         'fr/document-intake' => 'page-document-intake.php',
         'fr/pro'             => 'page-pro.php',
         'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
+        'fr/resources'          => 'page-resources.php',
     );
 
     if ( ! isset( $template_map[$path] ) ) {
@@ -877,6 +879,8 @@ function iakpress_document_title_parts( array $parts ): array {
         'fr/document-intake' => 'Intake documentaire et suivi de pièces',
         'fr/pro' => 'IntakeFlow Pro',
         'fr/purchase-confirmed' => 'Achat confirmé',
+        'resources' => 'Resources and Documentation',
+        'fr/resources' => 'Ressources et Documentation',
     );
 
     if ( isset( $title_map[$path] ) ) {
@@ -904,6 +908,8 @@ function iakpress_custom_seo_meta_description(): void {
         'fr/document-intake' => 'Simplifiez la collecte de documents administratifs avec une checklist claire et guidée pour vos clients.',
         'fr/pro' => 'Passez à IntakeFlow Pro pour débloquer la personnalisation des workflows et l’accès complet au builder de formulaires.',
         'fr/purchase-confirmed' => 'Suivez ces étapes simples pour configurer votre licence IntakeFlow Pro et mettre en ligne votre premier portail.',
+        'resources' => 'Access tutorials, default workflows, API documentation, and help resources for IntakeFlow.',
+        'fr/resources' => 'Accédez aux tutoriels, aux workflows par défaut, à la documentation de l’API et aux ressources d’aide d’IntakeFlow.',
     );
 
     if ( isset( $desc_map[$path] ) ) {

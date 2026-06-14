@@ -45,6 +45,8 @@ $footer_copy = $is_french_footer ? array(
       $footer_pricing_href = $is_french_footer ? '/fr/pricing/'   : '/pricing/';
       $footer_install_href = $is_french_footer ? '/fr/install/'   : '/install/';
       $footer_cloud_href   = $is_french_footer ? '/fr/xpressui-cloud/' : '/xpressui-cloud/';
+      $footer_resources_href = $is_french_footer ? '/fr/resources/' : '/resources/';
+      $footer_resources_label = $is_french_footer ? 'Ressources' : 'Resources';
       $footer_lang_href    = $is_french_footer ? '/'              : '/fr/';
       $footer_lang_label   = $is_french_footer ? 'English'        : 'Français';
       ?>
@@ -52,6 +54,7 @@ $footer_copy = $is_french_footer ? array(
       <a href="<?php echo esc_url($footer_cloud_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition">Cloud</a>
       <a href="<?php echo esc_url($footer_pricing_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_copy['pricing']); ?></a>
       <a href="<?php echo esc_url($footer_install_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_copy['install']); ?></a>
+      <a href="<?php echo esc_url($footer_resources_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_resources_label); ?></a>
       <a href="/blog/" class="text-sm text-gray-500 hover:text-gray-300 transition">Blog</a>
       <a href="<?php echo esc_url($footer_lang_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition"><?php echo esc_html($footer_lang_label); ?></a>
       <a href="<?php echo esc_url($footer_contact_href); ?>" class="text-sm text-gray-500 hover:text-gray-300 transition">Contact</a>
