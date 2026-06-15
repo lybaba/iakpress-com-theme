@@ -764,13 +764,13 @@ function iakpress_translate_french_output( string $html ): string {
         'Common questions.' => 'Questions fréquentes.',
 
         // Purchase Confirmed page translations
-        'Welcome to XPressUI Pro.' => 'Bienvenue sur XPressUI Pro.',
+        'Welcome to IntakeFlow.' => 'Bienvenue sur IntakeFlow.',
         'Your license key and download link are on their way to your inbox. Follow the steps below to go from ZIP file to live intake page.' => 'Votre clé de licence et votre lien de téléchargement sont en route vers votre boîte de réception. Suivez les étapes ci-dessous pour passer du fichier ZIP à votre page d’intake en ligne.',
         'Check your email' => 'Vérifiez vos e-mails',
         'Your license key and download link have been sent to your inbox. Check your spam folder if it doesn&#039;t show up within a minute.' => 'Votre clé de licence et votre lien de téléchargement ont été envoyés dans votre boîte de réception. Vérifiez votre dossier de spam s’ils n’apparaissent pas d’ici une minute.',
         'Download and install the free plugin' => 'Télécharger et installer le plugin gratuit',
-        'Install and activate XPressUI Bridge on your client site first. This is the base runtime the Pro plugin requires.' => 'Installez et activez d’abord XPressUI Bridge sur votre site client. Il s’agit du runtime de base requis par le plugin Pro.',
-        'Download XPressUI Bridge on WordPress.org' => 'Télécharger XPressUI Bridge sur WordPress.org',
+        'Install and activate IntakeFlow on your site first. This is the only plugin you need on WordPress.' => 'Installez et activez d’abord IntakeFlow sur votre site. C’est le seul plugin dont vous avez besoin sur WordPress.',
+        'Download IntakeFlow on WordPress.org' => 'Télécharger IntakeFlow sur WordPress.org',
         'Install XPressUI Pro from your email link' => 'Installer XPressUI Pro depuis le lien reçu par e-mail',
         'Download the XPressUI Pro ZIP from your email, then upload and activate it on the client site › Plugins › Add New › Upload Plugin.' => 'Téléchargez le ZIP d’XPressUI Pro depuis votre e-mail, puis téléversez-le et activez-le sur le site client › Extensions › Ajouter › Téléverser une extension.',
         'Enter your license key' => 'Saisir votre clé de licence',

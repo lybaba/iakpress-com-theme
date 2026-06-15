@@ -105,13 +105,13 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '01',
     'title'  => 'Installer le plugin depuis WordPress.org',
-    'body'   => 'Assurez-vous d’avoir installé et activé le plugin gratuit **XPressUI Bridge** sur votre site WordPress.',
+    'body'   => 'Assurez-vous d’avoir installé et activé le plugin gratuit **IntakeFlow** sur votre site WordPress.',
     'cta'    => ['label' => 'Télécharger sur WordPress.org', 'href' => $free_download_url, 'external' => true],
   ],
   [
     'number' => '02',
     'title'  => 'Connecter votre Console',
-    'body'   => 'Générez un jeton API dans la Console (Profil → API Tokens), puis saisissez-le dans l’administration de votre site sous **IntakeFlow/XPressUI → Workflows → Console Sync**.',
+    'body'   => 'Générez un jeton API dans la Console (Profil → API Tokens), puis saisissez-le dans l’administration de votre site sous **IntakeFlow → Workflows → Console Sync**.',
     'cta'    => ['label' => 'Ouvrir la Console', 'href' => $console_url, 'external' => true],
   ],
   [
@@ -130,13 +130,13 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '01',
     'title'  => 'Install the plugin from WordPress.org',
-    'body'   => 'Make sure you have installed and activated the free **XPressUI Bridge** plugin on your WordPress site.',
+    'body'   => 'Make sure you have installed and activated the free **IntakeFlow** plugin on your WordPress site.',
     'cta'    => ['label' => 'Download on WordPress.org', 'href' => $free_download_url, 'external' => true],
   ],
   [
     'number' => '02',
     'title'  => 'Connect your Console',
-    'body'   => 'Generate an API token in your Console (Profile → API Tokens), then paste it into your WordPress admin under **IntakeFlow/XPressUI → Workflows → Console Sync**.',
+    'body'   => 'Generate an API token in your Console (Profile → API Tokens), then paste it into your WordPress admin under **IntakeFlow → Workflows → Console Sync**.',
     'cta'    => ['label' => 'Open the Console', 'href' => $console_url, 'external' => true],
   ],
   [

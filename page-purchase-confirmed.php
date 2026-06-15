@@ -13,13 +13,13 @@ $steps = [
   [
     'n'    => '02',
     'title'=> 'Download and install the free plugin',
-    'body' => 'Install and activate XPressUI Bridge on your site first. This is the only plugin you need on WordPress.',
-    'cta'  => ['label' => 'Download XPressUI Bridge on WordPress.org', 'href' => 'https://wordpress.org/plugins/xpressui-bridge/'],
+    'body' => 'Install and activate IntakeFlow on your site first. This is the only plugin you need on WordPress.',
+    'cta'  => ['label' => 'Download IntakeFlow on WordPress.org', 'href' => 'https://wordpress.org/plugins/xpressui-bridge/'],
   ],
   [
     'n'    => '03',
     'title'=> 'Connect your Console account',
-    'body' => 'Generate an API token under Profile → API Tokens in your Console, then enter it in the WordPress settings under XPressUI → Workflows → Console Sync.',
+    'body' => 'Generate an API token under Profile → API Tokens in your Console, then enter it in the WordPress settings under IntakeFlow → Workflows → Console Sync.',
   ],
   [
     'n'    => '04',
@@ -49,7 +49,7 @@ get_header();
          ✓ Payment confirmed
        </span>
        <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">You're in</p>
-       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Welcome to XPressUI Pro.</h1>
+       <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 mb-4">Welcome to IntakeFlow.</h1>
        <p class="text-gray-500 leading-relaxed">Your welcome email and setup instructions are on their way to your inbox. Follow the steps below to connect your site to the Console.</p>
      </div>
   </section>
@@ -66,7 +66,7 @@ get_header();
           <p class="text-sm text-gray-500 leading-relaxed">
             We've sent setup instructions to your inbox. Access the Console directly to generate your API token.
             If it doesn't arrive within a couple of minutes, check your spam folder or
-            <a href="mailto:hello@intakeflow.dev?subject=XPressUI%20Pro%20%E2%80%94%20missing%20setup%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
+            <a href="mailto:hello@intakeflow.dev?subject=IntakeFlow%20%E2%80%94%20missing%20setup%20email" class="text-blue-600 font-semibold hover:underline">contact support</a>.
           </p>
         </div>
       </div>
