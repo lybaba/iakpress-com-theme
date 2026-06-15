@@ -12,7 +12,7 @@ $agency_url     = $is_french_install ? home_url('/fr/agency-pilot/') : home_url(
 $install_copy = $is_french_install ? [
   'eyebrow' => 'Guide d’installation',
   'title' => 'Une page d’intake IntakeFlow en ligne en moins de 10 minutes.',
-  'body' => 'Deux chemins : tester les workflows intégrés sans compte, ou créer un parcours personnalisé dans la console visuelle et le déployer par upload ZIP.',
+  'body' => 'Deux chemins : tester les workflows intégrés sans compte, ou créer un parcours personnalisé dans la console visuelle et le synchroniser en un clic via API.',
   'free_badge' => 'Free',
   'free_title' => 'Tester les workflows intégrés',
   'pro_badge' => 'Pro',
@@ -36,7 +36,7 @@ $install_copy = $is_french_install ? [
 ] : [
   'eyebrow' => 'Install guide',
   'title' => 'Live intake page with IntakeFlow in under 10 minutes.',
-  'body' => 'Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and deploy it via ZIP upload.',
+  'body' => 'Two paths: test the built-in workflows immediately with no account, or build a custom flow in the visual console and sync it in one click via API.',
   'free_badge' => 'Free',
   'free_title' => 'Test the built-in workflows',
   'pro_badge' => 'Pro',
@@ -117,7 +117,7 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '03',
     'title'  => 'Synchroniser vos workflows',
-    'body'   => 'Une fois connecté, cliquez sur "Load from Console" pour récupérer et synchroniser directement vos workflows personnalisés sur votre site WordPress, sans aucun transfert de fichier ZIP manuel nécessaire.',
+    'body'   => 'Une fois connecté, cliquez sur "Load from Console" pour récupérer et synchroniser directement vos workflows personnalisés sur votre site WordPress.',
   ],
   [
     'number' => '04',
@@ -142,7 +142,7 @@ $pro_steps = $is_french_install ? [
   [
     'number' => '03',
     'title'  => 'Sync in one click',
-    'body'   => 'Once connected, click "Load from Console" to sync your custom workflows directly to your WordPress site with no manual ZIP transfers required.',
+    'body'   => 'Once connected, click "Load from Console" to sync your custom workflows directly to your WordPress site.',
   ],
   [
     'number' => '04',
