@@ -38,7 +38,7 @@ get_header(); ?>
      . " booking_url=[" . esc_html( $booking_url ) . "] -->\n";
 } ?>
 
-<div class="font-sans text-gray-900 antialiased bg-gray-50 min-h-screen pb-20">
+<div class="font-sans text-gray-900 antialiased bg-gray-50 min-h-screen">
 
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white py-24 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
