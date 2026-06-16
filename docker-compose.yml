@@ -39,6 +39,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - .:/var/www/html/wp-content/themes/iakpress-com-theme
+      - ../xpressui-wordpress-bridge:/var/www/html/wp-content/plugins/xpressui-wordpress-bridge
 
   setup:
     image: wordpress:cli-php8.2
@@ -57,6 +58,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - .:/var/www/html/wp-content/themes/iakpress-com-theme
+      - ../xpressui-wordpress-bridge:/var/www/html/wp-content/plugins/xpressui-wordpress-bridge
     entrypoint: ["/bin/sh", "/var/www/html/wp-content/themes/iakpress-com-theme/scripts/docker-setup.sh"]
 
 volumes:

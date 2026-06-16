@@ -54,11 +54,12 @@ else
   echo "   Stub already present."
 fi
 
-# ── 5. Activate the child theme ──────────────────────────────────────────────
+# ── 5. Activate the plugin and child theme ───────────────────────────────────
+echo "==> Activating xpressui-wordpress-bridge plugin..."
+wp --allow-root plugin activate xpressui-wordpress-bridge --path="$WP" && echo "   Activated plugin." || echo "   ERROR: could not activate plugin."
+
 echo "==> Activating iakpress-com-theme..."
-wp --allow-root theme activate iakpress-com-theme --path="$WP" \
-  && echo "   Activated." \
-  || echo "   ERROR: could not activate theme."
+wp --allow-root theme activate iakpress-com-theme --path="$WP" && echo "   Activated theme." || echo "   ERROR: could not activate theme."
 
 # ── 6. Create pages with templates ───────────────────────────────────────────
 echo "==> Creating pages..."
