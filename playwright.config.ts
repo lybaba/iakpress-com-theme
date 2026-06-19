@@ -12,6 +12,7 @@ export default defineConfig({
     baseURL,
     trace: 'on-first-retry',
     viewport: { width: 1440, height: 2000 },
+    channel: 'chrome',
   },
   projects: [
     {
