@@ -84,6 +84,7 @@ function iakpress_language_path_map(): array {
         'purchase-confirmed' => 'fr/purchase-confirmed',
         'resources'          => 'fr/resources',
         'done-for-you'       => 'fr/done-for-you',
+        'tour'               => 'fr/tour',
     );
 }
 
@@ -863,6 +864,7 @@ function iakpress_render_french_routes(): void {
         'fr/purchase-confirmed' => 'page-purchase-confirmed.php',
         'fr/resources'          => 'page-resources.php',
         'fr/done-for-you'       => 'page-done-for-you.php',
+        'fr/tour'               => 'page-tour.php',
         'resources'             => 'page-resources.php',
         'done-for-you'          => 'page-done-for-you.php',
     );
@@ -901,6 +903,8 @@ function iakpress_document_title_parts( array $parts ): array {
         'fr/resources' => 'Ressources et Documentation',
         'done-for-you' => 'Done-For-You Client Portal Setup',
         'fr/done-for-you' => 'Service Clé en Main - Configuration Portail Client',
+        'tour' => 'Product Tour — The client intake gateway',
+        'fr/tour' => 'Visite produit — Le sas de pré-collecte client',
     );
 
     if ( isset( $title_map[$path] ) ) {
@@ -932,6 +936,8 @@ function iakpress_custom_seo_meta_description(): void {
         'fr/resources' => 'Accédez aux tutoriels, aux workflows par défaut, à la documentation de l’API et aux ressources d’aide d’IntakeFlow.',
         'done-for-you' => 'Get your custom client portal fully designed, set up, and integrated under 7 days with our Done-For-You service.',
         'fr/done-for-you' => 'Confiez la création et l’intégration de votre portail client à nos experts. Votre système opérationnel clé en main en 7 jours.',
+        'tour' => 'A looping product tour of IntakeFlow: one private link to collect, verify, and process client documents, plus catalog checkout and booking.',
+        'fr/tour' => 'Une visite animée d’IntakeFlow : un lien privé pour collecter, vérifier et traiter les pièces clients, avec checkout catalogue et réservation.',
     );
 
     if ( isset( $desc_map[$path] ) ) {

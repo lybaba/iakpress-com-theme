@@ -7,8 +7,10 @@ $console_url = '';
 $hero_client_portal = xpressui_asset_url('front-step-2.png');
 $hero_upload_flow = xpressui_asset_url('front-step-3.png');
 $hero_inbox = xpressui_asset_url('admin-project-inbox.png');
-$intro_video_url = 'https://www.youtube.com/watch?v=G8dXHAbIgac';
-$intro_video_embed_url = 'https://www.youtube.com/embed/G8dXHAbIgac';
+$tour_url = home_url( '/tour/' );
+
+// Animated promo-reel preview (shared copy + template-part) for the workflow-intro slot.
+$reel_copy = include locate_template( 'template-parts/promo-reel-copy.php' );
 
 get_header(); ?>
 
@@ -99,23 +101,18 @@ get_header(); ?>
         <p class="text-gray-600 leading-relaxed mb-6">
           A quick tour of the client link, guided submission, notification email, and operator review workflow.
         </p>
-        <a href="<?php echo esc_url($intro_video_url); ?>" target="_blank" rel="noreferrer" class="inline-flex justify-center rounded-lg border border-blue-100 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 transition hover:bg-blue-100 whitespace-nowrap">
-          Open on YouTube
+        <a href="<?php echo esc_url($tour_url); ?>" class="inline-flex justify-center rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:-translate-y-0.5 whitespace-nowrap">
+          Watch the tour
         </a>
       </div>
       <div class="lg:col-span-8">
-        <div class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-950 shadow-2xl shadow-blue-900/10">
-          <div class="aspect-video">
-            <iframe
-              src="<?php echo esc_url($intro_video_embed_url); ?>"
-              title="IntakeFlow product intro"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              referrerpolicy="strict-origin-when-cross-origin"
-              style="width: 100%; height: 100%; border: 0;"
-            ></iframe>
-          </div>
+        <div class="mx-auto w-full max-w-md lg:max-w-lg">
+        <?php
+          set_query_var( 'iaktour_reel', $reel_copy['en'] );
+          set_query_var( 'iaktour_embed', array( 'href' => $tour_url, 'label' => 'Watch the tour' ) );
+          get_template_part( 'template-parts/promo-reel' );
+          set_query_var( 'iaktour_embed', null );
+        ?>
         </div>
       </div>
     </div>
