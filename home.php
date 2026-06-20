@@ -7,12 +7,14 @@ get_header(); ?>
 
 <div class="font-sans text-gray-900 antialiased">
 
+  <?php $iakpress_blog_fr = function_exists( 'iakpress_is_french_request' ) && iakpress_is_french_request(); ?>
+
   <!-- Header -->
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-3xl mx-auto">
-      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3">From the Blog</p>
-      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900">Articles</h1>
-      <p class="text-gray-500 mt-3">Insights on IntakeFlow, agency workflow, client delivery, and decoupled development.</p>
+      <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-3"><?php echo $iakpress_blog_fr ? 'Le Blog' : 'From the Blog'; ?></p>
+      <h1 class="text-4xl font-extrabold tracking-tight text-gray-900"><?php echo $iakpress_blog_fr ? 'Actualités' : 'Articles'; ?></h1>
+      <p class="text-gray-500 mt-3"><?php echo $iakpress_blog_fr ? 'Le hors-flux, la collecte guidée et le positionnement produit, pour les cabinets d’expertise comptable.' : 'Insights on IntakeFlow, agency workflow, client delivery, and decoupled development.'; ?></p>
     </div>
   </section>
 
@@ -26,10 +28,10 @@ get_header(); ?>
            class="group block bg-gray-50 hover:bg-blue-50 border border-gray-100 hover:border-blue-200 rounded-2xl p-8 transition-all duration-200">
 
           <?php
-          $cats = get_the_category();
-          if ( ! empty( $cats ) ) : ?>
+          $eyebrow_cat = function_exists( 'iakpress_post_display_category' ) ? iakpress_post_display_category() : null;
+          if ( $eyebrow_cat ) : ?>
             <p class="text-xs font-bold tracking-widest text-blue-600 uppercase mb-2">
-              <?php echo esc_html( $cats[0]->name ); ?>
+              <?php echo esc_html( $eyebrow_cat->name ); ?>
             </p>
           <?php endif; ?>
 
@@ -45,10 +47,10 @@ get_header(); ?>
             <time class="text-xs text-gray-400" datetime="<?php echo get_the_date( 'c' ); ?>">
               <?php echo get_the_date(); ?>
               &middot;
-              <?php echo ceil( str_word_count( get_the_content() ) / 200 ); ?> min read
+              <?php echo ceil( str_word_count( get_the_content() ) / 200 ); ?> <?php echo $iakpress_blog_fr ? 'min de lecture' : 'min read'; ?>
             </time>
             <span class="text-sm font-bold text-blue-600 group-hover:underline">
-              Read <?php echo xpressui_arrow_svg(); ?>
+              <?php echo $iakpress_blog_fr ? 'Lire' : 'Read'; ?> <?php echo xpressui_arrow_svg(); ?>
             </span>
           </div>
         </a>
@@ -64,7 +66,7 @@ get_header(); ?>
       <?php endif; ?>
 
       <?php else : ?>
-        <p class="text-gray-500 text-center py-16">No articles yet. Check back soon.</p>
+        <p class="text-gray-500 text-center py-16"><?php echo $iakpress_blog_fr ? 'Pas encore d’articles. Revenez bientôt.' : 'No articles yet. Check back soon.'; ?></p>
       <?php endif; ?>
 
     </div>

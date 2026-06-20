@@ -111,7 +111,57 @@ function iakpress_localized_path( string $language, ?string $path = null ): stri
     return $english_path === '' ? '/' : '/' . $english_path . '/';
 }
 
+/**
+ * For a single blog post, find the permalink of its translation counterpart
+ * (same `iak_article_key`, opposite language). Returns null when there is no
+ * counterpart (not a single post, no key, or no published translation).
+ */
+function iakpress_post_translation_url( string $language, $post = null ): ?string {
+    $post = get_post( $post );
+    if ( ! $post || $post->post_type !== 'post' ) {
+        return null;
+    }
+
+    $key = get_post_meta( $post->ID, 'iak_article_key', true );
+    if ( $key === '' ) {
+        return null;
+    }
+
+    $matches = get_posts( array(
+        'post_type'        => 'post',
+        'post_status'      => 'publish',
+        'posts_per_page'   => 1,
+        'post__not_in'     => array( $post->ID ),
+        'fields'           => 'ids',
+        'no_found_rows'    => true,
+        'suppress_filters' => true,
+        'meta_query'       => array(
+            array( 'key' => 'iak_article_key', 'value' => $key ),
+            array( 'key' => 'iak_lang', 'value' => $language ),
+        ),
+        // The pre_get_posts language filter only touches main queries, but pass
+        // the language category as well so the match is unambiguous.
+        'category_name'    => $language,
+    ) );
+
+    if ( empty( $matches ) ) {
+        return null;
+    }
+
+    $url = get_permalink( $matches[0] );
+    return $url ? $url : null;
+}
+
 function iakpress_language_switch_url( string $language ): string {
+    // On a single blog post, switching language must land on the *translated*
+    // post, not flip the cookie while staying on the same article.
+    if ( is_singular( 'post' ) ) {
+        $translation = iakpress_post_translation_url( $language, get_queried_object_id() );
+        if ( $translation ) {
+            return add_query_arg( 'iakpress_lang', $language, $translation );
+        }
+    }
+
     $path = iakpress_localized_path( $language );
     return add_query_arg( 'iakpress_lang', $language, home_url( $path ) );
 }
@@ -142,6 +192,26 @@ function iakpress_redirect_to_persistent_language(): void {
 
     $language = $_COOKIE['iakpress_lang'] ?? '';
     if ( ! in_array( $language, array( 'en', 'fr' ), true ) ) {
+        return;
+    }
+
+    // Single blog post viewed in the opposite language context (e.g. an EN post
+    // while the FR cookie is set): send the reader to its translation if one
+    // exists. No loop risk — after the redirect the post's own language matches
+    // the cookie, so this branch no longer fires. A post without a counterpart
+    // stays put so direct access never 404s.
+    if ( is_singular( 'post' ) ) {
+        $post_lang = get_post_meta( get_queried_object_id(), 'iak_lang', true );
+        if ( $post_lang === '' ) {
+            $post_lang = iakpress_post_is_french( get_queried_object_id() ) ? 'fr' : 'en';
+        }
+        if ( $post_lang !== $language ) {
+            $translation = iakpress_post_translation_url( $language, get_queried_object_id() );
+            if ( $translation ) {
+                wp_safe_redirect( $translation );
+                exit;
+            }
+        }
         return;
     }
 
@@ -883,6 +953,114 @@ function iakpress_render_french_routes(): void {
 }
 add_action( 'template_redirect', 'iakpress_render_french_routes', 0 );
 
+/**
+ * Bilingual blog.
+ *
+ * Each blog post is tagged with one language category — slug `en` or `fr` (plain
+ * WordPress categories, no translation plugin). English posts live on the main
+ * `/blog/` index (home.php) and their native single permalinks. French posts are
+ * surfaced at the virtual `/fr/blog/` route, which renders the same home.php
+ * template but restricts the loop to the `fr` category (and the French header
+ * strings are active because the path starts with `fr/`). Single FR posts work
+ * natively at their French permalink; single.php detects the post language and
+ * renders French chrome + a `/fr/blog/` back-link.
+ *
+ * This mirrors the theme's code-driven FR/EN split used for hardcoded pages,
+ * applied to posts.
+ */
+
+/**
+ * Keep French posts out of the default English blog index, the post feed, and
+ * any default post archive. The dedicated /fr/blog/ route opts back in.
+ */
+function iakpress_filter_blog_by_language( WP_Query $query ): void {
+    if ( is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
+
+    // The /fr/blog/ route sets this flag and handles its own tax_query.
+    if ( ! empty( $query->get( 'iakpress_fr_blog' ) ) ) {
+        return;
+    }
+
+    if ( $query->is_home() || $query->is_feed() || $query->is_category() || $query->is_tag() ) {
+        $tax_query   = (array) $query->get( 'tax_query' );
+        $tax_query[] = array(
+            'taxonomy' => 'category',
+            'field'    => 'slug',
+            'terms'    => array( 'fr' ),
+            'operator' => 'NOT IN',
+        );
+        $query->set( 'tax_query', $tax_query );
+    }
+}
+add_action( 'pre_get_posts', 'iakpress_filter_blog_by_language' );
+
+/**
+ * Virtual /fr/blog/ index: renders home.php with the loop restricted to the
+ * French (`fr`) language category.
+ */
+function iakpress_render_french_blog(): void {
+    if ( iakpress_current_path() !== 'fr/blog' ) {
+        return;
+    }
+
+    global $wp_query;
+    $paged = max( 1, (int) get_query_var( 'paged' ), (int) get_query_var( 'page' ) );
+
+    $wp_query = new WP_Query( array(
+        'post_type'      => 'post',
+        'post_status'    => 'publish',
+        'posts_per_page' => (int) get_option( 'posts_per_page', 10 ),
+        'paged'          => $paged,
+        'iakpress_fr_blog' => true,
+        'tax_query'      => array(
+            array(
+                'taxonomy' => 'category',
+                'field'    => 'slug',
+                'terms'    => array( 'fr' ),
+                'operator' => 'IN',
+            ),
+        ),
+    ) );
+    $wp_query->is_home    = true;
+    $wp_query->is_archive = false;
+    $wp_query->is_404     = false;
+
+    status_header( 200 );
+    include get_stylesheet_directory() . '/home.php';
+    exit;
+}
+add_action( 'template_redirect', 'iakpress_render_french_blog', 0 );
+
+/**
+ * Is the given/current post a French-language blog post?
+ */
+function iakpress_post_is_french( $post = null ): bool {
+    $post = get_post( $post );
+    if ( ! $post ) {
+        return false;
+    }
+    return has_category( 'fr', $post );
+}
+
+/**
+ * Return the first topical category of a post, skipping the `en`/`fr` language
+ * terms, so they never surface as the article eyebrow label.
+ */
+function iakpress_post_display_category( $post = null ) {
+    $cats = get_the_category( $post ? get_post( $post )->ID : null );
+    if ( empty( $cats ) ) {
+        return null;
+    }
+    foreach ( $cats as $cat ) {
+        if ( ! in_array( $cat->slug, array( 'en', 'fr' ), true ) ) {
+            return $cat;
+        }
+    }
+    return null;
+}
+
 function iakpress_document_title_parts( array $parts ): array {
     $path = iakpress_current_path();
     $title_map = array(
@@ -905,6 +1083,7 @@ function iakpress_document_title_parts( array $parts ): array {
         'fr/done-for-you' => 'Service Clé en Main - Configuration Portail Client',
         'tour' => 'Product Tour — The client intake gateway',
         'fr/tour' => 'Visite produit — Le sas de pré-collecte client',
+        'fr/blog' => 'Actualités IntakeFlow',
     );
 
     if ( isset( $title_map[$path] ) ) {

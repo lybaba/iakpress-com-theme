@@ -9,24 +9,30 @@ get_header(); ?>
 
   <?php while ( have_posts() ) : the_post(); ?>
 
+  <?php
+  $post_is_fr  = function_exists( 'iakpress_post_is_french' ) ? iakpress_post_is_french() : false;
+  $blog_href   = $post_is_fr ? '/fr/blog/' : '/blog/';
+  $back_label  = $post_is_fr ? 'Tous les articles' : 'All articles';
+  ?>
+
   <!-- Article Header -->
   <section class="bg-white py-16 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
     <div class="max-w-3xl mx-auto">
 
       <!-- Back link -->
-      <a href="/blog/" class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 mb-8 transition">
+      <a href="<?php echo esc_url( $blog_href ); ?>" class="inline-flex items-center text-sm font-medium text-blue-600 hover:text-blue-800 mb-8 transition">
         <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
-        All articles
+        <?php echo esc_html( $back_label ); ?>
       </a>
 
       <!-- Category / Tag -->
       <?php
-      $categories = get_the_category();
-      if ( ! empty( $categories ) ) : ?>
+      $eyebrow_cat = function_exists( 'iakpress_post_display_category' ) ? iakpress_post_display_category() : null;
+      if ( $eyebrow_cat ) : ?>
         <p class="text-sm font-bold tracking-widest text-blue-600 uppercase mb-4">
-          <?php echo esc_html( $categories[0]->name ); ?>
+          <?php echo esc_html( $eyebrow_cat->name ); ?>
         </p>
       <?php endif; ?>
 
@@ -40,10 +46,21 @@ get_header(); ?>
         <time datetime="<?php echo get_the_date( 'c' ); ?>">
           <?php echo get_the_date(); ?>
         </time>
-        <span><?php echo ceil( str_word_count( get_the_content() ) / 200 ); ?> min read</span>
+        <span><?php echo $post_is_fr ? ceil( str_word_count( get_the_content() ) / 200 ) . ' min de lecture' : ceil( str_word_count( get_the_content() ) / 200 ) . ' min read'; ?></span>
       </div>
     </div>
   </section>
+
+  <!-- Featured image -->
+  <?php if ( has_post_thumbnail() ) : ?>
+  <section class="bg-white pt-4 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <figure class="rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
+        <?php the_post_thumbnail( 'large', array( 'class' => 'w-full h-auto block', 'loading' => 'eager' ) ); ?>
+      </figure>
+    </div>
+  </section>
+  <?php endif; ?>
 
   <!-- Article Body -->
   <section class="bg-white py-12 px-4 sm:px-6 lg:px-8">
@@ -67,16 +84,16 @@ get_header(); ?>
   <!-- CTA Banner -->
   <section class="bg-blue-50 border-y border-blue-100 py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-extrabold text-gray-900 mb-3">Ready to make peace with your themes?</h2>
-      <p class="text-gray-600 mb-8">See the decoupled architecture in action on our live demo &mdash; no signup required.</p>
+      <h2 class="text-2xl font-extrabold text-gray-900 mb-3"><?php echo $post_is_fr ? 'Prêt à voir le sas de pré-collecte en action ?' : 'Ready to see the pre-collection gateway in action?'; ?></h2>
+      <p class="text-gray-600 mb-8"><?php echo $post_is_fr ? 'Découvrez la démo en ligne &mdash; sans inscription.' : 'See the live demo &mdash; no signup required.'; ?></p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="/document-intake/"
+        <a href="<?php echo $post_is_fr ? '/fr/document-intake/' : '/document-intake/'; ?>"
            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-200 shadow-lg shadow-blue-500/30">
-          Try the Live Demo
+          <?php echo $post_is_fr ? 'Essayer la démo' : 'Try the Live Demo'; ?>
         </a>
-        <a href="/contact/"
+        <a href="<?php echo $post_is_fr ? '/fr/contact/' : '/contact/'; ?>"
            class="bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-800 font-bold py-3 px-8 rounded-lg transition duration-200">
-          Discuss Cloud plan <?php echo xpressui_arrow_svg(); ?>
+          <?php echo $post_is_fr ? 'Discuter du plan Cloud' : 'Discuss Cloud plan'; ?> <?php echo xpressui_arrow_svg(); ?>
         </a>
       </div>
     </div>

@@ -119,6 +119,12 @@ if [ -n "$XPRESSUI_CONTACT_HOSTED_LINK_URL" ]; then
   fi
 fi
 
+# ── 6b. Create bilingual blog posts (shared, single-source script) ───────────
+# The seeding logic lives in scripts/seed-blog-posts.sh so the same code runs
+# on the real server. Here we drive it with the Docker WP path + allow-root.
+THEME_DIR="$WP/wp-content/themes/iakpress-com-theme"
+WP_PATH="$WP" WP_ALLOW_ROOT=1 sh "$THEME_DIR/scripts/seed-blog-posts.sh"
+
 # ── 7. Set home as static front page ─────────────────────────────────────────
 echo "==> Setting home as static front page..."
 FRONT_ID=$(wp --allow-root post list --path="$WP" \

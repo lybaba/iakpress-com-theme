@@ -130,7 +130,7 @@
               <div>
                 <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3"><?php echo $is_french_request ? 'Apprendre' : 'Learn'; ?></p>
                 <div class="flex flex-col gap-2">
-                  <a href="/blog/" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Actualités' : 'News & updates'; ?></a>
+                  <a href="<?php echo $is_french_request ? '/fr/blog/' : '/blog/'; ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Actualités' : 'News & updates'; ?></a>
                   <a href="<?php echo esc_url($resources_href); ?>#workflows" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Workflows Inclus' : 'Bundled Workflows'; ?></a>
                   <a href="<?php echo esc_url($resources_href); ?>#developer-api" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Référence API' : 'Developer API'; ?></a>
                   <a href="<?php echo esc_url($contact_href); ?>" class="text-sm font-semibold text-gray-700 hover:text-blue-600 transition"><?php echo $is_french_request ? 'Consultation Setup' : 'Setup Consultation'; ?></a>
@@ -156,7 +156,7 @@
           </div>
         </div>
 
-        <a href="/blog/" class="<?php echo ( is_home() && ! is_front_page() ) || is_singular('post') || is_category() || is_tag() ? $nav_active : $nav_idle; ?>">Blog</a>
+        <a href="<?php echo $is_french_request ? '/fr/blog/' : '/blog/'; ?>" class="<?php echo ( is_home() && ! is_front_page() ) || is_singular('post') || is_category() || is_tag() || iakpress_current_path() === 'fr/blog' ? $nav_active : $nav_idle; ?>"><?php echo $is_french_request ? 'Blog' : 'Blog'; ?></a>
       </nav>
 
       <!-- Call to Action & Mobile -->
