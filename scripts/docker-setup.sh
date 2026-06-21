@@ -102,11 +102,6 @@ create_page "Blog"                "blog"               "default"
 create_page "Purchase Confirmed"  "purchase-confirmed" "page-purchase-confirmed.php"
 create_page "Resources"           "resources"          "page-resources.php"
 create_page "Done-For-You"        "done-for-you"       "page-done-for-you.php"
-create_page "L'angle mort de votre cabinet" "angle-mort-pieces-exception" "page-angle-mort-pieces-exception.php"
-create_page "30% du temps perdu en relances" "30pourcent-temps-relance" "page-30pourcent-temps-relance.php"
-create_page "L'onboarding client & première impression" "onboarding-client-premiere-impression" "page-onboarding-client-premiere-impression.php"
-create_page "Facture électronique et hors-flux" "facture-electronique-ce-qui-reste" "page-facture-electronique-ce-qui-reste.php"
-create_page "Positionnement de fondateur" "founder-positionnement" "page-founder-positionnement.php"
 
 
 
