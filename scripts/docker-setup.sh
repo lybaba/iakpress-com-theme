@@ -147,8 +147,11 @@ HTACCESS
   fi
 fi
 
-# Ensure the Apache container (www-data, UID 33) owns the generated files
-chown -R 33:33 "$WP/wp-content/themes/generatepress" "$WP/.htaccess" 2>/dev/null || true
+# Ensure the Apache container (www-data, UID 33) owns the generated files so PHP can
+# write to them. uploads/ must be www-data-owned or the bridge's workflow/catalog sync
+# (wp_mkdir_p in uploads) fails with "Could not create directory" — the wp-cli seeding
+# above creates uploads/ as root, so re-own it here.
+chown -R 33:33 "$WP/wp-content/themes/generatepress" "$WP/.htaccess" "$WP/wp-content/uploads" 2>/dev/null || true
 
 echo ""
 echo "================================================"
